@@ -118,7 +118,7 @@
 
 	<!-- VSIndicator -->
 	<model>
-		<path>Aircraft/727-200/Models/Instruments/VSIndicator/vsi1.xml</path>
+		<path>Aircraft/727-200/Models/Instruments/VSI/vsi.xml</path>
 		<offsets>
 			<x-m> -21.34050</x-m>
 			<y-m>  -0.33679</y-m>
@@ -128,7 +128,7 @@
 	
 	<!-- VSIndicator copilot -->
 	<model>
-		<path>Aircraft/727-200/Models/Instruments/VSIndicator/vsi2.xml</path>
+		<path>Aircraft/727-200/Models/Instruments/VSI/vsi2.xml</path>
 		<offsets>
 			<x-m> -21.34050</x-m>
 			<y-m>   0.56079</y-m>

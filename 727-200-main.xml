@@ -395,6 +395,7 @@
 	<nasal n="0">
 		<libraries>
 			<file>Aircraft/727-200/Nasal/magicstartup.nas</file>
+			<file>Aircraft/727-200/Nasal/libraries.nas</file>
 		</libraries>
 	</nasal>
 
