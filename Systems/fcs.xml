@@ -3,45 +3,42 @@
 <system name="B722: FCS">
 
 	<channel name="Pitch">
-
+	
 		<summer name="Pitch Trim Sum">
-			<input>fcs/elevator-cmd-norm</input>
-			<input>fcs/pitch-trim-cmd-norm</input>
+			<input>/controls/flight/elevator</input>
+			<input>/controls/flight/elevator-trim</input>
 			<clipto>
-				<min> -1 </min>
-				<max>  1 </max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</summer>
 
 		<aerosurface_scale name="Elevator Control">
 			<input>fcs/pitch-trim-sum</input>
+			<gain>0.019</gain>
 			<range>
-				<min> -0.20 </min>
-				<max>  0.20 </max>
+				<min>-20</min>
+				<max>20</max>
 			</range>
 			<output>fcs/elevator-pos-rad</output>
 		</aerosurface_scale>
-
-		<aerosurface_scale name="elevator normalization">
-			<input>fcs/elevator-pos-rad</input>
-			<domain>
-				<min> -0.20 </min>
-				<max>  0.20 </max>
-			</domain>
+		
+		<aerosurface_scale name="Elevator Position Normalizer">
+			<input>fcs/pitch-trim-sum</input>
 			<range>
-				<min> -1 </min>
-				<max>  1 </max>
+				<min>-1</min>
+				<max>1</max>
 			</range>
 			<output>fcs/elevator-pos-norm</output>
 		</aerosurface_scale>
-
+	
 	</channel>
 
 	<channel name="Roll">
 
 		<summer name="Roll Trim Sum">
-			<input>fcs/aileron-cmd-norm</input>
-			<input>fcs/roll-trim-cmd-norm</input>
+			<input>/controls/flight/aileron</input>
+			<input>/controls/flight/aileron-trim</input>
 			<clipto>
 				<min> -1 </min>
 				<max>  1 </max>
@@ -119,8 +116,8 @@
 		</scheduled_gain>
 
 		<summer name="Rudder Sum">
-			<input>fcs/rudder-command-sum</input>
-			<input>fcs/yaw-damper-rate</input>
+			<input>/controls/flight/rudder</input>
+			<input>/controls/flight/rudder-trim</input>
 			<clipto>
 				<min> -1.0 </min>
 				<max>  1.0 </max>
@@ -165,24 +162,20 @@
 					<time>      0 </time>
 				</setting>
 				<setting>
-					<position> 1 </position>
-					<time>     3 </time>
-				</setting>
-				<setting>
 					<position> 2 </position>
-					<time>     3 </time>
+					<time>     4 </time>
 				</setting>
 				<setting>
 					<position> 5 </position>
 					<time>     3 </time>
 				</setting>
 				<setting>
-					<position> 10 </position>
+					<position> 15 </position>
 					<time>     3 </time>
 				</setting>
 				<setting>
 					<position> 25 </position>
-					<time>     3 </time>
+					<time>     4 </time>
 				</setting>
 				<setting>
 					<position> 30 </position>
@@ -207,6 +200,38 @@
 				<max> 1 </max>
 			</range>
 			<output>fcs/flap-pos-norm</output>
+		</aerosurface_scale>
+
+	</channel>
+	
+	<channel name="Slats">
+
+		<kinematic name="Slats Control">
+			<input>/controls/flight/flaps</input>
+			<traverse>
+			<setting>
+				<position>0</position>
+				<time>0</time>
+			</setting>
+			<setting>
+				<position>27</position>
+				<time>20</time>
+			</setting>
+			</traverse>
+			<output>fcs/slat-pos-deg</output>
+		</kinematic>
+
+		<aerosurface_scale name="Slat position normalized">
+			<input>fcs/slat-pos-deg</input>
+			<domain>
+			<min>0</min>
+			<max>27</max>
+			</domain>
+			<range>
+			<min>0</min>
+			<max>1</max>
+			</range>
+			<output>fcs/slat-pos-norm</output>
 		</aerosurface_scale>
 
 	</channel>

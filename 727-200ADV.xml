@@ -8,7 +8,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 	<fileheader>
 		<author>Joshua Davidson (it0uchpods)</author>
 		<version>Pre V1.0</version>
-		<description>Boeing 727-XXX FDE</description>
+		<description>Boeing 727-2XX FDE</description>
 	</fileheader>
 
 	<metrics>
@@ -21,7 +21,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		<vtailarea unit="FT2">  330.00 </vtailarea>
 		<vtailarm  unit="FT" >   34.00 </vtailarm>
 		<location name="AERORP" unit="IN">
-			<x> -88.7724 </x>
+			<x> -96.7724 </x>
 			<y> 0.00    </y>
 			<z> 25.2535 </z>
 		</location>
@@ -93,7 +93,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<rolling_friction> 0.02 </rolling_friction>
 			<spring_coeff unit="LBS/FT">      62850.00 </spring_coeff>
 			<damping_coeff unit="LBS/FT/SEC"> 104750.00 </damping_coeff>
-			<max_steer unit="DEG"> 65.00 </max_steer>
+			<max_steer unit="DEG"> 70.00 </max_steer>
 			<brake_group>NONE</brake_group>
 			<retractable>1</retractable>
 		</contact>
@@ -285,7 +285,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
 	</propulsion>
 
-	<system file="TriCycle_PushbackJSBSIM" />
+	<system file="pushback" />
 	<system file="fcs" />
 
 	<flight_control name="none" />
