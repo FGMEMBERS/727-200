@@ -206,14 +206,8 @@
 		<object-name>glas</object-name>
 	</animation>
 
-	<!--Add it0uchpods' cockpit-->
 	<model>
 		<path>Aircraft/727-200/Models/Flightdeck/flightdeck.xml</path>
-		<offsets>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
-			<z-m>0</z-m>
-		</offsets>
 	</model>
 
 	<!-- chrome reflection -->
@@ -281,8 +275,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>rightaileron</object-name>
-		<property>surface-positions/right-aileron-pos-norm</property>
-		<factor>15</factor>
+		<property>surface-positions/left-aileron-pos-norm</property>
+		<factor>-10</factor>
 		<axis>
 			<x1-m>4.752</x1-m>
 			<y1-m>12.880</y1-m>
@@ -296,8 +290,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>inneraileronr</object-name>
-		<property>surface-positions/right-aileron-pos-norm</property>
-		<factor>20</factor>
+		<property>surface-positions/left-aileron-pos-norm</property>
+		<factor>-15</factor>
 		<axis>
 			<x1-m>1.763</x1-m>
 			<y1-m>6.371</y1-m>
@@ -311,8 +305,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>leftaileron</object-name>
-		<property>surface-positions/right-aileron-pos-norm</property>
-		<factor>-15</factor>
+		<property>surface-positions/left-aileron-pos-norm</property>
+		<factor>10</factor>
 		<axis>
 			<x1-m>5.956</x1-m>
 			<y1-m>-15.657</y1-m>
@@ -326,8 +320,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>inneraileronl</object-name>
-		<property>surface-positions/right-aileron-pos-norm</property>
-		<factor>20</factor>
+		<property>surface-positions/left-aileron-pos-norm</property>
+		<factor>-15</factor>
 		<axis>
 			<x1-m>1.762</x1-m>
 			<y1-m>-6.375</y1-m>
@@ -359,48 +353,11 @@
 
 	<animation>
 		<type>rotate</type>
-		<object-name>obs1</object-name>
-		<object-name>obs2</object-name>
-		<property>surface-positions/left-aileron-pos-norm</property>
-		<factor>-25</factor>
-		<offset-deg>0</offset-deg>
-		<min-deg>0</min-deg>
-		<axis>
-			<x1-m>2.249</x1-m>
-			<y1-m>-9.001</y1-m>
-			<z1-m>-0.472</z1-m>
-			<x2-m>2.753</x2-m>
-			<y2-m>-10.066</y2-m>
-			<z2-m>-0.450</z2-m>
-		</axis>
-	</animation>
-
-
-	<animation>
-		<type>rotate</type>
 		<object-name>obs13</object-name>
 		<object-name>obs14</object-name>
 		<property>surface-positions/speedbrake-pos-norm</property>
 		<factor>-45</factor>
 		<offset-deg>0</offset-deg>
-		<axis>
-			<x1-m>2.249</x1-m>
-			<y1-m>9.001</y1-m>
-			<z1-m>-0.472</z1-m>
-			<x2-m>2.753</x2-m>
-			<y2-m>10.066</y2-m>
-			<z2-m>-0.450</z2-m>
-		</axis>
-	</animation>
-
-	<animation>
-		<type>rotate</type>
-		<object-name>obs13</object-name>
-		<object-name>obs14</object-name>
-		<property>surface-positions/right-aileron-pos-norm</property>
-		<factor>25</factor>
-		<offset-deg>0</offset-deg>
-		<max-deg>0</max-deg>
 		<axis>
 			<x1-m>2.249</x1-m>
 			<y1-m>9.001</y1-m>
@@ -431,47 +388,11 @@
 
 	<animation>
 		<type>rotate</type>
-		<object-name>ibs4</object-name>
-		<object-name>ibs3</object-name>
-		<property>surface-positions/left-aileron-pos-norm</property>
-		<factor>-25</factor>
-		<offset-deg>0</offset-deg>
-		<min-deg>0</min-deg>
-		<axis>
-			<x1-m>2.249</x1-m>
-			<y1-m>-9.001</y1-m>
-			<z1-m>-0.472</z1-m>
-			<x2-m>2.753</x2-m>
-			<y2-m>-10.066</y2-m>
-			<z2-m>-0.450</z2-m>
-		</axis>
-	</animation>
-
-	<animation>
-		<type>rotate</type>
 		<object-name>ibs11</object-name>
 		<object-name>ibs12</object-name>
 		<property>surface-positions/speedbrake-pos-norm</property>
 		<factor>-45</factor>
 		<offset-deg>0</offset-deg>
-		<axis>
-			<x1-m>2.249</x1-m>
-			<y1-m>9.001</y1-m>
-			<z1-m>-0.472</z1-m>
-			<x2-m>2.753</x2-m>
-			<y2-m>10.066</y2-m>
-			<z2-m>-0.450</z2-m>
-		</axis>
-	</animation>
-
-	<animation>
-		<type>rotate</type>
-		<object-name>ibs11</object-name>
-		<object-name>ibs12</object-name>
-		<property>surface-positions/right-aileron-pos-norm</property>
-		<factor>25</factor>
-		<offset-deg>0</offset-deg>
-		<max-deg>0</max-deg>
 		<axis>
 			<x1-m>2.249</x1-m>
 			<y1-m>9.001</y1-m>
@@ -502,49 +423,11 @@
 
 	<animation>
 		<type>rotate</type>
-		<object-name>ibs5</object-name>
-		<object-name>ibs6</object-name>
-		<object-name>gs7</object-name>
-		<property>surface-positions/left-aileron-pos-norm</property>
-		<factor>25</factor>
-		<offset-deg>0</offset-deg>
-		<max-deg>0</max-deg>
-		<axis>
-			<x1-m>1.142</x1-m>
-			<y1-m>-6.073</y1-m>
-			<z1-m>-0.516</z1-m>
-			<x2-m>0.406</x2-m>
-			<y2-m>-2.208</y2-m>
-			<z2-m>-0.600</z2-m>
-		</axis>
-	</animation>
-
-	<animation>
-		<type>rotate</type>
 		<object-name>ibs10</object-name>
 		<object-name>ibs9</object-name>
 		<property>surface-positions/speedbrake-pos-norm</property>
 		<factor>45</factor>
 		<offset-deg>0</offset-deg>
-		<axis>
-			<x1-m>1.142</x1-m>
-			<y1-m>6.073</y1-m>
-			<z1-m>-0.516</z1-m>
-			<x2-m>0.406</x2-m>
-			<y2-m>2.208</y2-m>
-			<z2-m>-0.600</z2-m>
-		</axis>
-	</animation>
-
-	<animation>
-		<type>rotate</type>
-		<object-name>ibs10</object-name>
-		<object-name>ibs9</object-name>
-		<object-name>gs8</object-name>
-		<property>surface-positions/right-aileron-pos-norm</property>
-		<factor>-25</factor>
-		<offset-deg>0</offset-deg>
-		<min-deg>0</min-deg>
 		<axis>
 			<x1-m>1.142</x1-m>
 			<y1-m>6.073</y1-m>

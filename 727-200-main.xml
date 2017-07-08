@@ -5,7 +5,7 @@
 	<sim>
 
 		<rating>
-			<FDM type="int">1</FDM>
+			<FDM type="int">3</FDM>
 			<systems type="int">1</systems>
 			<cockpit type="int">2</cockpit>
 			<model type="int">3</model>
@@ -16,6 +16,18 @@
 			<switch type="bool">0</switch>
 			<stall-horn type="bool">0</stall-horn>
 		</sound>
+		
+		<startup>
+			<splash-texture>Aircraft/727-200/Splash/SplashOld.png</splash-texture>
+		</startup>
+		
+		<previews>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/splash1.png</path>
+			</preview>
+		</previews>
 
 		<menubar>
 			<default>
@@ -282,6 +294,78 @@
 		</chrono>
 		
 	</instrumentation>
+	
+	<input>
+		<keyboard>
+			<key n="49">
+				<name>1</name>
+				<desc>Captain View</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>/sim/current-view/view-number</property>
+					<value>0</value>
+				</binding>
+			</key>
+			<key n="50">
+				<name>2</name>
+				<desc>First Officer View</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>/sim/current-view/view-number</property>
+					<value>8</value>
+				</binding>
+			</key>
+			<!--key n="51">
+				<name>3</name>
+				<desc>Overhead View</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>/sim/current-view/view-number</property>
+					<value>9</value>
+				</binding>
+			</key>
+			<key n="127">
+				<name>DEL</name>
+				<desc>Simple Engage/Disengage reversers</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+					systems.toggleFastRevThrust();
+					</script>
+				</binding>
+			</key>
+			<key n="257">
+				<name>F1</name>
+				<desc>Disengage/Decrease reversers</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+					systems.unRevThrust();
+					</script>
+				</binding>
+			</key>
+			<key n="258">
+				<name>F2</name>
+				<desc>Engage/Increase reversers</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+					systems.doRevThrust();
+					</script>
+				</binding>
+			</key>
+			<key n="101">
+				<name>e</name>
+				<desc>Thrust Levers Idle</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+					systems.doIdleThrust();
+					</script>
+				</binding>
+			</key-->
+		</keyboard>
+	</input>
 
 	<payload>
 

@@ -15,7 +15,6 @@
 		<object-name>button.001</object-name>
 		<object-name>button.002</object-name>
 		<object-name>button.003</object-name>
-		<object-name>button.004</object-name>
 		<condition>		
 			<not><property>/sim/rendering/rembrandt/enabled</property></not>
 		</condition>
@@ -33,7 +32,6 @@
   <object-name>lampone</object-name>
   <object-name>lamptwo</object-name>
   <object-name>lampthree</object-name>
-  <object-name>lampfour</object-name> 
   <emission>
     <red>0.8</red>
     <green>0.2</green>
@@ -82,21 +80,6 @@
     <or>
 		  <property>/controls/test/warn-knob</property>
 		  <property>/controls/engines/engine[2]/fire</property>
-		</or>
-  </condition>
-</animation>
-
-<animation>
-  <type>select</type>
-  <object-name>lampfour</object-name>
-  <condition>
-		<greater-than>
-			<property>/b707/ess-bus</property>
-			<value>20</value>
-		</greater-than>
-    <or>
-		  <property>/controls/test/warn-knob</property>
-		  <property>/controls/engines/engine[3]/fire</property>
 		</or>
   </condition>
 </animation>
@@ -184,35 +167,6 @@
         <binding>
           <command>property-toggle</command>
           <property>/b707/warning/fire-button[2]</property>  
-        </binding>
-      </action>
-    </animation>
-
-    <!-- The warn button 4 -->
-		<animation>
-	    <type>translate</type>
-	    <object-name>button.004</object-name>
-  		<object-name>lampfour</object-name>
-	    <property>/b707/warning/fire-button[3]</property>
-	    <factor>0.015</factor>
-	    <axis>
-	        <x> 1.0</x>
-	        <y> 0.0</y>
-	        <z> 0.0</z>
-	    </axis>
-		</animation>
-
-    <animation>
-      <type>pick</type>
-        <object-name>button.004</object-name>
-        <object-name>lampfour</object-name>
-      <visible>true</visible>
-      <action>
-        <button>0</button>
-        <repeatable>false</repeatable>
-        <binding>
-          <command>property-toggle</command>
-          <property>/b707/warning/fire-button[3]</property>  
         </binding>
       </action>
     </animation>

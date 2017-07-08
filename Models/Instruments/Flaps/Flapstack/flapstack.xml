@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<!--
+###############################################################################################
+	Lake of Constance Hangar :: M.Kraus
+	Septemper 2013
+	This file is licenced under the terms of the GNU General Public Licence V2 or later
+###############################################################################################
+-->
+
+<PropertyList>
+
+<path>flapstack.ac</path>
+
+	<animation>
+		<name>flapstack</name>
+		<object-name>Flap.needle</object-name>
+		<object-name>Flap.face</object-name>
+		<object-name>Flap.needle.001</object-name>
+		<object-name>Flap.face.001</object-name>
+		<object-name>Slats.needle</object-name>
+		<object-name>Slats.needle.001</object-name>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>Flap.needle</object-name>
+		<object-name>Flap.face</object-name>
+		<object-name>Flap.needle.001</object-name>
+		<object-name>Flap.face.001</object-name>
+		<object-name>Slats.needle</object-name>
+		<object-name>Slats.needle.001</object-name>
+		  <emission>
+    <red>0.5</red>
+    <green>0.5</green>
+    <blue>0.5</blue>
+  </emission>
+	</animation>
+
+<!-- gears up and down -->
+	<animation>
+		<type>rotate</type>
+		<object-name>Gear.lever</object-name>
+		<property>/controls/gear/gear-down</property>
+		<interpolation>
+			<entry><ind>1</ind><dep>-24.5</dep></entry>
+			<entry><ind>0.5</ind><dep>0</dep></entry>
+			<entry><ind>0</ind><dep> 26</dep></entry> 
+		</interpolation>  
+		<center>
+			<x-m>-0.110</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>Gear.lever</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/gear/gear-down</property>
+      </binding>
+    </action>
+  </animation>
+  
+<!-- the flap instruments -->
+
+<animation>
+  <type>rotate</type>
+  <object-name>Flap.needle</object-name>
+  <property>surface-positions/flap-pos-norm</property>
+  <interpolation>
+    <entry><ind>   0</ind><dep>  0</dep></entry>
+    <entry><ind> 0.2</ind><dep> 48</dep></entry>
+    <entry><ind> 0.4</ind><dep> 90</dep></entry>
+    <entry><ind> 0.6</ind><dep>136</dep></entry>
+    <entry><ind>   1</ind><dep>180</dep></entry>
+  </interpolation>
+	<center>
+		<x-m>0.0</x-m>
+		<y-m>0.1021</y-m>
+		<z-m>-0.0262</z-m>
+	</center>
+  <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>Flap.needle.001</object-name>
+  <property>surface-positions/flap-pos-norm</property>
+  <interpolation>
+    <entry><ind>   0</ind><dep>  0</dep></entry>
+    <entry><ind> 0.2</ind><dep> 48</dep></entry>
+    <entry><ind> 0.4</ind><dep> 90</dep></entry>
+    <entry><ind> 0.6</ind><dep>136</dep></entry>
+    <entry><ind>   1</ind><dep>180</dep></entry>
+  </interpolation>
+	<center>
+		<x-m>0.0</x-m>
+		<y-m>0.1021</y-m>
+		<z-m>0.0223</z-m>
+	</center>
+  <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>Slats.needle</object-name>
+  <property>surface-positions/flap-pos-norm</property>
+  <interpolation>
+    <entry><ind>   0</ind><dep>  0</dep></entry>
+    <entry><ind> 0.2</ind><dep> 42</dep></entry>
+    <entry><ind> 0.4</ind><dep> 96</dep></entry>
+    <entry><ind> 0.6</ind><dep>130</dep></entry>
+    <entry><ind>   1</ind><dep>180</dep></entry>
+  </interpolation>
+	<center>
+		<x-m>0.0</x-m>
+		<y-m>0.1021</y-m>
+		<z-m>-0.0262</z-m>
+	</center>
+  <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>Slats.needle.001</object-name>
+  <property>surface-positions/flap-pos-norm</property>
+  <interpolation>
+    <entry><ind>   0</ind><dep>  0</dep></entry>
+    <entry><ind> 0.2</ind><dep> 51</dep></entry>
+    <entry><ind> 0.4</ind><dep> 84</dep></entry>
+    <entry><ind> 0.6</ind><dep>142</dep></entry>
+    <entry><ind>   1</ind><dep>178</dep></entry>
+  </interpolation>
+	<center>
+		<x-m>0.0</x-m>
+		<y-m>0.1021</y-m>
+		<z-m>0.0223</z-m>
+	</center>
+  <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+
+</PropertyList>
