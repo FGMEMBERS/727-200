@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+		Septemper 2013
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+<PropertyList>
+
+  <path>SeatBeltSwitch.ac</path>
+
+	<animation>
+		<name>seatbelt</name>
+		<object-name>sockle.001</object-name>
+		<object-name>sockle.002</object-name>
+		<object-name>switch.001</object-name>
+		<object-name>switch.002</object-name>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>sockle.001</object-name>
+		<object-name>sockle.002</object-name>
+		<condition>	
+			<not><property>/sim/rendering/rembrandt/enabled</property></not>
+		</condition>
+		<emission>
+		  <red>0.4</red>
+		  <green>0.4</green>
+		  <blue>0.4</blue>
+		  <factor-prop>/systems/electrical/outputs/overhead-dim</factor-prop>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>switch.001</object-name>
+		<object-name>switch.002</object-name>
+		<condition>			
+			<not><property>/sim/rendering/rembrandt/enabled</property></not>
+		</condition>
+		<emission>
+		  <red>0.2</red>
+		  <green>0.2</green>
+		  <blue>0.2</blue>
+		  <factor-prop>/systems/electrical/outputs/overhead-dim</factor-prop>
+		</emission>
+	</animation>
+	
+	<!-- NO SMOKING and SEAT BELTS lights -->
+	<animation>
+		<type>rotate</type>
+		<object-name>switch.001</object-name>
+		<property>/b707/call/no-smoking</property>
+		<factor>50</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m> 0.0</x-m>
+			<y-m> 0.0</y-m>
+			<z-m>-0.056</z-m>
+		</center>  
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>switch.001</object-name>
+		<object-name>sockle.001</object-name>		
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>/b707/call/no-smoking</property>
+			</binding>		
+			<binding>
+				<command>property-toggle</command>
+				<property>/sim/sound/switch2</property>
+			</binding>		
+		</action>
+	</animation>	
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>switch.002</object-name>
+		<property>/b707/call/seat-belts</property>
+		<factor>50</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m> 0.0</x-m>
+			<y-m> 0.0</y-m>
+			<z-m>-0.056</z-m>
+		</center>  
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>switch.002</object-name>
+		<object-name>sockle.002</object-name>		
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>/b707/call/seat-belts</property>
+			</binding>		
+			<binding>
+				<command>property-toggle</command>
+				<property>/sim/sound/switch2</property>
+			</binding>		
+		</action>
+	</animation>		
+	
+</PropertyList>

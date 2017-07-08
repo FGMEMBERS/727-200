@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<adf n="0">
+		<ident-audible type="bool">false</ident-audible>
+		<volume type="double">0.0</volume>
+	</adf>
+
+	<adf n="1">
+		<ident-audible type="bool">false</ident-audible>
+		<volume type="double">0.0</volume>
+	</adf>
+
+	<clock>
+		<name>clock</name>
+		<number>0</number>
+	</clock>
+
+	<comm n="0">
+		<volume type="double">1.0</volume>
+	</comm>
+
+	<comm n="1">
+		<volume type="double">1.0</volume>
+	</comm>
+
+	<nav n="0">
+		<volume type="double">0.0</volume>
+	</nav>
+
+	<nav-radio>
+		<name>nav</name>
+		<number>0</number>
+	</nav-radio>
+
+	<nav n="1">
+		<volume type="double">0.0</volume>
+	</nav>
+
+	<nav-radio>
+		<name>nav</name>
+		<number>1</number>
+	</nav-radio>
+
+	<dme>
+		<name>dme</name>
+		<number>0</number>
+	</dme>
+
+	<dme>
+		<name>dme</name>
+		<number>1</number>
+	</dme>
+
+	<!-- VOR mode -->
+	<rmi-needle n="0">
+		<mode type="bool">0</mode>
+	</rmi-needle>
+
+	<!-- VOR mode -->
+	<rmi-needle n="1">
+		<mode type="bool">0</mode>
+	</rmi-needle>
+
+	<transponder>
+		<name>transponder</name>
+		<number>0</number>
+		<mode-c-altitude>/instrumentation/encoder/mode-c-alt-ft</mode-c-altitude>
+	</transponder>
+
+	<tacan>
+		<name>tacan</name>
+		<number>0</number>
+	</tacan>
+
+	<!-- Transferred here from original -set.xml -->
+	<mk-viii>			   <!-- http://wiki.flightgear.org/index.php/GPWS -->
+		<serviceable>true</serviceable>  <!-- EGPWS_ENABLE -->
+		<configuration-module>
+			<category-1> 255 </category-1>  <!-- AIRCRAFT_MODE_TYPE_SELECT -->
+			<category-8> 3  </category-8> 		   <!-- RADIO_ALTITUDE_INPUT_SELECT/ YASIM -->
+		</configuration-module>
+		<inputs>			   <!-- Module I/O -->
+			<arinc429>
+				<decision-height-ncd> false </decision-height-ncd>
+				<decision-height> 200 </decision-height>
+			</arinc429>
+		</inputs>
+	</mk-viii>
+
+	<!-- Keep these comm-radio entries at the bottom of this file. Users running
+		Flightgear versions prior to 3.2 do not have the new comm radio code
+		and anything after these entries will be ignored in those versions.
+	-->
+
+	<comm-radio>
+		<name>comm</name>
+		<number>0</number>
+	</comm-radio>
+
+	<comm-radio>
+		<name>comm</name>
+		<number>1</number>
+	</comm-radio>
+
+</PropertyList>
+

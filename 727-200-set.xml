@@ -1,0 +1,319 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<description>Boeing 727-200</description>
+		<author>Joshua Davidson (it0uchpods), Other</author>
+		<status>Pre V1.0</status>
+
+		<rating>
+			<FDM type="int">1</FDM>
+			<systems type="int">1</systems>
+			<cockpit type="int">2</cockpit>
+			<model type="int">3</model>
+		</rating>
+
+		<flight-model>jsb</flight-model>
+		<aero>727-200</aero>
+		
+		<sound>
+			<path>Aircraft/727-200/Sounds/Sounds.xml</path>
+			<switch type="bool">0</switch>
+			<stall-horn type="bool">0</stall-horn>
+		</sound>
+
+		<menubar>
+			<default>
+				<menu n="10">
+					<label>727-200</label>
+					<enabled type="bool">true</enabled>
+
+					<item>
+						<label>Autostart</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>sim/model/start-idling</property>
+						</binding>
+					</item>
+
+					<item>
+						<label>Pushback</label>
+						<name>pushback</name>
+						<binding>
+							<command>dialog-show</command>
+							<dialog-name>pushback</dialog-name>
+						</binding>
+					</item>
+
+           <item>
+						<label>Select Livery</label>
+						<binding>
+							<command>nasal</command>
+							<script>aircraft.livery.dialog.open()</script>
+						</binding>
+					</item>
+
+				</menu>
+			</default>
+		</menubar>
+
+		<model>
+			<path>Aircraft/727-200/Models/727-200.xml</path>
+			<livery>
+				<name type="string">DLH - Lufthansa Airl.</name>
+				<texture>Liveries/727-230_Lufthansa.png</texture>
+			</livery>
+
+			<!-- Copied from JPack: push forces for Voodoomaster Pushback -->
+			<pushback>
+				<kp type="double">1600</kp>
+				<ki type="double">0</ki>
+				<kd type="double">0</kd>
+				<position-norm type="double">0</position-norm>
+				<enabled type="bool">false</enabled>
+			</pushback>
+		</model>
+
+		<view>
+			<internal archive="y">true</internal>
+			<config>
+				<!-- x/y/z == right/up/back -->
+				<x-offset-m archive="y">-0.44</x-offset-m>
+				<y-offset-m archive="y">1.02</y-offset-m>
+				<z-offset-m archive="y">-20.44</z-offset-m>
+				<!-- <z-offset-m archive="y">-6.300</z-offset-m>-->
+				<pitch-offset-deg archive="y">-11.0</pitch-offset-deg>
+				<default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+				<dynamic>
+					<enabled type="bool" userarchive="y">false</enabled>
+				</dynamic>
+			</config>
+		</view>
+
+		<view n="100">
+			<name>interior view</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<ground-level-nearplane-m type="double">0.05f</ground-level-nearplane-m>
+				<default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+				<default-pitch-deg type="double">0</default-pitch-deg>
+				<default-heading-deg type="double">0</default-heading-deg>
+				<front-direction-deg type="double">0</front-direction-deg>
+				<x-offset-m archive="y" type="double">-0.36</x-offset-m>
+				<y-offset-m archive="y" type="double">1.09</y-offset-m>
+				<z-offset-m archive="y" type="double">20.53</z-offset-m>
+				<pitch-offset-deg>3</pitch-offset-deg>
+			</config>
+		</view>
+
+		<chase-distance-m>-100</chase-distance-m>
+
+		<flaps>
+			<setting>0.000</setting>
+			<!-- flaps up -->
+			<setting>0.125</setting>
+			<!-- flaps 1  -->
+			<setting>0.250</setting>
+			<!-- flaps 2  -->
+			<setting>0.375</setting>
+			<!-- flaps 5  -->
+			<setting>0.500</setting>
+			<!-- flaps 10 -->
+			<setting>0.625</setting>
+			<!-- flaps 15 -->
+			<setting>0.750</setting>
+			<!-- flaps 25 -->
+			<setting>0.875</setting>
+			<!-- flaps 30 -->
+			<setting>1.000</setting>
+			<!-- flaps 40 -->
+		</flaps>
+
+		<!--<ai>
+			<submodels>
+			<contrails type="bool">true</contrails>
+			</submodels>
+		</ai>-->
+
+		<weight n="0">
+			<name>156 PAX</name>
+			<weight-lb>20080</weight-lb>
+			<max-lb>20080</max-lb>
+		</weight>
+
+		<weight n="1">
+			<name>pilots</name>
+			<weight-lb>340</weight-lb>
+			<max-lb>340</max-lb>
+		</weight>
+
+		<instrumentation>
+			<mk-viii>
+				<name>mk-viii</name>
+				<number>0</number>
+			</mk-viii>
+		</instrumentation>
+
+	</sim>
+
+	<!-- Introduce the controls xml into this version:: as per Sanhozay's Changelog -->
+	<controls include="Init/controls.xml"/>
+
+	<instrumentation>
+		<path>Aircraft/727-200/init/instrumentation.xml</path>
+	</instrumentation>
+
+	<controls>
+
+		<engines>
+			<engine n="0">
+				<rpm>0</rpm>
+				<running>false</running>
+			</engine>
+			
+			<engine n="1">
+				<rpm>0</rpm>
+				<running>false</running>
+			</engine>
+
+			<engine n="2">
+				<rpm>0</rpm>
+				<running>false</running>
+			</engine>
+		</engines>
+
+		<gear>
+			<brake-parking type="double">1</brake-parking>
+		</gear>
+
+		<lighting>
+			<strobe>1</strobe>
+			<beacon>1</beacon>
+			<landing-lights>1</landing-lights>
+			<nav-lights>1</nav-lights>
+		</lighting>
+
+		<wing>
+			<anti-ice type="string">controls/ice/wings/auto</anti-ice>
+		</wing>
+		<eng0>
+			<anti-ice type="string">controls/ice/eng0/auto</anti-ice>
+		</eng0>
+		<eng2>
+			<anti-ice type="string">controls/ice/eng2/auto</anti-ice>
+		</eng2>
+		<eng2>
+			<anti-ice type="string">controls/ice/eng2/auto</anti-ice>
+		</eng2>
+
+	</controls>
+
+	<gear>
+		<gear n="0">
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+		</gear>
+
+		<gear n="1">
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+		</gear>
+
+		<gear n="2">
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+		</gear>
+	</gear>
+
+	<consumables>
+		<fuel>
+			<tank n="0">
+				<name type="string">Left Wing</name>
+				<density-ppg type="double">7.00</density-ppg> <!-- density changed to 7.00 Jet-A1 fuel -->
+				<unusable-gal_us type="double">2.5</unusable-gal_us>
+				<level-gal_us type="double">1890</level-gal_us>
+				<selected type="bool">false</selected>
+			</tank>
+
+			<tank n="1">
+				<name type="string">Center</name>
+				<density-ppg type="double">7.00</density-ppg>
+				<unusable-gal_us type="double">2.5</unusable-gal_us>
+				<level-gal_us type="double">4310</level-gal_us>
+				<selected type="bool">true</selected>
+			</tank>
+
+			<tank n="2">
+				<name type="string">Right Wing</name>
+				<density-ppg type="double">7.00</density-ppg>
+				<unusable-gal_us type="double">2.5</unusable-gal_us>
+				<level-gal_us type="double">1890</level-gal_us>
+				<selected type="bool">false</selected>
+			</tank>
+		</fuel>
+	</consumables>
+
+	<payload>
+
+		<weight n="0">
+			<name>Cockpit Crew</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]" />
+			<min-lb type="double">  200</min-lb>
+			<max-lb type="double">  600</max-lb>
+		</weight>
+		
+		<weight n="2">
+			<name>First Class</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]" />
+			<min-lb type="double">    0 </min-lb>
+			<max-lb type="double"> 1200 </max-lb>
+		</weight>
+
+		<weight n="3">
+			<name>Coach Class</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]" />
+			<min-lb type="double">     0 </min-lb>
+			<max-lb type="double"> 12000 </max-lb>
+		</weight>
+
+	</payload>
+
+	<!-- Nasal files modified to include ADF/RMI and DME -->
+	<!-- Nasal includes always last to make sure all properties for initialization are set -->
+	<nasal>
+		<!-- ADF>
+			<file>Aircraft/727-200/Nasal/mk-rmi-adf-nav.nas</file>
+		</ADF -->
+		<DME>
+			<file>Aircraft/727-200/Nasal/mk-ki266.nas</file>
+			<script><![CDATA[
+				ki266.new(0);
+			]]></script>
+		</DME>
+		<tyresmoke>
+			<file>Aircraft/727-200/Nasal/tyresmoke.nas</file>
+		</tyresmoke>
+		
+<lights>
+                 <file>Aircraft/727-200/Nasal/lighting.nas</file>		
+               </lights>
+
+
+
+
+<livery>
+			<file>Aircraft/727-200/Nasal/livery.nas</file>
+		</livery>
+		<b727>
+			<file>Aircraft/727-200/Nasal/727.nas</file>
+			<file>Aircraft/727-200/Nasal/Steering.nas</file>
+		</b727>	
+	</nasal>
+
+</PropertyList>

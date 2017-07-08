@@ -1,0 +1,19 @@
+Liveries for the FG's Boeing 727-230 project were made and kindly released under GPL2 by
+Paintkit and UV remapping completed by IAHM-cOL June2015 (xcf and svg formats)
+
+DLH - Gilberto Agostinho (gsagostinho)
+CRZ - Gilberto Agostinho (gsagostinho)
+JWocky - Israel Hernandez (IAHM-COL)
+UAL Rainbow - Israel Hernandez (IAHM-COL)
+AAL - Gilberto Agostinho (gsagostinho)
+AAL Astrojet - Gilberto Agostinho (gsagostinho)
+Boeing - Suleman Sidiqqui (PIA1)
+PIA - Suleman Siddiqqui (PIA1)
+PAA - Suleman Siddiqqui (PIA1)
+AGX1-3 - David Todorovic (Berkut)
+JAT - David Todorovic (Berkut)
+DHL - Jonathan (Legoboyvdlp)
+CCI - Israel Hernandez (IAHM-COL)
+Servientrega - Israel Hernandez (IAHM-COL)
+
+Special Thanks to Gilberto for the texturizing of the default wings -- amazing work!

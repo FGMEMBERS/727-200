@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+
+<!--
+**********************************************************************
+copy from generic-instrumentation.xml
+
+with adf[1] and dme[1]
+
+Generic instrumentation configuration. This file selects the
+instrumentation modules that should be available.
+
+You can have several instances of the same instrument type.
+The value inside the name tag becomes the node in the property tree.
+If two instruments have the same name you must use the number tag
+to separate them. They become name[number] in the property tree.
+Some instruments have additional configuration tags like static-port
+and pitot-port. The static- and pitot-ports (and any other system that
+an instrument depend on) have to be configured in the systems
+configuration file: generic-systems.xml
+
+The values in this file are the default values. If any configuration
+tags are omitted in an aircraft specific version of this configuration
+file, these values will be used (they are hardcoded).
+
+**********************************************************************
+-->
+
+<PropertyList>
+
+  <!-- adf>
+    <name>adf</name>
+    <number>0</number>
+  </adf -->
+
+  <!-- adf>
+    <name>adf</name>
+    <number>1</number>
+  </adf -->
+
+  <!-- clock>
+    <name>clock</name>
+    <number>0</number>
+  </clock -->
+
+  <!-- dme>
+    <name>dme</name>
+    <number>0</number>
+  </dme -->
+
+  <!-- dme>
+    <name>dme</name>
+    <number>1</number>
+  </dme -->
+
+  <nav-radio>
+    <name>nav</name>
+    <number>0</number>
+  </nav-radio>
+
+  <nav-radio>
+    <name>nav</name>
+    <number>1</number>
+  </nav-radio>
+
+  <transponder>
+    <name>transponder</name>
+    <number>0</number>
+    <mode-c-altitude>/instrumentation/encoder/mode-c-alt-ft</mode-c-altitude>
+  </transponder>
+
+  <tacan>
+    <name>tacan</name>
+    <number>0</number>
+  </tacan>
+
+  <!-- Transferred here from original -set.xml -->
+  <mk-viii>			   <!-- http://wiki.flightgear.org/index.php/GPWS -->
+  <serviceable>true</serviceable>  <!-- EGPWS_ENABLE -->
+  <configuration-module>
+    <category-1> 255 </category-1>  <!-- AIRCRAFT_MODE_TYPE_SELECT -->
+    <category-8> 3  </category-8> 		   <!-- RADIO_ALTITUDE_INPUT_SELECT/ YASIM -->
+  </configuration-module>
+  <inputs>			   <!-- Module I/O -->
+  <arinc429>
+    <decision-height-ncd> false </decision-height-ncd>
+    <decision-height> 200 </decision-height>
+  </arinc429>
+  </inputs>
+  </mk-viii>
+
+  <!-- Keep these comm-radio entries at the bottom of this file. Users running
+       Flightgear versions prior to 3.2 do not have the new comm radio code
+       and anything after these entries will be ignored in those versions.
+  -->
+  <comm-radio>
+    <name>comm</name>
+    <number>0</number>
+  </comm-radio>
+
+  <comm-radio>
+    <name>comm</name>
+    <number>1</number>
+  </comm-radio>
+
+</PropertyList>
