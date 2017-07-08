@@ -59,12 +59,16 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>needle</object-name>
-		<property>/engines/engine[2]/egt-degf</property>
+		<property>/engines/engine[2]/egt-actual</property>
 		<interpolation>
-		  <entry><ind>   0.0</ind><dep> -10.0</dep></entry>
-		  <entry><ind>  32.0</ind><dep>   0.0</dep></entry>
-		  <entry><ind>1381.0</ind><dep> 175.0</dep></entry>
+		  <entry><ind>  0.0</ind><dep>  0.0</dep></entry>
+		  <entry><ind>950.0</ind><dep>255.0</dep></entry>
 		</interpolation>
+		<center>
+			<x-m>0.0</x-m>
+			<y-m>-0.00069</y-m>
+			<z-m>0.00022</z-m>
+		</center>
 		<axis>
 		  <x>-1</x>
 		  <y>0</y>

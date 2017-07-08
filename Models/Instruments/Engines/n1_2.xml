@@ -65,7 +65,7 @@
 		<property>/engines/engine[1]/n1</property>
 		<interpolation>
 		  <entry><ind>  0.0</ind><dep>    0.0</dep></entry>
-		  <entry><ind>100.0</ind><dep>  270.0</dep></entry>
+		  <entry><ind>115.0</ind><dep>  307.0</dep></entry>
 		</interpolation>
 		<axis>
 		  <x>-1</x>

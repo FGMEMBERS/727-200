@@ -109,6 +109,9 @@
             <autopilot n="0"> <!-- Will be replaced by Block V Autopilot later on -->
                 <path>Aircraft/727-200/Systems/jd-temp-ap.xml</path>
             </autopilot>
+            <autopilot n="1">
+                <path>Aircraft/727-200/Systems/libraries.xml</path>
+            </autopilot>
 		</systems>
 
 	</sim>

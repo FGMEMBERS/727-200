@@ -60,23 +60,22 @@
 		<object-name>shadow</object-name>
 	</effect>
 
-	<animation>
-		<type>rotate</type>
-		<object-name>needle</object-name>
-		<property>/engines/engine[0]/epr</property>
-		<interpolation>
-			<entry><ind>0.0</ind><dep>   0.0</dep></entry>
-			<entry><ind>1.0</ind><dep>   0.0</dep></entry>
-			<entry><ind>1.4</ind><dep>  97.6</dep></entry>
-			<entry><ind>1.9</ind><dep> 218.64</dep></entry>
-			<entry><ind>2.4</ind><dep> 327.20</dep></entry>
-			<entry><ind>5.0</ind><dep> 327.20</dep></entry>
-		</interpolation>
-		<axis>
-			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-	</animation>
+<animation>
+  <type>rotate</type>
+  <object-name>needle</object-name>
+  <property>/engines/engine[0]/epr-actual</property>
+  <interpolation>
+    <entry><ind>0.0</ind><dep>   0.0</dep></entry>
+    <entry><ind>1.0</ind><dep>   0.0</dep></entry>
+    <entry><ind>1.4</ind><dep>  97.6</dep></entry>
+    <entry><ind>1.9</ind><dep> 218.64</dep></entry>
+    <entry><ind>2.4</ind><dep> 337.20</dep></entry>
+  </interpolation>
+  <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
 
 </PropertyList>
