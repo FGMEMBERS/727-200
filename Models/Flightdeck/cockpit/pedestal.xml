@@ -125,7 +125,7 @@
 		</axis>
 	</animation>
 	
-	<animation>
+	<!--animation>
 		<type>pick</type>
 		<object-name>BrkLever</object-name>
 		<action>
@@ -156,7 +156,7 @@
 		  </binding>
 		  </mod-up>
 		</action>
-	</animation>
+	</animation-->
 	
   <!-- flap lever -->
   <animation>
@@ -165,9 +165,6 @@
 		<property>controls/flight/flaps</property>
 		<interpolation>
 		  <entry><ind>   0</ind><dep>  0</dep></entry>
-		  <entry><ind> 0.2</ind><dep>8.5</dep></entry>
-		  <entry><ind> 0.4</ind><dep> 15</dep></entry>
-		  <entry><ind> 0.6</ind><dep> 28</dep></entry>
 		  <entry><ind>   1</ind><dep> 36</dep></entry>
 		</interpolation>
 		<center>
@@ -628,7 +625,7 @@
 		<object-name>ElevatorTab</object-name>   
 		<object-name>ElevatorHelpL</object-name>   
 		<object-name>ElevatorHelpR</object-name>
-		<property>/b727/trim/elevator-trim-turn</property>
+		<property>/controls/flight/elevator-trim</property>
 		<factor>-10500</factor>
 		<center>
 		  <x-m>-18.636</x-m>
@@ -666,10 +663,6 @@
 		  <button>0</button>
 		  <repeatable>true</repeatable>
 		  <interval-sec>0.2</interval-sec>
-		   <binding>
-		    <command>nasal</command>
-		    <script>b727.applyTrimWheels(0, 0)</script>
-		   </binding>
 			<binding>
 			  <command>property-toggle</command>
 			  <property>/controls/special/elev-trim-help</property>

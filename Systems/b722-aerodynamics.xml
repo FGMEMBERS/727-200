@@ -33,10 +33,10 @@
 						0.000  0.00000
 						0.050  0.00210
 						0.125  0.00320
-						0.375  0.00750
-						0.625  0.01200
-						0.750  0.01800
-						1.000  0.02000
+						0.375  0.00850
+						0.625  0.01500
+						0.750  0.01900
+						1.000  0.02200
 					</tableData>
 				</table>
 			</product>
@@ -127,7 +127,17 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>fcs/flap-pos-deg</property>
-				<value> 0.00202 </value>
+				<value> 0.001000 </value>
+			</product>
+		</function>
+		
+		<function name="aero/force/Drag_slats">
+			<description>Drag due to slats</description>
+			<product>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<property>fcs/slat-pos-deg</property>
+				<value> 0.000875 </value>
 			</product>
 		</function>
 

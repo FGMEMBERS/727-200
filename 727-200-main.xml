@@ -92,6 +92,12 @@
 		<instrumentation>
 			<path>Aircraft/727-200/Systems/instrumentation.xml</path>
 		</instrumentation>
+		
+		<systems n="0">
+            <autopilot n="0"> <!-- Will be replaced by Block V Autopilot later on -->
+                <path>Aircraft/727-200/Systems/jd-temp-ap.xml</path>
+            </autopilot>
+		</systems>
 
 	</sim>
 
@@ -105,6 +111,9 @@
 			<landing-lights>1</landing-lights>
 			<nav-lights>1</nav-lights>
 		</lighting>
+		<special>
+			<elev-trim-help>0</elev-trim-help>
+		</special>
 	</controls>
 
 	<instrumentation>
