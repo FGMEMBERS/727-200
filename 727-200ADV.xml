@@ -21,7 +21,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		<vtailarea unit="FT2">  330.00 </vtailarea>
 		<vtailarm  unit="FT" >   34.00 </vtailarm>
 		<location name="AERORP" unit="IN">
-			<x> -96.7724 </x>
+			<x> -80.7724 </x>
 			<y> 0.00    </y>
 			<z> 25.2535 </z>
 		</location>
@@ -43,7 +43,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		<izz unit="SLUG*FT2">   3009335 </izz>
 		<emptywt unit="LBS" >    102900 </emptywt>
 		<location name="CG" unit="IN">
-			<x> -84.7724 </x>
+			<x> -80.7724 </x>
 			<y> 0.00 </y>
 			<z> 25.2535 </z>
 		</location>
@@ -62,7 +62,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<description>First Class, 12 persons</description>
 			<weight unit="LBS"> 3200.0000 </weight>
 			<location name="CREW" unit="IN">
-				<x> -90.7724 </x>
+				<x> -86.7724 </x>
 				<y> 0.00    </y>
 				<z> 25.2535 </z>
 			</location>
@@ -72,7 +72,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<description>Coach Class, 111 persons</description>
 			<weight unit="LBS"> 22200.0000 </weight>
 			<location name="Tech ops" unit="IN">
-				<x> -77.7724 </x>
+				<x> -73.7724 </x>
 				<y> 0.00    </y>
 				<z> 25.2535 </z>
 			</location>
@@ -252,7 +252,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
 		<tank type="FUEL" number="0"> <!-- Left Wing -->
 			<location unit="IN">
-				<x> -84.7724 </x>
+				<x> -80.7724 </x>
 				<y> -251.0074 </y>
 				<z> -18.4531 </z>
 			</location>
@@ -263,7 +263,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
 		<tank type="FUEL" number="1"> <!-- Center -->
 			<location unit="IN">
-				<x> -84.7724 </x>
+				<x> -80.7724 </x>
 				<y>   0.00 </y>
 				<z> -18.4531 </z>
 			</location>
@@ -274,7 +274,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
 		<tank type="FUEL" number="2"> <!-- Right Wing -->
 			<location unit="IN">
-				<x> -84.7724 </x>
+				<x> -80.7724 </x>
 				<y> 251.0074 </y>
 				<z> -18.4531 </z>
 			</location>

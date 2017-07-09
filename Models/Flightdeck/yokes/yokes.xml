@@ -102,7 +102,7 @@
 		<object-name>plane.down</object-name>
 		<object-name>plane.out</object-name>
     <property>/controls/flight/aileron</property>
-    <factor> -50 </factor>
+    <factor> -60 </factor>
     <center>
       <x-m> 0.000 </x-m>
       <y-m>-0.462 </y-m>
@@ -126,7 +126,7 @@
 		<object-name>plane.down.001</object-name>
 		<object-name>plane.out.001</object-name>
     <property>/controls/flight/aileron</property>
-    <factor> -50 </factor>
+    <factor> -60 </factor>
     <center>
       <x-m> 0.000 </x-m>
       <y-m> 0.447 </y-m>
@@ -238,9 +238,7 @@
 	
 	<animation>
 		<type>pick</type>
-		<object-name>sup.001</object-name>
 		<object-name>switch.001</object-name>
-		<object-name>sup.002</object-name>
 		<object-name>switch.002</object-name>
 		<visible>true</visible>
      <action>
@@ -249,16 +247,12 @@
         <interval-sec>0.2</interval-sec>
         <binding>
 		      <command>property-adjust</command>
-		      <property>/b707/stabilizer/cutout</property>
-		      <step>0.1</step>
+		      <property>/controls/flight/elevator-trim</property>
+		      <step>0.005</step>
 		      <min>-1.0</min>
-		      <max> 4.0</max>
+		      <max> 1.0</max>
 		      <wrap>false</wrap>
         </binding>      
-		    <binding>
-		      <command>property-toggle</command>
-		      <property>/sim/sound/switch3</property>
-		    </binding>
     </action>
     <action>
         <button>4</button>
@@ -266,16 +260,12 @@
         <interval-sec>0.2</interval-sec>
         <binding>
 		      <command>property-adjust</command>
-		      <property>/b707/stabilizer/cutout</property>
-		      <step>-0.1</step>
+		      <property>/controls/flight/elevator-trim</property>
+		      <step>-0.005</step>
 		      <min>-1.0</min>
-		      <max> 4.0</max>
+		      <max> 1.0</max>
 		      <wrap>false</wrap>
         </binding>              
-		    <binding>
-		      <command>property-toggle</command>
-		      <property>/sim/sound/switch3</property>
-		    </binding>
     </action>
 	</animation>
 	
@@ -287,14 +277,13 @@
      <action>
         <button>0</button>
         <repeatable>true</repeatable>
-        <interval-sec>0.2</interval-sec>
         <binding>
-        <command>property-adjust</command>
-        <property>/b707/stabilizer/cutout</property>
-        <step>0.1</step>
-        <min>-1.0</min>
-        <max> 4.0</max>
-        <wrap>false</wrap>
+		      <command>property-adjust</command>
+		      <property>/controls/flight/elevator-trim</property>
+		      <step>0.005</step>
+		      <min>-1.0</min>
+		      <max> 1.0</max>
+		      <wrap>false</wrap>
         </binding>        
         <binding>
 		      <command>property-assign</command>
@@ -308,10 +297,6 @@
 				    <value type="double">0.0</value>
 				  </binding>   
         </mod-up>         
-		    <binding>
-		      <command>property-toggle</command>
-		      <property>/sim/sound/switch3</property>
-		    </binding>
     </action>
 	</animation>	
 
@@ -323,14 +308,13 @@
      <action>
         <button>0</button>
         <repeatable>true</repeatable>
-        <interval-sec>0.2</interval-sec>
         <binding>
-        <command>property-adjust</command>
-        <property>/b707/stabilizer/cutout</property>
-        <step>-0.1</step>
-        <min>-1.0</min>
-        <max> 4.0</max>
-        <wrap>false</wrap>
+		      <command>property-adjust</command>
+		      <property>/controls/flight/elevator-trim</property>
+		      <step>-0.005</step>
+		      <min>-1.0</min>
+		      <max> 1.0</max>
+		      <wrap>false</wrap>
         </binding>        
         <binding>
 		      <command>property-assign</command>
@@ -344,10 +328,6 @@
 				    <value type="double">0.0</value>
 				  </binding>   
         </mod-up>         
-		    <binding>
-		      <command>property-toggle</command>
-		      <property>/sim/sound/switch3</property>
-		    </binding>
     </action>
 	</animation>	
 

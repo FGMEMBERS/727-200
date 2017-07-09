@@ -59,7 +59,7 @@
         <type>rotate</type>
         <object-name>brake</object-name>
         <property>/controls/gear/brake-parking</property>
-        <factor>90</factor>
+        <factor>-90</factor>
         <axis>
             <x> 1.0</x>
             <y> 0.0</y>

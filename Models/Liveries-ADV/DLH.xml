@@ -5,7 +5,7 @@
     <model>
       <livery>
 	<name type="string">DLH - Lufthansa Airl.</name>
-	<texture>Liveries/727-230_Lufthansa.png</texture>
+	<texture>Liveries-ADV/727-230_Lufthansa.png</texture>
       </livery>
     </model>
   </sim>

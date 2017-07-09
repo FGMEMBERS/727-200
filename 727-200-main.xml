@@ -110,6 +110,9 @@
                 <path>Aircraft/727-200/Systems/jd-temp-ap.xml</path>
             </autopilot>
             <autopilot n="1">
+                <path>Aircraft/727-200/Systems/hydraulics.xml</path>
+            </autopilot>
+            <autopilot n="2">
                 <path>Aircraft/727-200/Systems/libraries.xml</path>
             </autopilot>
 		</systems>
@@ -117,6 +120,9 @@
 	</sim>
 
 	<controls n="0">
+		<flight>
+			<rudder-fde>0</rudder-fde>
+		</flight>
 		<gear>
 			<brake-parking>0</brake-parking>
 		</gear>

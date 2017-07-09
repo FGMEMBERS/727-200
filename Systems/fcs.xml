@@ -94,15 +94,6 @@
 	<property value="1">fcs/yaw-damper-enable</property>
 	<channel name="Yaw">
 
-		<summer name="Rudder Command Sum">
-			<input>fcs/rudder-cmd-norm</input>
-			<input>fcs/yaw-trim-cmd-norm</input>
-			<clipto>
-				<min> -1 </min>
-				<max>  1 </max>
-			</clipto>
-		</summer>
-
 		<scheduled_gain name="Yaw Damper Rate">
 			<input>velocities/r-aero-rad_sec</input>
 			<table>
@@ -116,8 +107,7 @@
 		</scheduled_gain>
 
 		<summer name="Rudder Sum">
-			<input>/controls/flight/rudder</input>
-			<input>/controls/flight/rudder-trim</input>
+			<input>/controls/flight/rudder-fde</input>
 			<clipto>
 				<min> -1.0 </min>
 				<max>  1.0 </max>

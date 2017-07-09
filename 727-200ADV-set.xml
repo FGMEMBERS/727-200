@@ -13,7 +13,7 @@
 			<path>Aircraft/727-200/Models/727-200.xml</path>
 			<livery>
 				<name type="string">DLH - Lufthansa Airl.</name>
-				<texture>Liveries/727-230_Lufthansa.png</texture>
+				<texture>Liveries-ADV/727-230_Lufthansa.png</texture>
 			</livery>
 
 			<pushback>
