@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
  
-<!-- Simple WL and Pitch Hold thingie -->
+<!-- Temporary Autopilot Thingie -->
 <!-- Joshua Davidson (it0uchpods) -->
 
 
@@ -143,7 +143,7 @@
   <!-- Stage #1 sets target roll based on diff between current heading -->
   <!-- and heading bug. -->
   <pi-simple-controller>
-    <name>Heading Bug Hold (DG based) Stage 1</name>
+    <name>True Heading Bug Hold (DG based) Stage 1</name>
     <debug>false</debug>
     <enable>
       <property>/autopilot/locks/heading</property>
@@ -169,11 +169,93 @@
 
   <!-- Stage #2 drives the ailerons to achieve the desired roll deg. -->
   <pid-controller>
-    <name>Heading Bug Hold (DG based) Stage 2</name>
+    <name>True Heading Bug Hold (DG based) Stage 2</name>
     <debug>false</debug>
     <enable>
       <property>/autopilot/locks/heading</property>
       <value>true-heading-hold</value>
+    </enable>
+    <input>
+      <property>/orientation/roll-deg</property>
+    </input>
+    <reference>
+      <property>/autopilot/internal/target-roll-deg</property>
+    </reference>
+    <output>
+      <property>/controls/flight/aileron</property>
+    </output>
+    <config>
+      <Kp>0.10</Kp>       <!-- proportional gain -->
+      <beta>1.0</beta>    <!-- input value weighing factor -->
+      <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>  <!-- input value weighing factor for -->
+                          <!-- unfiltered derivative error -->
+      <Ti>5.0</Ti>        <!-- integrator time -->
+      <Td>0.0001</Td>    <!-- derivator time -->
+      <u_min>-0.7</u_min> <!-- minimum output clamp -->
+      <u_max>0.7</u_max>  <!-- maximum output clamp -->
+    </config>
+  </pid-controller>
+  
+  <!-- Nav1 hold.  2 stage cascade controller. -->
+
+  <filter>
+    <name>nav1 heading error computer/normalizer</name>
+    <debug>false</debug>
+    <type>gain</type>
+    <input>
+      <property>instrumentation/nav[0]/radials/target-auto-hdg-deg</property>
+      <offset>
+        <property>orientation/heading-deg</property>
+        <scale>-1.0</scale>
+      </offset>
+    </input>
+    <output>autopilot/internal/nav1-heading-error-deg</output>
+    <period>
+      <min>-180</min>
+      <max>180</max>
+    </period>
+    <gain>1.0</gain>
+  </filter>
+  
+  <!-- Stage #1 sets target roll based on diff between current heading -->
+  <!-- and target heading. -->
+  <pid-controller>
+    <name>Nav1 Hold Stage 1</name>
+    <debug>false</debug>
+    <enable>
+      <property>/autopilot/locks/heading</property>
+      <value>nav1-hold</value>
+    </enable>
+    <input>
+      <property>/autopilot/internal/nav1-heading-error-deg</property>
+    </input>
+    <reference>
+      <value>0.0</value>
+    </reference>
+    <output>
+      <property>/autopilot/internal/target-roll-deg</property>
+    </output>
+    <config>
+      <Kp>-2.0</Kp>        <!-- proportional gain -->
+      <beta>1.0</beta>     <!-- input value weighing factor -->
+      <alpha>0.1</alpha>   <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>   <!-- input value weighing factor for -->
+                           <!-- unfiltered derivative error -->
+      <Ti>10.0</Ti>        <!-- integrator time -->
+      <Td>0.00001</Td>     <!-- derivator time -->
+      <u_min>-20.0</u_min> <!-- minimum output clamp -->
+      <u_max>20.0</u_max>  <!-- maximum output clamp -->
+    </config>
+  </pid-controller>
+
+  <!-- Stage #2 drives the ailerons to achieve the desired roll deg. -->
+  <pid-controller>
+    <name>Nav1 Hold Stage 2</name>
+    <debug>false</debug>
+    <enable>
+      <property>/autopilot/locks/heading</property>
+      <value>nav1-hold</value>
     </enable>
     <input>
       <property>/orientation/roll-deg</property>
@@ -370,6 +452,67 @@
     <enable>
       <property>/autopilot/locks/altitude</property>
       <value>vertical-speed-hold</value>
+    </enable>
+    <input>
+      <property>/orientation/pitch-deg</property>
+    </input>
+    <reference>
+      <property>/autopilot/internal/target-pitch-deg</property>
+    </reference>
+    <output>
+      <property>/controls/flight/elevator</property>
+    </output>
+    <config>
+      <Kp>-0.04</Kp>      <!-- proportional gain -->
+      <beta>1.0</beta>    <!-- input value weighing factor -->
+      <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>  <!-- input value weighing factor for -->
+                          <!-- unfiltered derivative error -->
+      <Ti>10.0</Ti>       <!-- integrator time -->
+      <Td>0.000001</Td>    <!-- derivator time -->
+      <u_min>-0.5</u_min> <!-- minimum output clamp -->
+      <u_max>0.5</u_max>  <!-- maximum output clamp -->
+    </config>
+   </pid-controller>
+   
+  <!-- Glideslope hold -->
+  <pid-controller>
+    <name>GS Vertical Speed Hold</name>
+    <debug>false</debug>
+    <enable>
+      <property>/autopilot/locks/altitude</property>
+      <value>gs1-hold</value>
+    </enable>
+    <input>
+      <property>/autopilot/internal/vert-speed-fpm</property>
+	  <scale>0.16667</scale>
+    </input>
+    <reference>
+      <property>/instrumentation/nav[0]/gs-rate-of-climb-fpm</property>
+      <scale>0.16667</scale>
+    </reference>
+    <output>
+      <property>/autopilot/internal/target-pitch-deg</property>
+    </output>
+    <config>
+      <Kp>0.01</Kp>      <!-- proportional gain -->
+      <beta>1.0</beta>    <!-- input value weighing factor -->
+      <alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
+      <gamma>0.0</gamma>  <!-- input value weighing factor for -->
+                          <!-- unfiltered derivative error -->
+      <Ti>3.0</Ti>        <!-- integrator time -->
+      <Td>0.0001</Td>     <!-- derivator time -->
+      <u_min>-10</u_min> <!-- minimum output clamp -->
+      <u_max>25</u_max>  <!-- maximum output clamp -->
+    </config>
+  </pid-controller>
+
+ <pid-controller>
+    <name>GS Pitch hold</name>
+    <debug>false</debug>
+    <enable>
+      <property>/autopilot/locks/altitude</property>
+      <value>gs1-hold</value>
     </enable>
     <input>
       <property>/orientation/pitch-deg</property>
