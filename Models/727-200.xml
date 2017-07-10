@@ -1349,8 +1349,10 @@
 		</axis>
 	</animation>
 
+<!-- Tyre Smoke -->
+
 	<model>
-		<path>Aircraft/Generic/Effects/tyre-smoke-nose.xml</path>
+		<path>Aircraft/727-200/Models/Effects/tyre-smoke-nose.xml</path>
 		<name>tyre-smoke-n</name>
 		<offsets>
 			<x-m>-19.2064</x-m>
@@ -1360,7 +1362,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/Generic/Effects/tyre-smoke-port.xml</path>
+		<path>Aircraft/727-200/Models/Effects/tyre-smoke-left.xml</path>
 		<name>tyre-smoke-p</name>
 		<offsets>
 			<x-m>-0.3242</x-m>
@@ -1370,7 +1372,7 @@
 	</model>
 
 	<model>
-		<path>Aircraft/Generic/Effects/tyre-smoke-stbd.xml</path>
+		<path>Aircraft/727-200/Models/Effects/tyre-smoke-right.xml</path>
 		<name>tyre-smoke-s</name>
 		<offsets>
 			<x-m>-0.3242</x-m>
@@ -1379,9 +1381,10 @@
 		</offsets>
 	</model>
 
-	<!--contrails
+	<!-- CONTRAIL -->
+
 	<model>
-		<path>Aircraft/Generic/Effects/contrail.xml</path>
+		<path>Aircraft/727-200/Models/Effects/Contrail/contrail.xml</path>
 		<name>contrail1</name>
 		<offsets>
 			<x-m>47.079</x-m>
@@ -1391,8 +1394,8 @@
 	</model>
 
 	<model>
-		<path>Aircraft/Generic/Effects/contrail.xml</path>
-		<name>contrail2</name>
+		<path>Aircraft/727-200/Models/Effects/Contrail/contrail.xml</path>
+		<name>contrai2</name>
 		<offsets>
 			<x-m>44.933</x-m>
 			<y-m>-2.827</y-m>
@@ -1401,15 +1404,15 @@
 	</model>
 
 	<model>
-		<path>Aircraft/Generic/Effects/contrail.xml</path>
-		<name>contrail3</name>
+		<path>Aircraft/727-200/Models/Effects/Contrail/contrail.xml</path>
+		<name>contrai3</name>
 		<offsets>
 			<x-m>44.933</x-m>
 			<y-m>2.827</y-m>
 			<z-m>0.601</z-m>
 		</offsets>
 	</model>
-	-->
+	
 
 	<!--exhaust
 	<model>

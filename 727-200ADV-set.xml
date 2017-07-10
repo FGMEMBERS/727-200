@@ -57,6 +57,7 @@
 	<nasal n="0">
 		<specific>
 			<file>Aircraft/727-200/Nasal/722adv-livery.nas</file>
+                        <file>Aircraft/727-200/Nasal/tire-smoke.nas</file>
 		</specific>
 	</nasal>
 
