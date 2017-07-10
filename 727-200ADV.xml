@@ -21,7 +21,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		<vtailarea unit="FT2">  330.00 </vtailarea>
 		<vtailarm  unit="FT" >   34.00 </vtailarm>
 		<location name="AERORP" unit="IN">
-			<x> -80.7724 </x>
+			<x> -75.7724 </x>
 			<y> 0.00    </y>
 			<z> 25.2535 </z>
 		</location>
@@ -43,7 +43,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		<izz unit="SLUG*FT2">   3009335 </izz>
 		<emptywt unit="LBS" >    102900 </emptywt>
 		<location name="CG" unit="IN">
-			<x> -80.7724 </x>
+			<x> -75.7724 </x>
 			<y> 0.00 </y>
 			<z> 25.2535 </z>
 		</location>
