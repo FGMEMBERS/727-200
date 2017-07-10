@@ -20,7 +20,7 @@ kids 110
 OBJECT poly
 name "antlo"
 loc -7.2232 -2.00062 -0.005122
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 8
 -0.332942 0.38905 -0.000554
@@ -71,7 +71,7 @@ kids 0
 OBJECT poly
 name "antup"
 loc -9.40041 2.51449 0.002519
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 8
 -0.353472 -0.126264 -0.00077
@@ -121,7 +121,7 @@ refs 4
 kids 0
 OBJECT poly
 name "Circle"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 120
 6.73373 1.21923 2.34387
@@ -920,7 +920,7 @@ refs 4
 kids 0
 OBJECT poly
 name "Circle.001"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 120
 6.73373 1.21923 -2.39431
@@ -5080,7 +5080,7 @@ refs 3
 kids 0
 OBJECT poly
 name "Cube.005"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 21
 12.9944 -0.571313 0.565114
@@ -5192,7 +5192,7 @@ refs 4
 kids 0
 OBJECT poly
 name "edgel"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 24
 3.33841 -0.32933 -14.5402
@@ -5339,7 +5339,7 @@ refs 4
 kids 0
 OBJECT poly
 name "edger"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 24
 3.33841 -0.32935 14.5402
@@ -5486,7 +5486,7 @@ refs 4
 kids 0
 OBJECT poly
 name "flap1"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 26
 1.38921 -0.57951 -3.981
@@ -5727,7 +5727,7 @@ refs 3
 kids 0
 OBJECT poly
 name "flap1.1"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 20
 0.916073 -0.650551 -1.49702
@@ -5900,7 +5900,7 @@ refs 3
 kids 0
 OBJECT poly
 name "flap2"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 35
 1.84177 -0.722439 6.35692
@@ -6115,7 +6115,7 @@ refs 3
 kids 0
 OBJECT poly
 name "flap2.1"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 20
 1.38921 -0.579511 3.981
@@ -6278,7 +6278,7 @@ refs 4
 kids 0
 OBJECT poly
 name "flap3"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 29
 2.3206 -0.698557 -7.6542
@@ -6557,7 +6557,7 @@ refs 3
 kids 0
 OBJECT poly
 name "flap3.1"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 16
 4.7343 -0.533508 -12.6568
@@ -6703,7 +6703,7 @@ refs 3
 kids 0
 OBJECT poly
 name "flap4"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 35
 2.3206 -0.698558 7.6542
@@ -6967,7 +6967,7 @@ refs 3
 kids 0
 OBJECT poly
 name "flap4.1"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 21
 4.77129 -0.530997 12.7335
@@ -7158,7 +7158,7 @@ refs 4
 kids 0
 OBJECT poly
 name "frontdoorleft.001"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 184
 -18.6154 0.016635 1.57578
@@ -8437,7 +8437,7 @@ refs 4
 kids 0
 OBJECT poly
 name "Fuselage.003"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 439
 17.5885 6.13221 0.363596
@@ -12179,7 +12179,7 @@ refs 3
 kids 0
 OBJECT poly
 name "Fuselage.004"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 44
 8.35454 0.683419 0.918485
@@ -14621,7 +14621,7 @@ refs 3
 kids 0
 OBJECT poly
 name "fuselage.commercial"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 11174
 -23.2865 -0.072763 -0.003558
@@ -85911,7 +85911,7 @@ refs 4
 kids 0
 OBJECT poly
 name "gs7_0"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 3
 1.0248 -0.634225 2.06786
@@ -85927,7 +85927,7 @@ refs 3
 kids 0
 OBJECT poly
 name "gs7_1"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 10
 0.406179 -0.544518 2.20754
@@ -85995,7 +85995,7 @@ refs 3
 kids 0
 OBJECT poly
 name "gs8_0"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 3
 1.0248 -0.634225 -2.06786
@@ -86011,7 +86011,7 @@ refs 3
 kids 0
 OBJECT poly
 name "gs8_1"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 9
 0.406179 -0.544518 -2.20754
@@ -86061,7 +86061,7 @@ refs 4
 kids 0
 OBJECT poly
 name "ibs10"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 9
 1.1421 -0.549419 -6.073
@@ -86111,7 +86111,7 @@ refs 4
 kids 0
 OBJECT poly
 name "ibs12"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 8
 2.75322 -0.50021 -10.0655
@@ -86154,7 +86154,7 @@ refs 4
 kids 0
 OBJECT poly
 name "ibs4"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 10
 2.75322 -0.500219 10.0655
@@ -86206,7 +86206,7 @@ refs 4
 kids 0
 OBJECT poly
 name "ibs5"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 73
 4.23316 -0.400479 -12.0164
@@ -86337,7 +86337,7 @@ refs 3
 kids 0
 OBJECT poly
 name "ibs6"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 13
 1.38921 -0.57951 3.981
@@ -86404,7 +86404,7 @@ refs 4
 kids 0
 OBJECT poly
 name "ibs9"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 13
 1.38921 -0.57951 -3.981
@@ -89897,7 +89897,7 @@ refs 4
 kids 0
 OBJECT poly
 name "inneraileronl_0"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 8
 1.76247 -0.534241 6.37468
@@ -89936,7 +89936,7 @@ refs 3
 kids 0
 OBJECT poly
 name "inneraileronl_0.001"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 8
 1.76247 -0.534241 6.37468
@@ -89975,7 +89975,7 @@ refs 3
 kids 0
 OBJECT poly
 name "inneraileronl"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 8
 1.76247 -0.534241 6.37468
@@ -90028,7 +90028,7 @@ refs 3
 kids 0
 OBJECT poly
 name "inneraileronr_0"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 4
 2.6205 -0.618543 -6.37577
@@ -90051,7 +90051,7 @@ refs 3
 kids 0
 OBJECT poly
 name "inneraileronr"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 8
 2.32229 -0.503876 -7.65634
@@ -90320,7 +90320,7 @@ refs 4
 kids 0
 OBJECT poly
 name "leftaileron"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 12
 4.83465 -0.52687 12.8801
@@ -90424,7 +90424,7 @@ refs 4
 kids 0
 OBJECT poly
 name "leftelevator"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 14
 19.4918 6.24235 0
@@ -91092,7 +91092,7 @@ refs 3
 kids 0
 OBJECT poly
 name "lhngdoor_1_0"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 4
 -20.347 -1.35609 0.392745
@@ -91110,7 +91110,7 @@ refs 4
 kids 0
 OBJECT poly
 name "lhngdoor"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 22
 -20.7439 -1.3907 -0.004435
@@ -91505,7 +91505,7 @@ refs 3
 kids 0
 OBJECT poly
 name "lmgdoor"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 14
 -0.245713 -1.08752 2.57092
@@ -91572,7 +91572,7 @@ refs 4
 kids 0
 OBJECT poly
 name "lmgdoor.001"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 27
 -0.408773 -1.09541 2.66356
@@ -91944,7 +91944,7 @@ refs 3
 kids 0
 OBJECT poly
 name "lmgdoor1.001"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 15
 -18.982 -1.57766 -0.010732
@@ -92131,7 +92131,7 @@ refs 4
 kids 0
 OBJECT poly
 name "lmgdoor2.001"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 7
 -0.261113 -1.56628 0.299909
@@ -107125,7 +107125,7 @@ refs 3
 kids 0
 OBJECT poly
 name "obs1"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 8
 4.39586 -0.420447 11.9548
@@ -107175,7 +107175,7 @@ refs 4
 kids 0
 OBJECT poly
 name "obs13"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 8
 2.75322 -0.50021 -10.0655
@@ -107218,7 +107218,7 @@ refs 4
 kids 0
 OBJECT poly
 name "obs14"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 8
 4.39586 -0.420428 -11.9548
@@ -107268,7 +107268,7 @@ refs 4
 kids 0
 OBJECT poly
 name "obs2"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 8
 2.75322 -0.500219 10.0655
@@ -107311,7 +107311,7 @@ refs 4
 kids 0
 OBJECT poly
 name "Plane"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 38
 15.9622 5.95141 0
@@ -107656,7 +107656,7 @@ refs 3
 kids 0
 OBJECT poly
 name "Plane.004"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 136
 -16.7575 0.064645 -1.75411
@@ -108561,7 +108561,7 @@ refs 4
 kids 0
 OBJECT poly
 name "Plane.005"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 281
 -0.147642 -0.668788 -9.32962
@@ -110621,7 +110621,7 @@ refs 3
 kids 0
 OBJECT poly
 name "Plane.013"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 8
 4.47628 -0.300072 -16.2541
@@ -110657,7 +110657,7 @@ refs 4
 kids 0
 OBJECT poly
 name "Plane.018"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 170
 6.12182 0.019123 -1.71658
@@ -111779,7 +111779,7 @@ refs 4
 kids 0
 OBJECT poly
 name "Plane.020"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 172
 5.4475 0.108223 1.75366
@@ -113253,7 +113253,7 @@ refs 3
 kids 0
 OBJECT poly
 name "Plane.025_1_1"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 38
 -0.182196 -1.08204 -1.7699
@@ -113424,7 +113424,7 @@ refs 4
 kids 0
 OBJECT poly
 name "Plane.031"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 12
 4.47628 -0.300093 16.2541
@@ -114017,7 +114017,7 @@ refs 3
 kids 0
 OBJECT poly
 name "rhngdoor_1_0"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 4
 -20.347 -1.35609 -0.392745
@@ -114035,7 +114035,7 @@ refs 4
 kids 0
 OBJECT poly
 name "rhngdoor"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 22
 -20.7439 -1.3907 0.004435
@@ -114311,7 +114311,7 @@ refs 3
 kids 0
 OBJECT poly
 name "rightaileron"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 14
 6.54758 -0.388412 -15.6566
@@ -114456,7 +114456,7 @@ refs 3
 kids 0
 OBJECT poly
 name "rightelevator"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 12
 19.4918 6.24235 0
@@ -114644,7 +114644,7 @@ refs 3
 kids 0
 OBJECT poly
 name "rmgdoor"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 16
 0.770466 -0.91776 -1.77313
@@ -115119,7 +115119,7 @@ refs 4
 kids 0
 OBJECT poly
 name "rmgdoor1.001"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 14
 -0.257092 -1.21186 -1.76895
@@ -115311,7 +115311,7 @@ refs 4
 kids 0
 OBJECT poly
 name "rmgdoor2.001"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 7
 -0.261113 -1.60665 -0.286983
@@ -128486,7 +128486,7 @@ refs 4
 kids 0
 OBJECT poly
 name "rudder"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 19
 15.3037 1.49855 0.167945
@@ -128666,7 +128666,7 @@ refs 3
 kids 0
 OBJECT poly
 name "slat1"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 12
 -3.34169 -0.630725 -5.17163
@@ -128746,7 +128746,7 @@ refs 4
 kids 0
 OBJECT poly
 name "slat1.1"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 57
 -0.903973 -0.675297 -7.50616
@@ -129159,7 +129159,7 @@ refs 4
 kids 0
 OBJECT poly
 name "slat1.2"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 14
 1.36571 -0.468984 -11.8605
@@ -129234,7 +129234,7 @@ refs 4
 kids 0
 OBJECT poly
 name "slat1.3"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 12
 1.36571 -0.468984 -11.8605
@@ -129288,7 +129288,7 @@ refs 4
 kids 0
 OBJECT poly
 name "slat2"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 28
 1.74555 -0.549417 -7.93581
@@ -129464,7 +129464,7 @@ refs 4
 kids 0
 OBJECT poly
 name "slat2.1"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 46
 -1.11115 -0.305347 7.50616
@@ -129875,7 +129875,7 @@ refs 3
 kids 0
 OBJECT poly
 name "slat2.2"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 12
 -0.1287 -0.418487 9.31789
@@ -129941,7 +129941,7 @@ refs 4
 kids 0
 OBJECT poly
 name "slat2.3"
-texture "727-230.png"
+texture "727-200.png"
 crease 30.000000
 numvert 10
 1.55932 -0.375087 11.8605
