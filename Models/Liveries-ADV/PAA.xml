@@ -4,8 +4,8 @@
   <sim>
     <model>
       <livery>
-	<name type="string">PAA - Panamerican Airl.</name>
-	<texture>Liveries-ADV/727-230_PanAm.png</texture>
+	<name type="string">Panamerican Airlines (PanAm)</name>
+	<texture>Liveries-ADV/PAA.png</texture>
       </livery>
     </model>
   </sim>

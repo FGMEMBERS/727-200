@@ -5,7 +5,7 @@
     <model>
       <livery>
 	<name type="string">JAT Yugoslav Airlines (YU-AKI)</name>
-	<texture>Liveries-ADV/727-230_YUAKI.png</texture>
+	<texture>Liveries-ADV/JAT.png</texture>
       </livery>
     </model>
   </sim>
