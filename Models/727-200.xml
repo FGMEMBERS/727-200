@@ -99,7 +99,7 @@
 		<object-name>slat1.3</object-name>
 		<property-base>sim/model/livery</property-base>
 		<texture-prop>texture</texture-prop>
-		<texture>Liveries/VIP.png</texture>
+		<texture>Liveries/BOE.png</texture>
 	</animation>
 
 	<!-- Shaders -->
