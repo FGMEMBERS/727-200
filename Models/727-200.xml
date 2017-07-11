@@ -1540,7 +1540,7 @@
 
  
 <model>
-	<path>Aircraft/727-200/Models/lights/landinglight.xml</path>
+	<path>Aircraft/727-200/Models/Lights/landinglight.xml</path>
 	<name>LeftWingLandinglight</name>
   
 	<offsets>
@@ -1551,7 +1551,7 @@
 </model>
 
 <model>
-	<path>Aircraft/727-200/Models/lights/landinglight.xml</path>
+	<path>Aircraft/727-200/Models/Lights/landinglight.xml</path>
 	<name>RightWingLandinglight</name>
 	<offsets>
 		<x-m>-5.93</x-m>
