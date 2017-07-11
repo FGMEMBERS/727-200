@@ -1498,40 +1498,37 @@
  <model>
   <path>Aircraft/727-200/Models/Lights/RedLight.xml</path>
   <offsets>
-   <x-m>4.7</x-m>
+   <x-m>4.5</x-m>
    <y-m>-16.611</y-m>
-   <z-m>0.01</z-m>
+   <z-m>-0.15</z-m>
   </offsets>
  </model>
  <model>
   <path>Aircraft/727-200/Models/Lights/flash.xml</path>
   <offsets>
-   <x-m>4.7</x-m>
+   <x-m>4.5</x-m>
    <y-m>-16.911</y-m>
-   <z-m>0.01</z-m>
+   <z-m>-0.15</z-m>
   </offsets>
  </model>
                  
-
-
  <model>
   <path>Aircraft/727-200/Models/Lights/GreenLight.xml</path>
   <offsets>
-  <x-m>4.7</x-m>
+  <x-m>4.5</x-m>
    <y-m>16.611</y-m>
-   <z-m>0.01</z-m>
+   <z-m>-0.15</z-m>
   </offsets>
  </model>
+
  <model>
   <path>Aircraft/727-200/Models/Lights/flash.xml</path>
   <offsets>
-   <x-m>4.7</x-m>
+   <x-m>4.5</x-m>
    <y-m>16.611</y-m>
-   <z-m>0.01</z-m>
+   <z-m>-0.15</z-m>
   </offsets>
  </model>
-
-
 
 <model>
   <path>Aircraft/727-200/Models/Lights/flash.xml</path>
@@ -1553,7 +1550,7 @@
 
  
 <model>
-	<path>Aircraft/727-200/Models/Lights/landinglight.xml</path>
+	<path>Aircraft/727-200/Models/Lights/landing-stbd.xml</path>
 	<name>LeftWingLandinglight</name>
   
 	<offsets>
@@ -1564,7 +1561,7 @@
 </model>
 
 <model>
-	<path>Aircraft/727-200/Models/Lights/landinglight.xml</path>
+	<path>Aircraft/727-200/Models/Lights/landing-stbd.xml</path>
 	<name>RightWingLandinglight</name>
 	<offsets>
 		<x-m>-5.93</x-m>
