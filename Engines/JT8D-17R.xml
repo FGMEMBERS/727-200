@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <turbine_engine name="JT8D-17R">
-  <milthrust>   16400.0 </milthrust>
+  <milthrust>   17400.0 </milthrust>
   <bypassratio>     3.1 </bypassratio>
   <tsfc>            0.5 </tsfc>
   <bleed>          0.03 </bleed>
