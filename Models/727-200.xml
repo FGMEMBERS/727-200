@@ -1274,20 +1274,7 @@
 		<object-name>nlowerstrut</object-name>
 		<object-name>noseaxle</object-name>
 		<property>/gear/gear[0]/compression-norm</property>
-		<interpolation>
-			<entry>
-				<ind> 0.00 </ind>
-				<dep> -0.08 </dep>
-			</entry>
-			<entry>
-				<ind> 0.13 </ind>
-				<dep>  0.00 </dep>
-			</entry>
-			<entry>
-				<ind> 1.00 </ind>
-				<dep>  0.50 </dep>
-			</entry>
-		</interpolation>
+		<factor>0.11</factor>
 		<axis>
 			<x> 0.0 </x>
 			<y> 0.0 </y>
@@ -1301,20 +1288,7 @@
 		<object-name>lmgaxle</object-name>
 		<object-name>lglhlowerstrut</object-name>
 		<property>/gear/gear[1]/compression-norm</property>
-		<interpolation>
-			<entry>
-				<ind> 0.00 </ind>
-				<dep> -0.08 </dep>
-			</entry>
-			<entry>
-				<ind> 0.13 </ind>
-				<dep>  0.00 </dep>
-			</entry>
-			<entry>
-				<ind> 1.00 </ind>
-				<dep>  0.60 </dep>
-			</entry>
-		</interpolation>
+		<factor>0.11</factor>
 		<axis>
 			<x> 0.0 </x>
 			<y> 0.0 </y>
@@ -1328,25 +1302,64 @@
 		<object-name>rmgaxle</object-name>
 		<object-name>rglhlowerstrut</object-name>
 		<property>/gear/gear[2]/compression-norm</property>
-		<interpolation>
-			<entry>
-				<ind> 0.00 </ind>
-				<dep> -0.08 </dep>
-			</entry>
-			<entry>
-				<ind> 0.13 </ind>
-				<dep>  0.00 </dep>
-			</entry>
-			<entry>
-				<ind> 1.00 </ind>
-				<dep>  0.60 </dep>
-			</entry>
-		</interpolation>
+		<factor>0.11</factor>
 		<axis>
 			<x> 0.0 </x>
 			<y> 0.0 </y>
 			<z> 1.0 </z>
 		</axis>
+	</animation>
+	
+	<animation>
+		<type>spin</type>
+		<object-name>tyrern</object-name>
+		<object-name>tyreln</object-name>
+		<property>/gear/gear[0]/rollspeed-ms</property>
+		<factor>10</factor>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>-19.2178</x-m>
+			<y-m>0</y-m>
+			<z-m>-2.32781</z-m>
+		</center>
+	</animation>
+	
+	<animation>
+		<type>spin</type>
+		<object-name>lmgt</object-name>
+		<property>/gear/gear[1]/rollspeed-ms</property>
+		<factor>10</factor>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0.17202</x-m>
+			<y-m>0</y-m>
+			<z-m>-2.40457</z-m>
+		</center>
+	</animation>
+	
+	<animation>
+		<type>spin</type>
+		<object-name>rmgt</object-name>
+		<property>/gear/gear[2]/rollspeed-ms</property>
+		<factor>10</factor>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0.17202</x-m>
+			<y-m>0</y-m>
+			<z-m>-2.40457</z-m>
+		</center>
 	</animation>
 
 <!-- Tyre Smoke -->

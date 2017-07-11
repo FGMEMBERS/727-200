@@ -31,12 +31,12 @@
 					<independentVar lookup="row">fcs/flap-pos-norm</independentVar>
 					<tableData>
 						0.000  0.00000
-						0.050  0.00210
-						0.125  0.00320
-						0.375  0.00850
-						0.625  0.01500
-						0.750  0.01900
-						1.000  0.02200
+						0.050  0.00240
+						0.125  0.00390
+						0.375  0.00930
+						0.625  0.01850
+						0.750  0.02350
+						1.000  0.02560
 					</tableData>
 				</table>
 			</product>
@@ -48,7 +48,7 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>fcs/slat-pos-deg</property> <!-- will be slats-pos-deg later -->
-				<value> 0.01000 </value>
+				<value> 0.01100 </value>
 			</product>
 		</function>
 
@@ -344,7 +344,7 @@
 				<property>metrics/bw-ft</property>
 				<property>aero/bi2vel</property>
 				<property>velocities/r-aero-rad_sec</property>
-				<value>-0.15</value>
+				<value>-0.2</value>
 			</product>
 		</function>
 
@@ -355,7 +355,7 @@
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
 				<property>fcs/rudder-pos-rad</property>
-				<value>-0.08</value>
+				<value>-0.2</value>
 			</product>
 		</function>
 

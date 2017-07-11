@@ -86,13 +86,13 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<location unit="IN">
 				<x> -756.6102 </x>
 				<y>   0.00 </y>
-				<z> -215.5600 </z>
+				<z> -210.5600 </z>
 			</location>
 			<static_friction>  0.80 </static_friction>
 			<dynamic_friction> 0.50 </dynamic_friction>
 			<rolling_friction> 0.02 </rolling_friction>
-			<spring_coeff unit="LBS/FT">      62850.00 </spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC"> 104750.00 </damping_coeff>
+			<spring_coeff unit="LBS/FT"> 30935.5 </spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 16978.5 </damping_coeff>
 			<max_steer unit="DEG"> 70.00 </max_steer>
 			<brake_group>NONE</brake_group>
 			<retractable>1</retractable>
@@ -102,13 +102,13 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<location unit="IN">
 				<x> 6.7724 </x>
 				<y> -126.6661 </y>
-				<z> -220.5600 </z>
+				<z> -230.5600 </z>
 			</location>
 			<static_friction>  0.80 </static_friction>
 			<dynamic_friction> 0.50 </dynamic_friction>
 			<rolling_friction> 0.02 </rolling_friction>
-			<spring_coeff unit="LBS/FT">      209500.00 </spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC"> 104750.00 </damping_coeff>
+			<spring_coeff unit="LBS/FT"> 59785 </spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 23957 </damping_coeff>
 			<max_steer unit="DEG">0</max_steer>
 			<brake_group>LEFT</brake_group>
 			<retractable>1</retractable>
@@ -118,13 +118,13 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<location unit="IN">
 				<x> 6.7724 </x>
 				<y> 126.6661 </y>
-				<z> -220.5600 </z>
+				<z> -230.5600 </z>
 			</location>
 			<static_friction>  0.80 </static_friction>
 			<dynamic_friction> 0.50 </dynamic_friction>
 			<rolling_friction> 0.02 </rolling_friction>
-			<spring_coeff unit="LBS/FT">      209500.00 </spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC"> 104750.00 </damping_coeff>
+			<spring_coeff unit="LBS/FT"> 59785 </spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 23957 </damping_coeff>
 			<max_steer unit="DEG">0</max_steer>
 			<brake_group>RIGHT</brake_group>
 			<retractable>1</retractable>
@@ -138,8 +138,8 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			</location>
 			<static_friction>  1.00 </static_friction>
 			<dynamic_friction> 1.00 </dynamic_friction>
-			<spring_coeff unit="LBS/FT">      209500.00 </spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC"> 209500.00 </damping_coeff>
+			<spring_coeff unit="LBS/FT"> 50000 </spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 50000 </damping_coeff>
 		</contact>
 
 		<contact type="STRUCTURE" name="RIGHT_WING">
@@ -150,8 +150,8 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			</location>
 			<static_friction>  1.00 </static_friction>
 			<dynamic_friction> 1.00 </dynamic_friction>
-			<spring_coeff unit="LBS/FT">      209500.00 </spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC"> 209500.00 </damping_coeff>
+			<spring_coeff unit="LBS/FT"> 50000 </spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 50000 </damping_coeff>
 		</contact>
 		
 		<contact type="STRUCTURE" name="TAIL">
@@ -162,8 +162,8 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			</location>
 			<static_friction>  1.00 </static_friction>
 			<dynamic_friction> 1.00 </dynamic_friction>
-			<spring_coeff unit="LBS/FT">      209500.00 </spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC"> 209500.00 </damping_coeff>
+			<spring_coeff unit="LBS/FT"> 50000 </spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 50000 </damping_coeff>
 		</contact>
 
 	</ground_reactions>
