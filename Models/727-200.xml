@@ -1478,99 +1478,236 @@
  
  <model>
   <path>Aircraft/727-200/Models/Lights/beacon.xml</path>
+  <name>beacon.top</name>
   <offsets>
-   <x-m>-2.31186</x-m>
+   <x-m>-7.31186</x-m>
    <y-m>-0.00395537</y-m>
    <z-m>2.43609</z-m>
   </offsets>     
  </model>
+<model>
+  <path>Aircraft/727-200/Models/lights/ALS/beacon.xml</path>
+  <name>beacon.top.ALS</name>     
+ <offsets>
+   <x-m>-7.31186</x-m>
+   <y-m>-0.00395537</y-m>
+   <z-m>2.43609</z-m>
+  </offsets>  
+</model>
+
  <model>
   <path>Aircraft/727-200/Models/Lights/beacon.xml</path>
+  <name>beacon.bottom</name>   
   <offsets>
-   <x-m>2.31186</x-m>
+   <x-m>-8.31186</x-m>
    <y-m>-0.0107558</y-m>
    <z-m>-1.6757</z-m>
   </offsets>
  </model>
+<model>
+  <path>Aircraft/727-200/Models/Lights/ALS/beacon.xml</path>
+  <name>beacon.bottom.ALS</name>     
+   <offsets>
+   <x-m>-8.31186</x-m>
+   <y-m>-0.0107558</y-m>
+   <z-m>-1.6757</z-m>
+  </offsets>
+</model>
 
                  
  
  <model>
-  <path>Aircraft/727-200/Models/Lights/RedLight.xml</path>
+  <path>Aircraft/727-200/Models/Lights/rednav.xml</path>
+   <name>Redlight</name>
   <offsets>
    <x-m>4.5</x-m>
    <y-m>-16.611</y-m>
-   <z-m>-0.15</z-m>
+   <z-m>-0.26</z-m>
   </offsets>
  </model>
+<model>
+  <path>Aircraft/727-200/Models/Lights/ALS/red-navlight.xml</path>
+  <name>Redlight.ALS</name>     
+  <offsets>
+   <x-m>4.5</x-m>
+   <y-m>-16.611</y-m>
+   <z-m>-0.26</z-m>
+  </offsets>
+ </model>
+
  <model>
-  <path>Aircraft/727-200/Models/Lights/flash.xml</path>
+  <path>Aircraft/727-200/Models/Lights/strobe.xml</path>
+  <name>strobe.right</name>  
   <offsets>
    <x-m>4.5</x-m>
    <y-m>-16.911</y-m>
    <z-m>-0.15</z-m>
   </offsets>
  </model>
-                 
+<model>
+  <path>Aircraft/727-200/Models/Lights/ALS/right-strobe.xml</path>
+  <name>strobe.right.ALS</name>     
+ <offsets>
+   <x-m>4.5</x-m>
+   <y-m>-16.911</y-m>
+   <z-m>-0.15</z-m>
+  </offsets>
+</model>
+
+
  <model>
-  <path>Aircraft/727-200/Models/Lights/GreenLight.xml</path>
+  <path>Aircraft/727-200/Models/Lights/greennav.xml</path>
+  <name>Greenlight</name>
   <offsets>
   <x-m>4.5</x-m>
    <y-m>16.611</y-m>
-   <z-m>-0.15</z-m>
+   <z-m>-0.26</z-m>
   </offsets>
  </model>
+<model>
+  <path>Aircraft/727-200/Models/Lights/ALS/green-navlight.xml</path>
+  <name>Greenlight.ALS</name>     
+ <offsets>
+  <x-m>4.5</x-m>
+   <y-m>16.611</y-m>
+   <z-m>-0.26</z-m>
+  </offsets>
+</model>
 
  <model>
-  <path>Aircraft/727-200/Models/Lights/flash.xml</path>
+  <path>Aircraft/727-200/Models/Lights/strobe.xml</path>
+   <name>strobe.left</name>   
   <offsets>
    <x-m>4.5</x-m>
    <y-m>16.611</y-m>
    <z-m>-0.15</z-m>
   </offsets>
  </model>
+<model>
+  <path>Aircraft/727-200/Models/Lights/ALS/left-strobe.xml</path>
+  <name>strobe.left.ALS</name>     
+  <offsets>
+   <x-m>4.5</x-m>
+   <y-m>16.611</y-m>
+   <z-m>-0.15</z-m>
+  </offsets>
+</model>
+
 
 <model>
-  <path>Aircraft/727-200/Models/Lights/flash.xml</path>
+  <path>Aircraft/727-200/Models/Lights/center-strobe.xml</path>
+  <name>strobe.center.ALS</name>
   <offsets>
    <x-m>20.6198</x-m>
    <y-m>0</y-m>
    <z-m>6.33592</z-m>
   </offsets>
  </model>
+<model>
+  <path>Aircraft/727-200/Models/Lights/ALS/center-strobe.xml</path>
+  <name>strobe.center.ALS</name>     
+  <offsets>
+   <x-m>20.6198</x-m>
+   <y-m>0</y-m>
+   <z-m>6.33592</z-m>
+  </offsets>
+</model>
+
 
  <model>
-  <path>Aircraft/727-200/Models/Lights/flash.xml</path>
+  <path>Aircraft/727-200/Models/Lights/center-strobe.xml</path>
+  <name>strobe.center.ALS</name>
   <offsets>
    <x-m>18.6849</x-m>
    <y-m>0.</y-m>
    <z-m>0.39425</z-m>
   </offsets>
  </model>
-
+<model>
+  <path>Aircraft/727-200/Models/Lights/ALS/center-strobe.xml</path>
+  <name>strobe.center.ALS</name>     
+  <offsets>
+   <x-m>18.6849</x-m>
+   <y-m>0.</y-m>
+   <z-m>0.39425</z-m>
+  </offsets>
+</model>
  
 <model>
 	<path>Aircraft/727-200/Models/Lights/landing-stbd.xml</path>
-	<name>LeftWingLandinglight</name>
-  
+	 <name>landing.LW</name> 
 	<offsets>
 		<x-m>-5.93</x-m>
 		<y-m>-2.14</y-m>
 		<z-m>-0.51</z-m>      
 	</offsets>
 </model>
+<model>
+  <path>Aircraft/727-200/Models/Lights/ALS/landinglightL.xml</path>
+  <name>landing.LW.ALS</name>
+     <offsets>
+	<x-m>-5.93</x-m>
+	<y-m>-2.14</y-m>
+	<z-m>-0.51</z-m>      
+     </offsets>
+</model>
 
 <model>
 	<path>Aircraft/727-200/Models/Lights/landing-stbd.xml</path>
-	<name>RightWingLandinglight</name>
+	 <name>landing.RW</name>
 	<offsets>
 		<x-m>-5.93</x-m>
 		<y-m>2.14</y-m>
 		<z-m>-0.51</z-m>        
 	</offsets>
 </model>
+<model>
+  <path>Aircraft/727-200/Models/Lights/ALS/landinglightR.xml</path>
+  <name>landing.RW.ALS</name>
+  <offsets>
+	<x-m>-5.93</x-m>
+	<y-m>2.14</y-m>
+	<z-m>-0.51</z-m>        
+   </offsets>
+</model>
 
 
+
+<!--Select animation-->
+<animation>
+    <type>select</type>
+    <object-name>beacon.top</object-name>
+    <object-name>beacon.bottom</object-name>
+    <object-name>Redlight</object-name>
+    <object-name>Greenlight</object-name>
+    <object-name>strobe.left</object-name>
+    <object-name>strobe.right</object-name>
+    <object-name>strobe.rear</object-name>
+    <object-name>landing.LW</object-name>
+    <object-name>landing.RW</object-name>
+    <object-name>TaxiLight</object-name>
+    <condition>
+        <not>
+            <property>/sim/rendering/shaders/skydome</property>
+        </not>
+    </condition>
+</animation>
+<animation>
+    <type>select</type>
+    <object-name>beacon.top.ALS</object-name>
+    <object-name>beacon.bottom.ALS</object-name>
+    <object-name>Redlight.ALS</object-name>
+    <object-name>Greenlight.ALS</object-name>
+    <object-name>strobe.left.ALS</object-name>
+    <object-name>strobe.right.ALS</object-name>
+    <object-name>strobe.center.ALS</object-name>
+    <object-name>strobe.rear.ALS</object-name>
+    <object-name>landing.LW.ALS</object-name>
+    <object-name>landing.RW.ALS</object-name>
+      <condition>
+            <property>/sim/rendering/shaders/skydome</property>
+    </condition>
+</animation>
 
 
 </PropertyList>

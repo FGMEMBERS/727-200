@@ -51,6 +51,17 @@
 						<dialog-name>pushback</dialog-name>
 						</binding>
 					</item>
+                       <item>
+			<name>lights</name>
+			<label>Lights</label>
+				<binding>
+					<command>nasal</command>
+					<script>
+						var lights = gui.Dialog.new("sim/gui/dialogs/lights/dialog", "Aircraft/727-200/Systems/lights-dlg.xml");
+						lights.open();
+					</script>
+				</binding>
+		       </item>
 					<item>
 						<label>Select Livery</label>
 						<binding>
@@ -127,11 +138,15 @@
 			<brake-parking>0</brake-parking>
 		</gear>
 		<lighting>
-			<strobe>1</strobe>
-			<beacon>1</beacon>
-			<landing-lights>1</landing-lights>
-			<nav-lights>1</nav-lights>
+		<interior type="double">0</interior>
+		<panel-norm>0.2</panel-norm>
+		<cockpit type="bool">false</cockpit>
+		<cones type="bool">true</cones>
+		<dome-norm type="double">0</dome-norm>
+		<overhead-panel-norm type="double">1.0</overhead-panel-norm>
+		<main-panel-pedestal-norm type="double">1.0</main-panel-pedestal-norm>
 		</lighting>
+
 		<special>
 			<elev-trim-help>0</elev-trim-help>
 		</special>
@@ -406,6 +421,7 @@
 			<file>Aircraft/727-200/Nasal/magicstartup.nas</file>
 			<file>Aircraft/727-200/Nasal/libraries.nas</file>
 			<file>Aircraft/727-200/Nasal/tire-smoke.nas</file>
+                        <file>Aircraft/727-200/Nasal/lighting.nas</file>
 		</libraries>
 	</nasal>
 
