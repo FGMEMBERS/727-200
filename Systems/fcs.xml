@@ -15,7 +15,7 @@
 
 		<aerosurface_scale name="Elevator Control">
 			<input>fcs/pitch-trim-sum</input>
-			<gain>0.019</gain>
+			<gain>0.021</gain>
 			<range>
 				<min>-20</min>
 				<max>20</max>
