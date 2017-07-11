@@ -9,7 +9,7 @@
  <!-- Yaw Damper/Turn Coordinator                                     -->
  <!-- =============================================================== -->
 	
-	<pid-controller>
+	<!--pid-controller>
 		<name>IT-FBW: YAW DAMPER/TURN COORDINATOR</name>
 		<debug>false</debug>
 		<enable>
@@ -49,14 +49,14 @@
 			<u_min>-0.2</u_min>
 			<u_max>0.2</u_max>
 		</config>
-	</pid-controller>
+	</pid-controller-->
 	
 	<filter>
 		<name>IT-FBW: RUDDER OPTION</name>
 		<debug>false</debug>
 		<feedback-if-disabled>true</feedback-if-disabled>
 		<initialize-to>output</initialize-to>
-		<input>
+		<!--input>
 			<condition>
 				<and>
 					<equals>
@@ -82,9 +82,9 @@
 				</and>
 			</condition>
 			<property>/controls/flight/rudder-fbw-cmd</property>
-		</input>
+		</input-->
 		<input>
-			<condition>
+			<!--condition>
 				<or>
 					<equals>
 						<property>/gear/gear[1]/wow</property>
@@ -107,7 +107,7 @@
 						<value>50</value>
 					</less-than>
 				</or>
-			</condition>
+			</condition-->
 			<property>/controls/flight/rudder</property>
 		</input>
 		<output>/controls/flight/rudder-fbw</output>
