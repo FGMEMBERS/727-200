@@ -405,6 +405,7 @@
 		<libraries>
 			<file>Aircraft/727-200/Nasal/magicstartup.nas</file>
 			<file>Aircraft/727-200/Nasal/libraries.nas</file>
+			<file>Aircraft/727-200/Nasal/tire-smoke.nas</file>
 		</libraries>
 	</nasal>
 
