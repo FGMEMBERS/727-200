@@ -170,7 +170,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
 	<propulsion>
 
-		<engine file="JT8D">
+		<engine file="JT8D-17R">
 			<location unit="IN">
 				<x> 361.8303 </x>
 				<y> -135.0791 </y>
@@ -197,7 +197,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			</thruster>
 		</engine>
 
-		<engine file="JT8D">
+		<engine file="JT8D-17R">
 			<location unit="IN">
 				<x> 669.3818 </x>
 				<y> 0.00     </y>
@@ -223,7 +223,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			</thruster>
 		</engine>
 
-		<engine file="JT8D">
+		<engine file="JT8D-17R">
 			<location unit="IN">
 				<x> 361.8303 </x>
 				<y> 135.0791 </y>
