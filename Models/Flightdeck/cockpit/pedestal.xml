@@ -111,7 +111,7 @@
   <animation>
 		<type>rotate</type>
 		<object-name>BrkLever</object-name>
-		<property>/controls/flight/spoilers</property>
+		<property>/controls/flight/speedbrake</property>
 		<factor> 60</factor>
 		<center>
 		  <x-m>-18.6285</x-m>
@@ -125,38 +125,19 @@
 		</axis>
 	</animation>
 	
-	<!--animation>
+	<animation>
 		<type>pick</type>
 		<object-name>BrkLever</object-name>
 		<action>
 		  <button>0</button>
-		  <repeatable>false</repeatable>
-		  <binding>
-		    <command>nasal</command>
-		    <script>b727.stepSpeedbrakes(1)</script>
-		  </binding>
-		  <mod-up>
-		  <binding>
-		    <command>nasal</command>
-		    <script>b727.stepSpeedbrakes(0)</script>
-		  </binding>
-		  </mod-up>
-		</action>
-		<action>
 		  <button>1</button>
 		  <repeatable>false</repeatable>
 		  <binding>
-		    <command>nasal</command>
-		    <script>b727.stepSpeedbrakes(-1)</script>
+		    <command>property-toggle</command>
+		    <property>/controls/flight/speedbrake</property>
 		  </binding>
-		  <mod-up>
-		  <binding>
-		    <command>nasal</command>
-		    <script>b727.stepSpeedbrakes(0)</script>
-		  </binding>
-		  </mod-up>
 		</action>
-	</animation-->
+	</animation>
 	
   <!-- flap lever -->
   <animation>
@@ -217,10 +198,7 @@
 		<type>rotate</type>
 		<object-name>throttle.001</object-name>
 		<object-name>reverser.001</object-name>
-		<condition>
-			<not><property>engines/engine[0]/reversed</property></not>
-		</condition>
-		<property>/controls/engines/engine[0]/throttle</property>
+		<property>/controls/engines/engine[0]/throttle-pos</property>
 		<factor>-50</factor>
 		<center>
 		  <x-m>-18.64</x-m>
@@ -267,10 +245,7 @@
 		<type>rotate</type>
 		<object-name>throttle.002</object-name>
 		<object-name>reverser.002</object-name>
-		<condition>
-			<not><property>engines/engine[1]/reversed</property></not>
-		</condition>
-		<property>/controls/engines/engine[1]/throttle</property>
+		<property>/controls/engines/engine[1]/throttle-pos</property>
 		<factor>-50</factor>
 		<center>
 		  <x-m>-18.64</x-m>
@@ -317,10 +292,7 @@
 		<type>rotate</type>
 		<object-name>throttle.003</object-name>
 		<object-name>reverser.003</object-name>
-		<condition>
-			<not><property>engines/engine[2]/reversed</property></not>
-		</condition>
-		<property>/controls/engines/engine[2]/throttle</property>
+		<property>/controls/engines/engine[2]/throttle-pos</property>
 		<factor>-50</factor>
 		<center>
 		  <x-m>-18.64</x-m>
@@ -458,10 +430,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>reverser.001</object-name>		
-		<condition>
-			<property>engines/engine[0]/reversed</property>
-		</condition>
-		<property>/controls/engines/engine[0]/throttle</property>
+		<property>/controls/engines/engine[0]/throttle-rev</property>
 		<factor>140</factor>
 		<center>
 		  <x-m>-18.556</x-m>
@@ -478,10 +447,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>reverser.002</object-name>		
-		<condition>
-			<property>engines/engine[1]/reversed</property>
-		</condition>
-		<property>/controls/engines/engine[1]/throttle</property>
+		<property>/controls/engines/engine[1]/throttle-rev</property>
 		<factor>140</factor>
 		<center>
 		  <x-m>-18.556</x-m>
@@ -498,11 +464,59 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>reverser.003</object-name>		
-		<condition>
-			<property>engines/engine[2]/reversed</property>
-		</condition>
-		<property>/controls/engines/engine[2]/throttle</property>
+		<property>/controls/engines/engine[2]/throttle-rev</property>
 		<factor>140</factor>
+		<center>
+		  <x-m>-18.556</x-m>
+		  <y-m>  0.0</y-m>
+		  <z-m>  0.78</z-m>
+		</center>
+		<axis>
+		  <x>0.0</x>
+		  <y>1.0</y>
+		  <z>0.0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>reverser.001</object-name>		
+		<property>/controls/engines/engine[0]/reverser</property>
+		<factor>40</factor>
+		<center>
+		  <x-m>-18.556</x-m>
+		  <y-m>  0.0</y-m>
+		  <z-m>  0.78</z-m>
+		</center>
+		<axis>
+		  <x>0.0</x>
+		  <y>1.0</y>
+		  <z>0.0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>reverser.002</object-name>		
+		<property>/controls/engines/engine[1]/reverser</property>
+		<factor>40</factor>
+		<center>
+		  <x-m>-18.556</x-m>
+		  <y-m>  0.0</y-m>
+		  <z-m>  0.78</z-m>
+		</center>
+		<axis>
+		  <x>0.0</x>
+		  <y>1.0</y>
+		  <z>0.0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>reverser.003</object-name>		
+		<property>/controls/engines/engine[2]/reverser</property>
+		<factor>40</factor>
 		<center>
 		  <x-m>-18.556</x-m>
 		  <y-m>  0.0</y-m>

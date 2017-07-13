@@ -18,7 +18,8 @@ print(" ");
 #######################
  
 setlistener("/sim/signals/fdm-initialized", func {
-	# Do stuff
+	setprop("/systems/electrical/bus-volts", 1);
+    setprop("/systems/electrical/outputs/mk-viii", 28);
 });
 
 var librariesLoop = maketimer(0.1, func {
@@ -33,7 +34,7 @@ var librariesLoop = maketimer(0.1, func {
 
 var aglgears = func {
     var agl = getprop("/position/altitude-agl-ft") or 0;
-    var aglft = agl - 17.46;  # is the position from the Boeing 727 above ground
+    var aglft = agl - 19.801;  # is the position from the Boeing 727 above ground
     var aglm = aglft * 0.3048;
     setprop("/position/gear-agl-ft", aglft);
     setprop("/position/gear-agl-m", aglm);

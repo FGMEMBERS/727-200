@@ -7,6 +7,34 @@ Modified by FL2070 -->
   <!-- cockpit x=22.5 y=0 z=0.78 -->
 
   <fx>
+  
+	<wow>
+		<mode>once</mode>
+		<name>wow0</name>
+		<path>misc/touch.wav</path>
+		<condition>
+			<property>gear/gear[0]/wow</property>
+		</condition>
+	</wow>
+	
+	<wow>
+		<mode>once</mode>
+		<name>wow1</name>
+		<path>misc/touch.wav</path>
+		<condition>
+			<property>gear/gear[1]/wow</property>
+		</condition>
+	</wow>
+	
+	<wow>
+		<mode>once</mode>
+		<name>wow2</name>
+		<path>misc/touch.wav</path>
+		<condition>
+			<property>gear/gear[2]/wow</property>
+		</condition>
+	</wow>
+	
     <engine>
       <name>left run</name>
       <path>Aircraft/727-200/Sounds/eng/idling.wav</path>

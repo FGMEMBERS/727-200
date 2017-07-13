@@ -131,6 +131,17 @@
 	</sim>
 
 	<controls n="0">
+		<engines>
+			<engine n="0">
+				<throttle-fdm type="float">0</throttle-fdm>
+			</engine>
+			<engine n="1">
+				<throttle-fdm type="float">0</throttle-fdm>
+			</engine>
+			<engine n="2">
+				<throttle-fdm type="float">0</throttle-fdm>
+			</engine>
+		</engines>
 		<flight>
 			<rudder-fde>0</rudder-fde>
 		</flight>
@@ -146,11 +157,31 @@
 		<overhead-panel-norm type="double">1.0</overhead-panel-norm>
 		<main-panel-pedestal-norm type="double">1.0</main-panel-pedestal-norm>
 		</lighting>
-
 		<special>
 			<elev-trim-help>0</elev-trim-help>
 		</special>
 	</controls>
+	
+	<engines>
+		<engine n="0">
+			<egt-actual type="float">0</egt-actual>
+			<state type="int">0</state>
+			<on-fire type="bool">0</on-fire>
+			<reverser-pos-norm type="double">0</reverser-pos-norm>
+		</engine>
+		<engine n="1">
+			<egt-actual type="float">0</egt-actual>
+			<state type="int">0</state>
+			<on-fire type="bool">0</on-fire>
+			<reverser-pos-norm type="double">0</reverser-pos-norm>
+		</engine>
+		<engine n="2">
+			<egt-actual type="float">0</egt-actual>
+			<state type="int">0</state>
+			<on-fire type="bool">0</on-fire>
+			<reverser-pos-norm type="double">0</reverser-pos-norm>
+		</engine>
+	</engines>
 
 	<instrumentation>
 		<path>Aircraft/727-200/init/instrumentation.xml</path>
@@ -266,7 +297,7 @@
 		</nav-compass>
 
 		<!-- See http://wiki.flightgear.org/index.php/GPWS -->
-		<!--mk-viii n="0">
+		<mk-viii n="0">
 			<serviceable type="bool">true</serviceable>
 			<configuration-module>
 				<category-1 type="int">255</category-1>
@@ -295,7 +326,7 @@
 			<voice>
 				<file-prefix>Aircraft/727-200/Sounds/GPWS/</file-prefix>
 			</voice>
-		</mk-viii-->
+		</mk-viii>
 		
 		<groundradar>
 			<range type="double">1.0</range>
@@ -347,7 +378,7 @@
 					<property>/sim/current-view/view-number</property>
 					<value>9</value>
 				</binding>
-			</key>
+			</key-->
 			<key n="127">
 				<name>DEL</name>
 				<desc>Simple Engage/Disengage reversers</desc>
@@ -387,7 +418,7 @@
 					systems.doIdleThrust();
 					</script>
 				</binding>
-			</key-->
+			</key>
 		</keyboard>
 	</input>
 
@@ -421,8 +452,11 @@
 			<file>Aircraft/727-200/Nasal/magicstartup.nas</file>
 			<file>Aircraft/727-200/Nasal/libraries.nas</file>
 			<file>Aircraft/727-200/Nasal/tire-smoke.nas</file>
-                        <file>Aircraft/727-200/Nasal/lighting.nas</file>
+			<file>Aircraft/727-200/Nasal/lighting.nas</file>
 		</libraries>
+		<systems>
+			<file>Aircraft/727-200/Nasal/engines.nas</file>
+		</systems>
 	</nasal>
 
 </PropertyList>
