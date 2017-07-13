@@ -1344,6 +1344,8 @@
 		</center>
 	</animation>
 
+<!-- New Effects By YV3399 -->
+
 <!-- Tyre Smoke -->
 
 	<model>
@@ -1376,7 +1378,7 @@
 		</offsets>
 	</model>
 
-	<!-- CONTRAIL -->
+	<!-- Contrail -->
 
 	<model>
 		<path>Aircraft/727-200/Models/Effects/Contrail/contrail.xml</path>
@@ -1408,39 +1410,6 @@
 		</offsets>
 	</model>
 	
-
-	<!--exhaust
-	<model>
-		<path>Aircraft/Generic/Effects/exhaust-smoke.xml</path>
-		<name>contrail1</name>
-		<offsets>
-			<x-m>27.079</x-m>
-			<y-m>0</y-m>
-			<z-m>0.601</z-m>
-		</offsets>
-	</model>
-
-	<model>
-		<path>Aircraft/Generic/Effects/exhaust-smoke1.xml</path>
-		<name>contrail2</name>
-		<offsets>
-			<x-m>24.933</x-m>
-			<y-m>-2.827</y-m>
-			<z-m>0.601</z-m>
-		</offsets>
-	</model>
-
-	<model>
-		<path>Aircraft/Generic/Effects/exhaust-smoke2.xml</path>
-		<name>contrail3</name>
-		<offsets>
-			<x-m>24.933</x-m>
-			<y-m>2.827</y-m>
-			<z-m>0.601</z-m>
-		</offsets>
-	</model>
-	-->
-
 	<model>
 		<name>Pushback</name>
 		<path>Models/Airport/Pushback/Military.xml</path>
@@ -1451,13 +1420,10 @@
 		</offsets>
 	</model>
 
+  <!-- New Lights By YV3399 -->
 
-<!--LIGHTS-->
+<!-- Beacon -->
 
-  
-
-  <!-- Beacon -->
- 
  <model>
   <path>Aircraft/727-200/Models/Lights/beacon.xml</path>
   <name>beacon.top</name>
@@ -1496,7 +1462,7 @@
   </offsets>
 </model>
 
-                 
+       <!-- Navigation -->          
  
  <model>
   <path>Aircraft/727-200/Models/Lights/rednav.xml</path>
@@ -1517,6 +1483,27 @@
   </offsets>
  </model>
 
+<model>
+  <path>Aircraft/727-200/Models/Lights/greennav.xml</path>
+  <name>Greenlight</name>
+  <offsets>
+  <x-m>4.5</x-m>
+   <y-m>16.611</y-m>
+   <z-m>-0.26</z-m>
+  </offsets>
+ </model>
+<model>
+  <path>Aircraft/727-200/Models/Lights/ALS/green-navlight.xml</path>
+  <name>Greenlight.ALS</name>     
+ <offsets>
+  <x-m>4.5</x-m>
+   <y-m>16.611</y-m>
+   <z-m>-0.26</z-m>
+  </offsets>
+</model>
+
+<!-- Strobe -->
+
  <model>
   <path>Aircraft/727-200/Models/Lights/strobe.xml</path>
   <name>strobe.right</name>  
@@ -1533,26 +1520,6 @@
    <x-m>4.5</x-m>
    <y-m>-16.911</y-m>
    <z-m>-0.15</z-m>
-  </offsets>
-</model>
-
-
- <model>
-  <path>Aircraft/727-200/Models/Lights/greennav.xml</path>
-  <name>Greenlight</name>
-  <offsets>
-  <x-m>4.5</x-m>
-   <y-m>16.611</y-m>
-   <z-m>-0.26</z-m>
-  </offsets>
- </model>
-<model>
-  <path>Aircraft/727-200/Models/Lights/ALS/green-navlight.xml</path>
-  <name>Greenlight.ALS</name>     
- <offsets>
-  <x-m>4.5</x-m>
-   <y-m>16.611</y-m>
-   <z-m>-0.26</z-m>
   </offsets>
 </model>
 
@@ -1575,7 +1542,6 @@
   </offsets>
 </model>
 
-
 <model>
   <path>Aircraft/727-200/Models/Lights/center-strobe.xml</path>
   <name>strobe.center.ALS</name>
@@ -1594,7 +1560,6 @@
    <z-m>6.33592</z-m>
   </offsets>
 </model>
-
 
  <model>
   <path>Aircraft/727-200/Models/Lights/center-strobe.xml</path>
@@ -1615,6 +1580,8 @@
   </offsets>
 </model>
  
+<!-- Landing Lights -->
+
 <model>
 	<path>Aircraft/727-200/Models/Lights/landing-stbd.xml</path>
 	 <name>landing.LW</name> 
@@ -1652,8 +1619,6 @@
 	<z-m>-0.51</z-m>        
    </offsets>
 </model>
-
-
 
 <!--Select animation-->
 <animation>
