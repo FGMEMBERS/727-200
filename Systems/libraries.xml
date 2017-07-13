@@ -11,8 +11,8 @@
             <expression>
                 <table>
                     <property>/position/altitude-ft</property> 
-                    <entry><ind>    0</ind><dep>1.255</dep></entry>
-                    <entry><ind>42000</ind><dep>1.545</dep></entry>
+                    <entry><ind>    0</ind><dep>1.259</dep></entry>
+                    <entry><ind>44000</ind><dep>1.775</dep></entry>
                 </table>
             </expression>
         </input>
@@ -46,8 +46,8 @@
             <expression>
                 <table>
                     <property>/engines/engine[0]/n1</property>
-                    <entry><ind> 42.6</ind><dep>0.00</dep></entry>
-                    <entry><ind>112.4</ind><dep>1.00</dep></entry>
+                    <entry><ind> 41.6</ind><dep>0.00</dep></entry>
+                    <entry><ind>109.4</ind><dep>1.00</dep></entry>
                 </table>
             </expression>
 			<scale>/engines/epr-scale</scale>
@@ -80,8 +80,8 @@
             <expression>
                 <table>
                     <property>/engines/engine[1]/n1</property>
-                    <entry><ind> 42.6</ind><dep>0.00</dep></entry>
-                    <entry><ind>112.4</ind><dep>1.00</dep></entry>
+                    <entry><ind> 41.6</ind><dep>0.00</dep></entry>
+                    <entry><ind>109.4</ind><dep>1.00</dep></entry>
                 </table>
             </expression>
 			<scale>/engines/epr-scale</scale>
@@ -114,8 +114,8 @@
             <expression>
                 <table>
                     <property>/engines/engine[2]/n1</property>
-                    <entry><ind> 42.6</ind><dep>0.00</dep></entry>
-                    <entry><ind>112.4</ind><dep>1.00</dep></entry>
+                    <entry><ind> 41.6</ind><dep>0.00</dep></entry>
+                    <entry><ind>109.4</ind><dep>1.00</dep></entry>
                 </table>
             </expression>
 			<scale>/engines/epr-scale</scale>
