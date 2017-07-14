@@ -46,43 +46,6 @@ Modified by Gabriel Hernandez(YV3399) -->
     		<offset>0</offset>
     	</volume>
     </wow>
-    
-    <wow>
-    	<name>wow 3</name>
-    	<mode>once</mode>
-    	<path>Aircraft/727-200/Sounds/wow.wav</path>
-    	<condition>
-    		<property>gears/gear[0]/wow</property>
-    	</condition>
-    	<volume>
-    		<property>sim/current-view/internal</property>
-    		<offset>0</offset>
-    	</volume>
-    </wow>
-    <wow>
-    	<name>wow 4</name>
-    	<mode>once</mode>
-    	<path>Aircraft/727-200/Sounds/wow.wav</path>
-    	<condition>
-    		<property>gears/gear[1]/wow</property>
-    	</condition>
-    	<volume>
-    		<property>sim/current-view/internal</property>
-    		<offset>0</offset>
-    	</volume>
-    </wow>
-    <wow>
-    	<name>wow 5</name>
-    	<mode>once</mode>
-    	<path>Aircraft/727-200/Sounds/wow.wav</path>
-    	<condition>
-    		<property>gears/gear[2]/wow</property>
-    	</condition>
-    	<volume>
-    		<property>sim/current-view/internal</property>
-    		<offset>0</offset>
-    	</volume>
-    </wow>
 
     <rain>
     	<name>rain</name>
