@@ -730,7 +730,7 @@ Modified by Gabriel Hernandez(YV3399) -->
     	<max-dist>5</max-dist>
     </avionics>
 
-<wind>
+	<wind>
         <name>wind</name>
         <mode>looped</mode>
         <path>Aircraft/727-200/Sounds/Wind.wav</path>
@@ -761,8 +761,6 @@ Modified by Gabriel Hernandez(YV3399) -->
         <reference-dist>1.0</reference-dist>
         <max-dist>2.0</max-dist>
     </wind>
-
-
 
   </fx>
 
