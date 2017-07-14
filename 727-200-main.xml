@@ -370,15 +370,6 @@
 					<value>8</value>
 				</binding>
 			</key>
-			<!--key n="51">
-				<name>3</name>
-				<desc>Overhead View</desc>
-				<binding>
-					<command>property-assign</command>
-					<property>/sim/current-view/view-number</property>
-					<value>9</value>
-				</binding>
-			</key-->
 			<key n="127">
 				<name>DEL</name>
 				<desc>Simple Engage/Disengage reversers</desc>
