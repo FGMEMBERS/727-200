@@ -1,39 +1,113 @@
 <?xml version="1.0"?>
 <!-- Custom 727 Sound Effects by Liam Gathercole, extended by Peter Brendt
-Modified by FL2070 -->
+Modified by Gabriel Hernandez(YV3399) -->
 
 <PropertyList>
 
   <!-- cockpit x=22.5 y=0 z=0.78 -->
 
   <fx>
-  
-	<wow>
-		<mode>once</mode>
-		<name>wow0</name>
-		<path>misc/touch.wav</path>
-		<condition>
-			<property>gear/gear[0]/wow</property>
-		</condition>
-	</wow>
-	
-	<wow>
-		<mode>once</mode>
-		<name>wow1</name>
-		<path>misc/touch.wav</path>
-		<condition>
-			<property>gear/gear[1]/wow</property>
-		</condition>
-	</wow>
-	
-	<wow>
-		<mode>once</mode>
-		<name>wow2</name>
-		<path>misc/touch.wav</path>
-		<condition>
-			<property>gear/gear[2]/wow</property>
-		</condition>
-	</wow>
+
+  <!-- TouchDown -->
+
+    <wow>
+    	<name>wow 0</name>
+    	<mode>once</mode>
+    	<path>Aircraft/727-200/Sounds/wow.wav</path>
+    	<condition>
+    		<property>gear/gear[0]/wow</property>
+    	</condition>
+    	<volume>
+    		<property>sim/current-view/internal</property>
+    		<offset>0</offset>
+    	</volume>
+    </wow>
+    <wow>
+    	<name>wow 1</name>
+    	<mode>once</mode>
+    	<path>Aircraft/727-200/Sounds/wow.wav</path>
+    	<condition>
+    		<property>gear/gear[1]/wow</property>
+    	</condition>
+    	<volume>
+    		<property>sim/current-view/internal</property>
+    		<offset>0</offset>
+    	</volume>
+    </wow>
+    <wow>
+    	<name>wow 2</name>
+    	<mode>once</mode>
+    	<path>Aircraft/727-200/Sounds/wow.wav</path>
+    	<condition>
+    		<property>gear/gear[2]/wow</property>
+    	</condition>
+    	<volume>
+    		<property>sim/current-view/internal</property>
+    		<offset>0</offset>
+    	</volume>
+    </wow>
+    
+    <wow>
+    	<name>wow 3</name>
+    	<mode>once</mode>
+    	<path>Aircraft/727-200/Sounds/wow.wav</path>
+    	<condition>
+    		<property>gears/gear[0]/wow</property>
+    	</condition>
+    	<volume>
+    		<property>sim/current-view/internal</property>
+    		<offset>0</offset>
+    	</volume>
+    </wow>
+    <wow>
+    	<name>wow 4</name>
+    	<mode>once</mode>
+    	<path>Aircraft/727-200/Sounds/wow.wav</path>
+    	<condition>
+    		<property>gears/gear[1]/wow</property>
+    	</condition>
+    	<volume>
+    		<property>sim/current-view/internal</property>
+    		<offset>0</offset>
+    	</volume>
+    </wow>
+    <wow>
+    	<name>wow 5</name>
+    	<mode>once</mode>
+    	<path>Aircraft/727-200/Sounds/wow.wav</path>
+    	<condition>
+    		<property>gears/gear[2]/wow</property>
+    	</condition>
+    	<volume>
+    		<property>sim/current-view/internal</property>
+    		<offset>0</offset>
+    	</volume>
+    </wow>
+
+    <rain>
+    	<name>rain</name>
+    	<mode>looped</mode>
+    	<path>Aircraft/727-200/Sounds/rain.wav</path>
+    	<condition>
+    		<greater-than>
+    			<property>/environment/rain-norm</property>
+    			<value>0.2</value>
+    		</greater-than>
+    	</condition>
+    	<volume>
+    		<property>/environment/rain-norm</property>
+    		<factor>1.00</factor>
+    		<offset>0.00</offset>
+    		<min>0.4</min>
+    		<max>0.9</max>
+    	</volume>
+    	<pitch>
+    		<property>/velocities/airspeed-kt</property>
+    		<factor>0.001</factor>
+    		<offset>1.0</offset>
+    	</pitch>
+    </rain>
+
 	
     <engine>
       <name>left run</name>
@@ -678,16 +752,6 @@ Modified by FL2070 -->
 	<factor>1.5</factor>
       </pitch>
     </crash>
-
-       
-    <!--FL2070 has not shared this file
-    <ambience>
-      <name>passangers</name>
-      <mode>looped</mode>
-      <property>/sim/current-view/internal</property>
-      <path>Aircraft/717/Sounds/misc/amb.wav</path>
-    </ambience>
-    -->
 
   </fx>
 
