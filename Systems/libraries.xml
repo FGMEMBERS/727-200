@@ -12,7 +12,7 @@
                 <table>
                     <property>/position/altitude-ft</property> 
                     <entry><ind>    0</ind><dep>1.259</dep></entry>
-                    <entry><ind>44000</ind><dep>1.775</dep></entry>
+                    <entry><ind>44000</ind><dep>2.745</dep></entry>
                 </table>
             </expression>
         </input>
@@ -29,8 +29,8 @@
                 <table>
                     <property>/position/altitude-ft</property> 
                     <entry><ind>    0</ind><dep>0.992</dep></entry>
-                    <entry><ind>13000</ind><dep>0.975</dep></entry>
-                    <entry><ind>42000</ind><dep>0.966</dep></entry>
+                    <entry><ind>13000</ind><dep>0.755</dep></entry>
+                    <entry><ind>42000</ind><dep>0.406</dep></entry>
                 </table>
             </expression>
         </input>
@@ -46,8 +46,9 @@
             <expression>
                 <table>
                     <property>/engines/engine[0]/n1</property>
-                    <entry><ind> 41.6</ind><dep>0.00</dep></entry>
-                    <entry><ind>109.4</ind><dep>1.00</dep></entry>
+                    <entry><ind> 18.7</ind><dep>0.00</dep></entry>
+                    <entry><ind> 33.4</ind><dep>0.03</dep></entry>
+                    <entry><ind>104.6</ind><dep>1.00</dep></entry>
                 </table>
             </expression>
 			<scale>/engines/epr-scale</scale>
@@ -80,8 +81,9 @@
             <expression>
                 <table>
                     <property>/engines/engine[1]/n1</property>
-                    <entry><ind> 41.6</ind><dep>0.00</dep></entry>
-                    <entry><ind>109.4</ind><dep>1.00</dep></entry>
+                    <entry><ind> 18.7</ind><dep>0.00</dep></entry>
+                    <entry><ind> 33.4</ind><dep>0.03</dep></entry>
+                    <entry><ind>104.6</ind><dep>1.00</dep></entry>
                 </table>
             </expression>
 			<scale>/engines/epr-scale</scale>
@@ -114,8 +116,9 @@
             <expression>
                 <table>
                     <property>/engines/engine[2]/n1</property>
-                    <entry><ind> 41.6</ind><dep>0.00</dep></entry>
-                    <entry><ind>109.4</ind><dep>1.00</dep></entry>
+                    <entry><ind> 18.7</ind><dep>0.00</dep></entry>
+                    <entry><ind> 33.4</ind><dep>0.03</dep></entry>
+                    <entry><ind>104.6</ind><dep>1.00</dep></entry>
                 </table>
             </expression>
 			<scale>/engines/epr-scale</scale>
@@ -150,7 +153,7 @@
                     <property>/engines/engine[0]/n1</property> 
                     <entry><ind>0</ind><dep>0</dep></entry>
                     <entry><ind>6</ind><dep>0</dep></entry>
-                    <entry><ind>27.6</ind><dep>364</dep></entry>
+                    <entry><ind>33.4</ind><dep>364</dep></entry>
                     <entry><ind>110</ind><dep>612</dep></entry>
                 </table>
             </expression>
@@ -169,7 +172,7 @@
                     <property>/engines/engine[1]/n1</property> 
                     <entry><ind>0</ind><dep>0</dep></entry>
                     <entry><ind>6</ind><dep>0</dep></entry>
-                    <entry><ind>27.6</ind><dep>364</dep></entry>
+                    <entry><ind>33.4</ind><dep>364</dep></entry>
                     <entry><ind>110</ind><dep>612</dep></entry>
                 </table>
             </expression>
@@ -188,7 +191,7 @@
                     <property>/engines/engine[2]/n1</property> 
                     <entry><ind>0</ind><dep>0</dep></entry>
                     <entry><ind>6</ind><dep>0</dep></entry>
-                    <entry><ind>27.6</ind><dep>364</dep></entry>
+                    <entry><ind>33.4</ind><dep>364</dep></entry>
                     <entry><ind>110</ind><dep>612</dep></entry>
                 </table>
             </expression>

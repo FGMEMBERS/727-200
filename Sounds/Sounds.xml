@@ -7,6 +7,17 @@ Modified by Gabriel Hernandez(YV3399) -->
   <!-- cockpit x=22.5 y=0 z=0.78 -->
 
   <fx>
+  
+  <apoff>
+   <name>apoff</name>
+   <path>/Aircraft/727-200/Sounds/apoff.wav</path>
+   <condition>
+	 <property>/it-autoflight/sound/apoffsound</property>
+   </condition>
+   <volume>
+    <factor>40.0</factor>
+   </volume>
+  </apoff>
 
   <!-- TouchDown -->
 

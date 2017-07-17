@@ -191,8 +191,9 @@
           </binding>
         </mod-up>
         <binding>
-          <command>property-toggle</command>
-          <property>/sim/sound/switch2</property>
+          <command>property-assign</command>
+          <property>/it-autoflight/input/ap</property>
+		  <value>0</value>
         </binding>
 		  </action>
 	</animation>

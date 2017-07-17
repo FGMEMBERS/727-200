@@ -20,6 +20,9 @@ print(" ");
 setlistener("/sim/signals/fdm-initialized", func {
 	setprop("/systems/electrical/bus-volts", 1);
     setprop("/systems/electrical/outputs/mk-viii", 28);
+	autopilot_v.ap_init();
+	var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/727-200/Systems/autopilot-dlg.xml");
+	librariesLoop.start();
 });
 
 var librariesLoop = maketimer(0.1, func {
