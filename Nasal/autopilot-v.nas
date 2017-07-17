@@ -270,22 +270,6 @@ setlistener("/it-autoflight/input/alt-arm", func {
 });
 
 # Altitude Capture
-setlistener("/it-autoflight/output/vert", func {
-	var vertm = getprop("/it-autoflight/output/vert");
-	if (vertm == 1 or vertm == 4 or vertm == 5 or vertm == 6) {
-		if (getprop("/it-autoflight/settings/auto-arm-alt") == 1) {
-			setprop("/it-autoflight/output/alt-arm", 1);
-			altcaptt.start();
-		} else {
-			setprop("/it-autoflight/output/alt-arm", 0);
-			altcaptt.stop();
-		}
-	} else {
-		setprop("/it-autoflight/output/alt-arm", 0);
-		altcaptt.stop();
-	}
-});
-
 var altcapt = func {
 	var vsnow = getprop("/it-autoflight/internal/vert-speed-fpm");
 	if ((vsnow >= 0 and vsnow < 500) or (vsnow < 0 and vsnow > -500)) {

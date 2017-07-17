@@ -360,10 +360,16 @@
 		<gain>1</gain>
 		<enable>
 			<condition>
-				<not-equals>
-					<property>/it-autoflight/output/ap</property>
-					<value>1</value>
-				</not-equals>
+				<or>
+					<not-equals>
+						<property>/it-autoflight/output/ap</property>
+						<value>1</value>
+					</not-equals>
+					<equals>
+						<property>/it-autoflight/output/lat</property>
+						<value>1</value>
+					</equals>
+				</or>
 			</condition>
 		</enable>
 		<input>/orientation/roll-deg</input>
@@ -744,7 +750,7 @@
 		<input>/orientation/pitch-deg</input>
 		<output>/it-autoflight/internal/target-pitch-deg</output>
 		<min>-15</min>
-		<max>15</max>
+		<max>30</max>
 	</filter>
 	
 	<filter>
