@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- IT-AUTOFLIGHT Autopilot Control Dialog -->
+
+
+<PropertyList>
+
+	<name>autopilot</name>
+	<layout>vbox</layout>
+
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>IT-AUTOFLIGHT System (B72X)</label>
+        </text>
+        <button>
+            <halign>right</halign>
+            <pref-width>20</pref-width>
+            <pref-height>20</pref-height>
+            <legend>X</legend>
+            <key>Esc</key>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+	
+    <hrule/>
+	
+	<group>
+		<layout>hbox</layout>
+		
+		<group>
+			<layout>vbox</layout>
+	
+			<group>
+				<layout>hbox</layout>
+				<halign>left</halign>
+				
+				<text>
+					<label></label>
+				</text>
+				
+				<text>
+					<label></label>
+				</text>
+				
+				<text>
+					<visible>
+						<equals>
+							<property>/autopilot-v/pitch-knob</property>
+							<value>1</value>
+						</equals>
+					</visible>
+					<label>MACH</label>
+				</text>
+				
+				<text>
+					<label></label>
+				</text>
+				
+				<text>
+					<label></label>
+				</text>
+				
+				<text>
+					<label></label>
+				</text>
+				
+				<text>
+					<label></label>
+				</text>
+				
+				<text>
+					<label></label>
+				</text>
+				
+				<text>
+					<visible>
+						<equals>
+							<property>/autopilot-v/pitch-knob</property>
+							<value>2</value>
+						</equals>
+					</visible>
+					<label>IAS</label>
+				</text>
+				
+				<text>
+					<label></label>
+				</text>
+				
+				<text>
+					<label></label>
+				</text>
+				
+				<text>
+					<label></label>
+				</text>
+				
+				<text>
+					<label></label>
+				</text>
+				
+				<text>
+					<visible>
+						<equals>
+							<property>/autopilot-v/pitch-knob</property>
+							<value>3</value>
+						</equals>
+					</visible>
+					<label>VERT SPD</label>
+				</text>
+				
+				<text>
+					<label></label>
+				</text>
+				
+				<text>
+					<label> </label>
+				</text>
+				
+				<text>
+					<visible>
+						<equals>
+							<property>/autopilot-v/pitch-knob</property>
+							<value>4</value>
+						</equals>
+					</visible>
+					<label>PITCH</label>
+				</text>
+				
+			</group>
+
+			<group>
+				<layout>hbox</layout>
+				<halign>left</halign>
+				
+				<button>
+					<pref-width>70</pref-width>
+					<pref-height>20</pref-height>
+					<legend>MACH</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/autopilot-v/pitch-knob</property>
+						<value>1</value>
+					</binding>
+				</button>
+				
+				<button>
+					<pref-width>70</pref-width>
+					<pref-height>20</pref-height>
+					<legend>IAS</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/autopilot-v/pitch-knob</property>
+						<value>2</value>
+					</binding>
+				</button>
+				
+				<button>
+					<pref-width>70</pref-width>
+					<pref-height>20</pref-height>
+					<legend>VERT SPD</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/autopilot-v/pitch-knob</property>
+						<value>3</value>
+					</binding>
+				</button>
+				
+				<button>
+					<pref-width>70</pref-width>
+					<pref-height>20</pref-height>
+					<legend>PITCH</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/autopilot-v/pitch-knob</property>
+						<value>4</value>
+					</binding>
+				</button>
+				
+			</group>
+		
+		</group>
+		
+		<vrule/>
+		
+		<group>
+			<layout>vbox</layout>
+			
+			<button>
+				<pref-width>70</pref-width>
+				<pref-height>20</pref-height>
+				<property>/autopilot-v/hdg-sel-btn</property>
+				<live type="bool">true</live>
+				<legend>HDG SEL</legend>
+				<binding>
+					<command>property-toggle</command>
+					<property>/autopilot-v/hdg-sel-btn</property>
+				</binding>
+			</button>
+			
+			<button>
+				<pref-width>70</pref-width>
+				<pref-height>20</pref-height>
+				<property>/autopilot-v/alt-sel-btn</property>
+				<live type="bool">true</live>
+				<legend>ALT SEL</legend>
+				<binding>
+					<command>property-toggle</command>
+					<property>/autopilot-v/alt-sel-btn</property>
+				</binding>
+			</button>
+		
+		</group>
+		
+		<vrule/>
+		
+		<group>
+			<layout>vbox</layout>
+			
+			<text>
+				<label>ENGAGED</label>
+			</text>
+		
+			<checkbox>
+				<property>/it-autoflight/input/ap</property>
+				<live>1</live>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+			</checkbox>
+		
+		</group>
+		
+		<vrule/>
+		
+		<group>
+			<layout>vbox</layout>
+	
+			<group>
+				<layout>hbox</layout>
+				<halign>left</halign>
+				
+				<text>
+					<label></label>
+				</text>
+				
+				<text>
+					<visible>
+						<equals>
+							<property>/autopilot-v/roll-knob</property>
+							<value>1</value>
+						</equals>
+					</visible>
+					<label>AUX/NAV</label>
+				</text>
+				
+				<text>
+					<label> </label>
+				</text>
+				
+				<text>
+					<visible>
+						<equals>
+							<property>/autopilot-v/roll-knob</property>
+							<value>2</value>
+						</equals>
+					</visible>
+					<label>NAV/LOC</label>
+				</text>
+				
+				<text>
+					<label></label>
+				</text>
+				
+				<text>
+					<visible>
+						<equals>
+							<property>/autopilot-v/roll-knob</property>
+							<value>3</value>
+						</equals>
+					</visible>
+					<label>TURN KNB</label>
+				</text>
+				
+				<text>
+					<label> </label>
+				</text>
+				
+				<text>
+					<visible>
+						<equals>
+							<property>/autopilot-v/roll-knob</property>
+							<value>4</value>
+						</equals>
+					</visible>
+					<label>AUTO G/S</label>
+				</text>
+				
+				<text>
+					<label> </label>
+				</text>
+				
+				<text>
+					<visible>
+						<equals>
+							<property>/autopilot-v/roll-knob</property>
+							<value>5</value>
+						</equals>
+					</visible>
+					<label>MAN G/S</label>
+				</text>
+				
+			</group>
+
+			<group>
+				<layout>hbox</layout>
+				<halign>left</halign>
+				
+				<button>
+					<pref-width>70</pref-width>
+					<pref-height>20</pref-height>
+					<legend>AUX/NAV</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/autopilot-v/roll-knob</property>
+						<value>1</value>
+					</binding>
+				</button>
+				
+				<button>
+					<pref-width>70</pref-width>
+					<pref-height>20</pref-height>
+					<legend>NAV/LOC</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/autopilot-v/roll-knob</property>
+						<value>2</value>
+					</binding>
+				</button>
+				
+				<button>
+					<pref-width>70</pref-width>
+					<pref-height>20</pref-height>
+					<legend>TURN KNB</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/autopilot-v/roll-knob</property>
+						<value>3</value>
+					</binding>
+				</button>
+				
+				<button>
+					<pref-width>70</pref-width>
+					<pref-height>20</pref-height>
+					<legend>AUTO G/S</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/autopilot-v/roll-knob</property>
+						<value>4</value>
+					</binding>
+				</button>
+				
+				<button>
+					<pref-width>70</pref-width>
+					<pref-height>20</pref-height>
+					<legend>MAN G/S</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/autopilot-v/roll-knob</property>
+						<value>5</value>
+					</binding>
+				</button>
+				
+			</group>
+		
+		</group>
+	
+	</group>
+	
+	<hrule/>
+	
+	<group>
+		<layout>hbox</layout>
+		<halign>left</halign>
+	
+		<group>
+			<layout>vbox</layout>
+			
+			<button>
+				<pref-width>70</pref-width>
+				<pref-height>20</pref-height>
+				<legend>DESCEND</legend>
+				<binding>
+					<command>property-adjust</command>
+					<property>/it-autoflight/input/vs</property>
+					<min>-6000</min>
+					<max>6000</max>
+					<step>-100</step>
+					<wrap>false</wrap>
+				</binding>
+			</button>
+			
+			<button>
+				<pref-width>70</pref-width>
+				<pref-height>20</pref-height>
+				<legend>CLIMB</legend>
+				<binding>
+					<command>property-adjust</command>
+					<property>/it-autoflight/input/vs</property>
+					<min>-6000</min>
+					<max>6000</max>
+					<step>100</step>
+					<wrap>false</wrap>
+				</binding>
+			</button>
+		
+		</group>
+		
+		<group>
+			<layout>vbox</layout>
+			
+			<text>
+				<visible>
+					<and>
+						<greater-than>
+							<property>/it-autoflight/input/vs</property>
+							<value>-10</value>
+						</greater-than>
+						<less-than>
+							<property>/it-autoflight/input/vs</property>
+							<value>10</value>
+						</less-than>
+					</and>
+				</visible>
+				<label>HLD</label>
+			</text>
+			
+			<text>
+				<visible>
+					<or>
+						<greater-than>
+							<property>/it-autoflight/input/vs</property>
+							<value>10</value>
+						</greater-than>
+						<less-than>
+							<property>/it-autoflight/input/vs</property>
+							<value>-10</value>
+						</less-than>
+					</or>
+				</visible>
+				<label>99999</label>
+				<property>/it-autoflight/input/vs</property>
+				<live>1</live>
+			</text>
+			
+		</group>
+		
+		<vrule/>
+		
+		<group>
+			<layout>vbox</layout>
+	
+			<group>
+				<layout>hbox</layout>
+				
+				<text>
+					<label>TURN KNOB:</label>
+				</text>
+				
+				<text>
+					<visible>
+						<equals>
+							<property>/it-autoflight/output/lat</property>
+							<value>1</value>
+						</equals>
+					</visible>
+					<label>999</label>
+					<property>/it-autoflight/input/roll-deg</property>
+					<live>1</live>
+				</text>
+				
+			</group>
+			
+			<hrule/>
+
+			<group>
+				<layout>hbox</layout>
+				
+				<button>
+					<pref-width>25</pref-width>
+					<pref-height>20</pref-height>
+					<legend>&lt;&lt;</legend>
+					<binding>
+						<command>property-adjust</command>
+						<property>/it-autoflight/input/roll-deg</property>
+						<min>-30</min>
+						<max>30</max>
+						<step>-5</step>
+						<wrap>false</wrap>
+					</binding>
+				</button>
+				
+				<button>
+					<pref-width>25</pref-width>
+					<pref-height>20</pref-height>
+					<legend>&lt;</legend>
+					<binding>
+						<command>property-adjust</command>
+						<property>/it-autoflight/input/roll-deg</property>
+						<min>-30</min>
+						<max>30</max>
+						<step>-1</step>
+						<wrap>false</wrap>
+					</binding>
+				</button>
+				
+				<button>
+					<pref-width>25</pref-width>
+					<pref-height>20</pref-height>
+					<legend>&gt;</legend>
+					<binding>
+						<command>property-adjust</command>
+						<property>/it-autoflight/input/roll-deg</property>
+						<min>-30</min>
+						<max>30</max>
+						<step>1</step>
+						<wrap>false</wrap>
+					</binding>
+				</button>
+				
+				<button>
+					<pref-width>25</pref-width>
+					<pref-height>20</pref-height>
+					<legend>&gt;&gt;</legend>
+					<binding>
+						<command>property-adjust</command>
+						<property>/it-autoflight/input/roll-deg</property>
+						<min>-30</min>
+						<max>30</max>
+						<step>5</step>
+						<wrap>false</wrap>
+					</binding>
+				</button>
+				
+			</group>
+		
+		</group>
+		
+		<vrule/>
+		
+		<group>
+			<layout>vbox</layout>
+	
+			<group>
+				<layout>hbox</layout>
+				
+				<text>
+					<label>ALT SELECT:</label>
+				</text>
+				
+				<text>
+					<label>99999</label>
+					<property>/it-autoflight/input/alt</property>
+					<live>1</live>
+				</text>
+				
+			</group>
+			
+			<hrule/>
+
+			<group>
+				<layout>hbox</layout>
+				
+				<button>
+					<pref-width>25</pref-width>
+					<pref-height>20</pref-height>
+					<legend>&lt;&lt;</legend>
+					<binding>
+						<command>property-adjust</command>
+						<property>/it-autoflight/input/alt</property>
+						<min>0</min>
+						<max>50000</max>
+						<step>-1000</step>
+						<wrap>false</wrap>
+					</binding>
+				</button>
+				
+				<button>
+					<pref-width>25</pref-width>
+					<pref-height>20</pref-height>
+					<legend>&lt;</legend>
+					<binding>
+						<command>property-adjust</command>
+						<property>/it-autoflight/input/alt</property>
+						<min>0</min>
+						<max>50000</max>
+						<step>-100</step>
+						<wrap>false</wrap>
+					</binding>
+				</button>
+				
+				<button>
+					<pref-width>25</pref-width>
+					<pref-height>20</pref-height>
+					<legend>&gt;</legend>
+					<binding>
+						<command>property-adjust</command>
+						<property>/it-autoflight/input/alt</property>
+						<min>0</min>
+						<max>50000</max>
+						<step>100</step>
+						<wrap>false</wrap>
+					</binding>
+				</button>
+				
+				<button>
+					<pref-width>25</pref-width>
+					<pref-height>20</pref-height>
+					<legend>&gt;&gt;</legend>
+					<binding>
+						<command>property-adjust</command>
+						<property>/it-autoflight/input/alt</property>
+						<min>0</min>
+						<max>50000</max>
+						<step>1000</step>
+						<wrap>false</wrap>
+					</binding>
+				</button>
+				
+			</group>
+			
+		</group>
+		
+		<vrule/>
+		
+		<group>
+			<layout>vbox</layout>
+	
+			<group>
+				<layout>hbox</layout>
+				
+				<text>
+					<label>PITCH CMD:</label>
+				</text>
+				
+				<text>
+					<visible>
+						<equals>
+							<property>/it-autoflight/output/vert</property>
+							<value>6</value>
+						</equals>
+					</visible>
+					<label>99999</label>
+					<property>/it-autoflight/input/pitch-deg</property>
+					<live>1</live>
+				</text>
+				
+			</group>
+			
+			<hrule/>
+
+			<group>
+				<layout>hbox</layout>
+				
+				<button>
+					<pref-width>25</pref-width>
+					<pref-height>20</pref-height>
+					<legend>&lt;&lt;</legend>
+					<binding>
+						<command>property-adjust</command>
+						<property>/it-autoflight/input/pitch-deg</property>
+						<min>-15</min>
+						<max>30</max>
+						<step>-5</step>
+						<wrap>false</wrap>
+					</binding>
+				</button>
+				
+				<button>
+					<pref-width>25</pref-width>
+					<pref-height>20</pref-height>
+					<legend>&lt;</legend>
+					<binding>
+						<command>property-adjust</command>
+						<property>/it-autoflight/input/pitch-deg</property>
+						<min>-15</min>
+						<max>30</max>
+						<step>-1</step>
+						<wrap>false</wrap>
+					</binding>
+				</button>
+				
+				<button>
+					<pref-width>25</pref-width>
+					<pref-height>20</pref-height>
+					<legend>&gt;</legend>
+					<binding>
+						<command>property-adjust</command>
+						<property>/it-autoflight/input/pitch-deg</property>
+						<min>-15</min>
+						<max>30</max>
+						<step>1</step>
+						<wrap>false</wrap>
+					</binding>
+				</button>
+				
+				<button>
+					<pref-width>25</pref-width>
+					<pref-height>20</pref-height>
+					<legend>&gt;&gt;</legend>
+					<binding>
+						<command>property-adjust</command>
+						<property>/it-autoflight/input/pitch-deg</property>
+						<min>-15</min>
+						<max>30</max>
+						<step>5</step>
+						<wrap>false</wrap>
+					</binding>
+				</button>
+				
+			</group>
+			
+		</group>
+		
+		<vrule/>
+		
+		<group>
+			<layout>vbox</layout>
+	
+			<group>
+				<layout>hbox</layout>
+				<halign>left</halign>
+				
+				<text>
+					<label> </label>
+				</text>
+				
+				<text>
+					<visible>
+						<equals>
+							<property>/autopilot-v/fd-mode-knob</property>
+							<value>1</value>
+						</equals>
+					</visible>
+					<label>GA</label>
+				</text>
+				
+				<text>
+					<label> </label>
+				</text>
+				
+				<text>
+					<label> </label>
+				</text>
+				
+				<text>
+					<visible>
+						<equals>
+							<property>/autopilot-v/fd-mode-knob</property>
+							<value>2</value>
+						</equals>
+					</visible>
+					<label>OFF</label>
+				</text>
+				
+				<text>
+					<label></label>
+				</text>
+				
+				<text>
+					<label></label>
+				</text>
+				
+				<text>
+					<visible>
+						<equals>
+							<property>/autopilot-v/fd-mode-knob</property>
+							<value>3</value>
+						</equals>
+					</visible>
+					<label>HDG</label>
+				</text>
+				
+				<text>
+					<label> </label>
+				</text>
+				
+				<text>
+					<visible>
+						<equals>
+							<property>/autopilot-v/fd-mode-knob</property>
+							<value>4</value>
+						</equals>
+					</visible>
+					<label>N/LOC</label>
+				</text>
+				
+				<text>
+					<label> </label>
+				</text>
+				
+				<text>
+					<visible>
+						<equals>
+							<property>/autopilot-v/fd-mode-knob</property>
+							<value>5</value>
+						</equals>
+					</visible>
+					<label>APR.A</label>
+				</text>
+				
+				<text>
+					<label> </label>
+				</text>
+				
+				<text>
+					<visible>
+						<equals>
+							<property>/autopilot-v/fd-mode-knob</property>
+							<value>6</value>
+						</equals>
+					</visible>
+					<label>APR.M</label>
+				</text>
+				
+			</group>
+
+			<group>
+				<layout>hbox</layout>
+				<halign>left</halign>
+				
+				<button>
+					<pref-width>40</pref-width>
+					<pref-height>20</pref-height>
+					<legend>GA</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/autopilot-v/fd-mode-knob</property>
+						<value>1</value>
+					</binding>
+				</button>
+				
+				<button>
+					<pref-width>50</pref-width>
+					<pref-height>20</pref-height>
+					<legend>OFF</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/autopilot-v/fd-mode-knob</property>
+						<value>2</value>
+					</binding>
+				</button>
+				
+				<button>
+					<pref-width>40</pref-width>
+					<pref-height>20</pref-height>
+					<legend>HDG</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/autopilot-v/fd-mode-knob</property>
+						<value>3</value>
+					</binding>
+				</button>
+				
+				<button>
+					<pref-width>50</pref-width>
+					<pref-height>20</pref-height>
+					<legend>N/LOC</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/autopilot-v/fd-mode-knob</property>
+						<value>4</value>
+					</binding>
+				</button>
+				
+				<button>
+					<pref-width>50</pref-width>
+					<pref-height>20</pref-height>
+					<legend>APR.A</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/autopilot-v/fd-mode-knob</property>
+						<value>5</value>
+					</binding>
+				</button>
+				
+				<button>
+					<pref-width>50</pref-width>
+					<pref-height>20</pref-height>
+					<legend>APR.M</legend>
+					<binding>
+						<command>property-assign</command>
+						<property>/autopilot-v/fd-mode-knob</property>
+						<value>6</value>
+					</binding>
+				</button>
+				
+			</group>
+		
+		</group>
+		
+	</group>
+
+</PropertyList>

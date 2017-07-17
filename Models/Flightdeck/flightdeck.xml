@@ -2,6 +2,19 @@
 
 <PropertyList>
 
+	<animation>
+		<type>translate</type>
+		<property>/systems/shake/shaking</property>
+		<axis>
+			<x1-m>   0</x1-m>
+			<y1-m>   0</y1-m>
+			<z1-m>   0</z1-m>
+			<x2-m> 0.5</x2-m>
+			<y2-m>-0.5</y2-m>
+			<z2-m> 0.8</z2-m>
+		</axis>
+	</animation>
+
 	<!-- insert panel -->
 	<model>
 		<path>Aircraft/727-200/Models/Flightdeck/cockpit/Cockpit.ac</path>
@@ -235,15 +248,25 @@
 			<y-m>  0.02500</y-m>
 			<z-m>   0.88900</z-m>
 		</offsets>
-		</model>
+	</model>
+		
+	<!-- Reverse Lights -->
+	<model>
+		<path>Aircraft/727-200/Models/Instruments/Reverser/reverse-lights.xml</path>
+		<offsets>
+			<x-m> -21.35050</x-m>
+			<y-m>  -0.02079</y-m>
+			<z-m>   0.81564</z-m>
+		</offsets>
+	</model>
 	
 	<!-- EPR1 -->
 	<model>
 		<path>Aircraft/727-200/Models/Instruments/Engines/epr_1.xml</path>
 		<offsets>
-			<x-m> -21.34050</x-m>
+			<x-m> -21.35050</x-m>
 			<y-m>  -0.08079</y-m>
-			<z-m>   0.82064</z-m>
+			<z-m>   0.77564</z-m>
 		</offsets>
 	</model>
 	
@@ -259,9 +282,9 @@
 	<model>
 		<path>Aircraft/727-200/Models/Instruments/Engines/epr_2.xml</path>
 		<offsets>
-			<x-m> -21.34050</x-m>
+			<x-m> -21.35050</x-m>
 			<y-m>  -0.02079</y-m>
-			<z-m>   0.82064</z-m>
+			<z-m>   0.77564</z-m>
 		</offsets>
 	</model>
 	
@@ -277,9 +300,9 @@
 	<model>
 		<path>Aircraft/727-200/Models/Instruments/Engines/epr_3.xml</path>
 		<offsets>
-			<x-m> -21.34050</x-m>
+			<x-m> -21.35050</x-m>
 			<y-m>   0.04079</y-m>
-			<z-m>   0.82064</z-m>
+			<z-m>   0.77564</z-m>
 		</offsets>
 	</model>
 	
@@ -295,9 +318,9 @@
 	<model>
 		<path>Aircraft/727-200/Models/Instruments/Engines/n1_1.xml</path>
 		<offsets>
-			<x-m> -21.34050</x-m>
+			<x-m> -21.35050</x-m>
 			<y-m>  -0.08079</y-m>
-			<z-m>   0.76048</z-m>
+			<z-m>   0.72048</z-m>
 		</offsets>
 	</model>
 	
@@ -313,9 +336,9 @@
 	<model>
 		<path>Aircraft/727-200/Models/Instruments/Engines/n1_2.xml</path>
 		<offsets>
-			<x-m> -21.34050</x-m>
+			<x-m> -21.35050</x-m>
 			<y-m>  -0.02079</y-m>
-			<z-m>   0.76048</z-m>
+			<z-m>   0.72048</z-m>
 		</offsets>
 	</model>
 	
@@ -331,9 +354,9 @@
 	<model>
 		<path>Aircraft/727-200/Models/Instruments/Engines/n1_3.xml</path>
 		<offsets>
-			<x-m> -21.34050</x-m>
+			<x-m> -21.35050</x-m>
 			<y-m>   0.04079</y-m>
-			<z-m>   0.76048</z-m>
+			<z-m>   0.72048</z-m>
 		</offsets>
 	</model>
 	
@@ -349,9 +372,9 @@
 	<model>
 		<path>Aircraft/727-200/Models/Instruments/Engines/exh_1.xml</path>
 		<offsets>
-			<x-m> -21.34050</x-m>
+			<x-m> -21.35050</x-m>
 			<y-m>  -0.08079</y-m>
-			<z-m>   0.70032</z-m>
+			<z-m>   0.66532</z-m>
 		</offsets>
 	</model>
 	
@@ -367,9 +390,9 @@
 	<model>
 		<path>Aircraft/727-200/Models/Instruments/Engines/exh_2.xml</path>
 		<offsets>
-			<x-m> -21.34050</x-m>
+			<x-m> -21.35050</x-m>
 			<y-m>  -0.02079</y-m>
-			<z-m>   0.70032</z-m>
+			<z-m>   0.66532</z-m>
 		</offsets>
 	</model>
 	
@@ -385,9 +408,9 @@
 	<model>
 		<path>Aircraft/727-200/Models/Instruments/Engines/exh_3.xml</path>
 		<offsets>
-			<x-m> -21.34050</x-m>
+			<x-m> -21.35050</x-m>
 			<y-m>   0.04079</y-m>
-			<z-m>   0.70032</z-m>
+			<z-m>   0.66532</z-m>
 		</offsets>
 	</model>
 	
@@ -403,9 +426,9 @@
 	<model>
 		<path>Aircraft/727-200/Models/Instruments/Engines/n2_1.xml</path>
 		<offsets>
-			<x-m> -21.34050</x-m>
+			<x-m> -21.35050</x-m>
 			<y-m>  -0.08079</y-m>
-			<z-m>   0.64016</z-m>
+			<z-m>   0.61016</z-m>
 		</offsets>
 	</model>
 	
@@ -421,9 +444,9 @@
 	<model>
 		<path>Aircraft/727-200/Models/Instruments/Engines/n2_2.xml</path>
 		<offsets>
-			<x-m> -21.34050</x-m>
+			<x-m> -21.35050</x-m>
 			<y-m>  -0.02079</y-m>
-			<z-m>   0.64016</z-m>
+			<z-m>   0.61016</z-m>
 		</offsets>
 	</model>
 	
@@ -439,9 +462,9 @@
 	<model>
 		<path>Aircraft/727-200/Models/Instruments/Engines/n2_3.xml</path>
 		<offsets>
-			<x-m> -21.34050</x-m>
+			<x-m> -21.35050</x-m>
 			<y-m>   0.04079</y-m>
-			<z-m>   0.64016</z-m>
+			<z-m>   0.61016</z-m>
 		</offsets>
 	</model>
 	
@@ -457,9 +480,9 @@
 	<model>
 		<path>Aircraft/727-200/Models/Instruments/Engines/ffkgh_1.xml</path>
 		<offsets>
-			<x-m> -21.34050</x-m>
+			<x-m> -21.35050</x-m>
 			<y-m>  -0.08079</y-m>
-			<z-m>   0.58000</z-m>
+			<z-m>   0.55750</z-m>
 		</offsets>
 	</model>
 	
@@ -475,9 +498,9 @@
 	<model>
 		<path>Aircraft/727-200/Models/Instruments/Engines/ffkgh_2.xml</path>
 		<offsets>
-			<x-m> -21.34050</x-m>
+			<x-m> -21.35050</x-m>
 			<y-m>  -0.02079</y-m>
-			<z-m>   0.58000</z-m>
+			<z-m>   0.55750</z-m>
 		</offsets>
 	</model>
 	
@@ -493,9 +516,9 @@
 	<model>
 		<path>Aircraft/727-200/Models/Instruments/Engines/ffkgh_3.xml</path>
 		<offsets>
-			<x-m> -21.34050</x-m>
+			<x-m> -21.35050</x-m>
 			<y-m>   0.04079</y-m>
-			<z-m>   0.58000</z-m>
+			<z-m>   0.55750</z-m>
 		</offsets>
 	</model>
 	

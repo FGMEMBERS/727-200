@@ -1,11 +1,4 @@
 <?xml version="1.0"?>
-<!--
-###################################################################################
-		Lake of Constance Hangar :: M.Kraus
-		September 2013
-		This file is licenced under the terms of the GNU General Public Licence V2 or later
-###################################################################################
--->
 
 <PropertyList>
 
@@ -16,6 +9,13 @@
 		<object-name>face</object-name>
 		<object-name>needle</object-name>
 		<object-name>shadow</object-name>
+		<object-name>Bezel_35</object-name>
+		<object-name>Knob</object-name>
+		<object-name>epr-limit</object-name>
+		<object-name>epr1d</object-name>
+		<object-name>epr2d</object-name>
+		<object-name>epr3d</object-name>
+		<object-name>eprdot</object-name>
 	</animation>
 
 	<animation>
@@ -34,6 +34,11 @@
 		<object-name>face</object-name>
 		<object-name>needle</object-name>
 		<object-name>shadow</object-name>
+		<object-name>epr-limit</object-name>
+		<object-name>epr1d</object-name>
+		<object-name>epr2d</object-name>
+		<object-name>epr3d</object-name>
+		<object-name>eprdot</object-name>
 		<condition>
 			<not><property>/sim/rendering/rembrandt/enabled</property></not>
 			<property>/systems/electrical/outputs/cabin-dim</property>
@@ -59,17 +64,103 @@
 		<inherits-from>Effects/model-transparent</inherits-from>
 		<object-name>shadow</object-name>
 	</effect>
+	
+	<animation>
+		<type>textranslate</type>
+		<object-name>epr1d</object-name>
+		<property>/controls/engines/engine[0]/epr-lim</property>
+		<bias>0.001</bias>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>epr2d</object-name>
+		<property>/controls/engines/engine[0]/epr-lim</property>
+		<bias>0.001</bias>
+		<factor>1</factor>
+		<step>0.1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>epr3d</object-name>
+		<property>/controls/engines/engine[0]/epr-lim</property>
+		<bias>0.001</bias>
+		<factor>10</factor>
+		<step>0.01</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+		</axis>
+	</animation>
+	
+<animation>
+	<type>pick</type>
+	<object-name>Knob</object-name>
+	<action>
+		<button>0</button>
+		<button>3</button>
+		<binding>
+			<command>property-adjust</command>
+			<property>/controls/engines/engine[0]/epr-lim</property>
+			<min>1.0</min>
+			<max>3.0</max>
+			<step>0.01</step>
+			<wrap>false</wrap>
+		</binding>
+	</action>
+	<action>
+		<button>1</button>
+		<button>4</button>
+		<binding>
+			<command>property-adjust</command>
+			<property>/controls/engines/engine[0]/epr-lim</property>
+			<min>1.0</min>
+			<max>3.0</max>
+			<step>-0.01</step>
+			<wrap>false</wrap>
+		</binding>
+	</action>
+</animation>
 
 <animation>
   <type>rotate</type>
   <object-name>needle</object-name>
   <property>/engines/engine[0]/epr-actual</property>
   <interpolation>
-    <entry><ind>0.0</ind><dep>   0.0</dep></entry>
-    <entry><ind>1.0</ind><dep>   0.0</dep></entry>
-    <entry><ind>1.4</ind><dep>  97.6</dep></entry>
-    <entry><ind>1.9</ind><dep> 218.64</dep></entry>
-    <entry><ind>2.4</ind><dep> 337.20</dep></entry>
+    <entry><ind>1.0</ind><dep>  5</dep></entry>
+    <entry><ind>1.4</ind><dep> 73</dep></entry>
+    <entry><ind>1.8</ind><dep>139</dep></entry>
+    <entry><ind>2.2</ind><dep>205</dep></entry>
+    <entry><ind>2.6</ind><dep>269</dep></entry>
+    <entry><ind>3.0</ind><dep>335</dep></entry>
+  </interpolation>
+  <axis>
+    <x>-1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>epr-limit</object-name>
+  <property>/controls/engines/engine[0]/epr-lim</property>
+  <interpolation>
+    <entry><ind>1.0</ind><dep>  5</dep></entry>
+    <entry><ind>1.4</ind><dep> 73</dep></entry>
+    <entry><ind>1.8</ind><dep>139</dep></entry>
+    <entry><ind>2.2</ind><dep>205</dep></entry>
+    <entry><ind>2.6</ind><dep>269</dep></entry>
+    <entry><ind>3.0</ind><dep>335</dep></entry>
   </interpolation>
   <axis>
     <x>-1</x>

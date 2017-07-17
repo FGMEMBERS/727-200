@@ -15,7 +15,7 @@
 
 		<aerosurface_scale name="Elevator Control">
 			<input>fcs/pitch-trim-sum</input>
-			<gain>0.019</gain>
+			<gain>0.021</gain>
 			<range>
 				<min>-20</min>
 				<max>20</max>
@@ -89,6 +89,27 @@
 			<output>fcs/right-aileron-pos-norm</output>
 		</aerosurface_scale>
 
+	</channel>
+	
+	<channel name="Throttle">
+		<pure_gain name="fcs/throttle1">
+			<input>/controls/engines/engine[0]/throttle-fdm</input>
+			<gain>1</gain>
+			<output>fcs/throttle-cmd-norm</output>
+			<output>fcs/throttle-pos-norm</output>
+		</pure_gain>
+		<pure_gain name="fcs/throttle2">
+			<input>/controls/engines/engine[1]/throttle-fdm</input>
+			<gain>1</gain>
+			<output>fcs/throttle-cmd-norm[1]</output>
+			<output>fcs/throttle-pos-norm[1]</output>
+		</pure_gain>
+		<pure_gain name="fcs/throttle3">
+			<input>/controls/engines/engine[2]/throttle-fdm</input>
+			<gain>1</gain>
+			<output>fcs/throttle-cmd-norm[2]</output>
+			<output>fcs/throttle-pos-norm[2]</output>
+		</pure_gain>
 	</channel>
 
 	<property value="1">fcs/yaw-damper-enable</property>
