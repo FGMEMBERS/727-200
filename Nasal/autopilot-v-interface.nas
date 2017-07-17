@@ -38,13 +38,21 @@ var roll_knob = func {
 		setprop("/it-autoflight/input/lat", 1);
 		setprop("/it-autoflight/settings/slave-gps-nav", 1);
 		setprop("/it-autoflight/input/lat", 2);
+		if (getprop("/it-autoflight/output/vert") == 2) {
+			pitch_knob();
+		}
 	} else if (getprop("/autopilot-v/roll-knob") == 2) {
 		setprop("/autopilot-v/hdg-sel-btn", 0);
 		setprop("/it-autoflight/settings/slave-gps-nav", 0);
 		setprop("/it-autoflight/input/lat", 2);
+		if (getprop("/it-autoflight/output/vert") == 2) {
+			pitch_knob();
+		}
 	} else if (getprop("/autopilot-v/roll-knob") == 3) {
-		setprop("/autopilot-v/hdg-sel-btn", 0);
 		setprop("/it-autoflight/input/lat", 1);
+		if (getprop("/it-autoflight/output/vert") == 2) {
+			pitch_knob();
+		}
 	} else if (getprop("/autopilot-v/roll-knob") == 4) {
 		setprop("/it-autoflight/input/vert", 2);
 	} else if (getprop("/autopilot-v/roll-knob") == 5) {
@@ -58,9 +66,9 @@ setlistener("/autopilot-v/roll-knob", func {
 
 setlistener("/autopilot-v/hdg-sel-btn", func {
 	if (getprop("/autopilot-v/hdg-sel-btn") == 1) {
+		setprop("/autopilot-v/roll-knob", 3);
 		setprop("/it-autoflight/input/lat", 0);
 	} else if (getprop("/autopilot-v/hdg-sel-btn") == 0) {
-		setprop("/it-autoflight/input/lat", 0);
 		roll_knob();
 	}
 });

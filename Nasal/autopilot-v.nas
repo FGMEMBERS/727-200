@@ -124,7 +124,6 @@ setlistener("/it-autoflight/input/vert", func {
 var vertical = func {
 	var vertset = getprop("/it-autoflight/input/vert");
 	if (vertset == 0) {
-		setprop("/it-autoflight/output/appr-armed", 0);
 		setprop("/it-autoflight/output/vert", 0);
 		setprop("/it-autoflight/mode/vert", "ALT HLD");
 		if (getprop("/it-autoflight/output/loc-armed")) {
@@ -138,7 +137,6 @@ var vertical = func {
 	} else if (vertset == 1) {
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);
-		setprop("/it-autoflight/output/appr-armed", 0);
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);
 		var vsnow = int(getprop("/velocities/vertical-speed-fps")*0.6)*100;
@@ -184,7 +182,6 @@ var vertical = func {
 	} else if (vertset == 4) {
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);
-		setprop("/it-autoflight/output/appr-armed", 0);
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);
 		if (getprop("/gear/gear[1]/wow") == 0 and getprop("/gear/gear[2]/wow") == 0) {
@@ -201,7 +198,6 @@ var vertical = func {
 	} else if (vertset == 5) {
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);
-		setprop("/it-autoflight/output/appr-armed", 0);
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);
 		if (getprop("/gear/gear[1]/wow") == 0 and getprop("/gear/gear[2]/wow") == 0) {
@@ -218,7 +214,6 @@ var vertical = func {
 	} else if (vertset == 6) {
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);
-		setprop("/it-autoflight/output/appr-armed", 0);
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);
 		var pnow = math.round(getprop("/orientation/pitch-deg"));
@@ -402,6 +397,7 @@ var make_loc_active = func {
 }
 
 var make_appr_active = func {
+	setprop("/autopilot-v/pitch-knob", 3);
 	setprop("/autopilot-v/alt-sel-btn", 0);
 	setprop("/it-autoflight/output/appr-armed", 0);
 	setprop("/it-autoflight/output/vert", 2);
