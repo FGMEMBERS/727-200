@@ -70,7 +70,7 @@ setlistener("/autopilot-v/alt-sel-btn", func {
 		setprop("/it-autoflight/input/alt-arm", 1);
 	} else if (getprop("/autopilot-v/alt-sel-btn") == 0) {
 		setprop("/it-autoflight/input/alt-arm", 0);
-		if (getprop("/it-autoflight/output/vert") != 0) {
+		if (getprop("/it-autoflight/output/vert") == 0) {
 			pitch_knob();
 		}
 	}
