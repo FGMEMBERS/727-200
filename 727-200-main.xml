@@ -135,6 +135,9 @@
 		</instrumentation>
 		
 		<systems n="0">
+			<!--electrical>
+				<path></path>
+			</electrical-->
             <autopilot n="0">
                 <path>Aircraft/727-200/Systems/autopilot-v.xml</path>
             </autopilot>
@@ -505,6 +508,7 @@
 			<file>Aircraft/727-200/Nasal/shake.nas</file>
 		</libraries>
 		<systems>
+			<!--file>Aircraft/727-200/Nasal/electrical.nas</file-->
 			<file>Aircraft/727-200/Nasal/engines.nas</file>
 		</systems>
 		<autopilot_v>
