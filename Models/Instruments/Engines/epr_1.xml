@@ -40,8 +40,8 @@
 		<object-name>epr3d</object-name>
 		<object-name>eprdot</object-name>
 		<condition>
-			<not><property>/sim/rendering/rembrandt/enabled</property></not>
-			<property>/systems/electrical/outputs/cabin-dim</property>
+			<not><property>sim/rendering/rembrandt/enabled</property></not>
+			<property>systems/electrical/outputs/cabin-dim</property>
 		</condition>
 		<emission>
 		  <red>0.8</red>
@@ -55,8 +55,8 @@
 		<type>noshadow</type>
 		<object-name>shadow</object-name>
 		<condition>
-			<not><property>/sim/rendering/rembrandt/enabled</property></not>
-			<property>/systems/electrical/outputs/cabin-dim</property>
+			<not><property>sim/rendering/rembrandt/enabled</property></not>
+			<property>systems/electrical/outputs/cabin-dim</property>
 		</condition>
 	</animation>
 
@@ -68,7 +68,7 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>epr1d</object-name>
-		<property>/controls/engines/engine[0]/epr-lim</property>
+		<property>controls/engines/engine[0]/epr-lim</property>
 		<bias>0.001</bias>
 		<factor>0.1</factor>
 		<step>1</step>
@@ -80,7 +80,7 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>epr2d</object-name>
-		<property>/controls/engines/engine[0]/epr-lim</property>
+		<property>controls/engines/engine[0]/epr-lim</property>
 		<bias>0.001</bias>
 		<factor>1</factor>
 		<step>0.1</step>
@@ -92,7 +92,7 @@
 	<animation>
 		<type>textranslate</type>
 		<object-name>epr3d</object-name>
-		<property>/controls/engines/engine[0]/epr-lim</property>
+		<property>controls/engines/engine[0]/epr-lim</property>
 		<bias>0.001</bias>
 		<factor>10</factor>
 		<step>0.01</step>
@@ -110,7 +110,7 @@
 		<button>3</button>
 		<binding>
 			<command>property-adjust</command>
-			<property>/controls/engines/engine[0]/epr-lim</property>
+			<property>controls/engines/engine[0]/epr-lim</property>
 			<min>1.0</min>
 			<max>3.0</max>
 			<step>0.01</step>
@@ -122,7 +122,7 @@
 		<button>4</button>
 		<binding>
 			<command>property-adjust</command>
-			<property>/controls/engines/engine[0]/epr-lim</property>
+			<property>controls/engines/engine[0]/epr-lim</property>
 			<min>1.0</min>
 			<max>3.0</max>
 			<step>-0.01</step>
@@ -134,7 +134,7 @@
 <animation>
   <type>rotate</type>
   <object-name>needle</object-name>
-  <property>/engines/engine[0]/epr-actual</property>
+  <property>engines/engine[0]/epr-actual</property>
   <interpolation>
     <entry><ind>1.0</ind><dep>  5</dep></entry>
     <entry><ind>1.4</ind><dep> 73</dep></entry>
@@ -153,7 +153,7 @@
 <animation>
   <type>rotate</type>
   <object-name>epr-limit</object-name>
-  <property>/controls/engines/engine[0]/epr-lim</property>
+  <property>controls/engines/engine[0]/epr-lim</property>
   <interpolation>
     <entry><ind>1.0</ind><dep>  5</dep></entry>
     <entry><ind>1.4</ind><dep> 73</dep></entry>

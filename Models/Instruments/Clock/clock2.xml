@@ -20,7 +20,7 @@
 <animation>
   <type>rotate</type>
   <object-name>Clock.Hour</object-name>
-  <property>/instrumentation/clock/indicated-sec</property>
+  <property>instrumentation/clock/indicated-sec</property>
   <factor>0.00833333333333333</factor>
   <axis>
     <x>-1</x>
@@ -32,7 +32,7 @@
 <animation>
   <type>rotate</type>
   <object-name>Clock.Minute</object-name>
-  <property>/instrumentation/clock/indicated-sec</property>
+  <property>instrumentation/clock/indicated-sec</property>
   <factor>0.1</factor>
   <axis>
     <x>-1</x>
@@ -44,7 +44,7 @@
 <animation>
   <type>rotate</type>
   <object-name>Clock.Second</object-name>
-  <property>/instrumentation/clock/indicated-sec</property>
+  <property>instrumentation/clock/indicated-sec</property>
   <factor>6</factor>
   <axis>
     <x>-1</x>
@@ -56,7 +56,7 @@
 <animation>
   <type>rotate</type>
   <object-name>Clock.Knob</object-name>
-  <property>/instrumentation/clock/offset-sec</property>
+  <property>instrumentation/clock/offset-sec</property>
   <interpolation>
     <entry><ind>-43200</ind><dep>-180</dep></entry>
     <entry><ind>     0</ind><dep>   0</dep></entry>

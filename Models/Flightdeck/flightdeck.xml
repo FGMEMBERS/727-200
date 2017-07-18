@@ -4,7 +4,7 @@
 
 	<animation>
 		<type>translate</type>
-		<property>/systems/shake/shaking</property>
+		<property>systems/shake/shaking</property>
 		<axis>
 			<x1-m>   0</x1-m>
 			<y1-m>   0</y1-m>
