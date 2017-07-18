@@ -4,7 +4,7 @@
   <sim>
     <model>
       <livery>
-	<name type="string">AVENSA</name>
+	<name type="string">Avensa</name>
 	<texture>Liveries/AVE.png</texture>
       </livery>
     </model>
