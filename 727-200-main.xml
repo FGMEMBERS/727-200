@@ -3,7 +3,10 @@
 <PropertyList>
 
 	<sim>
-
+		<author>Joshua Davidson (it0uchpods)</author>
+		
+		<status>Pre V1.0</status>
+		
 		<rating>
 			<FDM type="int">3</FDM>
 			<systems type="int">2</systems>
@@ -28,6 +31,21 @@
 				<path>Splash/splash1.png</path>
 			</preview>
 		</previews>
+		
+		<tags>
+			<tag>transport</tag>
+			<tag>boeing</tag>
+			<tag>1960s</tag>
+			<tag>1970s</tag>
+			<tag>1980s</tag>
+			<tag>1990s</tag>
+			<tag>ifr</tag>
+			<tag>retractable-gear</tag>
+			<tag>glass-cockpit</tag>
+			<tag>pressurised</tag>
+			<tag>jet</tag>
+			<tag>3-engine</tag>
+		</tags>
 
 		<menubar>
 			<default>

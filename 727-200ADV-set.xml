@@ -4,8 +4,6 @@
 
 	<sim>
 		<description>Boeing 727-200 Advanced</description>
-		<author>Joshua Davidson (it0uchpods), Other</author>
-		<status>Pre V1.0</status>
 		<flight-model>jsb</flight-model>
 		<aero>727-200ADV</aero>
 
