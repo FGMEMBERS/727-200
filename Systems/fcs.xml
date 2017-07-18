@@ -8,26 +8,29 @@
 			<input>/controls/flight/elevator</input>
 			<input>/controls/flight/elevator-trim</input>
 			<clipto>
-				<min>-1</min>
-				<max>1</max>
+				<min> -1 </min>
+				<max>  1 </max>
 			</clipto>
 		</summer>
 
 		<aerosurface_scale name="Elevator Control">
 			<input>fcs/pitch-trim-sum</input>
-			<gain>0.021</gain>
 			<range>
-				<min>-20</min>
-				<max>20</max>
+				<min> -0.35 </min>
+				<max>  0.35 </max>
 			</range>
 			<output>fcs/elevator-pos-rad</output>
 		</aerosurface_scale>
-		
-		<aerosurface_scale name="Elevator Position Normalizer">
-			<input>fcs/pitch-trim-sum</input>
+
+		<aerosurface_scale name="elevator normalization">
+			<input>fcs/elevator-pos-rad</input>
+			<domain>
+				<min> -0.35 </min>
+				<max>  0.35 </max>
+			</domain>
 			<range>
-				<min>-1</min>
-				<max>1</max>
+				<min> -1 </min>
+				<max>  1 </max>
 			</range>
 			<output>fcs/elevator-pos-norm</output>
 		</aerosurface_scale>
