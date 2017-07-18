@@ -51,6 +51,10 @@ setlistener("/it-autoflight/input/ap", func {
 	if (apmas == 0) {
 		setprop("/it-autoflight/output/ap", 0);
 		setprop("/controls/flight/rudder", 0);
+		setprop("/autopilot-v/roll-knob", 3);
+		setprop("/autopilot-v/pitch-knob", 3);
+		setprop("/autopilot-v/alt-sel-btn", 0);
+		setprop("/autopilot-v/hdg-sel-btn", 0);
 		setprop("/it-autoflight/input/lat", 1);
 		setprop("/it-autoflight/input/vert", 1);
 		if (getprop("/it-autoflight/sound/enableapoffsound") == 1) {
@@ -312,8 +316,8 @@ var minmax = func {
 	var alt = getprop("/it-autoflight/internal/alt");
 	var dif = calt - alt;
 	if (dif < 50 and dif > -50) {
-		setprop("/it-autoflight/internal/max-vs", 200);
-		setprop("/it-autoflight/internal/min-vs", -200);
+		setprop("/it-autoflight/internal/max-vs", 500);
+		setprop("/it-autoflight/internal/min-vs", -500);
 		var vertmode = getprop("/it-autoflight/output/vert");
 		if (vertmode == 1 or vertmode == 2 or vertmode == 4 or vertmode == 5 or vertmode == 6) {
 			# Do not change the vertical mode because we are not trying to capture altitude.
