@@ -53,10 +53,10 @@
 			<config>
 				<from-model type="bool">true</from-model>
 				<x-offset-m archive="y">-2.03</x-offset-m>
-				<y-offset-m archive="y">1.19</y-offset-m>
+				<y-offset-m archive="y">1.12</y-offset-m>
 				<z-offset-m archive="y">3.30</z-offset-m>
 				<heading-offset-deg>90</heading-offset-deg>
-				<default-field-of-view-deg type="double">80.0</default-field-of-view-deg>
+				<default-field-of-view-deg type="double">90.0</default-field-of-view-deg>
 			</config>
 		</view>
 
