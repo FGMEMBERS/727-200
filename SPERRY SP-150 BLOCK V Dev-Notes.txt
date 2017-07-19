@@ -1,0 +1,3 @@
+727:
+Sperry SP-150 Block V:
+BUG: When Altitude is Captured, the ALT-ARM will toggle on randomly, causing the MinMax timer to keep engaging, which causes the max-VS and min-VS to keep resetting, causing some yoke oscilations. I've traced the bug down to the setlistener at line 88 of autopilot-v-interface.nas. I am thinking that the alt-sel-btn property being set somewhere else (possibly altCapture property?), which triggers the setlistener, causing the property to toggle on again. I'll solve it as soon as I can. -JD

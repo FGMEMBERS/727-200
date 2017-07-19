@@ -12,7 +12,7 @@
         <layout>hbox</layout>
         <text>
             <halign>left</halign>
-            <label>IT-AUTOFLIGHT System (B72X)</label>
+            <label>IT-AUTOFLIGHT System (B72X Block V)</label>
         </text>
         <button>
             <halign>right</halign>
@@ -199,6 +199,11 @@
 					<command>property-toggle</command>
 					<property>/autopilot-v/hdg-sel-btn</property>
 				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>/it-autoflight/input/roll-deg</property>
+					<value>0</value>
+				</binding>
 			</button>
 			
 			<button>
@@ -221,7 +226,7 @@
 			<layout>vbox</layout>
 			
 			<text>
-				<label>ENGAGED</label>
+				<label>SERVOS ENGAGED</label>
 			</text>
 		
 			<checkbox>
@@ -367,6 +372,9 @@
 					<pref-width>70</pref-width>
 					<pref-height>20</pref-height>
 					<legend>MAN G/S</legend>
+					<enable>
+						<property>/autopilot-v/unused</property>
+					</enable>
 					<binding>
 						<command>property-assign</command>
 						<property>/autopilot-v/roll-knob</property>
@@ -515,12 +523,6 @@
 				</text>
 				
 				<text>
-					<visible>
-						<equals>
-							<property>/it-autoflight/output/lat</property>
-							<value>1</value>
-						</equals>
-					</visible>
 					<label>999</label>
 					<property>/it-autoflight/input/roll-deg</property>
 					<live>1</live>
@@ -538,6 +540,17 @@
 					<pref-height>20</pref-height>
 					<legend>&lt;&lt;</legend>
 					<binding>
+						<condition>
+							<equals>
+								<property>/autopilot-v/hdg-sel-btn</property>
+								<value>1</value>
+							</equals>
+						</condition>
+						<command>property-assign</command>
+						<property>/autopilot-v/hdg-sel-btn</property>
+						<value>0</value>
+					</binding>
+					<binding>
 						<command>property-adjust</command>
 						<property>/it-autoflight/input/roll-deg</property>
 						<min>-30</min>
@@ -551,6 +564,17 @@
 					<pref-width>25</pref-width>
 					<pref-height>20</pref-height>
 					<legend>&lt;</legend>
+					<binding>
+						<condition>
+							<equals>
+								<property>/autopilot-v/hdg-sel-btn</property>
+								<value>1</value>
+							</equals>
+						</condition>
+						<command>property-assign</command>
+						<property>/autopilot-v/hdg-sel-btn</property>
+						<value>0</value>
+					</binding>
 					<binding>
 						<command>property-adjust</command>
 						<property>/it-autoflight/input/roll-deg</property>
@@ -566,6 +590,17 @@
 					<pref-height>20</pref-height>
 					<legend>&gt;</legend>
 					<binding>
+						<condition>
+							<equals>
+								<property>/autopilot-v/hdg-sel-btn</property>
+								<value>1</value>
+							</equals>
+						</condition>
+						<command>property-assign</command>
+						<property>/autopilot-v/hdg-sel-btn</property>
+						<value>0</value>
+					</binding>
+					<binding>
 						<command>property-adjust</command>
 						<property>/it-autoflight/input/roll-deg</property>
 						<min>-30</min>
@@ -579,6 +614,17 @@
 					<pref-width>25</pref-width>
 					<pref-height>20</pref-height>
 					<legend>&gt;&gt;</legend>
+					<binding>
+						<condition>
+							<equals>
+								<property>/autopilot-v/hdg-sel-btn</property>
+								<value>1</value>
+							</equals>
+						</condition>
+						<command>property-assign</command>
+						<property>/autopilot-v/hdg-sel-btn</property>
+						<value>0</value>
+					</binding>
 					<binding>
 						<command>property-adjust</command>
 						<property>/it-autoflight/input/roll-deg</property>
@@ -693,8 +739,8 @@
 				<text>
 					<visible>
 						<equals>
-							<property>/it-autoflight/output/vert</property>
-							<value>6</value>
+							<property>/autopilot-v/internal/dialog-pitch</property>
+							<value>1</value>
 						</equals>
 					</visible>
 					<label>99999</label>
@@ -935,6 +981,9 @@
 					<pref-width>50</pref-width>
 					<pref-height>20</pref-height>
 					<legend>APR.M</legend>
+					<enable>
+						<property>/autopilot-v/unused</property>
+					</enable>
 					<binding>
 						<command>property-assign</command>
 						<property>/autopilot-v/fd-mode-knob</property>
@@ -943,6 +992,25 @@
 				</button>
 				
 			</group>
+		
+		</group>
+		
+		<vrule/>
+		
+		<group>
+			<layout>vbox</layout>
+			
+			<text>
+				<label>FD ALT </label>
+			</text>
+		
+			<checkbox>
+				<property>/autopilot-v/fd/alt-hld</property>
+				<live>1</live>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+			</checkbox>
 		
 		</group>
 		

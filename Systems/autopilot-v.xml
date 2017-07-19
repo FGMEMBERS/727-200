@@ -5,7 +5,7 @@
 <PropertyList>
 
  <!-- =============================================================== -->
- <!-- Predictors                                                      -->
+ <!-- Predictors and Stuff                                            -->
  <!-- =============================================================== -->
 
 	<predict-simple>
@@ -34,6 +34,22 @@
 		<seconds>10.0</seconds>
 		<filter-gain>0.0</filter-gain>
 	</predict-simple>
+	
+	<logic>
+		<input>
+			<or>
+				<equals>
+					<property>/autopilot-v/internal/fd-vert</property>
+					<value>1</value>
+				</equals>
+				<equals>
+					<property>/it-autoflight/output/vert</property>
+					<value>6</value>
+				</equals>
+			</or>
+		</input>
+		<output>/autopilot-v/internal/dialog-pitch</output>
+	</logic>
   
  <!-- =============================================================== -->
  <!-- Autopilot Helpers                                               -->
@@ -421,23 +437,6 @@
 	</filter>
 	
 	<filter>
-		<name>IT-CONTROLLER: TARGET ROLL CMD DISABLED</name>
-		<debug>false</debug>
-		<type>gain</type>
-		<gain>1</gain>
-		<enable>
-			<condition>
-				<not-equals>
-					<property>/it-autoflight/output/lat</property>
-					<value>1</value>
-				</not-equals>
-			</condition>
-		</enable>
-		<input>/orientation/roll-deg</input>
-		<output>/it-autoflight/input/roll-deg</output>
-	</filter>
-	
-	<filter>
 		<name>IT-CONTROLLER: TARGET ROLL CMD MAN</name>
 		<debug>false</debug>
 		<feedback-if-disabled>true</feedback-if-disabled>
@@ -819,10 +818,16 @@
 		<gain>1</gain>
 		<enable>
 			<condition>
-				<not-equals>
-					<property>/it-autoflight/output/vert</property>
-					<value>6</value>
-				</not-equals>
+				<and>
+					<not-equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>6</value>
+					</not-equals>
+					<not-equals>
+						<property>/autopilot-v/internal/fd-vert</property>
+						<value>1</value>
+					</not-equals>
+				</and>
 			</condition>
 		</enable>
 		<input>/orientation/pitch-deg</input>

@@ -142,9 +142,12 @@
                 <path>Aircraft/727-200/Systems/autopilot-v.xml</path>
             </autopilot>
             <autopilot n="1">
-                <path>Aircraft/727-200/Systems/hydraulics.xml</path>
+                <path>Aircraft/727-200/Systems/flight-director-v.xml</path>
             </autopilot>
             <autopilot n="2">
+                <path>Aircraft/727-200/Systems/hydraulics.xml</path>
+            </autopilot>
+            <autopilot n="3">
                 <path>Aircraft/727-200/Systems/libraries.xml</path>
             </autopilot>
 		</systems>
@@ -157,6 +160,10 @@
 		<hdg-sel-btn type="bool">0</hdg-sel-btn>
 		<pitch-knob type="int">3</pitch-knob>
 		<roll-knob type="int">3</roll-knob>
+		<fd>
+			<alt-hld type="bool">0</alt-hld>
+			<go-around type="bool">0</go-around>
+		</fd>
 	</autopilot-v>
 
 	<controls n="0">
@@ -234,7 +241,7 @@
 				<umax>0.40</umax>
 				<kp>-0.07</kp>
 				<ti>10.0</ti>
-				<td>0.0001</td>
+				<td>0.00001</td>
 			</pitch>
 			<cmd>
 				<roll-kp>-0.9</roll-kp>
@@ -513,6 +520,7 @@
 		</systems>
 		<autopilot_v>
 			<file>Aircraft/727-200/Nasal/autopilot-v.nas</file>
+			<file>Aircraft/727-200/Nasal/autopilot-v-fd.nas</file>
 			<file>Aircraft/727-200/Nasal/autopilot-v-interface.nas</file>
 		</autopilot_v>
 	</nasal>

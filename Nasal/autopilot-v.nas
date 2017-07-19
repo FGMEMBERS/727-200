@@ -1,4 +1,4 @@
-# 727 Block V Autopilot
+# 727 Block V Autopilot/Flight Director
 # IT-AUTOFLIGHT Based
 # Joshua Davidson (it0uchpods)
 
@@ -41,6 +41,7 @@ var ap_init = func {
 	setprop("/it-autoflight/mode/arm", " ");
 	setprop("/it-autoflight/mode/lat", " ");
 	setprop("/it-autoflight/mode/vert", " ");
+	fd_init();
 	ap_varioust.start();
 	spdmach_pitcht.start();
 }
@@ -69,6 +70,8 @@ setlistener("/it-autoflight/input/ap", func {
 			setprop("/it-autoflight/input/vs", vsnow);
 			setprop("/it-autoflight/sound/enableapoffsound", 1);
 			setprop("/it-autoflight/sound/apoffsound", 0);
+		} else {
+			setprop("/it-autoflight/input/ap", 0);
 		}
 	}
 });
@@ -91,8 +94,6 @@ var lateral = func {
 		setprop("/it-autoflight/output/nav-armed", 0);
 		setprop("/it-autoflight/output/loc-armed", 0);
 		setprop("/it-autoflight/output/appr-armed", 0);
-		var rnow = math.round(getprop("/orientation/roll-deg"));
-		setprop("/it-autoflight/input/roll-deg", rnow);
 		setprop("/it-autoflight/output/lat", 1);
 		setprop("/it-autoflight/mode/lat", "ROLL");
 		setprop("/it-autoflight/mode/arm", " ");
@@ -216,12 +217,12 @@ var vertical = func {
 			setprop("/it-autoflight/mode/arm", " ");
 		}
 	} else if (vertset == 6) {
-		var altinput = getprop("/it-autoflight/input/alt");
-		setprop("/it-autoflight/internal/alt", altinput);
-		var altinput = getprop("/it-autoflight/input/alt");
-		setprop("/it-autoflight/internal/alt", altinput);
 		var pnow = math.round(getprop("/orientation/pitch-deg"));
 		setprop("/it-autoflight/input/pitch-deg", pnow);
+		var altinput = getprop("/it-autoflight/input/alt");
+		setprop("/it-autoflight/internal/alt", altinput);
+		var altinput = getprop("/it-autoflight/input/alt");
+		setprop("/it-autoflight/internal/alt", altinput);
 		setprop("/it-autoflight/output/vert", 6);
 		setprop("/it-autoflight/mode/vert", "PITCH");
 		if (getprop("/it-autoflight/output/loc-armed")) {
@@ -316,6 +317,7 @@ var minmax = func {
 	var alt = getprop("/it-autoflight/internal/alt");
 	var dif = calt - alt;
 	if (dif < 50 and dif > -50) {
+		setprop("/it-autoflight/input/alt-arm", 0);
 		setprop("/it-autoflight/internal/max-vs", 500);
 		setprop("/it-autoflight/internal/min-vs", -500);
 		var vertmode = getprop("/it-autoflight/output/vert");

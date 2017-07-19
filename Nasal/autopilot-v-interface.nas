@@ -1,4 +1,4 @@
-# 727 Block V Autopilot
+# 727 Block V Autopilot/Flight Director
 # IT-AUTOFLIGHT Based
 # Joshua Davidson (it0uchpods)
 
@@ -89,6 +89,7 @@ setlistener("/autopilot-v/alt-sel-btn", func {
 	if (getprop("/it-autoflight/output/ap") == 1) {
 		if (getprop("/autopilot-v/alt-sel-btn") == 1) {
 			setprop("/it-autoflight/input/alt-arm", 1);
+#			print("Debug: ALT-ARM On");
 		} else if (getprop("/autopilot-v/alt-sel-btn") == 0) {
 			setprop("/it-autoflight/input/alt-arm", 0);
 			if (getprop("/it-autoflight/output/vert") == 0) {
@@ -101,6 +102,7 @@ setlistener("/autopilot-v/alt-sel-btn", func {
 });
 
 var altCapture = func {
+	altcaptt.stop();
 	setprop("/autopilot-v/pitch-knob", 3);
 	setprop("/autopilot-v/alt-sel-btn", 1);
 	setprop("/it-autoflight/input/vert", 3);

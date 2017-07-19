@@ -4,6 +4,42 @@
 
     <animation>
         <type>select</type>
+        <object-name>FDroll</object-name>
+        <object-name>FDpitch</object-name>
+        <condition>
+			<not-equals>
+				<property>autopilot-v/fd-mode-knob</property>
+				<value>2</value>
+			</not-equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>FDpitch</object-name>
+        <property>autopilot-v/fd/pitch-bar</property>
+        <factor>0.0007</factor>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>FDroll</object-name>
+        <property>autopilot-v/fd/roll-bar</property>
+        <factor>0.0003</factor>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>select</type>
         <object-name>gs.flag</object-name>
         <condition>
 			<or>
