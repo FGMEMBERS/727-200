@@ -164,5 +164,20 @@
   </axis>
 </animation>
 
+<animation>
+		<type>material</type>
+		<object-name>stack</object-name> 
+		<object-name>Gear.lever</object-name>
+                <object-name>switch</object-name>
+		<condition>
+			<not><property>sim/rendering/rembrandt/enabled</property></not>
+		</condition>
+		<emission>
+		  <red>0.25</red>
+		  <green>0.25</green>
+		  <blue>0.25</blue>
+		   <factor-prop>controls/lighting/panel-light</factor-prop>
+		</emission>
+	</animation>
 
 </PropertyList>
