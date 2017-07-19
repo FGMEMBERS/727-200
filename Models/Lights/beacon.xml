@@ -2,11 +2,11 @@
 
 <PropertyList>
 
-  <path>RedLight.ac</path>
+  <path>beacon10000.ac</path>
 
   <animation>
     <type>noshadow</type>
-    <object-name>Light</object-name>
+    <object-name>strobe10000</object-name>
   </animation>
 
   <animation>
@@ -16,21 +16,21 @@
 
   <animation>
     <type>billboard</type>
-    <object-name>Light</object-name>
+    <object-name>strobe10000</object-name>
     <spherical type="bool">true</spherical>
   </animation>
 
   <animation>
     <type>select</type>
-    <object-name>Light</object-name>
+    <object-name>strobe10000</object-name>
     <condition>
-      <property>/sim/model/lights/beacon/state</property>
+      <property>sim/model/lights/beacon/state</property>
     </condition>
   </animation>
 
   <animation>
     <type>dist-scale</type>
-    <object-name>Light</object-name>
+    <object-name>strobe10000</object-name>
     <interpolation>
       <entry>
         <ind>0</ind>

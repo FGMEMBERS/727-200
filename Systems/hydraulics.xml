@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- B727 Hydraulics System -->
+<!-- Joshua Davidson (it0uchpods) -->
+
+<PropertyList>
+
+ <!-- =============================================================== -->
+ <!-- Yaw Damper/Turn Coordinator                                     -->
+ <!-- =============================================================== -->
+	
+	<!--pid-controller>
+		<name>IT-FBW: YAW DAMPER/TURN COORDINATOR</name>
+		<debug>false</debug>
+		<enable>
+			<condition>
+				<and>
+					<equals>
+						<property>/gear/gear[1]/wow</property>
+						<value>0</value>
+					</equals>
+					<equals>
+						<property>/gear/gear[2]/wow</property>
+						<value>0</value>
+					</equals>
+					<greater-than-equals>
+						<property>/position/gear-agl-ft</property>
+						<value>50</value>
+					</greater-than-equals>
+				</and>
+			</condition>
+		</enable>
+		<input>
+			<property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
+		</input>
+		<reference>
+			<value>0</value>
+		</reference>
+		<output>
+			<property>/controls/flight/rudder-fbw-cmd</property>
+		</output>
+		<config>
+			<Kp>0.03</Kp>
+			<beta>1</beta>
+			<alpha>0.1</alpha>
+			<gamma>0</gamma>
+			<Ti>3.0</Ti>
+			<Td>0.00001</Td>
+			<u_min>-0.2</u_min>
+			<u_max>0.2</u_max>
+		</config>
+	</pid-controller-->
+	
+	<filter>
+		<name>IT-FBW: RUDDER OPTION</name>
+		<debug>false</debug>
+		<feedback-if-disabled>true</feedback-if-disabled>
+		<initialize-to>output</initialize-to>
+		<!--input>
+			<condition>
+				<and>
+					<equals>
+						<property>/gear/gear[1]/wow</property>
+						<value>0</value>
+					</equals>
+					<equals>
+						<property>/gear/gear[2]/wow</property>
+						<value>0</value>
+					</equals>
+					<less-than>
+						<property>/controls/flight/rudder</property>
+						<value>0.1</value>
+					</less-than>
+					<greater-than>
+						<property>/controls/flight/rudder</property>
+						<value>-0.1</value>
+					</greater-than>
+					<greater-than-equals>
+						<property>/position/gear-agl-ft</property>
+						<value>50</value>
+					</greater-than-equals>
+				</and>
+			</condition>
+			<property>/controls/flight/rudder-fbw-cmd</property>
+		</input-->
+		<input>
+			<!--condition>
+				<or>
+					<equals>
+						<property>/gear/gear[1]/wow</property>
+						<value>1</value>
+					</equals>
+					<equals>
+						<property>/gear/gear[2]/wow</property>
+						<value>1</value>
+					</equals>
+					<greater-than-equals>
+						<property>/controls/flight/rudder</property>
+						<value>0.1</value>
+					</greater-than-equals>
+					<less-than-equals>
+						<property>/controls/flight/rudder</property>
+						<value>-0.1</value>
+					</less-than-equals>
+					<less-than>
+						<property>/position/gear-agl-ft</property>
+						<value>50</value>
+					</less-than>
+				</or>
+			</condition-->
+			<property>/controls/flight/rudder</property>
+		</input>
+		<output>/controls/flight/rudder-fbw</output>
+		<type>noise-spike</type>
+		<max-rate-of-change>2.5</max-rate-of-change>
+	</filter>
+
+ <!-- =============================================================== -->
+ <!-- Rudder Control                                                  -->
+ <!-- =============================================================== -->
+ 
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<expression>
+				<product>
+					<sum>
+						<property>/controls/flight/rudder-fbw</property>
+						<property>/controls/flight/rudder-trim</property> 
+					</sum>
+					<value>-1</value>
+				</product>
+			</expression>
+		</input>
+		<output>/controls/flight/rudder-fde-cmd</output>
+		<min>-1.0</min>
+		<max>1.0</max>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>/controls/flight/rudder-fde-cmd</input>
+		<output>/controls/flight/rudder-fde</output>
+		<max-rate-of-change>2.5</max-rate-of-change>
+	</filter>
+
+</PropertyList>

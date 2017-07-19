@@ -1,12 +1,88 @@
 <?xml version="1.0"?>
 <!-- Custom 727 Sound Effects by Liam Gathercole, extended by Peter Brendt
-Modified by FL2070 -->
+Modified by Gabriel Hernandez(YV3399) -->
 
 <PropertyList>
 
   <!-- cockpit x=22.5 y=0 z=0.78 -->
 
   <fx>
+  
+  <apoff>
+   <name>apoff</name>
+   <path>/Aircraft/727-200/Sounds/apoff.wav</path>
+   <condition>
+	 <property>/it-autoflight/sound/apoffsound</property>
+   </condition>
+   <volume>
+    <factor>40.0</factor>
+   </volume>
+  </apoff>
+
+  <!-- TouchDown -->
+
+    <wow>
+    	<name>wow 0</name>
+    	<mode>once</mode>
+    	<path>Aircraft/727-200/Sounds/wow.wav</path>
+    	<condition>
+    		<property>gear/gear[0]/wow</property>
+    	</condition>
+    	<volume>
+    		<property>sim/current-view/internal</property>
+    		<offset>0</offset>
+    	</volume>
+    </wow>
+    <wow>
+    	<name>wow 1</name>
+    	<mode>once</mode>
+    	<path>Aircraft/727-200/Sounds/wow.wav</path>
+    	<condition>
+    		<property>gear/gear[1]/wow</property>
+    	</condition>
+    	<volume>
+    		<property>sim/current-view/internal</property>
+    		<offset>0</offset>
+    	</volume>
+    </wow>
+    <wow>
+    	<name>wow 2</name>
+    	<mode>once</mode>
+    	<path>Aircraft/727-200/Sounds/wow.wav</path>
+    	<condition>
+    		<property>gear/gear[2]/wow</property>
+    	</condition>
+    	<volume>
+    		<property>sim/current-view/internal</property>
+    		<offset>0</offset>
+    	</volume>
+    </wow>
+
+    <rain>
+    	<name>rain</name>
+    	<mode>looped</mode>
+    	<path>Aircraft/727-200/Sounds/rain.wav</path>
+    	<condition>
+    		<greater-than>
+    			<property>/environment/rain-norm</property>
+    			<value>0.2</value>
+    		</greater-than>
+    	</condition>
+    	<volume>
+    		<property>/environment/rain-norm</property>
+    		<factor>1.00</factor>
+    		<offset>0.00</offset>
+    		<min>0.4</min>
+    		<max>0.9</max>
+    	</volume>
+    	<pitch>
+    		<property>/velocities/airspeed-kt</property>
+    		<factor>0.001</factor>
+    		<offset>1.0</offset>
+    	</pitch>
+    </rain>
+
+	
     <engine>
       <name>left run</name>
       <path>Aircraft/727-200/Sounds/eng/idling.wav</path>
@@ -115,12 +191,6 @@ Modified by FL2070 -->
       <max-dist>2.0</max-dist>
     </engine>
     
-    
-    
-    
-    
-    
-    
     <engine>
       <name>x left run</name>
       <path>Aircraft/727-200/Sounds/eng/running.wav</path>
@@ -228,15 +298,8 @@ Modified by FL2070 -->
       <reference-dist>1.0</reference-dist>
       <max-dist>2.0</max-dist>
     </engine>
-    
-    
-    
-    
-    
-    
-    
-    
-    <engine>
+
+   <engine>
       <name>x left whine</name>
       <path>Aircraft/727-200/Sounds/eng/whine.wav</path>
       <mode>looped</mode>
@@ -344,15 +407,6 @@ Modified by FL2070 -->
       <max-dist>2.0</max-dist>
     </engine>
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <engine>
       <name>left drone</name>
       <path>Aircraft/727-200/Sounds/eng/drone.wav</path>
@@ -397,7 +451,8 @@ Modified by FL2070 -->
       <reference-dist>100.0</reference-dist>
       <max-dist>2000.0</max-dist>
     </engine>
-    <engine>
+    
+<engine>
       <name>centre drone</name>
       <path>Aircraft/727-200/Sounds/eng/drone.wav</path>
       <mode>looped</mode>
@@ -419,11 +474,6 @@ Modified by FL2070 -->
       <reference-dist>100.0</reference-dist>
       <max-dist>2000.0</max-dist>
     </engine>
-    
-    
-    
-    
-    
     
     <engine>
       <name>left roar</name>
@@ -569,286 +619,7 @@ Modified by FL2070 -->
       <reference-dist>1.0</reference-dist>
       <max-dist>2.0</max-dist>
     </JET4>
-    
-    
-    
-    
-    
-    <announcement>
-			<name>welcome</name>
-			<path>Aircraft/727-200/Sounds/announce/welcome.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/welcome</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>20.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>safety</name>
-			<path>Aircraft/727-200/Sounds/announce/safety.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/safety</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>20.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>cruise</name>
-			<path>Aircraft/727-200/Sounds/announce/cruise.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/cruise</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>20.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>climb</name>
-			<path>Aircraft/727-200/Sounds/announce/climb.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/climb</property>
-			</condition>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>20.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>cruise-seatbelt</name>
-			<path>Aircraft/727-200/Sounds/announce/cruise-seatbelt.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/cruise-seatbelt</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>20.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>turbulence</name>
-			<path>Aircraft/727-200/Sounds/announce/turbulence.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/turbulence</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>20.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>descent</name>
-			<path>Aircraft/727-200/Sounds/announce/descent.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/descent</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>20.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>land</name>
-			<path>Aircraft/727-200/Sounds/announce/land.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/land</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>20.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>gate</name>
-			<path>Aircraft/727-200/Sounds/announce/gate.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/gate</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>20.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>emergency</name>
-			<path>Aircraft/727-200/Sounds/announce/emergency.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/emergency</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>20.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>pretakeoff</name>
-			<path>Aircraft/727-200/Sounds/announce/pretakeoff.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/pretakeoff</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>20.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>boarding2</name>
-			<path>Aircraft/727-200/Sounds/announce/music2.wav</path>
-			<mode>looped</mode>
-			<condition>
-				<property>sim/sound/music2</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>20.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>brace</name>
-			<path>Aircraft/727-200/Sounds/announce/brace.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/brace</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>20.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        
     <flap>
       <name>flaps</name>
       <mode>in-transit</mode>
@@ -915,207 +686,92 @@ Modified by FL2070 -->
       <max-dist>500.0</max-dist>
     </gear>
 
-    <!-- Crashed -->
+     <!-- Crashed -->
 
-    <crash>
-      <name>intense ground contact</name>
-      <mode>once</mode>
-      <path>Sounds/crash.wav</path>
-      <property>sim/crashed</property>
-      <volume>
-	<factor>1</factor>
-      </volume>
-      <pitch>
-	<factor>1.5</factor>
-      </pitch>
-    </crash>
-
-    <!-- Cabin -->
-
-    <seatbelt>
-      <name>Seatbelt</name>
-      <path>Aircraft/727-200/Sounds/Cabin/seatbelt.wav</path>
-      <mode>once</mode>
-      <condition>
-	<property>controls/switches/seatbelt-sign</property>
-      </condition>
-      <volume>
-	<property>sim/sound/Evolume</property>
-      </volume>
-      <position>
-	<x>0.00</x>
-	<y>0.00</y>
-	<z>0.00</z>
-      </position>
-      <reference-dist>10.0</reference-dist>
-      <max-dist>100.0</max-dist>
-    </seatbelt>
-
-    <music>
-      <name>Music</name>
-      <path>Aircraft/727-200/Sounds/Cabin/music.wav</path>
-      <mode>looped</mode>
-      <condition>
-	<property>controls/switches/music</property>
-      </condition>
-      <volume>
-	<property>sim/sound/Evolume</property>
-      </volume>
-      <position>
-	<x>0.00</x>
-	<y>0.00</y>
-	<z>0.00</z>
-      </position>
-      <reference-dist>10.0</reference-dist>
-      <max-dist>100.0</max-dist>
-    </music>
-
-    <music2>
-      <name>Music2</name>
-      <path>Aircraft/727-200/Sounds/Cabin/music2.wav</path>
-      <mode>looped</mode>
-      <condition>
-	<property>controls/switches/music2</property>
-      </condition>
-      <volume>
-	<property>sim/sound/Evolume</property>
-      </volume>
-      <position>
-	<x>0.00</x>
-	<y>0.00</y>
-	<z>0.00</z>
-      </position>
-      <reference-dist>10.0</reference-dist>
-      <max-dist>100.0</max-dist>
-    </music2>
-
-    <pretakeoff>
-      <name>pretakeoff</name>
-      <path>Aircraft/727-200/Sounds/Cabin/pretakeoff.wav</path>
-      <mode>once</mode>
-      <condition>
-	<property>controls/switches/pretakeoff</property>
-      </condition>
-      <volume>
-	<property>sim/sound/Evolume</property>
-      </volume>
-      <position>
-	<x>0.00</x>
-	<y>0.00</y>
-	<z>0.00</z>
-      </position>
-      <reference-dist>10.0</reference-dist>
-      <max-dist>100.0</max-dist>
-    </pretakeoff>
-
-    <climbing>
-      <name>climbing</name>
-      <path>Aircraft/727-200/Sounds/Cabin/climbing.wav</path>
-      <mode>once</mode>
-      <condition>
-	<property>controls/switches/climbing</property>
-      </condition>
-      <volume>
-	<property>sim/sound/Evolume</property>
-      </volume>
-      <position>
-	<x>0.00</x>
-	<y>0.00</y>
-	<z>0.00</z>
-      </position>
-      <reference-dist>10.0</reference-dist>
-      <max-dist>100.0</max-dist>
-    </climbing>
-
-    <descending>
-      <name>descending</name>
-      <path>Aircraft/727-200/Sounds/Cabin/descending.wav</path>
-      <mode>once</mode>
-      <condition>
-	<property>controls/switches/descending</property>
-      </condition>
-      <volume>
-	<property>sim/sound/Evolume</property>
-      </volume>
-      <position>
-	<x>0.00</x>
-	<y>0.00</y>
-	<z>0.00</z>
-      </position>
-      <reference-dist>10.0</reference-dist>
-      <max-dist>100.0</max-dist>
-    </descending>
-
-    <arrival>
-      <name>arrival</name>
-      <path>Aircraft/727-200/Sounds/Cabin/arrival.wav</path>
-      <mode>once</mode>
-      <condition>
-	<property>controls/switches/arrival</property>
-      </condition>
-      <volume>
-	<property>sim/sound/Evolume</property>
-      </volume>
-      <position>
-	<x>0.00</x>
-	<y>0.00</y>
-	<z>0.00</z>
-      </position>
-      <reference-dist>10.0</reference-dist>
-      <max-dist>100.0</max-dist>
-    </arrival>
-
-    <emergency>
-      <name>emergency</name>
-      <path>Aircraft/727-200/Sounds/Cabin/emergency.wav</path>
-      <mode>once</mode>
-      <condition>
-	<property>controls/switches/emergency</property>
-      </condition>
-      <volume>
-	<property>sim/sound/Evolume</property>
-      </volume>
-      <position>
-	<x>0.00</x>
-	<y>0.00</y>
-	<z>0.00</z>
-      </position>
-      <reference-dist>10.0</reference-dist>
-      <max-dist>100.0</max-dist>
-    </emergency>
-
-    <safety>
-      <name>safety</name>
-      <path>Aircraft/727-200/Sounds/Cabin/safety.wav</path>
-      <mode>once</mode>
-      <condition>
-	<property>controls/switches/safety</property>
-      </condition>
-      <volume>
-	<property>sim/sound/Evolume</property>
-      </volume>
-      <position>
-	<x>0.00</x>
-	<y>0.00</y>
-	<z>0.00</z>
-      </position>
-      <reference-dist>10.0</reference-dist>
-      <max-dist>100.0</max-dist>
-    </safety>
-     
-    <!--FL2070 has not shared this file
-    <ambience>
-      <name>passangers</name>
-      <mode>looped</mode>
-      <property>/sim/current-view/internal</property>
-      <path>Aircraft/717/Sounds/misc/amb.wav</path>
-    </ambience>
-    -->
+        <crash>
+        	<name>intense ground contact</name>
+        	<mode>once</mode>
+        	<path>Aircraft/727-200/Sounds/crash.wav</path>
+        	<property>sim/crashed</property>
+        	<volume>
+        		<factor>1</factor>
+        	</volume>
+        	<pitch>
+        		<factor>1.5</factor>
+        	</pitch>
+        </crash>
 
 
+                <overspeed>
+			<name>Overspeed warning</name>
+			<path>Aircraft/727-200/Sounds/overspeed.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<greater-than>
+					<property>velocities/airspeed-kt</property>
+					<value>345</value>
+				</greater-than>
+			</condition>
+			<volume>
+				<factor>1.0</factor>
+			</volume>
+		</overspeed>
 
+ <avionics>
+    	<name>avionics</name>
+    	<path>Aircraft/727-200/Sounds/avionics.wav</path>
+    	<mode>looped</mode>
+    	<condition>
+    		<property>sim/current-view/internal</property>
+    		<greater-than>
+    			<property>systems/electrical/outputs/efis</property>
+    			<value>0</value>
+    		</greater-than>
+    	</condition>
+    	<position>
+    		<x>-17</x>
+    		<y>0.01</y>
+    		<z>-1.95</z>
+    	</position>	
+    	<volume>
+    		<factor>0.2</factor>
+    		<max>0.5</max>
+    	</volume>
+    	<reference-dist>1.2</reference-dist>
+    	<max-dist>5</max-dist>
+    </avionics>
 
-
+	<wind>
+        <name>wind</name>
+        <mode>looped</mode>
+        <path>Aircraft/727-200/Sounds/Wind.wav</path>
+        <property>/velocities/airspeed-kt</property>
+        <volume>
+            <property>/position/altitude-ft</property>
+            <factor>-0.000015</factor>
+            <offset>1.0</offset>
+            <min>0.1</min>
+            <max>1.0</max>
+        </volume>
+        <volume>
+            <property>/velocities/airspeed-kt</property>
+            <factor>0.0015</factor>
+            <min>0.03</min>
+            <max>0.25</max>
+        </volume>
+        <pitch>
+            <property>/velocities/airspeed-kt</property>
+            <factor>0.01</factor>
+            <offset>1.25</offset>
+        </pitch>
+        <position>
+            <x>-24</x>
+            <y>0</y>
+            <z>0.86</z>
+        </position>
+        <reference-dist>1.0</reference-dist>
+        <max-dist>2.0</max-dist>
+    </wind>
 
   </fx>
 

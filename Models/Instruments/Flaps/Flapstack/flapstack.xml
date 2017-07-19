@@ -40,7 +40,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Gear.lever</object-name>
-		<property>/controls/gear/gear-down</property>
+		<property>controls/gear/gear-down</property>
 		<interpolation>
 			<entry><ind>1</ind><dep>-24.5</dep></entry>
 			<entry><ind>0.5</ind><dep>0</dep></entry>
@@ -65,7 +65,7 @@
       <button>0</button>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/gear/gear-down</property>
+        <property>controls/gear/gear-down</property>
       </binding>
     </action>
   </animation>
@@ -164,5 +164,20 @@
   </axis>
 </animation>
 
+<animation>
+		<type>material</type>
+		<object-name>stack</object-name> 
+		<object-name>Gear.lever</object-name>
+                <object-name>switch</object-name>
+		<condition>
+			<not><property>sim/rendering/rembrandt/enabled</property></not>
+		</condition>
+		<emission>
+		  <red>0.25</red>
+		  <green>0.25</green>
+		  <blue>0.25</blue>
+		   <factor-prop>controls/lighting/panel-light</factor-prop>
+		</emission>
+	</animation>
 
 </PropertyList>

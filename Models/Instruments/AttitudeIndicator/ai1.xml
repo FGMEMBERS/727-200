@@ -35,9 +35,9 @@
         <object-name>AI.ring</object-name>
 		  <property>orientation/roll-deg</property>
         <center>
-            <x-m>-0.041</x-m>
+            <x-m>-0.06172</x-m>
             <y-m>0</y-m>
-            <z-m>0</z-m>
+            <z-m>0.0001</z-m>
         </center>
         <axis>
             <x>1</x>
@@ -51,9 +51,9 @@
         <object-name>AIball</object-name>
         <property>orientation/pitch-deg</property>
         <center>
-            <x-m>-0.041</x-m>
+            <x-m>-0.06172</x-m>
             <y-m>0</y-m>
-            <z-m>0</z-m>
+            <z-m>0.0001</z-m>
         </center>
         <axis>
             <x>0</x>

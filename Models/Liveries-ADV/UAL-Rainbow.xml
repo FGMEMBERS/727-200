@@ -4,8 +4,8 @@
   <sim>
     <model>
       <livery>
-	<name type="string">UAL - United Airl. Rainbow</name>
-	<texture>Liveries/727-230_UAL-Rainbow.png</texture>
+	<name type="string">United Airlines (Rainbow Livery)</name>
+	<texture>Liveries-ADV/UAL-Rainbow.png</texture>
       </livery>
     </model>
   </sim>

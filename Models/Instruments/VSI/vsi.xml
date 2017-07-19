@@ -15,7 +15,7 @@
     <name>needle</name>
     <type>rotate</type>
     <object-name>needle</object-name>
-    <property>/instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+    <property>instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
     <interpolation>
       <entry><ind> -6000 </ind><dep> -174 </dep></entry>
       <entry><ind> -5000 </ind><dep> -164 </dep></entry>

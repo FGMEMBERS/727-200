@@ -43,7 +43,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>RALT.needle</object-name>
-		<property>position/altitude-agl-ft</property>
+		<property>position/gear-agl-ft</property>
 		<interpolation>
 			<entry><ind>-20</ind><dep>-7.5</dep></entry>
 			<entry><ind>0.0</ind><dep>0</dep></entry>

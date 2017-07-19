@@ -23,7 +23,7 @@
 		<object-name>sup.002</object-name>
 		<object-name>switch.002</object-name>
 		<condition>
-			<less-than><property>/systems/electrical/outputs/cabin-dim</property><value>0.8</value></less-than>
+			<less-than><property>systems/electrical/outputs/cabin-dim</property><value>0.8</value></less-than>
 		</condition>
 		<emission>
 			<red>0.2</red>
@@ -47,8 +47,8 @@
 		<object-name>sup.002</object-name>
 		<object-name>switch.002</object-name>
 		<condition>
-			<not><property>/sim/rendering/rembrandt/enabled</property></not>
-			<property>/systems/electrical/outputs/cabin-dim</property>
+			<not><property>sim/rendering/rembrandt/enabled</property></not>
+			<property>systems/electrical/outputs/cabin-dim</property>
 		</condition>
 		<emission>
 		  <red>0.3</red>
@@ -77,7 +77,7 @@
 		<object-name>plane.up.001</object-name>
 		<object-name>plane.down.001</object-name>
 		<object-name>plane.out.001</object-name>
-    <property>/controls/flight/elevator</property>
+    <property>controls/flight/elevator</property>
     <factor> -8 </factor>
     <center>
       <x-m>-18.718 </x-m>
@@ -101,8 +101,8 @@
 		<object-name>plane.up</object-name>
 		<object-name>plane.down</object-name>
 		<object-name>plane.out</object-name>
-    <property>/controls/flight/aileron</property>
-    <factor> -50 </factor>
+    <property>controls/flight/aileron</property>
+    <factor> -60 </factor>
     <center>
       <x-m> 0.000 </x-m>
       <y-m>-0.462 </y-m>
@@ -125,8 +125,8 @@
 		<object-name>plane.up.001</object-name>
 		<object-name>plane.down.001</object-name>
 		<object-name>plane.out.001</object-name>
-    <property>/controls/flight/aileron</property>
-    <factor> -50 </factor>
+    <property>controls/flight/aileron</property>
+    <factor> -60 </factor>
     <center>
       <x-m> 0.000 </x-m>
       <y-m> 0.447 </y-m>
@@ -144,7 +144,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>ap-dis-knob-L</object-name>
-		<property>/controls/special/yoke-switch1</property>
+		<property>controls/special/yoke-switch1</property>
 		<factor>0.003</factor>
     <axis>   
       <x1-m> -18.649</x1-m>
@@ -159,7 +159,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>ap-dis-knob-R</object-name>
-		<property>/controls/special/yoke-switch1</property>
+		<property>controls/special/yoke-switch1</property>
 		<factor>0.003</factor>
     <axis>   
       <x1-m> -18.65</x1-m>
@@ -182,17 +182,18 @@
 		    <repeatable>false</repeatable>
 		    <binding>
 		      <command>property-toggle</command>
-		      <property>/controls/special/yoke-switch1</property>
+		      <property>controls/special/yoke-switch1</property>
 		    </binding>        
 		    <mod-up>
           <binding>
 		      <command>property-toggle</command>
-		      <property>/controls/special/yoke-switch1</property>
+		      <property>controls/special/yoke-switch1</property>
           </binding>
         </mod-up>
         <binding>
-          <command>property-toggle</command>
-          <property>/sim/sound/switch2</property>
+          <command>property-assign</command>
+          <property>it-autoflight/input/ap</property>
+		  <value>0</value>
         </binding>
 		  </action>
 	</animation>
@@ -201,7 +202,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>switch.001</object-name>		
-		<property>/controls/special/yoke-switch2</property>
+		<property>controls/special/yoke-switch2</property>
 		<interpolation>
 		  <entry><ind> 1.0</ind><dep> -10.0</dep></entry>
 		  <entry><ind> 0.0</ind><dep>   0.0</dep></entry>
@@ -220,7 +221,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>switch.002</object-name>
-		<property>/controls/special/yoke-switch2</property>
+		<property>controls/special/yoke-switch2</property>
 		<interpolation>
 		  <entry><ind> 1.0</ind><dep> -10.0</dep></entry>
 		  <entry><ind> 0.0</ind><dep>   0.0</dep></entry>
@@ -238,9 +239,7 @@
 	
 	<animation>
 		<type>pick</type>
-		<object-name>sup.001</object-name>
 		<object-name>switch.001</object-name>
-		<object-name>sup.002</object-name>
 		<object-name>switch.002</object-name>
 		<visible>true</visible>
      <action>
@@ -249,16 +248,12 @@
         <interval-sec>0.2</interval-sec>
         <binding>
 		      <command>property-adjust</command>
-		      <property>/b707/stabilizer/cutout</property>
-		      <step>0.1</step>
+		      <property>controls/flight/elevator-trim</property>
+		      <step>0.005</step>
 		      <min>-1.0</min>
-		      <max> 4.0</max>
+		      <max> 1.0</max>
 		      <wrap>false</wrap>
         </binding>      
-		    <binding>
-		      <command>property-toggle</command>
-		      <property>/sim/sound/switch3</property>
-		    </binding>
     </action>
     <action>
         <button>4</button>
@@ -266,16 +261,12 @@
         <interval-sec>0.2</interval-sec>
         <binding>
 		      <command>property-adjust</command>
-		      <property>/b707/stabilizer/cutout</property>
-		      <step>-0.1</step>
+		      <property>controls/flight/elevator-trim</property>
+		      <step>-0.005</step>
 		      <min>-1.0</min>
-		      <max> 4.0</max>
+		      <max> 1.0</max>
 		      <wrap>false</wrap>
         </binding>              
-		    <binding>
-		      <command>property-toggle</command>
-		      <property>/sim/sound/switch3</property>
-		    </binding>
     </action>
 	</animation>
 	
@@ -287,31 +278,26 @@
      <action>
         <button>0</button>
         <repeatable>true</repeatable>
-        <interval-sec>0.2</interval-sec>
         <binding>
-        <command>property-adjust</command>
-        <property>/b707/stabilizer/cutout</property>
-        <step>0.1</step>
-        <min>-1.0</min>
-        <max> 4.0</max>
-        <wrap>false</wrap>
+		      <command>property-adjust</command>
+		      <property>controls/flight/elevator-trim</property>
+		      <step>0.005</step>
+		      <min>-1.0</min>
+		      <max> 1.0</max>
+		      <wrap>false</wrap>
         </binding>        
         <binding>
 		      <command>property-assign</command>
-		      <property>/controls/special/yoke-switch2</property>
+		      <property>controls/special/yoke-switch2</property>
 		      <value type="double">1.0</value>
 		    </binding>        
 		    <mod-up>
 		      <binding>
 				    <command>property-assign</command>
-				    <property>/controls/special/yoke-switch2</property>
+				    <property>controls/special/yoke-switch2</property>
 				    <value type="double">0.0</value>
 				  </binding>   
         </mod-up>         
-		    <binding>
-		      <command>property-toggle</command>
-		      <property>/sim/sound/switch3</property>
-		    </binding>
     </action>
 	</animation>	
 
@@ -323,31 +309,26 @@
      <action>
         <button>0</button>
         <repeatable>true</repeatable>
-        <interval-sec>0.2</interval-sec>
         <binding>
-        <command>property-adjust</command>
-        <property>/b707/stabilizer/cutout</property>
-        <step>-0.1</step>
-        <min>-1.0</min>
-        <max> 4.0</max>
-        <wrap>false</wrap>
+		      <command>property-adjust</command>
+		      <property>controls/flight/elevator-trim</property>
+		      <step>-0.005</step>
+		      <min>-1.0</min>
+		      <max> 1.0</max>
+		      <wrap>false</wrap>
         </binding>        
         <binding>
 		      <command>property-assign</command>
-		      <property>/controls/special/yoke-switch2</property>
+		      <property>controls/special/yoke-switch2</property>
 		      <value type="double">-1.0</value>
 		    </binding>        
 		    <mod-up>
 		      <binding>
 				    <command>property-assign</command>
-				    <property>/controls/special/yoke-switch2</property>
+				    <property>controls/special/yoke-switch2</property>
 				    <value type="double">0.0</value>
 				  </binding>   
         </mod-up>         
-		    <binding>
-		      <command>property-toggle</command>
-		      <property>/sim/sound/switch3</property>
-		    </binding>
     </action>
 	</animation>	
 
