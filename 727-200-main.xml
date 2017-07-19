@@ -265,7 +265,7 @@
 			<cmd>
 				<roll-kp>-0.9</roll-kp>
 				<roll-scale>1.2</roll-scale>
-				<vorloc>-2.0</vorloc>
+				<vorloc>-2.5</vorloc>
 				<vs>0.01</vs>
 			</cmd>
 		</config>
