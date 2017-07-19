@@ -51,6 +51,10 @@ setlistener("/it-autoflight/input/ap", func {
 	if (apmas == 0) {
 		setprop("/it-autoflight/output/ap", 0);
 		setprop("/controls/flight/rudder", 0);
+		setprop("/autopilot-v/roll-knob", 3);
+		setprop("/autopilot-v/pitch-knob", 3);
+		setprop("/autopilot-v/alt-sel-btn", 0);
+		setprop("/autopilot-v/hdg-sel-btn", 0);
 		setprop("/it-autoflight/input/lat", 1);
 		setprop("/it-autoflight/input/vert", 1);
 		if (getprop("/it-autoflight/sound/enableapoffsound") == 1) {
@@ -124,7 +128,6 @@ setlistener("/it-autoflight/input/vert", func {
 var vertical = func {
 	var vertset = getprop("/it-autoflight/input/vert");
 	if (vertset == 0) {
-		setprop("/it-autoflight/output/appr-armed", 0);
 		setprop("/it-autoflight/output/vert", 0);
 		setprop("/it-autoflight/mode/vert", "ALT HLD");
 		if (getprop("/it-autoflight/output/loc-armed")) {
@@ -138,7 +141,6 @@ var vertical = func {
 	} else if (vertset == 1) {
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);
-		setprop("/it-autoflight/output/appr-armed", 0);
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);
 		var vsnow = int(getprop("/velocities/vertical-speed-fps")*0.6)*100;
@@ -184,7 +186,6 @@ var vertical = func {
 	} else if (vertset == 4) {
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);
-		setprop("/it-autoflight/output/appr-armed", 0);
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);
 		if (getprop("/gear/gear[1]/wow") == 0 and getprop("/gear/gear[2]/wow") == 0) {
@@ -201,7 +202,6 @@ var vertical = func {
 	} else if (vertset == 5) {
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);
-		setprop("/it-autoflight/output/appr-armed", 0);
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);
 		if (getprop("/gear/gear[1]/wow") == 0 and getprop("/gear/gear[2]/wow") == 0) {
@@ -218,7 +218,6 @@ var vertical = func {
 	} else if (vertset == 6) {
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);
-		setprop("/it-autoflight/output/appr-armed", 0);
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);
 		var pnow = math.round(getprop("/orientation/pitch-deg"));
@@ -317,8 +316,8 @@ var minmax = func {
 	var alt = getprop("/it-autoflight/internal/alt");
 	var dif = calt - alt;
 	if (dif < 50 and dif > -50) {
-		setprop("/it-autoflight/internal/max-vs", 200);
-		setprop("/it-autoflight/internal/min-vs", -200);
+		setprop("/it-autoflight/internal/max-vs", 500);
+		setprop("/it-autoflight/internal/min-vs", -500);
 		var vertmode = getprop("/it-autoflight/output/vert");
 		if (vertmode == 1 or vertmode == 2 or vertmode == 4 or vertmode == 5 or vertmode == 6) {
 			# Do not change the vertical mode because we are not trying to capture altitude.
@@ -402,6 +401,7 @@ var make_loc_active = func {
 }
 
 var make_appr_active = func {
+	setprop("/autopilot-v/pitch-knob", 3);
 	setprop("/autopilot-v/alt-sel-btn", 0);
 	setprop("/it-autoflight/output/appr-armed", 0);
 	setprop("/it-autoflight/output/vert", 2);

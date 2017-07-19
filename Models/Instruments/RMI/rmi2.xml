@@ -23,7 +23,7 @@
 <animation>
   <type>rotate</type>
   <object-name>Face</object-name>
-  <property>/orientation/heading-magnetic-deg</property>
+  <property>orientation/heading-magnetic-deg</property>
   <factor>-1</factor>
   <axis>
     <x>-1</x>
@@ -35,7 +35,7 @@
 <animation>
   <type>rotate</type>
   <object-name>Needle1</object-name>
-  <property>/instrumentation/rmi-needle[0]/value</property>
+  <property>instrumentation/rmi-needle[0]/value</property>
   <axis>
     <x>-1</x>
     <y>0</y>
@@ -46,7 +46,7 @@
 <animation>
   <type>rotate</type>
   <object-name>Needle2</object-name>
-  <property>/instrumentation/rmi-needle[1]/value</property>
+  <property>instrumentation/rmi-needle[1]/value</property>
   <axis>
     <x>-1</x>
     <y>0</y>
@@ -57,7 +57,7 @@
 <animation>
   <type>rotate</type>
   <object-name>Knob1</object-name>
-  <property>/instrumentation/rmi-needle[0]/mode</property>
+  <property>instrumentation/rmi-needle[0]/mode</property>
   <interpolation>
     <entry><ind>0</ind><dep> 0</dep></entry>
     <entry><ind>1</ind><dep>90</dep></entry>
@@ -81,7 +81,7 @@
     <repeatable>false</repeatable>
     <binding>
       <command>property-toggle</command>
-      <property>/instrumentation/rmi-needle[0]/mode</property>
+      <property>instrumentation/rmi-needle[0]/mode</property>
     </binding>
   </action>
 </animation>
@@ -89,7 +89,7 @@
 <animation>
   <type>rotate</type>
   <object-name>Knob2</object-name>
-  <property>/instrumentation/rmi-needle[1]/mode</property>
+  <property>instrumentation/rmi-needle[1]/mode</property>
   <interpolation>
     <entry><ind>0</ind><dep> 0</dep></entry>
     <entry><ind>1</ind><dep>90</dep></entry>
@@ -113,7 +113,7 @@
     <repeatable>false</repeatable>
     <binding>
       <command>property-toggle</command>
-      <property>/instrumentation/rmi-needle[1]/mode</property>
+      <property>instrumentation/rmi-needle[1]/mode</property>
     </binding>
   </action>
 </animation>

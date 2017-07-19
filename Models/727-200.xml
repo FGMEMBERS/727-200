@@ -212,7 +212,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>rudder</object-name>
-		<property>/surface-positions/rudder-pos-norm</property>
+		<property>surface-positions/rudder-pos-norm</property>
 		<factor>25</factor>
 		<axis>
 			<x1-m>15.107</x1-m>
@@ -1255,7 +1255,7 @@
 		<object-name>Cube</object-name>
 		<object-name>nlowerstrut</object-name>
 		<object-name>noseaxle</object-name>
-		<property>/gear/gear[0]/compression-norm</property>
+		<property>gear/gear[0]/compression-norm</property>
 		<factor>0.11</factor>
 		<axis>
 			<x> 0.0 </x>
@@ -1269,7 +1269,7 @@
 		<object-name>lmgt</object-name>
 		<object-name>lmgaxle</object-name>
 		<object-name>lglhlowerstrut</object-name>
-		<property>/gear/gear[1]/compression-norm</property>
+		<property>gear/gear[1]/compression-norm</property>
 		<factor>0.11</factor>
 		<axis>
 			<x> 0.0 </x>
@@ -1283,7 +1283,7 @@
 		<object-name>rmgt</object-name>
 		<object-name>rmgaxle</object-name>
 		<object-name>rglhlowerstrut</object-name>
-		<property>/gear/gear[2]/compression-norm</property>
+		<property>gear/gear[2]/compression-norm</property>
 		<factor>0.11</factor>
 		<axis>
 			<x> 0.0 </x>
@@ -1296,7 +1296,7 @@
 		<type>spin</type>
 		<object-name>tyrern</object-name>
 		<object-name>tyreln</object-name>
-		<property>/gear/gear[0]/rollspeed-ms</property>
+		<property>gear/gear[0]/rollspeed-ms</property>
 		<factor>10</factor>
 		<axis>
 			<x>0</x>
@@ -1313,7 +1313,7 @@
 	<animation>
 		<type>spin</type>
 		<object-name>lmgt</object-name>
-		<property>/gear/gear[1]/rollspeed-ms</property>
+		<property>gear/gear[1]/rollspeed-ms</property>
 		<factor>10</factor>
 		<axis>
 			<x>0</x>
@@ -1330,7 +1330,7 @@
 	<animation>
 		<type>spin</type>
 		<object-name>rmgt</object-name>
-		<property>/gear/gear[2]/rollspeed-ms</property>
+		<property>gear/gear[2]/rollspeed-ms</property>
 		<factor>10</factor>
 		<axis>
 			<x>0</x>
@@ -1635,7 +1635,7 @@
     <object-name>TaxiLight</object-name>
     <condition>
         <not>
-            <property>/sim/rendering/shaders/skydome</property>
+            <property>sim/rendering/shaders/skydome</property>
         </not>
     </condition>
 </animation>
@@ -1652,7 +1652,7 @@
     <object-name>landing.LW.ALS</object-name>
     <object-name>landing.RW.ALS</object-name>
       <condition>
-            <property>/sim/rendering/shaders/skydome</property>
+            <property>sim/rendering/shaders/skydome</property>
     </condition>
 </animation>
 

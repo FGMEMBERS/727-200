@@ -3,11 +3,14 @@
 <PropertyList>
 
 	<sim>
-
+		<author>Joshua Davidson (it0uchpods)</author>
+		
+		<status>Pre V1.0</status>
+		
 		<rating>
 			<FDM type="int">3</FDM>
-			<systems type="int">1</systems>
-			<cockpit type="int">2</cockpit>
+			<systems type="int">2</systems>
+			<cockpit type="int">3</cockpit>
 			<model type="int">3</model>
 		</rating>
 		
@@ -28,6 +31,21 @@
 				<path>Splash/splash1.png</path>
 			</preview>
 		</previews>
+		
+		<tags>
+			<tag>transport</tag>
+			<tag>boeing</tag>
+			<tag>1960s</tag>
+			<tag>1970s</tag>
+			<tag>1980s</tag>
+			<tag>1990s</tag>
+			<tag>ifr</tag>
+			<tag>retractable-gear</tag>
+			<tag>glass-cockpit</tag>
+			<tag>pressurised</tag>
+			<tag>jet</tag>
+			<tag>3-engine</tag>
+		</tags>
 
 		<menubar>
 			<default>
@@ -117,6 +135,9 @@
 		</instrumentation>
 		
 		<systems n="0">
+			<!--electrical>
+				<path></path>
+			</electrical-->
             <autopilot n="0">
                 <path>Aircraft/727-200/Systems/autopilot-v.xml</path>
             </autopilot>
@@ -198,7 +219,6 @@
 		<path>Aircraft/727-200/init/instrumentation.xml</path>
 	</instrumentation>
 	
-
 	<it-autoflight>
 		<config>
 			<roll>
@@ -210,9 +230,9 @@
 				<td>0.0001</td>
 			</roll>
 			<pitch>
-				<umin>-0.50</umin>
-				<umax>0.50</umax>
-				<kp>-0.04</kp>
+				<umin>-0.40</umin>
+				<umax>0.40</umax>
+				<kp>-0.07</kp>
 				<ti>10.0</ti>
 				<td>0.0001</td>
 			</pitch>
@@ -488,6 +508,7 @@
 			<file>Aircraft/727-200/Nasal/shake.nas</file>
 		</libraries>
 		<systems>
+			<!--file>Aircraft/727-200/Nasal/electrical.nas</file-->
 			<file>Aircraft/727-200/Nasal/engines.nas</file>
 		</systems>
 		<autopilot_v>

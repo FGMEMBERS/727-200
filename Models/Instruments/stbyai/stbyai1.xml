@@ -21,7 +21,7 @@
  <animation>
   <type>rotate</type>
   <object-name>ball</object-name>
-  <property>/orientation/roll-deg</property>
+  <property>orientation/roll-deg</property>
   <center>
    <x-m>-0.03217</x-m>
    <y-m>0.00011</y-m>
@@ -37,7 +37,7 @@
  <animation>
   <type>rotate</type>
   <object-name>ball</object-name>
-  <property>/orientation/pitch-deg</property>
+  <property>orientation/pitch-deg</property>
   <center>
    <x-m>-0.03217</x-m>
    <y-m>0.00011</y-m>
@@ -53,7 +53,7 @@
  <animation>
   <type>rotate</type>
   <object-name>rollarrow</object-name>
-  <property>/orientation/roll-deg</property>
+  <property>orientation/roll-deg</property>
   <axis>
    <x>1</x>
    <y>0</y>

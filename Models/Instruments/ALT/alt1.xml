@@ -30,7 +30,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>inhg01</object-name>
-        <property>/instrumentation/altimeter/setting-inhg</property>
+        <property>instrumentation/altimeter/setting-inhg</property>
         <factor>0.01</factor>
         <step>10</step>
 		<bias>0.005</bias>
@@ -44,7 +44,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>inhg02</object-name>
-        <property>/instrumentation/altimeter/setting-inhg</property>
+        <property>instrumentation/altimeter/setting-inhg</property>
         <factor>0.1</factor>
         <step>1</step>
 		<bias>0.005</bias>
@@ -58,7 +58,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>inhg03</object-name>
-        <property>/instrumentation/altimeter/setting-inhg</property>
+        <property>instrumentation/altimeter/setting-inhg</property>
         <factor>1.0</factor>
         <step>0.1</step>
 		<bias>0.005</bias>
@@ -72,7 +72,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>inhg04</object-name>
-        <property>/instrumentation/altimeter/setting-inhg</property>
+        <property>instrumentation/altimeter/setting-inhg</property>
         <factor>10.0</factor>
         <step>0.01</step>
 		<bias>0.005</bias>
@@ -86,7 +86,7 @@
     <!--animation>
         <type>textranslate</type>
         <object-name>mb01</object-name>
-        <property>/instrumentation/altimeter/millibars</property>
+        <property>instrumentation/altimeter/millibars</property>
         <factor>0.0001</factor>
         <step>1000</step>
         <axis>
@@ -99,7 +99,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>mb02</object-name>
-        <property>/instrumentation/altimeter/millibars</property>
+        <property>instrumentation/altimeter/millibars</property>
         <factor>0.001</factor>
         <step>100</step>
         <axis>
@@ -112,7 +112,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>mb03</object-name>
-        <property>/instrumentation/altimeter/millibars</property>
+        <property>instrumentation/altimeter/millibars</property>
         <factor>0.01</factor>
         <step>10</step>
         <axis>
@@ -125,7 +125,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>mb04</object-name>
-        <property>/instrumentation/altimeter/millibars</property>
+        <property>instrumentation/altimeter/millibars</property>
         <factor>0.1</factor>
         <step>1</step>
         <axis>
@@ -190,7 +190,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>altnum100</object-name>
-        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+        <property>instrumentation/altimeter/indicated-altitude-ft</property>
         <factor>0.001</factor>
         <axis>
             <x>0</x>
@@ -202,7 +202,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>altnum1000</object-name>
-        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+        <property>instrumentation/altimeter/indicated-altitude-ft</property>
         <factor>0.0001</factor>
         <step>1000</step>
         <scroll>20</scroll>
@@ -216,7 +216,7 @@
     <animation>
         <type>textranslate</type>
         <object-name>altnum10000</object-name>
-        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+        <property>instrumentation/altimeter/indicated-altitude-ft</property>
         <factor>0.00001</factor>
         <step>10000</step>
         <scroll>20</scroll>
@@ -230,7 +230,7 @@
     <animation>
         <type>rotate</type>
         <object-name>ALTneedle</object-name>
-        <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+        <property>instrumentation/altimeter/indicated-altitude-ft</property>
         <factor>0.36</factor>
         <axis>
             <x>-1.0</x>
@@ -242,7 +242,7 @@
 <animation>
   <type>rotate</type>
   <object-name>BaroKnob</object-name>
-  <property>/instrumentation/altimeter/setting-inhg</property>
+  <property>instrumentation/altimeter/setting-inhg</property>
   <factor>500</factor>
   <center>
     <x-m>0</x-m>

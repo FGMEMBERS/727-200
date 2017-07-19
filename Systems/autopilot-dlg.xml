@@ -401,6 +401,28 @@
 					<step>-100</step>
 					<wrap>false</wrap>
 				</binding>
+				<binding>
+					<condition>
+						<not-equals>
+							<property>/autopilot-v/pitch-knob</property>
+							<value>3</value>
+						</not-equals>
+					</condition>
+					<command>property-assign</command>
+					<property>/autopilot-v/pitch-knob</property>
+					<value>3</value>
+				</binding>
+				<binding>
+					<condition>
+						<equals>
+							<property>/it-autoflight/output/vert</property>
+							<value>0</value>
+						</equals>
+					</condition>
+					<command>property-assign</command>
+					<property>/autopilot-v/alt-sel-btn</property>
+					<value>0</value>
+				</binding>
 			</button>
 			
 			<button>
@@ -414,6 +436,28 @@
 					<max>6000</max>
 					<step>100</step>
 					<wrap>false</wrap>
+				</binding>
+				<binding>
+					<condition>
+						<not-equals>
+							<property>/autopilot-v/pitch-knob</property>
+							<value>3</value>
+						</not-equals>
+					</condition>
+					<command>property-assign</command>
+					<property>/autopilot-v/pitch-knob</property>
+					<value>3</value>
+				</binding>
+				<binding>
+					<condition>
+						<equals>
+							<property>/it-autoflight/output/vert</property>
+							<value>0</value>
+						</equals>
+					</condition>
+					<command>property-assign</command>
+					<property>/autopilot-v/alt-sel-btn</property>
+					<value>0</value>
 				</binding>
 			</button>
 		

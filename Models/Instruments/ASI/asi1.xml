@@ -19,7 +19,7 @@
 <animation>
   <type>rotate</type>
   <object-name>Needle1</object-name>
-  <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+  <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
   <interpolation>
     <entry>
       <ind>0</ind>
@@ -54,7 +54,7 @@
 <animation>
   <type>textranslate</type>
   <object-name>Mach1</object-name>
-  <property>/velocities/mach</property>
+  <property>velocities/mach</property>
   <factor>1.0</factor>
   <step>0.1</step>
   <axis>
@@ -67,7 +67,7 @@
 <animation>
   <type>textranslate</type>
   <object-name>Mach2</object-name>
-  <property>/velocities/mach</property>
+  <property>velocities/mach</property>
   <factor>10</factor>
   <step>.01</step>
   <axis>
