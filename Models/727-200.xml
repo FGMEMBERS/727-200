@@ -1656,5 +1656,45 @@
     </condition>
 </animation>
 
+<animation>
+  <type>material</type>
+  <object-name>floor</object-name>
+  <emission>
+    <red>4.0</red>
+    <green>4.0</green>
+    <blue>4.0</blue>
+    <factor-prop>controls/lighting/panel-light</factor-prop>	
+  </emission>
+</animation>
+
+<animation>
+  <type>material</type>
+  <object-name>panel</object-name>
+  <object-name>ElevatorTab</object-name>
+  <object-name>BrkLever</object-name>
+  <object-name>FlapLever</object-name>
+  <object-name>throttle.001</object-name>
+  <object-name>throttle.002</object-name>
+  <object-name>throttle.003</object-name>
+  <object-name>PBrakeLever</object-name>
+  <object-name>reverser.001</object-name>
+  <object-name>reverser.002</object-name>
+  <object-name>reverser.003</object-name>
+  <object-name>cutoff.001</object-name>
+  <object-name>cutoff.002</object-name>
+  <object-name>cutoff.003</object-name>
+  <object-name>RudderSup</object-name>
+  <object-name>RudderTab</object-name>
+  <object-name>AileronTab</object-name>
+  <object-name>panelE</object-name>
+  <object-name>Plane.002</object-name>
+   <emission>
+    <red>0.1</red>
+    <green>0.1</green>
+    <blue>0.1</blue>
+    <factor-prop>controls/lighting/panel-light</factor-prop>	
+  </emission>
+</animation>
+
 
 </PropertyList>
