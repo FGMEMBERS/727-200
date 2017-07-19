@@ -1553,7 +1553,7 @@ OBJECT poly
 name "AI.ring"
 data 10
 Circle.019
-texture "aiball.png"
+texture "airing.png"
 crease 30.000000
 numvert 78
 0.001284 0.036156 -0.000499
