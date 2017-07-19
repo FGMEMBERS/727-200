@@ -8,22 +8,27 @@ var pitch_knob = func {
 			if (getprop("/it-autoflight/output/vert") == 0) {
 				setprop("/autopilot-v/alt-sel-btn", 0);
 			}
-			setprop("/it-autoflight/input/vert", 5);
+			if (getprop("/it-autoflight/output/vert") != 5) {
+				setprop("/it-autoflight/input/vert", 5);
+			}
 		} else if (getprop("/autopilot-v/pitch-knob") == 2) {
 			if (getprop("/it-autoflight/output/vert") == 0) {
 				setprop("/autopilot-v/alt-sel-btn", 0);
 			}
-			setprop("/it-autoflight/input/vert", 4);
-		} else if (getprop("/autopilot-v/pitch-knob") == 3) {
-			if (getprop("/it-autoflight/output/vert") == 0) {
-				setprop("/autopilot-v/alt-sel-btn", 0);
+			if (getprop("/it-autoflight/output/vert") != 4) {
+				setprop("/it-autoflight/input/vert", 4);
 			}
-			setprop("/it-autoflight/input/vert", 1);
+		} else if (getprop("/autopilot-v/pitch-knob") == 3) {
+			if (getprop("/it-autoflight/output/vert") != 1) {
+				setprop("/it-autoflight/input/vert", 1);
+			}
 		} else if (getprop("/autopilot-v/pitch-knob") == 4) {
 			if (getprop("/it-autoflight/output/vert") == 0) {
 				setprop("/autopilot-v/alt-sel-btn", 0);
 			}
-			setprop("/it-autoflight/input/vert", 6);
+			if (getprop("/it-autoflight/output/vert") != 6) {
+				setprop("/it-autoflight/input/vert", 6);
+			}
 		} else if (getprop("/autopilot-v/pitch-knob") == 5) {
 			setprop("/autopilot-v/pitch-knob", 4);
 		}
@@ -89,7 +94,6 @@ setlistener("/autopilot-v/alt-sel-btn", func {
 	if (getprop("/it-autoflight/output/ap") == 1) {
 		if (getprop("/autopilot-v/alt-sel-btn") == 1) {
 			setprop("/it-autoflight/input/alt-arm", 1);
-#			print("Debug: ALT-ARM On");
 		} else if (getprop("/autopilot-v/alt-sel-btn") == 0) {
 			setprop("/it-autoflight/input/alt-arm", 0);
 			if (getprop("/it-autoflight/output/vert") == 0) {
@@ -104,6 +108,5 @@ setlistener("/autopilot-v/alt-sel-btn", func {
 var altCapture = func {
 	altcaptt.stop();
 	setprop("/autopilot-v/pitch-knob", 3);
-	setprop("/autopilot-v/alt-sel-btn", 1);
 	setprop("/it-autoflight/input/vert", 3);
 }
