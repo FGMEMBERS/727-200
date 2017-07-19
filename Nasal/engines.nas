@@ -61,7 +61,7 @@ var doRevThrust = func {
 	if (getprop("/controls/engines/engine[0]/reverser") == "1" and getprop("/controls/engines/engine[1]/reverser") == "1" and getprop("/controls/engines/engine[2]/reverser") == "1" and getprop("/gear/gear[1]/wow") == 1 and getprop("/gear/gear[2]/wow") == 1) {
 		var pos1 = getprop("/controls/engines/engine[0]/throttle-rev");
 		var pos2 = getprop("/controls/engines/engine[1]/throttle-rev");
-		var pos3 = getprop("/controls/engines/engine[1]/throttle-rev");
+		var pos3 = getprop("/controls/engines/engine[2]/throttle-rev");
 		if (pos1 < 0.5) {
 			setprop("/controls/engines/engine[0]/throttle-rev", pos1 + 0.167);
 		}
