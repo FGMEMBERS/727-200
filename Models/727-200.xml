@@ -212,7 +212,22 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>rudder</object-name>
-		<property>surface-positions/rudder-pos-norm</property>
+		<property>sim/multiplay/generic/float[4]</property>
+		<factor>25</factor>
+		<axis>
+			<x1-m>15.107</x1-m>
+			<y1-m>0.0</y1-m>
+			<z1-m>2.035</z1-m>
+			<x2-m>18.482</x2-m>
+			<y2-m>0.0</y2-m>
+			<z2-m>5.320</z2-m>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>rudder</object-name>
+		<property>sim/multiplay/generic/float[5]</property>
 		<factor>25</factor>
 		<axis>
 			<x1-m>15.107</x1-m>
@@ -227,8 +242,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>leftelevator</object-name>
-		<property>surface-positions/elevator-pos-norm</property>
-		<factor>-10</factor>
+		<property>sim/multiplay/generic/float[0]</property>
+		<factor>-20</factor>
 		<axis>
 			<x1-m>19.506</x1-m>
 			<y1-m>0.0</y1-m>
@@ -242,8 +257,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>rightelevator</object-name>
-		<property>surface-positions/elevator-pos-norm</property>
-		<factor>-10</factor>
+		<property>sim/multiplay/generic/float[1]</property>
+		<factor>-20</factor>
 		<axis>
 			<x1-m>21.572</x1-m>
 			<y1-m>4.856</y1-m>
@@ -257,8 +272,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>rightaileron</object-name>
-		<property>surface-positions/left-aileron-pos-norm</property>
-		<factor>-10</factor>
+		<property>sim/multiplay/generic/float[3]</property>
+		<factor>-20</factor>
 		<axis>
 			<x1-m>4.752</x1-m>
 			<y1-m>12.880</y1-m>
@@ -272,8 +287,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>inneraileronr</object-name>
-		<property>surface-positions/left-aileron-pos-norm</property>
-		<factor>-15</factor>
+		<property>sim/multiplay/generic/float[3]</property>
+		<factor>-30</factor>
 		<axis>
 			<x1-m>1.763</x1-m>
 			<y1-m>6.371</y1-m>
@@ -287,8 +302,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>leftaileron</object-name>
-		<property>surface-positions/left-aileron-pos-norm</property>
-		<factor>10</factor>
+		<property>sim/multiplay/generic/float[2]</property>
+		<factor>20</factor>
 		<axis>
 			<x1-m>5.956</x1-m>
 			<y1-m>-15.657</y1-m>
@@ -302,8 +317,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>inneraileronl</object-name>
-		<property>surface-positions/left-aileron-pos-norm</property>
-		<factor>-15</factor>
+		<property>sim/multiplay/generic/float[2]</property>
+		<factor>-30</factor>
 		<axis>
 			<x1-m>1.762</x1-m>
 			<y1-m>-6.375</y1-m>

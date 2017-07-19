@@ -56,7 +56,27 @@
             </signal>
             <signal>
                 <type>float</type>
-                <property>controls/flight/rudder-fde</property>
+                <property>controls/flight/elevator-left</property>
+            </signal>
+            <signal>
+                <type>float</type>
+                <property>controls/flight/elevator-right</property>
+            </signal>
+            <signal>
+                <type>float</type>
+                <property>controls/flight/aileron-left</property>
+            </signal>
+            <signal>
+                <type>float</type>
+                <property>controls/flight/aileron-right</property>
+            </signal>
+            <signal>
+                <type>float</type>
+                <property>controls/flight/rudder-upper</property>
+            </signal>
+            <signal>
+                <type>float</type>
+                <property>controls/flight/rudder-lower</property>
             </signal>
 			<signal>
 				<type>float</type>

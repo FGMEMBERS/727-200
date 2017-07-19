@@ -63,28 +63,36 @@
 					</item>
 					<item>
 						<label>Pushback</label>
-						<name>pushback</name>
 						<binding>
-						<command>dialog-show</command>
-						<dialog-name>pushback</dialog-name>
+							<command>dialog-show</command>
+							<dialog-name>pushback</dialog-name>
 						</binding>
 					</item>
-                       <item>
-			<name>lights</name>
-			<label>Lights</label>
-				<binding>
-					<command>nasal</command>
-					<script>
-						var lights = gui.Dialog.new("sim/gui/dialogs/lights/dialog", "Aircraft/727-200/Systems/lights-dlg.xml");
-						lights.open();
-					</script>
-				</binding>
-		       </item>
+					<item>
+						<label>Lights</label>
+						<binding>
+							<command>nasal</command>
+							<script>
+							var lights = gui.Dialog.new("sim/gui/dialogs/lights/dialog", "Aircraft/727-200/Systems/lights-dlg.xml");
+							lights.open();
+							</script>
+						</binding>
+					</item>
 					<item>
 						<label>Select Livery</label>
 						<binding>
-						<command>nasal</command>
-						<script>aircraft.livery.dialog.open()</script>
+							<command>nasal</command>
+							<script>aircraft.livery.dialog.open()</script>
+						</binding>
+					</item>
+					<item>
+						<label>FCTL</label>
+						<binding>
+							<command>nasal</command>
+							<script>
+							var fctl = gui.Dialog.new("sim/gui/dialogs/fctl/dialog", "Aircraft/727-200/Systems/fctl-dlg.xml");
+							fctl.open();
+							</script>
 						</binding>
 					</item>
 				</menu>
@@ -93,19 +101,16 @@
 		
 		<tags>
 			<tag>transport</tag>
-			<tag>airbus</tag>
+			<tag>boeing</tag>
+			<tag>1960s</tag>
+			<tag>1970s</tag>
 			<tag>1980s</tag>
 			<tag>1990s</tag>
-			<tag>2000s</tag>
-			<tag>2010s</tag>
 			<tag>ifr</tag>
 			<tag>retractable-gear</tag>
-			<tag>glass-cockpit</tag>
 			<tag>pressurised</tag>
-			<tag>rembrandt</tag>
-			<!--tag>dual-controls</tag--> <!-- Coming Soon ;) -->
 			<tag>jet</tag>
-			<tag>2-engine</tag>
+			<tag>3-engine</tag>
 		</tags>
 		
 		<flaps>
@@ -151,7 +156,19 @@
                 <path>Aircraft/727-200/Systems/libraries.xml</path>
             </autopilot>
 		</systems>
-
+		
+		<!-- Multiplayer properties -->
+		<multiplay>
+			<generic>
+				<float n="0" alias="/controls/flight/elevator-left" />
+				<float n="1" alias="/controls/flight/elevator-right" />
+				<float n="2" alias="/controls/flight/aileron-left" />
+				<float n="3" alias="/controls/flight/aileron-right" />
+				<float n="4" alias="/controls/flight/rudder-upper" />
+				<float n="5" alias="/controls/flight/rudder-lower" />
+				<float n="6" alias="/fdm/jsbsim/fcs/slat-pos-norm" />
+			</generic>
+		</multiplay>
 	</sim>
 	
 	<autopilot-v>
@@ -182,7 +199,9 @@
 			</engine>
 		</engines>
 		<flight>
-			<rudder-fde>0</rudder-fde>
+			<aileron-sum>0</aileron-sum>
+			<elevator-sum>0</elevator-sum>
+			<rudder-sum>0</rudder-sum>
 		</flight>
 		<gear>
 			<brake-parking>0</brake-parking>
@@ -513,6 +532,7 @@
 		</libraries>
 		<systems>
 			<!--file>Aircraft/727-200/Nasal/electrical.nas</file-->
+			<file>Aircraft/727-200/Nasal/hydraulics.nas</file>
 			<file>Aircraft/727-200/Nasal/engines.nas</file>
 		</systems>
 		<autopilot_v>
