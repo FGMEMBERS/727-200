@@ -124,6 +124,7 @@
 				</and>
 			</condition>
 			<property>/systems/hydraulic/aileron-droop</property>
+			<scale>-1.0</scale>
 		</input>
 		<input>
 			<condition>
