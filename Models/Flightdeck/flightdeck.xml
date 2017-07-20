@@ -151,7 +151,7 @@
 
 	<!-- AI -->
 	<model>
-		<path>Aircraft/727-200/Models/Instruments/AttitudeIndicator/ai1.xml</path>
+		<path>Aircraft/727-200/Models/Instruments/AI/ai.xml</path>
 		<offsets>
 			<x-m> -21.35050</x-m>
 			<y-m>  -0.44379</y-m>
@@ -161,7 +161,7 @@
 	
 	<!-- AIcopilot -->
 	<model>
-		<path>Aircraft/727-200/Models/Instruments/AttitudeIndicator/ai2.xml</path>
+		<path>Aircraft/727-200/Models/Instruments/AI/ai2.xml</path>
 		<offsets>
 			<x-m> -21.35050</x-m>
 			<y-m>   0.45379</y-m>
@@ -231,7 +231,7 @@
 
 	<!-- Standby Attitude -->
 	<model>
-		<path>Aircraft/727-200/Models/Instruments/stbyai/stbyai1.xml</path>
+		<path>Aircraft/727-200/Models/Instruments/stbyai/stbyai.xml</path>
 		<offsets>
 			<x-m> -21.34850</x-m>
 			<y-m>  -0.25079</y-m>

@@ -178,10 +178,16 @@
 		<type>noise-spike</type>
 		<input>
 			<condition>
-				<not-equals>
-					<property>/autopilot-v/internal/fd-lat</property>
-					<value>1</value>
-				</not-equals>
+				<and>
+					<not-equals>
+						<property>/autopilot-v/fd-mode-knob</property>
+						<value>2</value>
+					</not-equals>
+					<not-equals>
+						<property>/autopilot-v/internal/fd-lat</property>
+						<value>1</value>
+					</not-equals>
+				</and>
 			</condition>
 			<expression>
 				<dif>
@@ -192,10 +198,16 @@
 		</input>
 		<input>
 			<condition>
-				<equals>
-					<property>/autopilot-v/internal/fd-lat</property>
-					<value>1</value>
-				</equals>
+				<and>
+					<not-equals>
+						<property>/autopilot-v/fd-mode-knob</property>
+						<value>2</value>
+					</not-equals>
+					<equals>
+						<property>/autopilot-v/internal/fd-lat</property>
+						<value>1</value>
+					</equals>
+				</and>
 			</condition>
 			<expression>
 				<dif>
@@ -204,10 +216,32 @@
 				</dif>
 			</expression>
 		</input>
-		<output>/autopilot-v/fd/roll-bar</output>
+		<input>0</input>
+		<output>/autopilot-v/fd/roll-bar-cmd</output>
 		<min>-30</min>
 		<max>30</max>
-		<max-rate-of-change>20</max-rate-of-change>
+		<max-rate-of-change>40</max-rate-of-change>
+	</filter>
+	
+	<filter>
+		<name>FD: ROLL BAR</name>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>
+			<expression>
+				<sum>
+					<property>/autopilot-v/fd/roll-bar-cmd</property>
+					<table>
+						<property>/autopilot-v/fd-mode-knob</property> 
+						<entry><ind>1</ind><dep>-129.1</dep></entry>
+						<entry><ind>2</ind><dep>   0.0</dep></entry>
+						<entry><ind>3</ind><dep>-129.1</dep></entry>
+					</table>
+				</sum>
+			</expression>
+		</input>
+		<output>/autopilot-v/fd/roll-bar</output>
+		<max-rate-of-change>240</max-rate-of-change>
 	</filter>
 
  <!-- =============================================================== -->
@@ -228,8 +262,8 @@
 		<output>
 			<property>/autopilot-v/internal/target-fd-fpm</property>
 		</output>
-		<min>-500</min>
-		<max>500</max>
+		<min>-1000</min>
+		<max>1000</max>
 	</filter>
  
 	<filter>
@@ -288,10 +322,16 @@
 		<type>noise-spike</type>
 		<input>
 			<condition>
-				<equals>
-					<property>/autopilot-v/internal/fd-vert</property>
-					<value>1</value>
-				</equals>
+				<and>
+					<not-equals>
+						<property>/autopilot-v/fd-mode-knob</property>
+						<value>2</value>
+					</not-equals>
+					<equals>
+						<property>/autopilot-v/internal/fd-vert</property>
+						<value>1</value>
+					</equals>
+				</and>
 			</condition>
 			<expression>
 				<dif>
@@ -302,10 +342,16 @@
 		</input>
 		<input>
 			<condition>
-				<equals>
-					<property>/autopilot-v/internal/fd-vert</property>
-					<value>3</value>
-				</equals>
+				<and>
+					<not-equals>
+						<property>/autopilot-v/fd-mode-knob</property>
+						<value>2</value>
+					</not-equals>
+					<equals>
+						<property>/autopilot-v/internal/fd-vert</property>
+						<value>3</value>
+					</equals>
+				</and>
 			</condition>
 			<expression>
 				<dif>
@@ -316,16 +362,22 @@
 		</input>
 		<input>
 			<condition>
-				<or>
-					<equals>
-						<property>/autopilot-v/internal/fd-vert</property>
-						<value>0</value>
-					</equals>
-					<equals>
-						<property>/autopilot-v/internal/fd-vert</property>
+				<and>
+					<not-equals>
+						<property>/autopilot-v/fd-mode-knob</property>
 						<value>2</value>
-					</equals>
-				</or>
+					</not-equals>
+					<or>
+						<equals>
+							<property>/autopilot-v/internal/fd-vert</property>
+							<value>0</value>
+						</equals>
+						<equals>
+							<property>/autopilot-v/internal/fd-vert</property>
+							<value>2</value>
+						</equals>
+					</or>
+				</and>
 			</condition>
 			<expression>
 				<product>
@@ -341,10 +393,32 @@
 				</product>
 			</expression>
 		</input>
-		<output>/autopilot-v/fd/pitch-bar</output>
+		<input>0</input>
+		<output>/autopilot-v/fd/pitch-bar-cmd</output>
 		<min>-10</min>
 		<max>15</max>
 		<max-rate-of-change>10</max-rate-of-change>
+	</filter>
+	
+	<filter>
+		<name>FD: PITCH BAR</name>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>
+			<expression>
+				<sum>
+					<property>/autopilot-v/fd/pitch-bar-cmd</property>
+					<table>
+						<property>/autopilot-v/fd-mode-knob</property> 
+						<entry><ind>1</ind><dep>-57.7</dep></entry>
+						<entry><ind>2</ind><dep>  0.0</dep></entry>
+						<entry><ind>3</ind><dep>-57.7</dep></entry>
+					</table>
+				</sum>
+			</expression>
+		</input>
+		<output>/autopilot-v/fd/pitch-bar</output>
+		<max-rate-of-change>80</max-rate-of-change>
 	</filter>
 
 </PropertyList>

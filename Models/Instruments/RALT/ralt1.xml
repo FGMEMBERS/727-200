@@ -2,6 +2,20 @@
 
 <path>ralt.ac</path>
 
+    <animation>
+        <type>material</type>
+        <object-name>DH.bug</object-name>
+        <object-name>RALT.flag</object-name>
+        <object-name>RALT.face</object-name>
+        <object-name>RALT.needle</object-name>
+  <emission>
+      <factor-prop>systems/electrical/outputs/cabin-dim</factor-prop>
+      <red>0.5</red>
+      <green>0.5</green>
+      <blue>0.5</blue>
+  </emission>
+    </animation>
+
 	<animation>
 		<type>select</type>
 		<object-name>DH.lamp</object-name>

@@ -20,6 +20,7 @@ print(" ");
 setlistener("/sim/signals/fdm-initialized", func {
 	setprop("/systems/electrical/bus-volts", 1);
     setprop("/systems/electrical/outputs/mk-viii", 28);
+    setprop("/systems/electrical/outputs/efis", 28);
 #	systems.elec_init();
 	systems.hyd_init();
 	autopilot_v.ap_init();

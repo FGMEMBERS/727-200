@@ -22,9 +22,10 @@
 		<object-name>face</object-name>
 		<object-name>needle</object-name>
 		  <emission>
-    <red>0.5</red>
-    <green>0.5</green>
-    <blue>0.5</blue>
+      <factor-prop>systems/electrical/outputs/cabin-dim</factor-prop>
+      <red>0.5</red>
+      <green>0.5</green>
+      <blue>0.5</blue>
   </emission>
 	</animation>
 	

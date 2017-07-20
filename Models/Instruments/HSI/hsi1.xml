@@ -3,6 +3,17 @@
 <path>hsi.ac</path>
 
     <animation>
+        <type>material</type>
+        <object-name>HSI-light</object-name>
+  <emission>
+      <factor-prop>systems/electrical/outputs/cabin-dim</factor-prop>
+      <red>0.5</red>
+      <green>0.5</green>
+      <blue>0.5</blue>
+  </emission>
+    </animation>
+
+    <animation>
         <type>select</type>
         <object-name>HSI.dstoff</object-name>
         <condition>
