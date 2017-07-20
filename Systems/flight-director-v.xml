@@ -410,9 +410,9 @@
 					<property>/autopilot-v/fd/pitch-bar-cmd</property>
 					<table>
 						<property>/autopilot-v/fd-mode-knob</property> 
-						<entry><ind>1</ind><dep>-57.7</dep></entry>
+						<entry><ind>1</ind><dep>-60.8</dep></entry>
 						<entry><ind>2</ind><dep>  0.0</dep></entry>
-						<entry><ind>3</ind><dep>-57.7</dep></entry>
+						<entry><ind>3</ind><dep>-60.8</dep></entry>
 					</table>
 				</sum>
 			</expression>
