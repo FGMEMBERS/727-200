@@ -56,6 +56,39 @@
     <axis><x>1</x></axis>
   </animation>
   
+  <!-- ILS Symbols -->
+    <animation>
+        <type>translate</type>
+        <object-name>loc-index</object-name>
+        <property>instrumentation/nav/heading-needle-deflection</property>
+        <interpolation>
+            <entry><ind>-5.0</ind><dep>-0.022</dep></entry>
+            <entry><ind> 0.0</ind><dep> 0</dep></entry>
+            <entry><ind> 5.0</ind><dep> 0.022</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+	
+    <animation>
+        <type>translate</type>
+        <object-name>glide-slope-index</object-name>
+        <property>instrumentation/nav/gs-needle-deflection</property>
+        <interpolation>
+            <entry><ind>-2.0</ind><dep>-0.022</dep></entry>
+            <entry><ind> 0.0</ind><dep> 0</dep></entry>
+            <entry><ind> 2.0</ind><dep> 0.022</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>1</z>
+        </axis>
+    </animation>
+  
   <!-- FD Bars -->
     <animation>
         <type>translate</type>
@@ -130,28 +163,15 @@
 			</binding>
 		</action>
 	</animation>
-	
-  <!-- Turn indicator -->
-  <animation>
-    <type>translate</type>
-    <object-name>turn-indicator</object-name>
-    <property>instrumentation/turn-indicator/indicated-turn-rate</property>
-    <!--  midle: ~ 1,3 G turn, full 2 G turn at mach 0.8 ??? -->
-    <factor>0.0073</factor>
-    <min>-0.0111</min>
-    <max>0.0111</max>
-    <axis><y>1</y></axis>
-  </animation>
-
 
   <!-- slip-ball-->
   <animation>
     <type>rotate</type>
     <object-name>slip-ball</object-name>
     <property>instrumentation/slip-skid-ball/indicated-slip-skid</property>
-    <factor>2</factor>
-    <min-deg>-2</min-deg>
-    <max-deg>2</max-deg>
+    <factor>3</factor>
+    <min-deg>-3</min-deg>
+    <max-deg>3</max-deg>
     <center>
       <x-m>0</x-m>
       <y-m>0</y-m>
