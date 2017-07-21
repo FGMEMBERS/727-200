@@ -45,6 +45,9 @@ var fd_update = func {
 			setprop("/autopilot-v/internal/fd-loc-armed", 1);
 		}
 	} else if (fdset == 5) {
+		if (getprop("/autopilot-v/internal/fd-vert") == 4) {
+			setprop("/autopilot-v/internal/fd-vert", 1);
+		}
 		if (getprop("/autopilot-v/internal/fd-lat") == 2) {
 			# Do nothing because VOR/LOC is active
 		} else {
@@ -68,7 +71,7 @@ setlistener("/autopilot-v/fd/alt-hld", func {
 			setprop("/autopilot-v/internal/fd-alt", int((getprop("/instrumentation/altimeter/indicated-altitude-ft")+50)/100)*100);
 			setprop("/autopilot-v/internal/fd-vert", 0);
 		} else if (getprop("/autopilot-v/fd/alt-hld") == 0) {
-			if (getprop("/autopilot-v/internal/fd-vert") != 4) {
+			if (getprop("/autopilot-v/internal/fd-vert") != 2 and getprop("/autopilot-v/internal/fd-vert") != 4) {
 				fd_update();
 			}
 		}
@@ -134,6 +137,7 @@ var make_fd_loc_active = func {
 var make_fd_appr_active = func {
 	setprop("/autopilot-v/internal/fd-appr-armed", 0);
 	setprop("/autopilot-v/internal/fd-vert", 2);
+	setprop("/autopilot-v/fd/alt-hld", 0);
 }
 
 
