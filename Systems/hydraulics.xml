@@ -166,17 +166,39 @@
 		<max-rate-of-change>2.5</max-rate-of-change>
 	</filter>
 	
+ <!-- =============================================================== -->
+ <!-- Roll Control                                                    -->
+ <!-- =============================================================== -->
+	
 	<filter>
 		<debug>false</debug>
 		<type>gain</type>
 		<gain>1.0</gain>
 		<input>
-			<expression>
-				<sum>
-					<property>/controls/flight/aileron-left</property>
-					<property>/controls/flight/aileron-right</property> 
-				</sum>
-			</expression>
+            <expression>
+				<product>
+					<sum>
+						<product>
+							<sum>
+								<property>/controls/flight/aileron-left</property>
+								<property>/controls/flight/aileron-right</property>
+							</sum>
+							<value>1.5</value>
+						</product>
+						<product>
+							<sum>
+								<product>
+									<property>/controls/flight/spoiler-l-sum</property>
+									<value>-1.0</value>
+								</product>
+								<property>/controls/flight/spoiler-r-sum</property>
+							</sum>
+							<value>0.5</value>
+						</product>
+					</sum>
+					<value>0.363636</value>
+				</product>
+            </expression>
 		</input>
 		<output>/controls/flight/aileron-sum</output>
 		<min>-1.0</min>
@@ -470,6 +492,1016 @@
 		<output>/controls/flight/rudder-sum</output>
 		<min>-1.0</min>
 		<max>1.0</max>
+	</filter>
+	
+ <!-- =============================================================== -->
+ <!-- Spoiler Control                                                 -->
+ <!-- =============================================================== -->
+ 
+ 	<!-- Spoiler 1 -->
+	
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<and>
+					<greater-than-equals>
+						<property>/systems/hydraulic/a-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+					<not-equals>
+						<property>/controls/flight/speedbrake</property>
+						<value>0.0</value>
+					</not-equals>
+				</and>
+			</condition>
+			<expression>
+				<sum>
+					<property>/controls/flight/speedbrake-norm</property> 
+					<table>
+						<property>/controls/flight/aileron</property> 
+						<entry><ind>0.1</ind><dep>   0</dep></entry>
+						<entry><ind>1.0</ind><dep>-0.5</dep></entry>
+					</table>
+				</sum>
+			</expression>
+		</input>
+		<input>
+			<condition>
+				<less-than>
+					<property>/systems/hydraulic/a-psi</property>
+					<value>1500</value>
+				</less-than>
+			</condition>
+			<value>0.0</value>
+		</input>
+		<input>
+			<condition>
+				<greater-than-equals>
+					<property>/systems/hydraulic/a-psi</property>
+					<value>1500</value>
+				</greater-than-equals>
+			</condition>
+            <expression>
+                <table>
+                    <property>/controls/flight/aileron</property> 
+                    <entry><ind>-0.1</ind><dep>  0</dep></entry>
+                    <entry><ind>-1.0</ind><dep>0.5</dep></entry>
+                </table>
+            </expression>
+		</input>
+		<output>/controls/flight/spoiler-1-cmd</output>
+		<min>0.0</min>
+		<max>1.0</max>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>/controls/flight/spoiler-1-cmd</input>
+		<output>/controls/flight/spoiler-1</output>
+		<max-rate-of-change>0.5</max-rate-of-change>
+	</filter>
+	
+ 	<!-- Spoiler 2 -->
+	
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<and>
+					<greater-than-equals>
+						<property>/systems/hydraulic/a-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+					<not-equals>
+						<property>/controls/flight/speedbrake</property>
+						<value>0.0</value>
+					</not-equals>
+				</and>
+			</condition>
+			<expression>
+				<sum>
+					<property>/controls/flight/speedbrake-norm</property> 
+					<table>
+						<property>/controls/flight/aileron</property> 
+						<entry><ind>0.1</ind><dep>   0</dep></entry>
+						<entry><ind>1.0</ind><dep>-0.5</dep></entry>
+					</table>
+				</sum>
+			</expression>
+		</input>
+		<input>
+			<condition>
+				<less-than>
+					<property>/systems/hydraulic/a-psi</property>
+					<value>1500</value>
+				</less-than>
+			</condition>
+			<value>0.0</value>
+		</input>
+		<input>
+			<condition>
+				<greater-than-equals>
+					<property>/systems/hydraulic/a-psi</property>
+					<value>1500</value>
+				</greater-than-equals>
+			</condition>
+            <expression>
+                <table>
+                    <property>/controls/flight/aileron</property> 
+                    <entry><ind>-0.1</ind><dep>  0</dep></entry>
+                    <entry><ind>-1.0</ind><dep>0.5</dep></entry>
+                </table>
+            </expression>
+		</input>
+		<output>/controls/flight/spoiler-2-cmd</output>
+		<min>0.0</min>
+		<max>1.0</max>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>/controls/flight/spoiler-2-cmd</input>
+		<output>/controls/flight/spoiler-2</output>
+		<max-rate-of-change>0.5</max-rate-of-change>
+	</filter>
+	
+ 	<!-- Spoiler 3 -->
+	
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<and>
+					<greater-than-equals>
+						<property>/systems/hydraulic/b-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+					<not-equals>
+						<property>/controls/flight/speedbrake</property>
+						<value>0.0</value>
+					</not-equals>
+				</and>
+			</condition>
+			<expression>
+				<sum>
+					<property>/controls/flight/speedbrake-norm</property> 
+					<table>
+						<property>/controls/flight/aileron</property> 
+						<entry><ind>0.1</ind><dep>   0</dep></entry>
+						<entry><ind>1.0</ind><dep>-0.5</dep></entry>
+					</table>
+				</sum>
+			</expression>
+		</input>
+		<input>
+			<condition>
+				<less-than>
+					<property>/systems/hydraulic/b-psi</property>
+					<value>1500</value>
+				</less-than>
+			</condition>
+			<value>0.0</value>
+		</input>
+		<input>
+			<condition>
+				<greater-than-equals>
+					<property>/systems/hydraulic/b-psi</property>
+					<value>1500</value>
+				</greater-than-equals>
+			</condition>
+            <expression>
+                <table>
+                    <property>/controls/flight/aileron</property> 
+                    <entry><ind>-0.1</ind><dep>  0</dep></entry>
+                    <entry><ind>-1.0</ind><dep>0.5</dep></entry>
+                </table>
+            </expression>
+		</input>
+		<output>/controls/flight/spoiler-3-cmd</output>
+		<min>0.0</min>
+		<max>1.0</max>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>/controls/flight/spoiler-3-cmd</input>
+		<output>/controls/flight/spoiler-3</output>
+		<max-rate-of-change>0.5</max-rate-of-change>
+	</filter>
+	
+ 	<!-- Spoiler 4 -->
+	
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<and>
+					<greater-than-equals>
+						<property>/systems/hydraulic/b-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+					<not-equals>
+						<property>/controls/flight/speedbrake</property>
+						<value>0.0</value>
+					</not-equals>
+				</and>
+			</condition>
+			<expression>
+				<sum>
+					<property>/controls/flight/speedbrake-norm</property> 
+					<table>
+						<property>/controls/flight/aileron</property> 
+						<entry><ind>0.1</ind><dep>   0</dep></entry>
+						<entry><ind>1.0</ind><dep>-0.5</dep></entry>
+					</table>
+				</sum>
+			</expression>
+		</input>
+		<input>
+			<condition>
+				<less-than>
+					<property>/systems/hydraulic/b-psi</property>
+					<value>1500</value>
+				</less-than>
+			</condition>
+			<value>0.0</value>
+		</input>
+		<input>
+			<condition>
+				<greater-than-equals>
+					<property>/systems/hydraulic/b-psi</property>
+					<value>1500</value>
+				</greater-than-equals>
+			</condition>
+            <expression>
+                <table>
+                    <property>/controls/flight/aileron</property> 
+                    <entry><ind>-0.1</ind><dep>  0</dep></entry>
+                    <entry><ind>-1.0</ind><dep>0.5</dep></entry>
+                </table>
+            </expression>
+		</input>
+		<output>/controls/flight/spoiler-4-cmd</output>
+		<min>0.0</min>
+		<max>1.0</max>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>/controls/flight/spoiler-4-cmd</input>
+		<output>/controls/flight/spoiler-4</output>
+		<max-rate-of-change>0.5</max-rate-of-change>
+	</filter>
+	
+ 	<!-- Spoiler 5 -->
+	
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<and>
+					<greater-than-equals>
+						<property>/systems/hydraulic/b-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+					<not-equals>
+						<property>/controls/flight/speedbrake</property>
+						<value>0.0</value>
+					</not-equals>
+				</and>
+			</condition>
+			<expression>
+				<sum>
+					<property>/controls/flight/speedbrake-norm</property> 
+					<table>
+						<property>/controls/flight/aileron</property> 
+						<entry><ind>0.1</ind><dep>   0</dep></entry>
+						<entry><ind>1.0</ind><dep>-0.5</dep></entry>
+					</table>
+				</sum>
+			</expression>
+		</input>
+		<input>
+			<condition>
+				<less-than>
+					<property>/systems/hydraulic/b-psi</property>
+					<value>1500</value>
+				</less-than>
+			</condition>
+			<value>0.0</value>
+		</input>
+		<input>
+			<condition>
+				<greater-than-equals>
+					<property>/systems/hydraulic/b-psi</property>
+					<value>1500</value>
+				</greater-than-equals>
+			</condition>
+            <expression>
+                <table>
+                    <property>/controls/flight/aileron</property> 
+                    <entry><ind>-0.1</ind><dep>  0</dep></entry>
+                    <entry><ind>-1.0</ind><dep>0.5</dep></entry>
+                </table>
+            </expression>
+		</input>
+		<output>/controls/flight/spoiler-5-cmd</output>
+		<min>0.0</min>
+		<max>1.0</max>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>/controls/flight/spoiler-5-cmd</input>
+		<output>/controls/flight/spoiler-5</output>
+		<max-rate-of-change>0.5</max-rate-of-change>
+	</filter>
+	
+ 	<!-- Spoiler 6 -->
+	
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<and>
+					<greater-than-equals>
+						<property>/systems/hydraulic/a-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+					<not-equals>
+						<property>/controls/flight/speedbrake</property>
+						<value>0.0</value>
+					</not-equals>
+					<or>
+						<equals>
+							<property>/gear/gear[1]/wow</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>/gear/gear[2]/wow</property>
+							<value>1</value>
+						</equals>
+					</or>
+				</and>
+			</condition>
+			<property>/controls/flight/speedbrake-norm</property> 
+		</input>
+		<input>
+			<condition>
+				<or>
+					<less-than>
+						<property>/systems/hydraulic/a-psi</property>
+						<value>1500</value>
+					</less-than>
+					<and>
+						<equals>
+							<property>/gear/gear[1]/wow</property>
+							<value>0</value>
+						</equals>
+						<equals>
+							<property>/gear/gear[2]/wow</property>
+							<value>0</value>
+						</equals>
+					</and>
+				</or>
+			</condition>
+			<value>0.0</value>
+		</input>
+		<output>/controls/flight/spoiler-6-cmd</output>
+		<min>0.0</min>
+		<max>1.0</max>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>/controls/flight/spoiler-6-cmd</input>
+		<output>/controls/flight/spoiler-6</output>
+		<max-rate-of-change>0.5</max-rate-of-change>
+	</filter>
+	
+ 	<!-- Spoiler 7 -->
+	
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<and>
+					<greater-than-equals>
+						<property>/systems/hydraulic/a-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+					<not-equals>
+						<property>/controls/flight/speedbrake</property>
+						<value>0.0</value>
+					</not-equals>
+					<or>
+						<equals>
+							<property>/gear/gear[1]/wow</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>/gear/gear[2]/wow</property>
+							<value>1</value>
+						</equals>
+					</or>
+				</and>
+			</condition>
+			<property>/controls/flight/speedbrake-norm</property> 
+		</input>
+		<input>
+			<condition>
+				<or>
+					<less-than>
+						<property>/systems/hydraulic/a-psi</property>
+						<value>1500</value>
+					</less-than>
+					<and>
+						<equals>
+							<property>/gear/gear[1]/wow</property>
+							<value>0</value>
+						</equals>
+						<equals>
+							<property>/gear/gear[2]/wow</property>
+							<value>0</value>
+						</equals>
+					</and>
+				</or>
+			</condition>
+			<value>0.0</value>
+		</input>
+		<output>/controls/flight/spoiler-7-cmd</output>
+		<min>0.0</min>
+		<max>1.0</max>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>/controls/flight/spoiler-7-cmd</input>
+		<output>/controls/flight/spoiler-7</output>
+		<max-rate-of-change>0.5</max-rate-of-change>
+	</filter>
+	
+	<!-- Left Spoiler Sum -->
+	
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+            <expression>
+				<sum>
+					<property>/controls/flight/spoiler-1</property>
+					<property>/controls/flight/spoiler-2</property>
+					<property>/controls/flight/spoiler-3</property>
+					<property>/controls/flight/spoiler-4</property>
+					<property>/controls/flight/spoiler-5</property>
+					<property>/controls/flight/spoiler-6</property>
+					<property>/controls/flight/spoiler-7</property>
+				</sum>
+            </expression>
+		</input>
+		<output>/controls/flight/spoiler-l-sum</output>
+	</filter>
+	
+ 	<!-- Spoiler 8 -->
+	
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<and>
+					<greater-than-equals>
+						<property>/systems/hydraulic/a-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+					<not-equals>
+						<property>/controls/flight/speedbrake</property>
+						<value>0.0</value>
+					</not-equals>
+					<or>
+						<equals>
+							<property>/gear/gear[1]/wow</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>/gear/gear[2]/wow</property>
+							<value>1</value>
+						</equals>
+					</or>
+				</and>
+			</condition>
+			<property>/controls/flight/speedbrake-norm</property> 
+		</input>
+		<input>
+			<condition>
+				<or>
+					<less-than>
+						<property>/systems/hydraulic/a-psi</property>
+						<value>1500</value>
+					</less-than>
+					<and>
+						<equals>
+							<property>/gear/gear[1]/wow</property>
+							<value>0</value>
+						</equals>
+						<equals>
+							<property>/gear/gear[2]/wow</property>
+							<value>0</value>
+						</equals>
+					</and>
+				</or>
+			</condition>
+			<value>0.0</value>
+		</input>
+		<output>/controls/flight/spoiler-8-cmd</output>
+		<min>0.0</min>
+		<max>1.0</max>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>/controls/flight/spoiler-8-cmd</input>
+		<output>/controls/flight/spoiler-8</output>
+		<max-rate-of-change>0.5</max-rate-of-change>
+	</filter>
+	
+ 	<!-- Spoiler 9 -->
+	
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<and>
+					<greater-than-equals>
+						<property>/systems/hydraulic/a-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+					<not-equals>
+						<property>/controls/flight/speedbrake</property>
+						<value>0.0</value>
+					</not-equals>
+					<or>
+						<equals>
+							<property>/gear/gear[1]/wow</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>/gear/gear[2]/wow</property>
+							<value>1</value>
+						</equals>
+					</or>
+				</and>
+			</condition>
+			<property>/controls/flight/speedbrake-norm</property> 
+		</input>
+		<input>
+			<condition>
+				<or>
+					<less-than>
+						<property>/systems/hydraulic/a-psi</property>
+						<value>1500</value>
+					</less-than>
+					<and>
+						<equals>
+							<property>/gear/gear[1]/wow</property>
+							<value>0</value>
+						</equals>
+						<equals>
+							<property>/gear/gear[2]/wow</property>
+							<value>0</value>
+						</equals>
+					</and>
+				</or>
+			</condition>
+			<value>0.0</value>
+		</input>
+		<output>/controls/flight/spoiler-9-cmd</output>
+		<min>0.0</min>
+		<max>1.0</max>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>/controls/flight/spoiler-9-cmd</input>
+		<output>/controls/flight/spoiler-9</output>
+		<max-rate-of-change>0.5</max-rate-of-change>
+	</filter>
+	
+ 	<!-- Spoiler 10 -->
+	
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<and>
+					<greater-than-equals>
+						<property>/systems/hydraulic/b-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+					<not-equals>
+						<property>/controls/flight/speedbrake</property>
+						<value>0.0</value>
+					</not-equals>
+				</and>
+			</condition>
+			<expression>
+				<sum>
+					<property>/controls/flight/speedbrake-norm</property> 
+					<table>
+						<property>/controls/flight/aileron</property> 
+						<entry><ind>-0.1</ind><dep>   0</dep></entry>
+						<entry><ind>-1.0</ind><dep>-0.5</dep></entry>
+					</table>
+				</sum>
+			</expression>
+		</input>
+		<input>
+			<condition>
+				<less-than>
+					<property>/systems/hydraulic/b-psi</property>
+					<value>1500</value>
+				</less-than>
+			</condition>
+			<value>0.0</value>
+		</input>
+		<input>
+			<condition>
+				<greater-than-equals>
+					<property>/systems/hydraulic/b-psi</property>
+					<value>1500</value>
+				</greater-than-equals>
+			</condition>
+            <expression>
+                <table>
+                    <property>/controls/flight/aileron</property> 
+                    <entry><ind>0.1</ind><dep>  0</dep></entry>
+                    <entry><ind>1.0</ind><dep>0.5</dep></entry>
+                </table>
+            </expression>
+		</input>
+		<output>/controls/flight/spoiler-10-cmd</output>
+		<min>0.0</min>
+		<max>1.0</max>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>/controls/flight/spoiler-10-cmd</input>
+		<output>/controls/flight/spoiler-10</output>
+		<max-rate-of-change>0.5</max-rate-of-change>
+	</filter>
+	
+ 	<!-- Spoiler 11 -->
+	
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<and>
+					<greater-than-equals>
+						<property>/systems/hydraulic/b-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+					<not-equals>
+						<property>/controls/flight/speedbrake</property>
+						<value>0.0</value>
+					</not-equals>
+				</and>
+			</condition>
+			<expression>
+				<sum>
+					<property>/controls/flight/speedbrake-norm</property> 
+					<table>
+						<property>/controls/flight/aileron</property> 
+						<entry><ind>-0.1</ind><dep>   0</dep></entry>
+						<entry><ind>-1.0</ind><dep>-0.5</dep></entry>
+					</table>
+				</sum>
+			</expression>
+		</input>
+		<input>
+			<condition>
+				<less-than>
+					<property>/systems/hydraulic/b-psi</property>
+					<value>1500</value>
+				</less-than>
+			</condition>
+			<value>0.0</value>
+		</input>
+		<input>
+			<condition>
+				<greater-than-equals>
+					<property>/systems/hydraulic/b-psi</property>
+					<value>1500</value>
+				</greater-than-equals>
+			</condition>
+            <expression>
+                <table>
+                    <property>/controls/flight/aileron</property> 
+                    <entry><ind>0.1</ind><dep>  0</dep></entry>
+                    <entry><ind>1.0</ind><dep>0.5</dep></entry>
+                </table>
+            </expression>
+		</input>
+		<output>/controls/flight/spoiler-11-cmd</output>
+		<min>0.0</min>
+		<max>1.0</max>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>/controls/flight/spoiler-11-cmd</input>
+		<output>/controls/flight/spoiler-11</output>
+		<max-rate-of-change>0.5</max-rate-of-change>
+	</filter>
+	
+ 	<!-- Spoiler 12 -->
+	
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<and>
+					<greater-than-equals>
+						<property>/systems/hydraulic/b-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+					<not-equals>
+						<property>/controls/flight/speedbrake</property>
+						<value>0.0</value>
+					</not-equals>
+				</and>
+			</condition>
+			<expression>
+				<sum>
+					<property>/controls/flight/speedbrake-norm</property> 
+					<table>
+						<property>/controls/flight/aileron</property> 
+						<entry><ind>-0.1</ind><dep>   0</dep></entry>
+						<entry><ind>-1.0</ind><dep>-0.5</dep></entry>
+					</table>
+				</sum>
+			</expression>
+		</input>
+		<input>
+			<condition>
+				<less-than>
+					<property>/systems/hydraulic/b-psi</property>
+					<value>1500</value>
+				</less-than>
+			</condition>
+			<value>0.0</value>
+		</input>
+		<input>
+			<condition>
+				<greater-than-equals>
+					<property>/systems/hydraulic/b-psi</property>
+					<value>1500</value>
+				</greater-than-equals>
+			</condition>
+            <expression>
+                <table>
+                    <property>/controls/flight/aileron</property> 
+                    <entry><ind>0.1</ind><dep>  0</dep></entry>
+                    <entry><ind>1.0</ind><dep>0.5</dep></entry>
+                </table>
+            </expression>
+		</input>
+		<output>/controls/flight/spoiler-12-cmd</output>
+		<min>0.0</min>
+		<max>1.0</max>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>/controls/flight/spoiler-12-cmd</input>
+		<output>/controls/flight/spoiler-12</output>
+		<max-rate-of-change>0.5</max-rate-of-change>
+	</filter>
+	
+ 	<!-- Spoiler 13 -->
+	
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<and>
+					<greater-than-equals>
+						<property>/systems/hydraulic/a-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+					<not-equals>
+						<property>/controls/flight/speedbrake</property>
+						<value>0.0</value>
+					</not-equals>
+				</and>
+			</condition>
+			<expression>
+				<sum>
+					<property>/controls/flight/speedbrake-norm</property> 
+					<table>
+						<property>/controls/flight/aileron</property> 
+						<entry><ind>-0.1</ind><dep>   0</dep></entry>
+						<entry><ind>-1.0</ind><dep>-0.5</dep></entry>
+					</table>
+				</sum>
+			</expression>
+		</input>
+		<input>
+			<condition>
+				<less-than>
+					<property>/systems/hydraulic/a-psi</property>
+					<value>1500</value>
+				</less-than>
+			</condition>
+			<value>0.0</value>
+		</input>
+		<input>
+			<condition>
+				<greater-than-equals>
+					<property>/systems/hydraulic/a-psi</property>
+					<value>1500</value>
+				</greater-than-equals>
+			</condition>
+            <expression>
+                <table>
+                    <property>/controls/flight/aileron</property> 
+                    <entry><ind>0.1</ind><dep>  0</dep></entry>
+                    <entry><ind>1.0</ind><dep>0.5</dep></entry>
+                </table>
+            </expression>
+		</input>
+		<output>/controls/flight/spoiler-13-cmd</output>
+		<min>0.0</min>
+		<max>1.0</max>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>/controls/flight/spoiler-13-cmd</input>
+		<output>/controls/flight/spoiler-13</output>
+		<max-rate-of-change>0.5</max-rate-of-change>
+	</filter>
+	
+ 	<!-- Spoiler 14 -->
+	
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<and>
+					<greater-than-equals>
+						<property>/systems/hydraulic/a-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+					<not-equals>
+						<property>/controls/flight/speedbrake</property>
+						<value>0.0</value>
+					</not-equals>
+				</and>
+			</condition>
+			<expression>
+				<sum>
+					<property>/controls/flight/speedbrake-norm</property> 
+					<table>
+						<property>/controls/flight/aileron</property> 
+						<entry><ind>-0.1</ind><dep>   0</dep></entry>
+						<entry><ind>-1.0</ind><dep>-0.5</dep></entry>
+					</table>
+				</sum>
+			</expression>
+		</input>
+		<input>
+			<condition>
+				<less-than>
+					<property>/systems/hydraulic/a-psi</property>
+					<value>1500</value>
+				</less-than>
+			</condition>
+			<value>0.0</value>
+		</input>
+		<input>
+			<condition>
+				<greater-than-equals>
+					<property>/systems/hydraulic/a-psi</property>
+					<value>1500</value>
+				</greater-than-equals>
+			</condition>
+            <expression>
+                <table>
+                    <property>/controls/flight/aileron</property> 
+                    <entry><ind>0.1</ind><dep>  0</dep></entry>
+                    <entry><ind>1.0</ind><dep>0.5</dep></entry>
+                </table>
+            </expression>
+		</input>
+		<output>/controls/flight/spoiler-14-cmd</output>
+		<min>0.0</min>
+		<max>1.0</max>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>/controls/flight/spoiler-14-cmd</input>
+		<output>/controls/flight/spoiler-14</output>
+		<max-rate-of-change>0.5</max-rate-of-change>
+	</filter>
+	
+	<!-- Right Spoiler Sum -->
+	
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+            <expression>
+				<sum>
+					<property>/controls/flight/spoiler-8</property>
+					<property>/controls/flight/spoiler-9</property>
+					<property>/controls/flight/spoiler-10</property>
+					<property>/controls/flight/spoiler-11</property>
+					<property>/controls/flight/spoiler-12</property>
+					<property>/controls/flight/spoiler-13</property>
+					<property>/controls/flight/spoiler-14</property>
+				</sum>
+            </expression>
+		</input>
+		<output>/controls/flight/spoiler-r-sum</output>
+	</filter>
+	
+ <!-- =============================================================== -->
+ <!-- Speedbrake Logic                                                -->
+ <!-- =============================================================== -->
+ 
+	<!-- Speedbrake Sum -->
+	
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<expression>
+				<product>
+					<sum>
+						<property>/controls/flight/spoiler-l-sum</property>
+						<property>/controls/flight/spoiler-r-sum</property>
+					</sum>
+					<value>0.07142857142857145</value>
+				</product>
+			</expression>
+		</input>
+		<output>/controls/flight/speedbrake-output</output>
+	</filter>
+	
+	<filter>
+		<name>Speedbrake Norm</name>
+		<type>noise-spike</type>
+		<input>/controls/flight/speedbrake</input>
+		<output>/controls/flight/speedbrake-norm</output>
+		<max-rate-of-change>0.7</max-rate-of-change>
 	</filter>
 
 </PropertyList>

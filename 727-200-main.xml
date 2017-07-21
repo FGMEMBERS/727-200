@@ -202,6 +202,23 @@
 			<aileron-sum>0</aileron-sum>
 			<elevator-sum>0</elevator-sum>
 			<rudder-sum>0</rudder-sum>
+			<spoiler-1>0.0</spoiler-1>
+			<spoiler-2>0.0</spoiler-2>
+			<spoiler-3>0.0</spoiler-3>
+			<spoiler-4>0.0</spoiler-4>
+			<spoiler-5>0.0</spoiler-5>
+			<spoiler-6>0.0</spoiler-6>
+			<spoiler-7>0.0</spoiler-7>
+			<spoiler-l-sum>0.0</spoiler-l-sum>
+			<spoiler-8>0.0</spoiler-8>
+			<spoiler-9>0.0</spoiler-9>
+			<spoiler-10>0.0</spoiler-10>
+			<spoiler-11>0.0</spoiler-11>
+			<spoiler-12>0.0</spoiler-12>
+			<spoiler-13>0.0</spoiler-13>
+			<spoiler-14>0.0</spoiler-14>
+			<spoiler-r-sum>0.0</spoiler-r-sum>
+			<speedbrake-output>0.0</speedbrake-output>
 		</flight>
 		<gear>
 			<brake-parking>0</brake-parking>

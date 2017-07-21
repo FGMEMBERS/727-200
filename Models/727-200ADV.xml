@@ -60,14 +60,13 @@
 		<object-name>flap4.1</object-name>
 		<object-name>inneraileronl_0</object-name>
 		<object-name>inneraileronl_1</object-name>
-		<object-name>obs1</object-name>
-		<object-name>obs2</object-name>
-		<object-name>ibs3</object-name>
-		<object-name>ibs4</object-name>
-		<object-name>ibs5</object-name>
-		<object-name>ibs6</object-name>
-		<object-name>gs7_0</object-name>
-		<object-name>gs7_1</object-name>
+		<object-name>spoiler1</object-name>
+		<object-name>spoiler2</object-name>
+		<object-name>spoiler3</object-name>
+		<object-name>spoiler4</object-name>
+		<object-name>spoiler5</object-name>
+		<object-name>spoiler6</object-name>
+		<object-name>spoiler7</object-name>
 		<object-name>slat1.039</object-name>
 		<object-name>Plane.031</object-name>
 		<object-name>slat2</object-name>
@@ -81,16 +80,15 @@
 		<object-name>flap1.1</object-name>
 		<object-name>flap3</object-name>
 		<object-name>flap3.1</object-name>
-		<object-name>gs8_0</object-name>
-		<object-name>gs8_1</object-name>
+		<object-name>spoiler8</object-name>
 		<object-name>inneraileronr_0</object-name>
 		<object-name>inneraileronr_1</object-name>
-		<object-name>ibs9</object-name>
-		<object-name>ibs10</object-name>
-		<object-name>ibs11</object-name>
-		<object-name>ibs12</object-name>
-		<object-name>obs13</object-name>
-		<object-name>obs14</object-name>
+		<object-name>spoiler9</object-name>
+		<object-name>spoiler10</object-name>
+		<object-name>spoiler11</object-name>
+		<object-name>spoiler12</object-name>
+		<object-name>spoiler13</object-name>
+		<object-name>spoiler14</object-name>
 		<object-name>Plane.013</object-name>
 		<object-name>edgel</object-name>
 		<object-name>slat1</object-name>
@@ -329,14 +327,29 @@
 		</axis>
 	</animation>
 
-	<!--spoiler-->
-	<!--outboardspoiler-->
+	<!-- Spoilers-->
+	
 	<animation>
 		<type>rotate</type>
-		<object-name>obs1</object-name>
-		<object-name>obs2</object-name>
-		<property>surface-positions/speedbrake-pos-norm</property>
-		<factor>45</factor>
+		<object-name>spoiler1</object-name>
+		<property>controls/flight/spoiler-1</property>
+		<factor>40</factor>
+		<offset-deg>0</offset-deg>
+		<axis>
+			<x1-m>2.249</x1-m>
+			<y1-m>-9.001</y1-m>
+			<z1-m>-0.472</z1-m>
+			<x2-m>2.753</x2-m>
+			<y2-m>-10.066</y2-m>
+			<z2-m>-0.450</z2-m>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>spoiler2</object-name>
+		<property>controls/flight/spoiler-2</property>
+		<factor>40</factor>
 		<offset-deg>0</offset-deg>
 		<axis>
 			<x1-m>2.249</x1-m>
@@ -350,28 +363,25 @@
 
 	<animation>
 		<type>rotate</type>
-		<object-name>obs13</object-name>
-		<object-name>obs14</object-name>
-		<property>surface-positions/speedbrake-pos-norm</property>
-		<factor>-45</factor>
+		<object-name>spoiler3</object-name>
+		<property>controls/flight/spoiler-3</property>
+		<factor>40</factor>
 		<offset-deg>0</offset-deg>
 		<axis>
 			<x1-m>2.249</x1-m>
-			<y1-m>9.001</y1-m>
+			<y1-m>-9.001</y1-m>
 			<z1-m>-0.472</z1-m>
 			<x2-m>2.753</x2-m>
-			<y2-m>10.066</y2-m>
+			<y2-m>-10.066</y2-m>
 			<z2-m>-0.450</z2-m>
 		</axis>
 	</animation>
-
-	<!--inboardspoiler3,4&11,12-->
+	
 	<animation>
 		<type>rotate</type>
-		<object-name>ibs4</object-name>
-		<object-name>ibs3</object-name>
-		<property>surface-positions/speedbrake-pos-norm</property>
-		<factor>45</factor>
+		<object-name>spoiler4</object-name>
+		<property>controls/flight/spoiler-4</property>
+		<factor>40</factor>
 		<offset-deg>0</offset-deg>
 		<axis>
 			<x1-m>2.249</x1-m>
@@ -385,28 +395,9 @@
 
 	<animation>
 		<type>rotate</type>
-		<object-name>ibs11</object-name>
-		<object-name>ibs12</object-name>
-		<property>surface-positions/speedbrake-pos-norm</property>
-		<factor>-45</factor>
-		<offset-deg>0</offset-deg>
-		<axis>
-			<x1-m>2.249</x1-m>
-			<y1-m>9.001</y1-m>
-			<z1-m>-0.472</z1-m>
-			<x2-m>2.753</x2-m>
-			<y2-m>10.066</y2-m>
-			<z2-m>-0.450</z2-m>
-		</axis>
-	</animation>
-
-	<!--inboardspoiler5,6&10,9-->
-	<animation>
-		<type>rotate</type>
-		<object-name>ibs5</object-name>
-		<object-name>ibs6</object-name>
-		<property>surface-positions/speedbrake-pos-norm</property>
-		<factor>-45</factor>
+		<object-name>spoiler5</object-name>
+		<property>controls/flight/spoiler-5</property>
+		<factor>-40</factor>
 		<offset-deg>0</offset-deg>
 		<axis>
 			<x1-m>1.142</x1-m>
@@ -417,13 +408,44 @@
 			<z2-m>-0.600</z2-m>
 		</axis>
 	</animation>
-
+	
 	<animation>
 		<type>rotate</type>
-		<object-name>ibs10</object-name>
-		<object-name>ibs9</object-name>
-		<property>surface-positions/speedbrake-pos-norm</property>
-		<factor>45</factor>
+		<object-name>spoiler6</object-name>
+		<property>controls/flight/spoiler-6</property>
+		<factor>-40</factor>
+		<offset-deg>0</offset-deg>
+		<axis>
+			<x1-m>1.142</x1-m>
+			<y1-m>-6.073</y1-m>
+			<z1-m>-0.516</z1-m>
+			<x2-m>0.406</x2-m>
+			<y2-m>-2.208</y2-m>
+			<z2-m>-0.600</z2-m>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>spoiler7</object-name>
+		<property>controls/flight/spoiler-7</property>
+		<factor>-40</factor>
+		<offset-deg>0</offset-deg>
+		<axis>
+			<x1-m>1.142</x1-m>
+			<y1-m>-6.073</y1-m>
+			<z1-m>-0.516</z1-m>
+			<x2-m>0.406</x2-m>
+			<y2-m>-2.208</y2-m>
+			<z2-m>-0.600</z2-m>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>spoiler8</object-name>
+		<property>controls/flight/spoiler-8</property>
+		<factor>40</factor>
 		<offset-deg>0</offset-deg>
 		<axis>
 			<x1-m>1.142</x1-m>
@@ -434,6 +456,104 @@
 			<z2-m>-0.600</z2-m>
 		</axis>
 	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>spoiler9</object-name>
+		<property>controls/flight/spoiler-9</property>
+		<factor>40</factor>
+		<offset-deg>0</offset-deg>
+		<axis>
+			<x1-m>1.142</x1-m>
+			<y1-m>6.073</y1-m>
+			<z1-m>-0.516</z1-m>
+			<x2-m>0.406</x2-m>
+			<y2-m>2.208</y2-m>
+			<z2-m>-0.600</z2-m>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>spoiler10</object-name>
+		<property>controls/flight/spoiler-10</property>
+		<factor>40</factor>
+		<offset-deg>0</offset-deg>
+		<axis>
+			<x1-m>1.142</x1-m>
+			<y1-m>6.073</y1-m>
+			<z1-m>-0.516</z1-m>
+			<x2-m>0.406</x2-m>
+			<y2-m>2.208</y2-m>
+			<z2-m>-0.600</z2-m>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>spoiler11</object-name>
+		<property>controls/flight/spoiler-11</property>
+		<factor>-40</factor>
+		<offset-deg>0</offset-deg>
+		<axis>
+			<x1-m>2.249</x1-m>
+			<y1-m>9.001</y1-m>
+			<z1-m>-0.472</z1-m>
+			<x2-m>2.753</x2-m>
+			<y2-m>10.066</y2-m>
+			<z2-m>-0.450</z2-m>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>spoiler12</object-name>
+		<property>controls/flight/spoiler-12</property>
+		<factor>-40</factor>
+		<offset-deg>0</offset-deg>
+		<axis>
+			<x1-m>2.249</x1-m>
+			<y1-m>9.001</y1-m>
+			<z1-m>-0.472</z1-m>
+			<x2-m>2.753</x2-m>
+			<y2-m>10.066</y2-m>
+			<z2-m>-0.450</z2-m>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>spoiler13</object-name>
+		<property>controls/flight/spoiler-13</property>
+		<factor>-40</factor>
+		<offset-deg>0</offset-deg>
+		<axis>
+			<x1-m>2.249</x1-m>
+			<y1-m>9.001</y1-m>
+			<z1-m>-0.472</z1-m>
+			<x2-m>2.753</x2-m>
+			<y2-m>10.066</y2-m>
+			<z2-m>-0.450</z2-m>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>spoiler14</object-name>
+		<property>controls/flight/spoiler-14</property>
+		<factor>-40</factor>
+		<offset-deg>0</offset-deg>
+		<axis>
+			<x1-m>2.249</x1-m>
+			<y1-m>9.001</y1-m>
+			<z1-m>-0.472</z1-m>
+			<x2-m>2.753</x2-m>
+			<y2-m>10.066</y2-m>
+			<z2-m>-0.450</z2-m>
+		</axis>
+	</animation>
+	
+	<!-- Gear Door -->
 
 	<animation>
 		<type>rotate</type>
