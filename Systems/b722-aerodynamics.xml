@@ -251,7 +251,7 @@
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
 				<property>fcs/left-aileron-pos-rad</property>
-				<value>0.13</value>
+				<value>0.15</value>
 			</product>
 		</function>
 

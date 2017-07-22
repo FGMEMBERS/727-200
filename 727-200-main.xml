@@ -273,11 +273,9 @@
 				<td>0.0001</td>
 			</roll>
 			<pitch>
-				<umin>-0.40</umin>
-				<umax>0.40</umax>
-				<kp>-0.08</kp>
-				<ti>10.0</ti>
-				<td>0.00001</td>
+				<gain>0.1</gain>
+				<min>-0.2</min>
+				<max>0.2</max>
 			</pitch>
 			<cmd>
 				<roll-kp>-0.9</roll-kp>

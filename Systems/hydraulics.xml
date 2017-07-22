@@ -167,334 +167,6 @@
 	</filter>
 	
  <!-- =============================================================== -->
- <!-- Roll Control                                                    -->
- <!-- =============================================================== -->
-	
-	<filter>
-		<debug>false</debug>
-		<type>gain</type>
-		<gain>1.0</gain>
-		<input>
-            <expression>
-				<product>
-					<sum>
-						<product>
-							<sum>
-								<property>/controls/flight/aileron-left</property>
-								<property>/controls/flight/aileron-right</property>
-							</sum>
-							<value>1.5</value>
-						</product>
-						<product>
-							<sum>
-								<product>
-									<property>/controls/flight/spoiler-l-sum</property>
-									<value>-1.0</value>
-								</product>
-								<property>/controls/flight/spoiler-r-sum</property>
-							</sum>
-							<value>0.5</value>
-						</product>
-					</sum>
-					<value>0.363636</value>
-				</product>
-            </expression>
-		</input>
-		<output>/controls/flight/aileron-sum</output>
-		<min>-1.0</min>
-		<max>1.0</max>
-	</filter>
-	
- <!-- =============================================================== -->
- <!-- Elevator Control                                                -->
- <!-- =============================================================== -->
- 
-	<filter>
-		<debug>false</debug>
-		<type>gain</type>
-		<gain>1.0</gain>
-		<input>
-			<condition>
-				<and>
-					<less-than>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</less-than>
-					<less-than>
-						<property>/systems/hydraulic/b-psi</property>
-						<value>1500</value>
-					</less-than>
-				</and>
-			</condition>
-			<property>/systems/hydraulic/elevator-droop</property>
-		</input>
-		<input>
-			<condition>
-				<or>
-					<greater-than-equals>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
-					<greater-than-equals>
-						<property>/systems/hydraulic/b-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
-				</or>
-			</condition>
-            <expression>
-                <table>
-                    <property>/controls/flight/elevator</property> 
-                    <entry><ind>-1</ind><dep>-0.5</dep></entry>
-                    <entry><ind> 0</ind><dep> 0.0</dep></entry>
-                    <entry><ind> 1</ind><dep> 0.5</dep></entry>
-                </table>
-            </expression>
-		</input>
-		<output>/controls/flight/elevator-left-cmd</output>
-	</filter>
-	
-	<filter>
-		<debug>false</debug>
-		<type>noise-spike</type>
-		<input>/controls/flight/elevator-left-cmd</input>
-		<output>/controls/flight/elevator-left</output>
-		<max-rate-of-change>2.5</max-rate-of-change>
-	</filter>
-	
-	<filter>
-		<debug>false</debug>
-		<type>gain</type>
-		<gain>1.0</gain>
-		<input>
-			<condition>
-				<and>
-					<less-than>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</less-than>
-					<less-than>
-						<property>/systems/hydraulic/b-psi</property>
-						<value>1500</value>
-					</less-than>
-				</and>
-			</condition>
-			<property>/systems/hydraulic/elevator-droop</property>
-		</input>
-		<input>
-			<condition>
-				<or>
-					<greater-than-equals>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
-					<greater-than-equals>
-						<property>/systems/hydraulic/b-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
-				</or>
-			</condition>
-            <expression>
-                <table>
-                    <property>/controls/flight/elevator</property> 
-                    <entry><ind>-1</ind><dep>-0.5</dep></entry>
-                    <entry><ind> 0</ind><dep> 0.0</dep></entry>
-                    <entry><ind> 1</ind><dep> 0.5</dep></entry>
-                </table>
-            </expression>
-		</input>
-		<output>/controls/flight/elevator-right-cmd</output>
-	</filter>
-	
-	<filter>
-		<debug>false</debug>
-		<type>noise-spike</type>
-		<input>/controls/flight/elevator-right-cmd</input>
-		<output>/controls/flight/elevator-right</output>
-		<max-rate-of-change>2.5</max-rate-of-change>
-	</filter>
-	
-	<filter>
-		<debug>false</debug>
-		<type>gain</type>
-		<gain>1.0</gain>
-		<input>
-            <expression>
-				<sum>
-					<property>/controls/flight/elevator-left</property>
-					<property>/controls/flight/elevator-right</property>
-				</sum>
-            </expression>
-		</input>
-		<output>/controls/flight/elevator-sum</output>
-		<min>-1.0</min>
-		<max>1.0</max>
-	</filter>
-
- <!-- =============================================================== -->
- <!-- Rudder Control                                                  -->
- <!-- =============================================================== -->
- 
-	<filter>
-		<debug>false</debug>
-		<type>gain</type>
-		<gain>1.0</gain>
-		<input>
-			<condition>
-				<and>
-					<less-than>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</less-than>
-					<less-than>
-						<property>/systems/hydraulic/b-psi</property>
-						<value>1500</value>
-					</less-than>
-					<less-than>
-						<property>/systems/hydraulic/stby-psi</property>
-						<value>1500</value>
-					</less-than>
-				</and>
-			</condition>
-			<value>0</value>
-		</input>
-		<input>
-			<condition>
-				<or>
-					<greater-than-equals>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
-					<greater-than-equals>
-						<property>/systems/hydraulic/b-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
-					<greater-than-equals>
-						<property>/systems/hydraulic/stby-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
-				</or>
-			</condition>
-			<expression>
-				<sum>
-					<table>
-						<property>/controls/flight/rudder</property> 
-						<entry><ind>-1</ind><dep>-0.5</dep></entry>
-						<entry><ind> 0</ind><dep> 0.0</dep></entry>
-						<entry><ind> 1</ind><dep> 0.5</dep></entry>
-					</table>
-					<table>
-						<property>/controls/flight/rudder-trim</property> 
-						<entry><ind>-1</ind><dep>-0.5</dep></entry>
-						<entry><ind> 0</ind><dep> 0.0</dep></entry>
-						<entry><ind> 1</ind><dep> 0.5</dep></entry>
-					</table>
-				</sum>
-			</expression>
-		</input>
-		<output>/controls/flight/rudder-upper-cmd</output>
-		<min>-1.0</min>
-		<max>1.0</max>
-	</filter>
-	
-	<filter>
-		<debug>false</debug>
-		<type>noise-spike</type>
-		<input>/controls/flight/rudder-upper-cmd</input>
-		<output>/controls/flight/rudder-upper</output>
-		<max-rate-of-change>2.5</max-rate-of-change>
-	</filter>
-	
-	<filter>
-		<debug>false</debug>
-		<type>gain</type>
-		<gain>1.0</gain>
-		<input>
-			<condition>
-				<and>
-					<less-than>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</less-than>
-					<less-than>
-						<property>/systems/hydraulic/b-psi</property>
-						<value>1500</value>
-					</less-than>
-					<less-than>
-						<property>/systems/hydraulic/stby-psi</property>
-						<value>1500</value>
-					</less-than>
-				</and>
-			</condition>
-			<value>0</value>
-		</input>
-		<input>
-			<condition>
-				<or>
-					<greater-than-equals>
-						<property>/systems/hydraulic/a-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
-					<greater-than-equals>
-						<property>/systems/hydraulic/b-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
-					<greater-than-equals>
-						<property>/systems/hydraulic/stby-psi</property>
-						<value>1500</value>
-					</greater-than-equals>
-				</or>
-			</condition>
-			<expression>
-				<sum>
-					<table>
-						<property>/controls/flight/rudder</property> 
-						<entry><ind>-1</ind><dep>-0.5</dep></entry>
-						<entry><ind> 0</ind><dep> 0.0</dep></entry>
-						<entry><ind> 1</ind><dep> 0.5</dep></entry>
-					</table>
-					<table>
-						<property>/controls/flight/rudder-trim</property> 
-						<entry><ind>-1</ind><dep>-0.5</dep></entry>
-						<entry><ind> 0</ind><dep> 0.0</dep></entry>
-						<entry><ind> 1</ind><dep> 0.5</dep></entry>
-					</table>
-				</sum>
-			</expression>
-		</input>
-		<output>/controls/flight/rudder-lower-cmd</output>
-		<min>-1.0</min>
-		<max>1.0</max>
-	</filter>
-	
-	<filter>
-		<debug>false</debug>
-		<type>noise-spike</type>
-		<input>/controls/flight/rudder-lower-cmd</input>
-		<output>/controls/flight/rudder-lower</output>
-		<max-rate-of-change>2.5</max-rate-of-change>
-	</filter>
- 
-	<filter>
-		<debug>false</debug>
-		<type>gain</type>
-		<gain>1.0</gain>
-		<input>
-			<expression>
-				<product>
-					<sum>
-						<property>/controls/flight/rudder-upper</property>
-						<property>/controls/flight/rudder-lower</property>
-					</sum>
-					<value>-1</value>
-				</product>
-			</expression>
-		</input>
-		<output>/controls/flight/rudder-sum</output>
-		<min>-1.0</min>
-		<max>1.0</max>
-	</filter>
-	
- <!-- =============================================================== -->
  <!-- Spoiler Control                                                 -->
  <!-- =============================================================== -->
  
@@ -1470,6 +1142,334 @@
             </expression>
 		</input>
 		<output>/controls/flight/spoiler-r-sum</output>
+	</filter>
+	
+ <!-- =============================================================== -->
+ <!-- Roll Control                                                    -->
+ <!-- =============================================================== -->
+	
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+            <expression>
+				<product>
+					<sum>
+						<product>
+							<sum>
+								<property>/controls/flight/aileron-left</property>
+								<property>/controls/flight/aileron-right</property>
+							</sum>
+							<value>1.5</value>
+						</product>
+						<product>
+							<sum>
+								<product>
+									<property>/controls/flight/spoiler-l-sum</property>
+									<value>-1.0</value>
+								</product>
+								<property>/controls/flight/spoiler-r-sum</property>
+							</sum>
+							<value>0.5</value>
+						</product>
+					</sum>
+					<value>0.363636</value>
+				</product>
+            </expression>
+		</input>
+		<output>/controls/flight/aileron-sum</output>
+		<min>-1.0</min>
+		<max>1.0</max>
+	</filter>
+	
+ <!-- =============================================================== -->
+ <!-- Elevator Control                                                -->
+ <!-- =============================================================== -->
+ 
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<and>
+					<less-than>
+						<property>/systems/hydraulic/a-psi</property>
+						<value>1500</value>
+					</less-than>
+					<less-than>
+						<property>/systems/hydraulic/b-psi</property>
+						<value>1500</value>
+					</less-than>
+				</and>
+			</condition>
+			<property>/systems/hydraulic/elevator-droop</property>
+		</input>
+		<input>
+			<condition>
+				<or>
+					<greater-than-equals>
+						<property>/systems/hydraulic/a-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+					<greater-than-equals>
+						<property>/systems/hydraulic/b-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+				</or>
+			</condition>
+            <expression>
+                <table>
+                    <property>/controls/flight/elevator</property> 
+                    <entry><ind>-1</ind><dep>-0.5</dep></entry>
+                    <entry><ind> 0</ind><dep> 0.0</dep></entry>
+                    <entry><ind> 1</ind><dep> 0.5</dep></entry>
+                </table>
+            </expression>
+		</input>
+		<output>/controls/flight/elevator-left-cmd</output>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>/controls/flight/elevator-left-cmd</input>
+		<output>/controls/flight/elevator-left</output>
+		<max-rate-of-change>2.5</max-rate-of-change>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<and>
+					<less-than>
+						<property>/systems/hydraulic/a-psi</property>
+						<value>1500</value>
+					</less-than>
+					<less-than>
+						<property>/systems/hydraulic/b-psi</property>
+						<value>1500</value>
+					</less-than>
+				</and>
+			</condition>
+			<property>/systems/hydraulic/elevator-droop</property>
+		</input>
+		<input>
+			<condition>
+				<or>
+					<greater-than-equals>
+						<property>/systems/hydraulic/a-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+					<greater-than-equals>
+						<property>/systems/hydraulic/b-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+				</or>
+			</condition>
+            <expression>
+                <table>
+                    <property>/controls/flight/elevator</property> 
+                    <entry><ind>-1</ind><dep>-0.5</dep></entry>
+                    <entry><ind> 0</ind><dep> 0.0</dep></entry>
+                    <entry><ind> 1</ind><dep> 0.5</dep></entry>
+                </table>
+            </expression>
+		</input>
+		<output>/controls/flight/elevator-right-cmd</output>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>/controls/flight/elevator-right-cmd</input>
+		<output>/controls/flight/elevator-right</output>
+		<max-rate-of-change>2.5</max-rate-of-change>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+            <expression>
+				<sum>
+					<property>/controls/flight/elevator-left</property>
+					<property>/controls/flight/elevator-right</property>
+				</sum>
+            </expression>
+		</input>
+		<output>/controls/flight/elevator-sum</output>
+		<min>-1.0</min>
+		<max>1.0</max>
+	</filter>
+
+ <!-- =============================================================== -->
+ <!-- Rudder Control                                                  -->
+ <!-- =============================================================== -->
+ 
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<and>
+					<less-than>
+						<property>/systems/hydraulic/a-psi</property>
+						<value>1500</value>
+					</less-than>
+					<less-than>
+						<property>/systems/hydraulic/b-psi</property>
+						<value>1500</value>
+					</less-than>
+					<less-than>
+						<property>/systems/hydraulic/stby-psi</property>
+						<value>1500</value>
+					</less-than>
+				</and>
+			</condition>
+			<value>0</value>
+		</input>
+		<input>
+			<condition>
+				<or>
+					<greater-than-equals>
+						<property>/systems/hydraulic/a-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+					<greater-than-equals>
+						<property>/systems/hydraulic/b-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+					<greater-than-equals>
+						<property>/systems/hydraulic/stby-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+				</or>
+			</condition>
+			<expression>
+				<sum>
+					<table>
+						<property>/controls/flight/rudder-output</property> 
+						<entry><ind>-1</ind><dep>-0.5</dep></entry>
+						<entry><ind> 0</ind><dep> 0.0</dep></entry>
+						<entry><ind> 1</ind><dep> 0.5</dep></entry>
+					</table>
+					<table>
+						<property>/controls/flight/rudder-trim</property> 
+						<entry><ind>-1</ind><dep>-0.5</dep></entry>
+						<entry><ind> 0</ind><dep> 0.0</dep></entry>
+						<entry><ind> 1</ind><dep> 0.5</dep></entry>
+					</table>
+				</sum>
+			</expression>
+		</input>
+		<output>/controls/flight/rudder-upper-cmd</output>
+		<min>-1.0</min>
+		<max>1.0</max>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>/controls/flight/rudder-upper-cmd</input>
+		<output>/controls/flight/rudder-upper</output>
+		<max-rate-of-change>2.5</max-rate-of-change>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<condition>
+				<and>
+					<less-than>
+						<property>/systems/hydraulic/a-psi</property>
+						<value>1500</value>
+					</less-than>
+					<less-than>
+						<property>/systems/hydraulic/b-psi</property>
+						<value>1500</value>
+					</less-than>
+					<less-than>
+						<property>/systems/hydraulic/stby-psi</property>
+						<value>1500</value>
+					</less-than>
+				</and>
+			</condition>
+			<value>0</value>
+		</input>
+		<input>
+			<condition>
+				<or>
+					<greater-than-equals>
+						<property>/systems/hydraulic/a-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+					<greater-than-equals>
+						<property>/systems/hydraulic/b-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+					<greater-than-equals>
+						<property>/systems/hydraulic/stby-psi</property>
+						<value>1500</value>
+					</greater-than-equals>
+				</or>
+			</condition>
+			<expression>
+				<sum>
+					<table>
+						<property>/controls/flight/rudder-output</property> 
+						<entry><ind>-1</ind><dep>-0.5</dep></entry>
+						<entry><ind> 0</ind><dep> 0.0</dep></entry>
+						<entry><ind> 1</ind><dep> 0.5</dep></entry>
+					</table>
+					<table>
+						<property>/controls/flight/rudder-trim</property> 
+						<entry><ind>-1</ind><dep>-0.5</dep></entry>
+						<entry><ind> 0</ind><dep> 0.0</dep></entry>
+						<entry><ind> 1</ind><dep> 0.5</dep></entry>
+					</table>
+				</sum>
+			</expression>
+		</input>
+		<output>/controls/flight/rudder-lower-cmd</output>
+		<min>-1.0</min>
+		<max>1.0</max>
+	</filter>
+	
+	<filter>
+		<debug>false</debug>
+		<type>noise-spike</type>
+		<input>/controls/flight/rudder-lower-cmd</input>
+		<output>/controls/flight/rudder-lower</output>
+		<max-rate-of-change>2.5</max-rate-of-change>
+	</filter>
+ 
+	<filter>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<input>
+			<expression>
+				<product>
+					<sum>
+						<property>/controls/flight/rudder-upper</property>
+						<property>/controls/flight/rudder-lower</property>
+					</sum>
+					<value>-1</value>
+				</product>
+			</expression>
+		</input>
+		<output>/controls/flight/rudder-sum</output>
+		<min>-1.0</min>
+		<max>1.0</max>
 	</filter>
 	
  <!-- =============================================================== -->
