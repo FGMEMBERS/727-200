@@ -58,6 +58,7 @@ setlistener("/it-autoflight/input/ap", func {
 		setprop("/autopilot-v/hdg-sel-btn", 0);
 		setprop("/it-autoflight/input/lat", 1);
 		setprop("/it-autoflight/input/vert", 1);
+		setprop("/it-autoflight/input/roll-deg", 0);
 		if (getprop("/it-autoflight/sound/enableapoffsound") == 1) {
 			setprop("/it-autoflight/sound/apoffsound", 1);
 			setprop("/it-autoflight/sound/enableapoffsound", 0);	  
