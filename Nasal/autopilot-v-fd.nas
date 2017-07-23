@@ -46,6 +46,7 @@ var fd_update = func {
 		}
 	} else if (fdset == 5) {
 		if (getprop("/autopilot-v/internal/fd-vert") == 4) {
+			sync_pitch();
 			setprop("/autopilot-v/internal/fd-vert", 1);
 		}
 		if (getprop("/autopilot-v/internal/fd-lat") == 2) {
