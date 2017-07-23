@@ -232,8 +232,8 @@
 			<spoiler-14>0.0</spoiler-14>
 			<spoiler-r-sum>0.0</spoiler-r-sum>
 			<speedbrake-output>0.0</speedbrake-output>
-			<yaw-damper-a>0</yaw-damper-a>
-			<yaw-damper-b>0</yaw-damper-b>
+			<yaw-damper-a>1</yaw-damper-a>
+			<yaw-damper-b>1</yaw-damper-b>
 		</flight>
 		<gear>
 			<brake-parking>0</brake-parking>
