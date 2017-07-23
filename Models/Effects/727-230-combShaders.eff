@@ -23,6 +23,7 @@
     </texture> -->   
     <reflection-enabled type="int">1</reflection-enabled>
     <reflection-dynamic type="int">1</reflection-dynamic>
+    <reflection-type type="int">2</reflection-type>
     <reflect_map-enabled type="int">0</reflect_map-enabled>
     <reflection-correction type="float">0.10</reflection-correction>
     <texture n="5">

@@ -184,6 +184,19 @@
 	</autopilot-v>
 
 	<controls n="0">
+                <anti-ice>
+                    <ducttemp>
+                        <selected-engine type="int">0</selected-engine>
+                    </ducttemp>
+                    <valves>
+                        <engine1 type="bool">0</engine1>
+                        <engine2 type="bool">0</engine2>
+                        <engine3 type="bool">0</engine3>
+                        <engine1-ok type="bool">0</engine1-ok>
+                        <engine2-ok type="bool">0</engine2-ok>
+                        <engine3-ok type="bool">0</engine3-ok>
+                    </valves>                        
+                </anti-ice>
 		<engines>
 			<engine n="0">
 				<epr-lim type="double">2.11</epr-lim>
@@ -235,6 +248,20 @@
 			<dome-norm type="double">0</dome-norm>
 			<overhead-panel-norm type="double">1.0</overhead-panel-norm>
 			<main-panel-pedestal-norm type="double">1.0</main-panel-pedestal-norm>
+                        <!--EXTERIOR LIGHTS-->
+                        <outbound-landing-lights-left type="bool">0</outbound-landing-lights-left>
+                        <outbound-landing-lights-right type="bool">0</outbound-landing-lights-right>
+                        <inbound-landing-lights-left type="bool">0</inbound-landing-lights-left>
+                        <inbound-landing-lights-right type="bool">0</inbound-landing-lights-right>
+                        <taxi-lights type="bool">0</taxi-lights>
+                        <runway-turnoff-left type="bool">0</runway-turnoff-left>
+                        <runway-turnoff-right type="bool">0</runway-turnoff-right>
+                        <strobe-lights type="bool">0</strobe-lights>
+                        <logo-lights type="bool">0</logo-lights>
+                        <beacon-lights type="bool">0</beacon-lights>
+                        <wing-lights type="bool">0</wing-lights>
+                        <wheel-well-lights type="bool">0</wheel-well-lights>
+                        <taxi-lights type="bool">0</taxi-lights>
 		</lighting>
 		<special>
 			<elev-trim-help>0</elev-trim-help>
@@ -540,6 +567,24 @@
 		</weight>
 
 	</payload>
+        
+        <systems>
+            <anti-ice>
+                <ducttemp>
+                    <engine1 type="float">0</engine1>
+                    <engine2 type="float">0</engine2>
+                    <engine3 type="float">0</engine3>
+                    <engine1-overheat type="bool">0</engine1-overheat>
+                    <engine2-overheat type="bool">0</engine2-overheat>
+                    <engine3-overheat type="bool">0</engine3-overheat>
+                </ducttemp>
+            </anti-ice>
+            <electrical>
+                <outputs>
+                    <ohp-lights type="float">1</ohp-lights>
+                </outputs>
+            </electrical>
+        </systems>
 
 	<nasal n="0">
 		<libraries>

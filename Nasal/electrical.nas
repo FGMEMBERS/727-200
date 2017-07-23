@@ -106,7 +106,7 @@ var elec_init = func {
     setprop("/systems/electrical/outputs/nav", 0);
     setprop("/systems/electrical/outputs/nav[1]", 0);
     setprop("/systems/electrical/outputs/pitot-head", 0);
-    setprop("/systems/electrical/outputs/stobe-lights", 0);
+    setprop("/systems/electrical/outputs/strobe-lights", 0);
     setprop("/systems/electrical/outputs/tacan", 0);
     setprop("/systems/electrical/outputs/taxi-lights", 0);
     setprop("/systems/electrical/outputs/transponder", 0);
