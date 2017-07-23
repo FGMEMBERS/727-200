@@ -59,13 +59,16 @@ var roll_knob = func {
 				pitch_knob();
 			}
 		} else if (getprop("/autopilot-v/roll-knob") == 3) {
+			setprop("/it-autoflight/settings/slave-gps-nav", 0);
 			setprop("/it-autoflight/input/lat", 1);
 			if (getprop("/it-autoflight/output/vert") == 2) {
 				pitch_knob();
 			}
 		} else if (getprop("/autopilot-v/roll-knob") == 4) {
+			setprop("/it-autoflight/settings/slave-gps-nav", 0);
 			setprop("/it-autoflight/input/vert", 2);
 		} else if (getprop("/autopilot-v/roll-knob") == 5) {
+			setprop("/it-autoflight/settings/slave-gps-nav", 0);
 			setprop("/it-autoflight/input/vert", 2);
 		}
 	} else {
