@@ -64,7 +64,7 @@ setlistener("/it-autoflight/input/ap", func {
 			setprop("/it-autoflight/sound/enableapoffsound", 0);	  
 		}
 	} else if (apmas == 1) {
-		if ((getprop("/gear/gear[1]/wow") == 0) and (getprop("/gear/gear[2]/wow") == 0)) {
+		if (getprop("/gear/gear[1]/wow") == 0 and getprop("/gear/gear[2]/wow") == 0 and (getprop("/controls/flight/yaw-damper-a") == 1 or getprop("/controls/flight/yaw-damper-b") == 1)) {
 			setprop("/controls/flight/rudder", 0);
 			var vsnow = int(getprop("/velocities/vertical-speed-fps")*0.6)*100;
 			setprop("/it-autoflight/output/ap", 1);
