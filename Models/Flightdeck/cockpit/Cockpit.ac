@@ -8931,7 +8931,7 @@ refs 3
 kids 0
 OBJECT poly
 name "OHPanel"
-loc -20.6079 1.47569 2.43e-005
+loc -20.6079 1.47569 2.43e-05
 texture "OH.png"
 crease 45.000000
 numvert 38
@@ -19657,7 +19657,7 @@ refs 4
 kids 0
 OBJECT poly
 name "window.piop"
-loc -20.6691 0.535716 -0.0272741
+loc -20.6365 0.512834 -0.020328
 texture "cockpit.png"
 crease 45.000000
 numvert 144

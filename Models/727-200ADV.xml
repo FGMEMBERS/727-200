@@ -1841,6 +1841,8 @@
   <object-name>AileronTab</object-name>
   <object-name>panelE</object-name>
   <object-name>Plane.002</object-name>
+  <object-name>PedalR</object-name>
+  <object-name>PedalL</object-name>
    <emission>
     <red>0.1</red>
     <green>0.1</green>
