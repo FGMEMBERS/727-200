@@ -25,7 +25,7 @@
 		<object-name>needle</object-name>
 		<object-name>needle.001</object-name>
 		  <emission>
-      <factor-prop>systems/electrical/outputs/cabin-dim</factor-prop>
+           <factor-prop>controls/lighting/panel-light</factor-prop>
       <red>0.5</red>
       <green>0.5</green>
       <blue>0.5</blue>
@@ -46,7 +46,7 @@
 		  <red>0.8</red>
 		  <green>0.8</green>
 		  <blue>0.8</blue>
-		  <factor-prop>/systems/electrical/outputs/cabin-dim</factor-prop>
+		       <factor-prop>controls/lighting/panel-light</factor-prop>
 		</emission>
 	</animation>	
 

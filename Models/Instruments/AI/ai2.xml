@@ -186,7 +186,7 @@
     <object-name>ai</object-name>
     <type>material</type>
     <emission>
-      <factor-prop>systems/electrical/outputs/cabin-dim</factor-prop>
+      <factor-prop>controls/lighting/panel-light</factor-prop>
       <red>0.4</red>
       <green>0.4</green>
       <blue>0.4</blue>

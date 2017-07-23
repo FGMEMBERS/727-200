@@ -1,4 +1,4 @@
-<PropertyList>
+ <PropertyList>
 
 <path>ralt.ac</path>
 
@@ -9,7 +9,7 @@
         <object-name>RALT.face</object-name>
         <object-name>RALT.needle</object-name>
   <emission>
-      <factor-prop>systems/electrical/outputs/cabin-dim</factor-prop>
+          <factor-prop>controls/lighting/panel-light</factor-prop>
       <red>0.5</red>
       <green>0.5</green>
       <blue>0.5</blue>
