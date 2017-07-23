@@ -119,7 +119,7 @@
         <type>rotate</type>
         <object-name>adi-knob</object-name>
         <property>it-autoflight/input/pitch-deg</property>
-        <factor>3</factor>
+        <factor>5</factor>
         <axis>
             <x>-1.0</x>
             <y> 0.0</y>
