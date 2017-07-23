@@ -41,7 +41,8 @@
 		<object-name>Plane.025_1_1</object-name>
 		<!-- tail -->
 		<object-name>Fuselage.003</object-name>
-		<object-name>rudder</object-name>
+		<object-name>rudder_upper</object-name>
+		<object-name>rudder_lower</object-name>
 		<object-name>Plane</object-name>
 		<object-name>leftelevator</object-name>
 		<object-name>rightelevator</object-name>
@@ -128,7 +129,8 @@
 		<object-name>Plane.025_1_1</object-name>
 		<!-- tail -->
 		<object-name>Fuselage.003</object-name>
-		<object-name>rudder</object-name>
+		<object-name>rudder_upper</object-name>
+		<object-name>rudder_lower</object-name>
 		<object-name>Plane</object-name>
 		<object-name>leftelevator</object-name>
 		<object-name>rightelevator</object-name>
@@ -227,7 +229,7 @@
 
 	<animation>
 		<type>rotate</type>
-		<object-name>rudder</object-name>
+		<object-name>rudder_upper</object-name>
 		<property>sim/multiplay/generic/float[4]</property>
 		<factor>25</factor>
 		<axis>
@@ -242,7 +244,7 @@
 	
 	<animation>
 		<type>rotate</type>
-		<object-name>rudder</object-name>
+		<object-name>rudder_lower</object-name>
 		<property>sim/multiplay/generic/float[5]</property>
 		<factor>25</factor>
 		<axis>

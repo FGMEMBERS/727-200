@@ -12,6 +12,15 @@ setlistener("/sim/signals/fdm-initialized", func {
 	var b_elec2_pump_sw = getprop("/controls/hydraulic/b-elec2-pump");
 	var a_b_cross_pump_sw = getprop("/controls/hydraulic/a-b-cross-pump");
 	var stby_pump_sw = getprop("/controls/hydraulic/stby-pump");
+	var rudder_force_stby = getprop("/controls/hydraulic/rudder-force-sbty");
+	var ail_a_sw = getprop("/controls/hydraulic/ail-a");
+	var ail_b_sw = getprop("/controls/hydraulic/ail-b");
+	var elev_a_sw = getprop("/controls/hydraulic/elev-a");
+	var elev_b_sw = getprop("/controls/hydraulic/elev-b");
+	var rudder_a_sw = getprop("/controls/hydraulic/rudder-a");
+	var rudder_b_sw = getprop("/controls/hydraulic/rudder-b");
+	var spoiler_a_sw = getprop("/controls/hydraulic/spoiler-a");
+	var spoiler_b_sw = getprop("/controls/hydraulic/spoiler-b");
 	var a_psi = getprop("/systems/hydraulic/a-psi");
 	var b_psi = getprop("/systems/hydraulic/b-psi");
 	var stby_psi = getprop("/systems/hydraulic/stby-psi");
@@ -26,9 +35,32 @@ var hyd_init = func {
 	setprop("/controls/hydraulic/b-elec2-pump", 0);
 	setprop("/controls/hydraulic/a-b-cross-pump", 0);
 	setprop("/controls/hydraulic/stby-pump", 0);
+	setprop("/controls/hydraulic/rudder-force-sbty", 0);
+	setprop("/controls/hydraulic/ail-a", 1);
+	setprop("/controls/hydraulic/ail-b", 1);
+	setprop("/controls/hydraulic/elev-a", 1);
+	setprop("/controls/hydraulic/elev-b", 1);
+	setprop("/controls/hydraulic/rudder-a", 1);
+	setprop("/controls/hydraulic/rudder-b", 1);
+	setprop("/controls/hydraulic/spoiler-a", 1);
+	setprop("/controls/hydraulic/spoiler-b", 1);
+	setprop("/controls/hydraulic/ail-a-cover", 0);
+	setprop("/controls/hydraulic/ail-b-cover", 0);
+	setprop("/controls/hydraulic/elev-a-cover", 0);
+	setprop("/controls/hydraulic/elev-b-cover", 0);
+	setprop("/controls/hydraulic/rudder-a-cover", 0);
+	setprop("/controls/hydraulic/rudder-b-cover", 0);
+	setprop("/controls/hydraulic/spoiler-a-cover", 0);
+	setprop("/controls/hydraulic/spoiler-b-cover", 0);
 	setprop("/systems/hydraulic/a-psi", 0);
 	setprop("/systems/hydraulic/b-psi", 0);
 	setprop("/systems/hydraulic/stby-psi", 0);
+	setprop("/systems/hydraulic/ail-active", 0);
+	setprop("/systems/hydraulic/elev-active", 0);
+	setprop("/systems/hydraulic/rudder-u-active", 0);
+	setprop("/systems/hydraulic/rudder-l-active", 0);
+	setprop("/systems/hydraulic/spoiler-a-active", 0);
+	setprop("/systems/hydraulic/spoiler-b-active", 0);
 	setprop("/controls/gear/brake-parking", 0);
 	hyd_timer.start();
 }
@@ -44,6 +76,7 @@ var master_hyd = func {
 	b_elec2_pump_sw = getprop("/controls/hydraulic/b-elec2-pump");
 	a_b_cross_pump_sw = getprop("/controls/hydraulic/a-b-cross-pump");
 	stby_pump_sw = getprop("/controls/hydraulic/stby-pump");
+	rudder_force_stby = getprop("/controls/hydraulic/rudder-force-sbty");
 	a_psi = getprop("/systems/hydraulic/a-psi");
 	b_psi = getprop("/systems/hydraulic/b-psi");
 	stby_psi = getprop("/systems/hydraulic/stby-psi");
@@ -84,7 +117,9 @@ var master_hyd = func {
 		}
 	}
 	
-	if (stby_pump_sw) {
+	rudder_a_sw = getprop("/controls/hydraulic/rudder-a");
+	
+	if (stby_pump_sw or !rudder_a_sw) {
 		if (stby_psi < 2400) {
 			setprop("/systems/hydraulic/stby-psi", stby_psi + 100);
 		} else {
@@ -96,6 +131,60 @@ var master_hyd = func {
 		} else {
 			setprop("/systems/hydraulic/stby-psi", 0);
 		}
+	}
+	
+	a_psi = getprop("/systems/hydraulic/a-psi");
+	b_psi = getprop("/systems/hydraulic/b-psi");
+	stby_psi = getprop("/systems/hydraulic/stby-psi");
+	ail_a_sw = getprop("/controls/hydraulic/ail-a");
+	ail_b_sw = getprop("/controls/hydraulic/ail-b");
+	elev_a_sw = getprop("/controls/hydraulic/elev-a");
+	elev_b_sw = getprop("/controls/hydraulic/elev-b");
+	rudder_a_sw = getprop("/controls/hydraulic/rudder-a");
+	rudder_b_sw = getprop("/controls/hydraulic/rudder-b");
+	spoiler_a_sw = getprop("/controls/hydraulic/spoiler-a");
+	spoiler_b_sw = getprop("/controls/hydraulic/spoiler-b");
+	
+	if (a_psi >= 1500 and ail_a_sw) {
+		setprop("/systems/hydraulic/ail-active", 1);
+	} else if (b_psi >= 1500 and ail_b_sw) {
+		setprop("/systems/hydraulic/ail-active", 1);
+	} else {
+		setprop("/systems/hydraulic/ail-active", 0);
+	}
+	
+	if (a_psi >= 1500 and elev_a_sw) {
+		setprop("/systems/hydraulic/elev-active", 1);
+	} else if (b_psi >= 1500 and elev_b_sw) {
+		setprop("/systems/hydraulic/elev-active", 1);
+	} else {
+		setprop("/systems/hydraulic/elev-active", 0);
+	}
+	
+	if (a_psi >= 1500 and spoiler_a_sw) {
+		setprop("/systems/hydraulic/spoiler-a-active", 1);
+	} else {
+		setprop("/systems/hydraulic/spoiler-a-active", 0);
+	}
+	
+	if (b_psi >= 1500 and spoiler_b_sw) {
+		setprop("/systems/hydraulic/spoiler-b-active", 1);
+	} else {
+		setprop("/systems/hydraulic/spoiler-b-active", 0);
+	}
+	
+	if (b_psi >= 1500 and rudder_b_sw) {
+		setprop("/systems/hydraulic/rudder-u-active", 1);
+	} else {
+		setprop("/systems/hydraulic/rudder-u-active", 0);
+	}
+	
+	if (a_psi >= 1500 and rudder_a_sw) {
+		setprop("/systems/hydraulic/rudder-l-active", 1);
+	} else if (stby_psi >= 1500 or !rudder_a_sw) {
+		setprop("/systems/hydraulic/rudder-l-active", 1);
+	} else {
+		setprop("/systems/hydraulic/rudder-l-active", 0);
 	}
 }
 
