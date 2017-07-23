@@ -222,6 +222,8 @@
 		</flight>
 		<gear>
 			<brake-parking>0</brake-parking>
+            <tiller-cmd-norm type="double">0</tiller-cmd-norm>
+			<tiller-enabled type="bool">0</tiller-enabled>
 		</gear>
 		<lighting>
 			<interior type="double">0</interior>
