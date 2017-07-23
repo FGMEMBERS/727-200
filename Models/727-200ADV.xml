@@ -207,6 +207,24 @@
 		<object-name>rmgaxle</object-name>
 	</effect>
 
+<!-- Shadow -->
+
+   <model>
+    <name>shadowOSG</name>
+    <path>Aircraft/727-200/Models/shadow.xml</path>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>shadow</object-name>
+    <condition>
+      <equals>
+	<property>sim[0]/rendering/shadows/enabled</property>
+	<value>true</value>
+      </equals>
+    </condition>
+  </animation>
+
 	<animation>
 		<type>rotate</type>
 		<object-name>rudder</object-name>
