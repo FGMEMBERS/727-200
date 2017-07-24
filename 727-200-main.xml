@@ -139,6 +139,11 @@
 			<path>Aircraft/727-200/Systems/instrumentation.xml</path>
 		</instrumentation>
 		
+		<sounde n="0">
+			<altalert type="double">0</altalert>
+			<trim type="bool">0</trim>
+		</sounde>
+		
 		<systems n="0">
 			<!--electrical>
 				<path></path>

@@ -26,6 +26,7 @@ setlistener("/sim/signals/fdm-initialized", func {
 	autopilot_v.ap_init();
 	var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/727-200/Systems/autopilot-dlg.xml");
 	librariesLoop.start();
+	var trim = 0;
 });
 
 var librariesLoop = maketimer(0.1, func {
@@ -50,3 +51,13 @@ var aglgears = func {
 
 aglgears();
 
+setlistener("/controls/flight/elevator-trim", func {
+	trim = getprop("/controls/flight/elevator-trim");
+	settimer(func {
+		if (getprop("/controls/flight/elevator-trim") == trim) {
+			setprop("/sim/sounde/trim", 0);
+		} else {
+			setprop("/sim/sounde/trim", 1);
+		}
+	}, 0.05);
+});

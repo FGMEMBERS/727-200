@@ -327,5 +327,21 @@
 		<output>/controls/engines/engine[2]/throttle-fdm</output>
 		<max-rate-of-change>0.65</max-rate-of-change>
 	</filter>
+	
+	<filter>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<expression>
+				<dif>
+					<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+					<property>/it-autoflight/internal/alt</property>
+				</dif>
+			</expression>
+		</input>
+		<output>
+			<property>sim/sounde/altalert</property>
+		</output>
+	</filter>
 
 </PropertyList>

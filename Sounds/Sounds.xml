@@ -8,16 +8,62 @@ Modified by Gabriel Hernandez(YV3399) -->
 
   <fx>
   
-  <apoff>
-   <name>apoff</name>
-   <path>/Aircraft/727-200/Sounds/apoff.wav</path>
-   <condition>
-	 <property>/it-autoflight/sound/apoffsound</property>
-   </condition>
-   <volume>
-    <factor>40.0</factor>
-   </volume>
-  </apoff>
+	<apoff>
+		<name>apoff</name>
+		<path>/Aircraft/727-200/Sounds/apoff.wav</path>
+		<condition>
+			<property>/it-autoflight/sound/apoffsound</property>
+		</condition>
+		<volume>
+			<factor>40.0</factor>
+		</volume>
+	</apoff>
+  
+	<trimming>
+		<name>trimming</name>
+		<mode>looped</mode>
+		<path>Aircraft/727-200/Sounds/trim.wav</path>
+		<condition>
+			<property>sim/sounde/trim</property>
+		</condition>
+		<volume>
+			<property>/sim/current-view/internal</property>
+			<value>0.50</value>
+		</volume>
+	</trimming>
+	
+	<altAlert>
+		<name>altalert</name>
+		<mode>once</mode>
+		<path>Aircraft/727-200/Sounds/altalert.wav</path>
+		<condition>
+			<or>
+				<and>
+					<greater-than>
+						<property>sim/sounde/altalert</property>
+						<value>-1000</value>
+					</greater-than>
+					<less-than>
+						<property>sim/sounde/altalert</property>
+						<value>-100</value>
+					</less-than>
+				</and>
+				<and>
+					<less-than>
+						<property>sim/sounde/altalert</property>
+						<value>1000</value>
+					</less-than>
+					<greater-than>
+						<property>sim/sounde/altalert</property>
+						<value>100</value>
+					</greater-than>
+				</and>
+			</or>
+		</condition>
+		<volume>
+			<factor>2.0</factor>
+		</volume>
+	</altAlert>
 
   <!-- TouchDown -->
 
