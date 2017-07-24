@@ -23,6 +23,7 @@ setlistener("/sim/signals/fdm-initialized", func {
     setprop("/systems/electrical/outputs/efis", 28);
 #	systems.elec_init();
 	systems.hyd_init();
+	systems.heat_init();
 	autopilot_v.ap_init();
 	var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/727-200/Systems/autopilot-dlg.xml");
 	librariesLoop.start();

@@ -599,6 +599,7 @@
 		<systems>
 			<!--file>Aircraft/727-200/Nasal/electrical.nas</file-->
 			<file>Aircraft/727-200/Nasal/hydraulics.nas</file>
+			<file>Aircraft/727-200/Nasal/heat.nas</file>
 			<file>Aircraft/727-200/Nasal/engines.nas</file>
 		</systems>
 		<autopilot_v>

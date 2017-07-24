@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
-
+	
     <filter>
         <name>EPR Scale</name>
         <type>gain</type>
@@ -344,4 +344,36 @@
 		</output>
 	</filter>
 
+	<filter>
+        <name>Window Heat Factor</name>
+        <type>gain</type>
+        <gain>1</gain>
+        <update-interval-secs type="double">0.05</update-interval-secs>
+        <input> 
+            <expression>
+                <table>
+                    <property>velocities/TAS</property> 
+                    <entry><ind>0</ind><dep>0.0016</dep></entry>
+					<entry><ind>200</ind><dep>0.0014</dep></entry>
+                    <entry><ind>400</ind><dep>0.0008</dep></entry>
+                </table>
+            </expression>
+        </input>
+		<output>/systems/heat/heatingfactor</output>
+    </filter>
+	
+	<filter>
+        <name>TAS</name>
+        <type>gain</type>
+        <gain>1</gain>
+        <input> 
+			 <expression>
+                <product>
+                    <property>velocities/uBody-fps</property> 
+                    <value>0.592484</value>
+                </product>
+            </expression>
+		</input>
+		<output>/velocities/TAS</output>
+    </filter>
 </PropertyList>
