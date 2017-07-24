@@ -5,9 +5,10 @@
 # Init Vars #
 #############
 
+var oat = getprop("/environment/temperature-degc");
+
 setlistener("/sim/signals/fdm-initialized", func {
 	var heatingfactor = getprop("/systems/heat/heatingfactor");
-	var oat = getprop("/environment/temperature-degc");
 	var maxTemp = 43;
 	var ovhtDisco = 58;
 	var EyeBrowMax = 38;
