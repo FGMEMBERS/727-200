@@ -306,7 +306,7 @@
 		<type>rotate</type>
 		<object-name>inneraileronr</object-name>
 		<property>sim/multiplay/generic/float[3]</property>
-		<factor>-30</factor>
+		<factor>-25</factor>
 		<axis>
 			<x1-m>1.763</x1-m>
 			<y1-m>6.371</y1-m>
@@ -336,7 +336,7 @@
 		<type>rotate</type>
 		<object-name>inneraileronl</object-name>
 		<property>sim/multiplay/generic/float[2]</property>
-		<factor>-30</factor>
+		<factor>-25</factor>
 		<axis>
 			<x1-m>1.762</x1-m>
 			<y1-m>-6.375</y1-m>
