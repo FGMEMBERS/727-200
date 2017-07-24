@@ -296,17 +296,14 @@
 	<it-autoflight>
 		<config>
 			<roll>
-				<umin>-0.75</umin>
-				<umax>0.75</umax>
-				<kp>0.06</kp>
-				<kp-vloc>0.07</kp-vloc>
-				<ti>10.0</ti>
-				<td>0.0001</td>
+				<gain>0.05</gain>
+				<min>-0.5</min>
+				<max>0.5</max>
 			</roll>
 			<pitch>
-				<gain>0.1</gain>
-				<min>-0.2</min>
-				<max>0.2</max>
+				<gain>0.11</gain>
+				<min>-0.25</min>
+				<max>0.25</max>
 			</pitch>
 			<cmd>
 				<roll-kp>-0.9</roll-kp>
