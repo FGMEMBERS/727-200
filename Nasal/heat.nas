@@ -7,13 +7,13 @@
 
 setlistener("/sim/signals/fdm-initialized", func {
 	var heatingfactor = getprop("/systems/heat/heatingfactor");
-	var oat = getprop("environment/temperature-degc");
+	var oat = getprop("/environment/temperature-degc");
 	var maxTemp = 43;
 	var ovhtDisco = 58;
 	var EyeBrowMax = 38;
 	var cabinTemp = 21;
-	var densityAtmo = getprop("atmosphere/rho-slugs_ft3");
-	var ambientTemp = getprop("environment/temperature-degc");
+	var densityAtmo = getprop("/atmosphere/rho-slugs_ft3");
+	var ambientTemp = getprop("/environment/temperature-degc");
 });
 	
 var heat_init = func {
