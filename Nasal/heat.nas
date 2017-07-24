@@ -4,6 +4,8 @@
 #############
 # Init Vars #
 #############
+
+setlistener("/sim/signals/fdm-initialized", func {
 	var heatingfactor = getprop("/systems/heat/heatingfactor");
 	var oat = getprop("environment/temperature-degc");
 	var maxTemp = 43;
@@ -12,6 +14,7 @@
 	var cabinTemp = 21;
 	var densityAtmo = getprop("atmosphere/rho-slugs_ft3");
 	var ambientTemp = getprop("environment/temperature-degc");
+});
 	
 var heat_init = func {
 	# basic system
