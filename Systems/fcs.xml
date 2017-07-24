@@ -358,7 +358,6 @@
             </function>
         </fcs_function>
         
-        <!-- simulate rotational friction -->
         <actuator name="Gear Nose Actuator">
             <input>fcs/steer-nose-deg[0]</input>
             <rate_limit>70</rate_limit>
