@@ -6,7 +6,7 @@
     <replay-config type="int">0</replay-config>
 
     <config n="0">
-        <name>A3XX Flight Recorder</name>
+        <name>B722 Flight Recorder</name>
         <!-- Include Generic Stuff -->
         <signals include="/Aircraft/Generic/flightrecorder/components/position.xml" />
         <signals include="/Aircraft/Generic/flightrecorder/components/controls.xml" />
@@ -81,6 +81,18 @@
 			<signal>
 				<type>float</type>
 				<property>fdm/jsbsim/fcs/slat-pos-norm</property>
+			</signal>
+			<signal>
+				<type>float</type>
+				<property type="string">engines/engine/thrust_lb</property>
+			</signal>
+			<signal>
+				<type>float</type>
+				<property type="string">engines/engine[1]/thrust_lb</property>
+			</signal>
+			<signal>
+				<type>float</type>
+				<property type="string">engines/engine[2]/thrust_lb</property>
 			</signal>
         </signals>
     </config>
