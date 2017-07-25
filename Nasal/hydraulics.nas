@@ -12,7 +12,6 @@ setlistener("/sim/signals/fdm-initialized", func {
 	var b_elec2_pump_sw = getprop("/controls/hydraulic/b-elec2-pump");
 	var a_b_cross_pump_sw = getprop("/controls/hydraulic/a-b-cross-pump");
 	var stby_pump_sw = getprop("/controls/hydraulic/stby-pump");
-	var rudder_force_stby = getprop("/controls/hydraulic/rudder-force-sbty");
 	var ail_a_sw = getprop("/controls/hydraulic/ail-a");
 	var ail_b_sw = getprop("/controls/hydraulic/ail-b");
 	var elev_a_sw = getprop("/controls/hydraulic/elev-a");
@@ -35,7 +34,6 @@ var hyd_init = func {
 	setprop("/controls/hydraulic/b-elec2-pump", 0);
 	setprop("/controls/hydraulic/a-b-cross-pump", 0);
 	setprop("/controls/hydraulic/stby-pump", 0);
-	setprop("/controls/hydraulic/rudder-force-sbty", 0);
 	setprop("/controls/hydraulic/ail-a", 1);
 	setprop("/controls/hydraulic/ail-b", 1);
 	setprop("/controls/hydraulic/elev-a", 1);
@@ -76,7 +74,6 @@ var master_hyd = func {
 	b_elec2_pump_sw = getprop("/controls/hydraulic/b-elec2-pump");
 	a_b_cross_pump_sw = getprop("/controls/hydraulic/a-b-cross-pump");
 	stby_pump_sw = getprop("/controls/hydraulic/stby-pump");
-	rudder_force_stby = getprop("/controls/hydraulic/rudder-force-sbty");
 	a_psi = getprop("/systems/hydraulic/a-psi");
 	b_psi = getprop("/systems/hydraulic/b-psi");
 	stby_psi = getprop("/systems/hydraulic/stby-psi");
