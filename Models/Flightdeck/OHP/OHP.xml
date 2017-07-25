@@ -17,7 +17,7 @@
             <button>0</button>
             <binding>
                     <command>property-toggle</command>
-                    <property>controls/lighting/outbound-landing-lights-left</property>
+                    <property>controls/lighting/landing-lights</property>
             </binding>
         </action>
         <!--<hovered>
@@ -33,7 +33,7 @@
     <animation>
         <type>rotate</type>
         <object-name>outbdL_switch</object-name>
-        <property>controls/lighting/outbound-landing-lights-left</property>
+        <property>controls/lighting/landing-lights</property>
         <factor>56</factor>
         <center>
             <x-m>-0.42568</x-m>
@@ -52,7 +52,7 @@
             <button>0</button>
             <binding>
                     <command>property-toggle</command>
-                    <property>controls/lighting/outbound-landing-lights-right</property>
+                  <property>controls/lighting/landing-lights</property>
             </binding>
         </action>
         <!--<hovered>
@@ -68,7 +68,7 @@
     <animation>
         <type>rotate</type>
         <object-name>outbdR_switch</object-name>
-        <property>controls/lighting/outbound-landing-lights-right</property>
+       <property>controls/lighting/landing-lights</property>
         <factor>56</factor>
         <center>
             <x-m>-0.42568</x-m>
@@ -88,7 +88,7 @@
             <button>0</button>
             <binding>
                     <command>property-toggle</command>
-                    <property>controls/lighting/inbound-landing-lights-left</property>
+                  <property>controls/lighting/landing-lights</property>
             </binding>
         </action>
         <!--<hovered>
@@ -104,7 +104,7 @@
     <animation>
         <type>rotate</type>
         <object-name>inbdL_switch</object-name>
-        <property>controls/lighting/inbound-landing-lights-left</property>
+      <property>controls/lighting/landing-lights</property>
         <factor>56</factor>
         <center>
             <x-m>-0.42568</x-m>
@@ -123,7 +123,7 @@
             <button>0</button>
             <binding>
                     <command>property-toggle</command>
-                    <property>controls/lighting/inbound-landing-lights-right</property>
+                  <property>controls/lighting/landing-lights</property>
             </binding>
         </action>
         <!--<hovered>
@@ -139,7 +139,7 @@
     <animation>
         <type>rotate</type>
         <object-name>inbdR_switch</object-name>
-        <property>controls/lighting/inbound-landing-lights-right</property>
+      <property>controls/lighting/landing-lights</property>
         <factor>56</factor>
         <center>
             <x-m>-0.42568</x-m>
@@ -268,7 +268,7 @@
                 <button>0</button>
                     <binding>
                             <command>property-toggle</command>
-                            <property>controls/lighting/strobe-lights</property>
+                            <property>controls/lighting/strobe</property>
                     </binding>
             </action>
         <!--<hovered>
@@ -277,14 +277,14 @@
                 <tooltip-id>strobelt_switch</tooltip-id>
                 <label>Strobe Lights: %s</label>
                 <mapping>on-off</mapping>
-                <property>controls/lighting/strobe-lights</property>      
+                <property>controls/lighting/strobe</property>      
             </binding>
         </hovered>-->
     </animation>
     <animation>
         <type>rotate</type>
         <object-name>strobelt_switch</object-name>
-        <property>controls/lighting/strobe-lights</property>
+        <property>controls/lighting/strobe</property>
         <factor>56</factor>
         <center>
             <x-m>-0.42568</x-m>
@@ -304,7 +304,7 @@
                 <button>0</button>
                     <binding>
                             <command>property-toggle</command>
-                            <property>controls/lighting/logo-lights</property>
+                           <property>controls/lighting/nav-lights</property>
                     </binding>
             </action>
         <!--<hovered>
@@ -320,7 +320,7 @@
     <animation>
         <type>rotate</type>
         <object-name>logolt_switch</object-name>
-        <property>controls/lighting/logo-lights</property>
+       <property>controls/lighting/nav-lights</property>
         <factor>56</factor>
         <center>
             <x-m>-0.42568</x-m>
@@ -340,7 +340,7 @@
                 <button>0</button>
                 <binding>
                         <command>property-toggle</command>
-                        <property>controls/lighting/beacon-lights</property>
+                        <property>controls/lighting/beacon</property>
                 </binding>
             </action>
         <!--<hovered>
@@ -349,14 +349,14 @@
                 <tooltip-id>beaconlt_switch</tooltip-id>
                 <label>Beacon Lights: %s</label>
                 <mapping>on-off</mapping>
-                <property>controls/lighting/beacon-lights</property>      
+                <property>controls/lighting/beacon</property>      
             </binding>
         </hovered>-->
     </animation>
     <animation>
         <type>rotate</type>
         <object-name>beaconlt_switch</object-name>
-        <property>controls/lighting/beacon-lights</property>
+        <property>controls/lighting/beacon</property>
         <factor>56</factor>
         <center>
             <x-m>-0.42568</x-m>
@@ -2178,4 +2178,23 @@
 		</axis>
 	</animation>
     
+
+<animation>
+		<type>material</type>
+		<object-name>Circle.021</object-name> 
+                <object-name>Cube.016</object-name> 
+                <object-name>screws</object-name>
+		<condition>
+			<not><property>sim/rendering/rembrandt/enabled</property></not>
+		</condition>
+		<emission>
+		  <red>0.3</red>
+		  <green>0.3</green>
+		  <blue>0.3</blue>
+		   <factor-prop>controls/lighting/panel-light</factor-prop>
+		</emission>
+	</animation>
+
+
+
 </PropertyList>

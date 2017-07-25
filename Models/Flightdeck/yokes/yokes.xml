@@ -29,8 +29,7 @@
 			<red>0.2</red>
 			<green>0.2</green>
 			<blue>0.2</blue>
-			<factor-prop>/systems/electrical/outputs/panel-dim</factor-prop>
-		</emission>
+			  <factor-prop>controls/lighting/panel-light</factor-prop>		</emission>
 	</animation>
 
 	<animation>
