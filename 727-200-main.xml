@@ -141,6 +141,7 @@
 		
 		<sounde n="0">
 			<altalert type="double">0</altalert>
+			<gear-vol type="double">0.25</gear-vol>
 			<trim type="bool">0</trim>
 		</sounde>
 		

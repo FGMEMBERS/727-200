@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
-<!-- Custom 727 Sound Effects by Liam Gathercole, extended by Peter Brendt
-Modified by Gabriel Hernandez(YV3399) -->
+
+<!-- 727 Sounds -->
+<!-- Swamp, it0uchpods -->
 
 <PropertyList>
 
@@ -724,57 +725,35 @@ Modified by Gabriel Hernandez(YV3399) -->
       <max-dist>500.0</max-dist>
     </flap>
     
-    <gear>
-      <name>gears</name>
-      <mode>in-transit</mode>
-      <path>Aircraft/727-200/Sounds/misc/gear-move.wav</path>
-      <property>/gears/gear[0]/position-norm</property>
-      <position>
-        <x>-9</x>
-        <y>0</y>
-        <z>0</z>
-      </position>
-      <reference-dist>50.0</reference-dist>
-      <max-dist>500.0</max-dist>
-    </gear>
-    
-    <gear>
-      <name>gear lock</name>
-      <mode>once</mode>
-      <path>Aircraft/727-200/Sounds/misc/gear-lock.wav</path>
-      <condition>
-	<equals>
-	  <property>/gears/gear[0]/position-norm</property>
-	  <value>0</value>
-	</equals>
-      </condition>
-      <position>
-        <x>-9</x>
-        <y>0</y>
-        <z>0</z>
-      </position>
-      <reference-dist>50.0</reference-dist>
-      <max-dist>500.0</max-dist>
-    </gear>
-    
-    <gear>
-      <name>gear lock</name>
-      <mode>once</mode>
-      <path>Aircraft/727-200/Sounds/misc/gear-lock.wav</path>
-      <condition>
-	<equals>
-	  <property>/gears/gear[0]/position-norm</property>
-	  <value>1</value>
-	</equals>
-      </condition>
-      <position>
-        <x>-9</x>
-        <y>0</y>
-        <z>0</z>
-      </position>
-      <reference-dist>50.0</reference-dist>
-      <max-dist>500.0</max-dist>
-    </gear>
+	<gear>
+		<name>gear0</name>
+		<mode>in-transit</mode>
+		<path>misc/gear.wav</path>
+		<property>gear/gear[0]/position-norm</property>
+		<volume>
+			<property>sim/sounde/gear-vol</property>
+		</volume>
+	</gear>
+	
+	<gear>
+		<name>gear1</name>
+		<mode>in-transit</mode>
+		<path>misc/gear.wav</path>
+		<property>gear/gear[1]/position-norm</property>
+		<volume>
+			<property>sim/sounde/gear-vol</property>
+		</volume>
+	</gear>
+	
+	<gear>
+		<name>gear2</name>
+		<mode>in-transit</mode>
+		<path>misc/gear.wav</path>
+		<property>gear/gear[2]/position-norm</property>
+		<volume>
+			<property>sim/sounde/gear-vol</property>
+		</volume>
+	</gear>
 
      <!-- Crashed -->
 
