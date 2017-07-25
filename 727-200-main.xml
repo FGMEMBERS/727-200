@@ -161,6 +161,9 @@
             <autopilot n="3">
                 <path>Aircraft/727-200/Systems/libraries.xml</path>
             </autopilot>
+			<autopilot n="10">
+				<path>Aircraft/727-200/Sounds/Sound-Control.xml</path>
+			</autopilot>
 		</systems>
 		
 		<!-- Multiplayer properties -->

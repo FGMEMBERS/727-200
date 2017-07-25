@@ -133,87 +133,281 @@
 <!-- Internal engine sounds -->
 
 
-	<engine>
-		<name>Left internal</name>
-		<path>Aircraft/727-200/Sounds/eng/internal.wav</path>
+	<!-- ENGINE 1 IDLE -->
+	
+	<MDA_WHN>
+		<name>MDA WHN 1</name>
+		<path>FL2070/MDA_WHN_1.wav</path>
 		<mode>looped</mode>
-		<condition>
-			<and>
-				<property>sim/current-view/internal</property>
-				<greater-than>
-					<property>engines/engine/running</property>
-					<value>0</value>
-				</greater-than>
-			</and>
-		</condition>
+		<property>engines/engine[0]/n1</property>
 		<volume>
-			<property>engines/engine/n1</property>
-			<offset>0</offset>
-			<factor>0.008</factor>
-              <min>0.1</min>
-              <max>0.2</max>
+			<property>sim/sounde/custom/engine/MDA_WHN_1</property>
+		</volume>
+		<volume>
+			<property>sim/current-view/internal</property>
 		</volume>
 		<pitch>
-			<property>engines/engine/n1</property>
-			<offset>0.5</offset>
-			<factor>0.005</factor>
-		</pitch>
-	</engine>
-
-
-	<engine>
-		<name>center internal</name>
-		<path>Aircraft/727-200/Sounds/eng/internal.wav</path>
-		<mode>looped</mode>
-		<condition>
-			<and>
-				<property>sim/current-view/internal</property>
-				<greater-than>
-					<property>engines/engine[1]/running</property>
-					<value>0</value>
-				</greater-than>
-			</and>
-		</condition>
-		<volume>
-			<property>engines/engine[1]/n1</property>
+			<property>sim/sounde/custom/enginep/MDA_WHN_1</property>
 			<offset>0</offset>
-			<factor>0.008</factor>
-              <min>0.1</min>
-              <max>0.2</max>
+		</pitch>
+	</MDA_WHN>
+	
+	<!-- ENGINE 1 SPOOL -->
+	
+	<MDA_WHN>
+		<name>MDA WHN 2</name>
+		<path>FL2070/MDA_WHN_2.wav</path>
+		<mode>looped</mode>
+		<property>engines/engine[0]/n1</property>
+		<volume>
+			<property>sim/sounde/custom/engine/MDA_WHN_2</property>
+		</volume>
+		<volume>
+			<property>sim/current-view/internal</property>
 		</volume>
 		<pitch>
-			<property>engines/engine[1]/n1</property>
-			<offset>0.5</offset>
-			<factor>0.005</factor>
-		</pitch>
-	</engine>
-
-	<engine>
-		<name>right internal</name>
-		<path>Aircraft/727-200/Sounds/eng/internal.wav</path>
-		<mode>looped</mode>
-		<condition>
-			<and>
-				<property>sim/current-view/internal</property>
-				<greater-than>
-					<property>engines/engine[2]/running</property>
-					<value>0</value>
-				</greater-than>
-			</and>
-		</condition>
-		<volume>
-			<property>engines/engine[2]/n1</property>
+			<property>sim/sounde/custom/enginep/MDA_WHN_2</property>
 			<offset>0</offset>
-			<factor>0.008</factor>
-              <min>0.1</min>
-              <max>0.2</max>
+		</pitch>
+	</MDA_WHN>
+	
+	<MDA_WHN>
+		<name>MDA WHN 3</name>
+		<path>FL2070/MDA_WHN_3.wav</path>
+		<mode>looped</mode>
+		<property>engines/engine[0]/n1</property>
+		<volume>
+			<property>sim/sounde/custom/engine/MDA_WHN_3</property>
+		</volume>
+		<volume>
+			<property>sim/current-view/internal</property>
 		</volume>
 		<pitch>
-			<property>engines/engine[2]/n1</property>
-			<offset>0.5</offset>
-			<factor>0.005</factor>
+			<property>sim/sounde/custom/enginep/MDA_WHN_3</property>
+			<offset>0</offset>
 		</pitch>
-	</engine>
+	</MDA_WHN>
+	
+	<!-- ENGINE 1 BUZZ -->
+	
+	<MDA_WHN>
+		<name>MDA WHN 4</name>
+		<path>FL2070/MDA_WHN_4.wav</path>
+		<mode>looped</mode>
+		<property>engines/engine[0]/n1</property>
+		<volume>
+			<property>sim/sounde/custom/engine/MDA_WHN_4</property>
+		</volume>
+		<volume>
+			<property>sim/current-view/internal</property>
+		</volume>
+		<volume>
+			<property>sim/current-view/internal</property>
+		</volume>
+		<pitch>
+			<property>sim/sounde/custom/enginep/MDA_WHN_4</property>
+			<offset>0</offset>
+		</pitch>
+	</MDA_WHN>
+	
+	<MDA_WHN>
+		<name>MDA WHN 5</name>
+		<path>FL2070/MDA_WHN_5.wav</path>
+		<mode>looped</mode>
+		<property>engines/engine[0]/n1</property>
+		<volume>
+			<property>sim/sounde/custom/engine/MDA_WHN_5</property>
+		</volume>
+		<volume>
+			<property>sim/current-view/internal</property>
+		</volume>
+		<pitch>
+			<property>sim/sounde/custom/enginep/MDA_WHN_5</property>
+			<offset>0</offset>
+		</pitch>
+	</MDA_WHN>
+	
+	<!-- ENGINE 2 IDLE -->
+	
+	<MDB_WHN>
+		<name>MDB WHN 1</name>
+		<path>FL2070/MDB_WHN_1.wav</path>
+		<mode>looped</mode>
+		<property>engines/engine[1]/n1</property>
+		<volume>
+			<property>sim/sounde/custom/engine/MDB_WHN_1</property>
+		</volume>
+		<volume>
+			<property>sim/current-view/internal</property>
+		</volume>
+		<pitch>
+			<property>sim/sounde/custom/enginep/MDB_WHN_1</property>
+			<offset>0</offset>
+		</pitch>
+	</MDB_WHN>
+	
+	<!-- ENGINE 2 SPOOL -->
+	
+	<MDB_WHN>
+		<name>MDB WHN 2</name>
+		<path>FL2070/MDB_WHN_2.wav</path>
+		<mode>looped</mode>
+		<property>engines/engine[1]/n1</property>
+		<volume>
+			<property>sim/sounde/custom/engine/MDB_WHN_2</property>
+		</volume>
+		<volume>
+			<property>sim/current-view/internal</property>
+		</volume>
+		<pitch>
+			<property>sim/sounde/custom/enginep/MDB_WHN_2</property>
+			<offset>0</offset>
+		</pitch>
+	</MDB_WHN>
+	
+	<MDB_WHN>
+		<name>MDB WHN 3</name>
+		<path>FL2070/MDB_WHN_3.wav</path>
+		<mode>looped</mode>
+		<property>engines/engine[1]/n1</property>
+		<volume>
+			<property>sim/sounde/custom/engine/MDB_WHN_3</property>
+		</volume>
+		<volume>
+			<property>sim/current-view/internal</property>
+		</volume>
+		<pitch>
+			<property>sim/sounde/custom/enginep/MDB_WHN_3</property>
+			<offset>0</offset>
+		</pitch>
+	</MDB_WHN>
+	
+	<!-- ENGINE 2 BUZZ -->
+	
+	<MDB_WHN>
+		<name>MDB WHN 4</name>
+		<path>FL2070/MDB_WHN_4.wav</path>
+		<mode>looped</mode>
+		<property>engines/engine[1]/n1</property>
+		<volume>
+			<property>sim/sounde/custom/engine/MDB_WHN_4</property>
+		</volume>
+		<volume>
+			<property>sim/current-view/internal</property>
+		</volume>
+		<pitch>
+			<property>sim/sounde/custom/enginep/MDB_WHN_4</property>
+			<offset>0</offset>
+		</pitch>
+	</MDB_WHN>
+	
+	<MDB_WHN>
+		<name>MDB WHN 5</name>
+		<path>FL2070/MDB_WHN_5.wav</path>
+		<mode>looped</mode>
+		<property>engines/engine[1]/n1</property>
+		<volume>
+			<property>sim/sounde/custom/engine/MDB_WHN_5</property>
+		</volume>
+		<volume>
+			<property>sim/current-view/internal</property>
+		</volume>
+		<pitch>
+			<property>sim/sounde/custom/enginep/MDB_WHN_5</property>
+			<offset>0</offset>
+		</pitch>
+	</MDB_WHN>
+	
+	<!-- ENGINE 3 IDLE -->
+	
+	<MDC_WHN>
+		<name>MDC WHN 1</name>
+		<path>FL2070/MDC_WHN_1.wav</path>
+		<mode>looped</mode>
+		<property>engines/engine[2]/n1</property>
+		<volume>
+			<property>sim/sounde/custom/engine/MDC_WHN_1</property>
+		</volume>
+		<volume>
+			<property>sim/current-view/internal</property>
+		</volume>
+		<pitch>
+			<property>sim/sounde/custom/enginep/MDC_WHN_1</property>
+			<offset>0</offset>
+		</pitch>
+	</MDC_WHN>
+	
+	<!-- ENGINE 3 SPOOL -->
+	
+	<MDC_WHN>
+		<name>MDC WHN 2</name>
+		<path>FL2070/MDC_WHN_2.wav</path>
+		<mode>looped</mode>
+		<property>engines/engine[2]/n1</property>
+		<volume>
+			<property>sim/sounde/custom/engine/MDC_WHN_2</property>
+		</volume>
+		<volume>
+			<property>sim/current-view/internal</property>
+		</volume>
+		<pitch>
+			<property>sim/sounde/custom/enginep/MDC_WHN_2</property>
+			<offset>0</offset>
+		</pitch>
+	</MDC_WHN>
+	
+	<MDC_WHN>
+		<name>MDC WHN 3</name>
+		<path>FL2070/MDC_WHN_3.wav</path>
+		<mode>looped</mode>
+		<property>engines/engine[2]/n1</property>
+		<volume>
+			<property>sim/sounde/custom/engine/MDC_WHN_3</property>
+		</volume>
+		<volume>
+			<property>sim/current-view/internal</property>
+		</volume>
+		<pitch>
+			<property>sim/sounde/custom/enginep/MDC_WHN_3</property>
+			<offset>0</offset>
+		</pitch>
+	</MDC_WHN>
+	
+	<!-- ENGINE 3 BUZZ -->
+	
+	<MDC_WHN>
+		<name>MDC WHN 4</name>
+		<path>FL2070/MDC_WHN_4.wav</path>
+		<mode>looped</mode>
+		<property>engines/engine[2]/n1</property>
+		<volume>
+			<property>sim/sounde/custom/engine/MDC_WHN_4</property>
+		</volume>
+		<volume>
+			<property>sim/current-view/internal</property>
+		</volume>
+		<pitch>
+			<property>sim/sounde/custom/enginep/MDC_WHN_4</property>
+			<offset>0</offset>
+		</pitch>
+	</MDC_WHN>
+	
+	<MDC_WHN>
+		<name>MDC WHN 5</name>
+		<path>FL2070/MDC_WHN_5.wav</path>
+		<mode>looped</mode>
+		<property>engines/engine[2]/n1</property>
+		<volume>
+			<property>sim/sounde/custom/engine/MDC_WHN_5</property>
+		</volume>
+		<volume>
+			<property>sim/current-view/internal</property>
+		</volume>
+		<pitch>
+			<property>sim/sounde/custom/enginep/MDC_WHN_5</property>
+			<offset>0</offset>
+		</pitch>
+	</MDC_WHN>
 
 	<!-- External engine sounds -->
     <engine>
@@ -221,15 +415,9 @@
       <path>Aircraft/727-200/Sounds/eng/idling.wav</path>
       <mode>looped</mode>
             <condition>
-                <and>
-                    <not>
-                        <property>sim/current-view/internal</property>
-                    </not>
-                    <greater-than>
-                        <property>engines/engine/running</property>
-                        <value>0</value>
-                    </greater-than>
-                </and>
+				<not>
+					<property>sim/current-view/internal</property>
+				</not>
             </condition>
             <volume>
               <property>/engines/engine/n1</property>
@@ -257,15 +445,9 @@
       <path>Aircraft/727-200/Sounds/eng/idling.wav</path>
       <mode>looped</mode>
             <condition>
-                <and>
-                    <not>
-                        <property>sim/current-view/internal</property>
-                    </not>
-                    <greater-than>
-                        <property>engines/engine[1]/running</property>
-                        <value>0</value>
-                    </greater-than>
-                </and>
+				<not>
+					<property>sim/current-view/internal</property>
+				</not>
             </condition>
             <volume>
               <property>/engines/engine[1]/n1</property>
@@ -291,15 +473,9 @@
       <name>right idle</name>
       <path>Aircraft/727-200/Sounds/eng/idling.wav</path>
             <condition>
-                <and>
-                    <not>
-                        <property>sim/current-view/internal</property>
-                    </not>
-                    <greater-than>
-                        <property>engines/engine[2]/running</property>
-                        <value>0</value>
-                    </greater-than>
-                </and>
+				<not>
+					<property>sim/current-view/internal</property>
+				</not>
             </condition>
             <volume>
               <property>/engines/engine[2]/n1</property>
@@ -326,15 +502,9 @@
       <path>Aircraft/727-200/Sounds/eng/running.wav</path>
       <mode>looped</mode>
             <condition>
-                <and>
-                    <not>
-                        <property>sim/current-view/internal</property>
-                    </not>
-                    <greater-than>
-                        <property>engines/engine/running</property>
-                        <value>0</value>
-                    </greater-than>
-                </and>
+				<not>
+					<property>sim/current-view/internal</property>
+				</not>
             </condition>
             <volume>
               <property>/engines/engine/n1</property>
@@ -363,15 +533,9 @@
       <path>Aircraft/727-200/Sounds/eng/running.wav</path>
       <mode>looped</mode>
             <condition>
-                <and>
-                    <not>
-                        <property>sim/current-view/internal</property>
-                    </not>
-                    <greater-than>
-                        <property>engines/engine[1]/running</property>
-                        <value>0</value>
-                    </greater-than>
-                </and>
+				<not>
+					<property>sim/current-view/internal</property>
+				</not>
             </condition>
             <volume>
               <property>/engines/engine[1]/n1</property>
@@ -399,15 +563,9 @@
       <name>right run</name>
       <path>Aircraft/727-200/Sounds/eng/running.wav</path>
             <condition>
-                <and>
-                    <not>
-                        <property>sim/current-view/internal</property>
-                    </not>
-                    <greater-than>
-                        <property>engines/engine[2]/running</property>
-                        <value>0</value>
-                    </greater-than>
-                </and>
+				<not>
+					<property>sim/current-view/internal</property>
+				</not>
             </condition>
             <volume>
               <property>/engines/engine[2]/n1</property>
@@ -435,15 +593,9 @@
       <path>Aircraft/727-200/Sounds/eng/whine.wav</path>
       <mode>looped</mode>
             <condition>
-                <and>
-                    <not>
-                        <property>sim/current-view/internal</property>
-                    </not>
-                    <greater-than>
-                        <property>engines/engine/running</property>
-                        <value>0</value>
-                    </greater-than>
-                </and>
+				<not>
+					<property>sim/current-view/internal</property>
+				</not>
             </condition>
             <volume>
               <property>/engines/engine/n1</property>
@@ -471,15 +623,9 @@
       <path>Aircraft/727-200/Sounds/eng/whine.wav</path>
       <mode>looped</mode>
             <condition>
-                <and>
-                    <not>
-                        <property>sim/current-view/internal</property>
-                    </not>
-                    <greater-than>
-                        <property>engines/engine[1]/running</property>
-                        <value>0</value>
-                    </greater-than>
-                </and>
+				<not>
+					<property>sim/current-view/internal</property>
+				</not>
             </condition>
             <volume>
               <property>/engines/engine[1]/n1</property>
@@ -507,15 +653,9 @@
       <path>Aircraft/727-200/Sounds/eng/whine.wav</path>
       <mode>looped</mode>
             <condition>
-                <and>
-                    <not>
-                        <property>sim/current-view/internal</property>
-                    </not>
-                    <greater-than>
-                        <property>engines/engine[2]/running</property>
-                        <value>0</value>
-                    </greater-than>
-                </and>
+				<not>
+					<property>sim/current-view/internal</property>
+				</not>
             </condition>
             <volume>
               <property>/engines/engine[2]/n1</property>
@@ -545,15 +685,9 @@
       <path>Aircraft/727-200/Sounds/eng/roar.wav</path>
       <mode>looped</mode>
             <condition>
-                <and>
-                    <not>
-                        <property>sim/current-view/internal</property>
-                    </not>
-                    <greater-than>
-                        <property>engines/engine/running</property>
-                        <value>0</value>
-                    </greater-than>
-                </and>
+				<not>
+					<property>sim/current-view/internal</property>
+				</not>
             </condition>
             <volume>
          		<property>/engines/engine/thrust_lb</property>
@@ -579,15 +713,9 @@
       <path>Aircraft/727-200/Sounds/eng/roar.wav</path>
       <mode>looped</mode>
             <condition>
-                <and>
-                    <not>
-                        <property>sim/current-view/internal</property>
-                    </not>
-                    <greater-than>
-                        <property>engines/engine[1]/running</property>
-                        <value>0</value>
-                    </greater-than>
-                </and>
+				<not>
+					<property>sim/current-view/internal</property>
+				</not>
             </condition>
             <volume>
          		<property>/engines/engine[1]/thrust_lb</property>
@@ -613,15 +741,9 @@
       <path>Aircraft/727-200/Sounds/eng/roar.wav</path>
       <mode>looped</mode>
             <condition>
-                <and>
-                    <not>
-                        <property>sim/current-view/internal</property>
-                    </not>
-                    <greater-than>
-                        <property>engines/engine[2]/running</property>
-                        <value>0</value>
-                    </greater-than>
-                </and>
+				<not>
+					<property>sim/current-view/internal</property>
+				</not>
             </condition>
             <volume>
          		<property>/engines/engine[2]/thrust_lb</property>
