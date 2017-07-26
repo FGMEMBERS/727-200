@@ -4,16 +4,6 @@
 
 	<path>727-200.ac</path>
 
-	<!-- Livery System -->
-	<nasal>
-		<load>
-			var livery_update = aircraft.livery_update.new("Aircraft/727-200/Models/Liveries", 10);
-		</load>
-		<unload>
-			livery_update.stop();
-		</unload>
-	</nasal>
-
 	<animation>
 		<type>material</type>
 		<!-- fuselage -->
@@ -98,8 +88,18 @@
 		<object-name>slat1.3</object-name>
 		<property-base>sim/model/livery</property-base>
 		<texture-prop>texture</texture-prop>
-		<texture>Liveries/BOE.png</texture>
+		<texture>Liveries-ADV/BOE.png</texture>
 	</animation>
+	
+	<!-- Livery System -->
+	<nasal>
+		<load>
+		 var livery_update = aircraft.livery_update.new("Aircraft/A320Family/Models/Liveries/A319/CFM");
+		</load>
+		<unload>
+		 livery_update.stop();
+		</unload>
+	</nasal>
 
 	<!-- Shaders -->
 	<effect>

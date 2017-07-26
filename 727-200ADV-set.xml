@@ -10,8 +10,7 @@
 		<model>
 			<path>Aircraft/727-200/Models/727-200ADV.xml</path>
 			<livery>
-				<name type="string">Boeing 727</name>
-				<texture>Liveries-ADV/BOE.png</texture>
+				<file>Boeing 727</file>
 			</livery>
 
 			<pushback>
