@@ -52,13 +52,14 @@ var aglgears = func {
 
 aglgears();
 
-setlistener("/controls/flight/elevator-trim", func {
-	trim = getprop("/controls/flight/elevator-trim");
-	settimer(func {
-		if (getprop("/controls/flight/elevator-trim") == trim) {
-			setprop("/sim/sounde/trim", 0);
-		} else {
-			setprop("/sim/sounde/trim", 1);
-		}
-	}, 0.05);
-});
+# Not working right -JD
+#setlistener("/controls/flight/elevator-trim", func {
+#	trim = getprop("/controls/flight/elevator-trim");
+#	settimer(func {
+#		if (getprop("/controls/flight/elevator-trim") == trim) {
+#			setprop("/sim/sounde/trim", 0);
+#		} else {
+#			setprop("/sim/sounde/trim", 1);
+#		}
+#	}, 0.05);
+#});
