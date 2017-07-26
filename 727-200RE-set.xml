@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+
+<PropertyList include="727-200-main.xml">
+
+	<sim>
+		<description>Boeing 727-200 Super 27 (JT8D-219)</description>
+		<flight-model>jsb</flight-model>
+		<aero>727-200RE</aero>
+
+		<model>
+			<path>Aircraft/727-200/Models/727-200RE.xml</path>
+			<livery>
+				<file>Boeing 727</file>
+			</livery>
+
+			<pushback>
+				<kp type="double">1600</kp>
+				<ki type="double">0</ki>
+				<kd type="double">0</kd>
+				<position-norm type="double">0</position-norm>
+				<enabled type="bool">false</enabled>
+			</pushback>
+		</model>
+
+		<view>
+			<internal archive="y">true</internal>
+			<config>
+				<x-offset-m archive="y">-0.44</x-offset-m>
+				<y-offset-m archive="y">1.05</y-offset-m>
+				<z-offset-m archive="y">-20.44</z-offset-m>
+				<pitch-offset-deg archive="y">-13.0</pitch-offset-deg>
+				<default-field-of-view-deg type="double">56.8</default-field-of-view-deg>
+			</config>
+		</view>
+		<view n="100">
+			<name>Copilot View</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">0.44</x-offset-m>
+				<y-offset-m archive="y">1.05</y-offset-m>
+				<z-offset-m archive="y">-20.44</z-offset-m>
+				<pitch-offset-deg archive="y">-13.0</pitch-offset-deg>
+				<default-field-of-view-deg type="double">56.8</default-field-of-view-deg>
+			</config>
+		</view>
+		<view n="101">
+			<name>Left Front View</name>
+			<type>lookfrom</type>
+			<internal archive="y">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">-2.03</x-offset-m>
+				<y-offset-m archive="y">0.97</y-offset-m>
+				<z-offset-m archive="y">-5.56</z-offset-m>
+				<heading-offset-deg>115</heading-offset-deg>
+				<default-field-of-view-deg type="double">90.0</default-field-of-view-deg>
+			</config>
+		</view>
+		<view n="102">
+			<name>Right Mid View</name>
+			<type>lookfrom</type>
+			<internal archive="y">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">2.03</x-offset-m>
+				<y-offset-m archive="y">0.97</y-offset-m>
+				<z-offset-m archive="y">-0.32</z-offset-m>
+				<heading-offset-deg>257</heading-offset-deg>
+				<default-field-of-view-deg type="double">90.0</default-field-of-view-deg>
+			</config>
+		</view>
+		<view n="103">
+			<name>Left Aft View</name>
+			<type>lookfrom</type>
+			<internal archive="y">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">-2.03</x-offset-m>
+				<y-offset-m archive="y">0.97</y-offset-m>
+				<z-offset-m archive="y">5.54</z-offset-m>
+				<heading-offset-deg>88</heading-offset-deg>
+				<default-field-of-view-deg type="double">90.0</default-field-of-view-deg>
+			</config>
+		</view>
+
+		<chase-distance-m>-100</chase-distance-m>
+		
+		<systems n="0">
+            <autopilot n="4">
+                <path>Aircraft/727-200/Systems/JT8D-200.xml</path>
+            </autopilot>
+		</systems>
+
+	</sim>
+	
+	<controls n="0">
+		<engines n="0">
+			<engine n="0">
+				<epr-lim type="double">2.01</epr-lim>
+			</engine>
+			<engine n="1">
+				<epr-lim type="double">2.11</epr-lim>
+			</engine>
+			<engine n="2">
+				<epr-lim type="double">2.01</epr-lim>
+			</engine>
+		</engines>
+	</controls>
+	
+	<nasal n="0">
+		<specific>
+			<file>Aircraft/727-200/Nasal/722super27-livery.nas</file>
+			<file>Aircraft/727-200/Nasal/engines-2rev.nas</file>
+		</specific>
+	</nasal>
+
+</PropertyList>

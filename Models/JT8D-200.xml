@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+	<path>JT8D-200.ac</path>
+	
+<!-- Engine reversers -->
+
+<animation>
+  <type>rotate</type>
+  <object-name>EngRevStrutFDL</object-name>
+  <object-name>EngRevDL</object-name>
+  <property>sim/multiplay/generic/float[7]</property>
+  <interpolation>
+    <entry><ind>0</ind><dep>  0</dep></entry>
+    <entry><ind>1</ind><dep>142</dep></entry>
+  </interpolation>   
+  <axis>
+    <x1-m>12.9707</x1-m>
+    <y1-m>-3.4598</y1-m>
+    <z1-m>0.728</z1-m>
+    <x2-m>12.9627</x2-m>
+    <y2-m>-2.3908</y2-m>
+    <z2-m>0.516</z2-m>
+  </axis>
+</animation> 
+<animation>
+  <type>rotate</type>
+  <object-name>EngRevDL</object-name>
+  <property>sim/multiplay/generic/float[7]</property>
+  <interpolation>
+    <entry><ind>0</ind><dep>  0</dep></entry>
+    <entry><ind>1</ind><dep>-67</dep></entry>
+  </interpolation>   
+  <axis>
+    <x1-m>12.1848</x1-m>
+    <y1-m>-3.56281</y1-m>
+    <z1-m>0.674</z1-m>
+    <x2-m>12.1757</x2-m>
+    <y2-m>-2.32681</y2-m>
+    <z2-m>0.429</z2-m>
+  </axis>
+</animation> 
+<animation>
+  <type>rotate</type>
+  <object-name>EngRevStrutADL</object-name>
+  <property>sim/multiplay/generic/float[7]</property>
+  <interpolation>
+    <entry><ind>0</ind><dep>  0</dep></entry>
+    <entry><ind>1</ind><dep>190</dep></entry>
+  </interpolation>   
+  <axis>
+    <x1-m>13.2057</x1-m>
+    <y1-m>-3.4598</y1-m>
+    <z1-m>0.720</z1-m>
+    <x2-m>13.1977</x2-m>
+    <y2-m>-2.3908</y2-m>
+    <z2-m>0.508</z2-m>
+  </axis>
+</animation> 
+
+<animation>
+  <type>rotate</type>
+  <object-name>EngRevStrutFVL</object-name>
+  <object-name>EngRevVL</object-name>
+  <property>sim/multiplay/generic/float[7]</property>
+  <interpolation>
+    <entry><ind>0</ind><dep>   0</dep></entry>
+    <entry><ind>1</ind><dep>-142</dep></entry>
+  </interpolation>   
+  <axis>
+    <x1-m>12.9638</x1-m>
+    <y1-m>-3.49881</y1-m>
+    <z1-m>0.532</z1-m>
+    <x2-m>12.9568</x2-m>
+    <y2-m>-2.42981</y2-m>
+    <z2-m>0.320</z2-m>
+  </axis>
+</animation> 
+<animation>
+  <type>rotate</type>
+  <object-name>EngRevVL</object-name>
+  <property>sim/multiplay/generic/float[7]</property>
+  <interpolation>
+    <entry><ind>0</ind><dep> 0</dep></entry>
+    <entry><ind>1</ind><dep>67</dep></entry>
+  </interpolation>   
+  <axis>
+    <x1-m>12.1847</x1-m>
+    <y1-m>-3.5628</y1-m>
+    <z1-m>0.674</z1-m>
+    <x2-m>12.1757</x2-m>
+    <y2-m>-2.3268</y2-m>
+    <z2-m>0.429</z2-m>
+  </axis>
+</animation> 
+<animation>
+  <type>rotate</type>
+  <object-name>EngRevStrutAVL</object-name>
+  <property>sim/multiplay/generic/float[7]</property>
+  <interpolation>
+    <entry><ind>0</ind><dep>   0</dep></entry>
+    <entry><ind>1</ind><dep>-190</dep></entry>
+  </interpolation>   
+  <axis>
+    <x1-m>13.1988</x1-m>
+    <y1-m>-3.49881</y1-m>
+    <z1-m>0.524</z1-m>
+    <x2-m>13.1908</x2-m>
+    <y2-m>-2.42981</y2-m>
+    <z2-m>0.312</z2-m>
+  </axis>
+</animation> 
+
+<animation>
+  <type>rotate</type>
+  <object-name>EngRevStrutFDR</object-name>
+  <object-name>EngRevDR</object-name>
+  <property>sim/multiplay/generic/float[9]</property>
+  <interpolation>
+    <entry><ind>0</ind><dep>   0</dep></entry>
+    <entry><ind>1</ind><dep>-142</dep></entry>
+  </interpolation>   
+  <axis>
+    <x1-m>12.9707</x1-m>
+    <y1-m>3.4598</y1-m>
+    <z1-m>0.728</z1-m>
+    <x2-m>12.9627</x2-m>
+    <y2-m>2.3908</y2-m>
+    <z2-m>0.516</z2-m>
+  </axis>
+</animation> 
+<animation>
+  <type>rotate</type>
+  <object-name>EngRevDR</object-name>
+  <property>sim/multiplay/generic/float[9]</property>
+  <interpolation>
+    <entry><ind>0</ind><dep> 0</dep></entry>
+    <entry><ind>1</ind><dep>67</dep></entry>
+  </interpolation>   
+  <axis>
+    <x1-m>12.1848</x1-m>
+    <y1-m>3.56281</y1-m>
+    <z1-m>0.674</z1-m>
+    <x2-m>12.1757</x2-m>
+    <y2-m>2.32681</y2-m>
+    <z2-m>0.429</z2-m>
+  </axis>
+</animation> 
+<animation>
+  <type>rotate</type>
+  <object-name>EngRevStrutADR</object-name>
+  <property>sim/multiplay/generic/float[9]</property>
+  <interpolation>
+    <entry><ind>0</ind><dep>   0</dep></entry>
+    <entry><ind>1</ind><dep>-190</dep></entry>
+  </interpolation>   
+  <axis>
+    <x1-m>13.2057</x1-m>
+    <y1-m>3.4598</y1-m>
+    <z1-m>0.720</z1-m>
+    <x2-m>13.1977</x2-m>
+    <y2-m>2.3908</y2-m>
+    <z2-m>0.508</z2-m>
+  </axis>
+</animation> 
+
+<animation>
+  <type>rotate</type>
+  <object-name>EngRevStrutFVR</object-name>
+  <object-name>EngRevVR</object-name>
+  <property>sim/multiplay/generic/float[9]</property>
+  <interpolation>
+    <entry><ind>0</ind><dep>  0</dep></entry>
+    <entry><ind>1</ind><dep>142</dep></entry>
+  </interpolation>   
+  <axis>
+    <x1-m>12.9638</x1-m>
+    <y1-m>3.49881</y1-m>
+    <z1-m>0.532</z1-m>
+    <x2-m>12.9568</x2-m>
+    <y2-m>2.42981</y2-m>
+    <z2-m>0.320</z2-m>
+  </axis>
+</animation> 
+<animation>
+  <type>rotate</type>
+  <object-name>EngRevVR</object-name>
+  <property>sim/multiplay/generic/float[9]</property>
+  <interpolation>
+    <entry><ind>0</ind><dep>  0</dep></entry>
+    <entry><ind>1</ind><dep>-67</dep></entry>
+  </interpolation>   
+  <axis>
+    <x1-m>12.1847</x1-m>
+    <y1-m>3.5628</y1-m>
+    <z1-m>0.674</z1-m>
+    <x2-m>12.1757</x2-m>
+    <y2-m>2.3268</y2-m>
+    <z2-m>0.429</z2-m>
+  </axis>
+</animation> 
+<animation>
+  <type>rotate</type>
+  <object-name>EngRevStrutAVR</object-name>
+  <property>sim/multiplay/generic/float[9]</property>
+  <interpolation>
+    <entry><ind>0</ind><dep>  0</dep></entry>
+    <entry><ind>1</ind><dep>190</dep></entry>
+  </interpolation>   
+  <axis>
+    <x1-m>13.1988</x1-m>
+    <y1-m>3.49881</y1-m>
+    <z1-m>0.524</z1-m>
+    <x2-m>13.1908</x2-m>
+    <y2-m>2.42981</y2-m>
+    <z2-m>0.312</z2-m>
+  </axis>
+</animation>
+
+</PropertyList>
+

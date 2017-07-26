@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Boeing 727</name>
+				<texture>Liveries-RE/BOE.png</texture>
+			</livery>
+			<eng>
+				<texture>Liveries-RE/BOE-eng.png</texture>
+			</eng>
+		</model>
+	</sim>
+</PropertyList>

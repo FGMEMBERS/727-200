@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">FedEx</name>
+				<texture>Liveries-RE/FedEx.png</texture>
+			</livery>
+			<eng>
+				<texture>Liveries-RE/FedEx-eng.png</texture>
+			</eng>
+		</model>
+	</sim>
+</PropertyList>

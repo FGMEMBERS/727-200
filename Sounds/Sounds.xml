@@ -415,9 +415,15 @@
       <path>Aircraft/727-200/Sounds/eng/idling.wav</path>
       <mode>looped</mode>
             <condition>
-				<not>
-					<property>sim/current-view/internal</property>
-				</not>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>/engines/engine/n1</property>
+						<value>0</value>
+					</greater-than>
+				</and>
             </condition>
             <volume>
               <property>/engines/engine/n1</property>
@@ -445,9 +451,15 @@
       <path>Aircraft/727-200/Sounds/eng/idling.wav</path>
       <mode>looped</mode>
             <condition>
-				<not>
-					<property>sim/current-view/internal</property>
-				</not>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>/engines/engine/n1</property>
+						<value>0</value>
+					</greater-than>
+				</and>
             </condition>
             <volume>
               <property>/engines/engine[1]/n1</property>
@@ -473,9 +485,15 @@
       <name>right idle</name>
       <path>Aircraft/727-200/Sounds/eng/idling.wav</path>
             <condition>
-				<not>
-					<property>sim/current-view/internal</property>
-				</not>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>/engines/engine/n1</property>
+						<value>0</value>
+					</greater-than>
+				</and>
             </condition>
             <volume>
               <property>/engines/engine[2]/n1</property>
@@ -502,9 +520,15 @@
       <path>Aircraft/727-200/Sounds/eng/running.wav</path>
       <mode>looped</mode>
             <condition>
-				<not>
-					<property>sim/current-view/internal</property>
-				</not>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>/engines/engine/n1</property>
+						<value>0</value>
+					</greater-than>
+				</and>
             </condition>
             <volume>
               <property>/engines/engine/n1</property>
@@ -533,9 +557,15 @@
       <path>Aircraft/727-200/Sounds/eng/running.wav</path>
       <mode>looped</mode>
             <condition>
-				<not>
-					<property>sim/current-view/internal</property>
-				</not>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>/engines/engine/n1</property>
+						<value>0</value>
+					</greater-than>
+				</and>
             </condition>
             <volume>
               <property>/engines/engine[1]/n1</property>
@@ -563,9 +593,15 @@
       <name>right run</name>
       <path>Aircraft/727-200/Sounds/eng/running.wav</path>
             <condition>
-				<not>
-					<property>sim/current-view/internal</property>
-				</not>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>/engines/engine/n1</property>
+						<value>0</value>
+					</greater-than>
+				</and>
             </condition>
             <volume>
               <property>/engines/engine[2]/n1</property>
@@ -593,9 +629,15 @@
       <path>Aircraft/727-200/Sounds/eng/whine.wav</path>
       <mode>looped</mode>
             <condition>
-				<not>
-					<property>sim/current-view/internal</property>
-				</not>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>/engines/engine/n1</property>
+						<value>0</value>
+					</greater-than>
+				</and>
             </condition>
             <volume>
               <property>/engines/engine/n1</property>
@@ -623,9 +665,15 @@
       <path>Aircraft/727-200/Sounds/eng/whine.wav</path>
       <mode>looped</mode>
             <condition>
-				<not>
-					<property>sim/current-view/internal</property>
-				</not>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>/engines/engine/n1</property>
+						<value>0</value>
+					</greater-than>
+				</and>
             </condition>
             <volume>
               <property>/engines/engine[1]/n1</property>
@@ -653,9 +701,15 @@
       <path>Aircraft/727-200/Sounds/eng/whine.wav</path>
       <mode>looped</mode>
             <condition>
-				<not>
-					<property>sim/current-view/internal</property>
-				</not>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>/engines/engine/n1</property>
+						<value>0</value>
+					</greater-than>
+				</and>
             </condition>
             <volume>
               <property>/engines/engine[2]/n1</property>
@@ -685,9 +739,15 @@
       <path>Aircraft/727-200/Sounds/eng/roar.wav</path>
       <mode>looped</mode>
             <condition>
-				<not>
-					<property>sim/current-view/internal</property>
-				</not>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>/engines/engine/n1</property>
+						<value>0</value>
+					</greater-than>
+				</and>
             </condition>
             <volume>
          		<property>/engines/engine/thrust_lb</property>
@@ -713,9 +773,15 @@
       <path>Aircraft/727-200/Sounds/eng/roar.wav</path>
       <mode>looped</mode>
             <condition>
-				<not>
-					<property>sim/current-view/internal</property>
-				</not>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>/engines/engine/n1</property>
+						<value>0</value>
+					</greater-than>
+				</and>
             </condition>
             <volume>
          		<property>/engines/engine[1]/thrust_lb</property>
@@ -741,9 +807,15 @@
       <path>Aircraft/727-200/Sounds/eng/roar.wav</path>
       <mode>looped</mode>
             <condition>
-				<not>
-					<property>sim/current-view/internal</property>
-				</not>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>/engines/engine/n1</property>
+						<value>0</value>
+					</greater-than>
+				</and>
             </condition>
             <volume>
          		<property>/engines/engine[2]/thrust_lb</property>

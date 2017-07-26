@@ -94,7 +94,7 @@
 	<!-- Livery System -->
 	<nasal>
 		<load>
-		 var livery_update = aircraft.livery_update.new("Aircraft/A320Family/Models/Liveries/A319/CFM");
+		 var livery_update = aircraft.livery_update.new("Aircraft/727-200/Models/Liveries-ADV");
 		</load>
 		<unload>
 		 livery_update.stop();
@@ -187,7 +187,11 @@
 		<object-name>slat1.2</object-name>
 		<object-name>slat1.3</object-name>
 	</effect>
-
+	
+	<model>
+		<path>Aircraft/727-200/Models/JT8D-9-15-17.xml</path>
+	</model>
+	
 	<model>
 		<path>Aircraft/727-200/Models/Flightdeck/flightdeck.xml</path>
 	</model>
@@ -1852,6 +1856,5 @@
     <factor-prop>controls/lighting/panel-light</factor-prop>	
   </emission>
 </animation>
-
-
+	
 </PropertyList>

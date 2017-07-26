@@ -3,7 +3,7 @@
 <PropertyList include="727-200-main.xml">
 
 	<sim>
-		<description>Boeing 727-200 Advanced</description>
+		<description>Boeing 727-200 Advanced (JT8D-17R)</description>
 		<flight-model>jsb</flight-model>
 		<aero>727-200ADV</aero>
 
@@ -28,8 +28,8 @@
 				<x-offset-m archive="y">-0.44</x-offset-m>
 				<y-offset-m archive="y">1.05</y-offset-m>
 				<z-offset-m archive="y">-20.44</z-offset-m>
-				<pitch-offset-deg archive="y">-12.0</pitch-offset-deg>
-				<default-field-of-view-deg type="double">60.8</default-field-of-view-deg>
+				<pitch-offset-deg archive="y">-13.0</pitch-offset-deg>
+				<default-field-of-view-deg type="double">56.8</default-field-of-view-deg>
 			</config>
 		</view>
 		<view n="100">
@@ -41,8 +41,8 @@
 				<x-offset-m archive="y">0.44</x-offset-m>
 				<y-offset-m archive="y">1.05</y-offset-m>
 				<z-offset-m archive="y">-20.44</z-offset-m>
-				<pitch-offset-deg archive="y">-12.0</pitch-offset-deg>
-				<default-field-of-view-deg type="double">60.8</default-field-of-view-deg>
+				<pitch-offset-deg archive="y">-13.0</pitch-offset-deg>
+				<default-field-of-view-deg type="double">56.8</default-field-of-view-deg>
 			</config>
 		</view>
 		<view n="101">
@@ -86,12 +86,33 @@
 		</view>
 
 		<chase-distance-m>-100</chase-distance-m>
+		
+		<systems n="0">
+            <autopilot n="4">
+                <path>Aircraft/727-200/Systems/JT8D-9-15-17.xml</path>
+            </autopilot>
+		</systems>
 
 	</sim>
+	
+	<controls n="0">
+		<engines n="0">
+			<engine n="0">
+				<epr-lim type="double">2.11</epr-lim>
+			</engine>
+			<engine n="1">
+				<epr-lim type="double">2.11</epr-lim>
+			</engine>
+			<engine n="2">
+				<epr-lim type="double">2.11</epr-lim>
+			</engine>
+		</engines>
+	</controls>
 	
 	<nasal n="0">
 		<specific>
 			<file>Aircraft/727-200/Nasal/722adv-livery.nas</file>
+			<file>Aircraft/727-200/Nasal/engines-3rev.nas</file>
 		</specific>
 	</nasal>
 

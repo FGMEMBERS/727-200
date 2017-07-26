@@ -161,6 +161,7 @@
             <autopilot n="3">
                 <path>Aircraft/727-200/Systems/libraries.xml</path>
             </autopilot>
+			<!-- Skip number 4, used in -set -->
 			<autopilot n="10">
 				<path>Aircraft/727-200/Sounds/Sound-Control.xml</path>
 			</autopilot>
@@ -176,6 +177,9 @@
 				<float n="4" alias="/controls/flight/rudder-upper" />
 				<float n="5" alias="/controls/flight/rudder-lower" />
 				<float n="6" alias="/fdm/jsbsim/fcs/slat-pos-norm" />
+				<float n="7" alias="/engines/engine[0]/reverser-pos-norm" />
+				<float n="8" alias="/engines/engine[1]/reverser-pos-norm" />
+				<float n="9" alias="/engines/engine[2]/reverser-pos-norm" />
 			</generic>
 		</multiplay>
 		
@@ -195,30 +199,27 @@
 	</autopilot-v>
 
 	<controls n="0">
-                <anti-ice>
-                    <ducttemp>
-                        <selected-engine type="int">0</selected-engine>
-                    </ducttemp>
-                    <valves>
-                        <engine1 type="bool">0</engine1>
-                        <engine2 type="bool">0</engine2>
-                        <engine3 type="bool">0</engine3>
-                        <engine1-ok type="bool">0</engine1-ok>
-                        <engine2-ok type="bool">0</engine2-ok>
-                        <engine3-ok type="bool">0</engine3-ok>
-                    </valves>                        
-                </anti-ice>
-		<engines>
+		<anti-ice>
+			<ducttemp>
+				<selected-engine type="int">0</selected-engine>
+			</ducttemp>
+			<valves>
+				<engine1 type="bool">0</engine1>
+				<engine2 type="bool">0</engine2>
+				<engine3 type="bool">0</engine3>
+				<engine1-ok type="bool">0</engine1-ok>
+				<engine2-ok type="bool">0</engine2-ok>
+				<engine3-ok type="bool">0</engine3-ok>
+			</valves>                        
+		</anti-ice>
+		<engines n="0">
 			<engine n="0">
-				<epr-lim type="double">2.11</epr-lim>
 				<throttle-fdm type="float">0</throttle-fdm>
 			</engine>
 			<engine n="1">
-				<epr-lim type="double">2.11</epr-lim>
 				<throttle-fdm type="float">0</throttle-fdm>
 			</engine>
 			<engine n="2">
-				<epr-lim type="double">2.11</epr-lim>
 				<throttle-fdm type="float">0</throttle-fdm>
 			</engine>
 		</engines>
@@ -514,7 +515,7 @@
 				<binding>
 					<command>nasal</command>
 					<script>
-					systems.toggleFastRevThrust();
+					specific.toggleFastRevThrust();
 					</script>
 				</binding>
 			</key>
@@ -524,7 +525,7 @@
 				<binding>
 					<command>nasal</command>
 					<script>
-					systems.unRevThrust();
+					specific.unRevThrust();
 					</script>
 				</binding>
 			</key>
@@ -534,7 +535,7 @@
 				<binding>
 					<command>nasal</command>
 					<script>
-					systems.doRevThrust();
+					specific.doRevThrust();
 					</script>
 				</binding>
 			</key>
@@ -544,7 +545,7 @@
 				<binding>
 					<command>nasal</command>
 					<script>
-					systems.doIdleThrust();
+					specific.doIdleThrust();
 					</script>
 				</binding>
 			</key>
@@ -606,7 +607,7 @@
 			<!--file>Aircraft/727-200/Nasal/electrical.nas</file-->
 			<file>Aircraft/727-200/Nasal/hydraulics.nas</file>
 			<file>Aircraft/727-200/Nasal/heat.nas</file>
-			<file>Aircraft/727-200/Nasal/engines.nas</file>
+			<!--file>Aircraft/727-200/Nasal/engines.nas</file-->
 		</systems>
 		<autopilot_v>
 			<file>Aircraft/727-200/Nasal/autopilot-v.nas</file>
