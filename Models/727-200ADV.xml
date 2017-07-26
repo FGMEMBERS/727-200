@@ -36,10 +36,6 @@
 		<object-name>Plane</object-name>
 		<object-name>leftelevator</object-name>
 		<object-name>rightelevator</object-name>
-		<!-- engines -->
-		<object-name>Circle</object-name>
-		<object-name>Circle.001</object-name>
-		<object-name>Fuselage.004</object-name>
 		<!-- Wings -->
 		<!-- main plane -->
 		<object-name>Plane.005</object-name>
@@ -89,6 +85,15 @@
 		<property-base>sim/model/livery</property-base>
 		<texture-prop>texture</texture-prop>
 		<texture>Liveries-ADV/BOE.png</texture>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<!-- engines -->
+		<object-name>Engines</object-name>
+		<property-base>sim/model/eng</property-base>
+		<texture-prop>texture</texture-prop>
+		<texture>Liveries-ADV/BOE-eng.png</texture>
 	</animation>
 	
 	<!-- Livery System -->
@@ -212,24 +217,6 @@
 		<object-name>rgouterstrut</object-name>
 		<object-name>rmgaxle</object-name>
 	</effect>
-
-<!-- Shadow -->
-
-   <model>
-    <name>shadowOSG</name>
-    <path>Aircraft/727-200/Models/shadow.xml</path>
-  </model>
-
-  <animation>
-    <type>select</type>
-    <object-name>shadow</object-name>
-    <condition>
-      <equals>
-	<property>sim[0]/rendering/shadows/enabled</property>
-	<value>true</value>
-      </equals>
-    </condition>
-  </animation>
 
 	<animation>
 		<type>rotate</type>

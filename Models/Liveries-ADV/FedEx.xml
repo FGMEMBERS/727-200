@@ -7,6 +7,9 @@
 				<name type="string">FedEx</name>
 				<texture>Liveries-ADV/FedEx.png</texture>
 			</livery>
+			<eng>
+				<texture>Liveries-ADV/FedEx-eng.png</texture>
+			</eng>
 		</model>
 	</sim>
 </PropertyList>

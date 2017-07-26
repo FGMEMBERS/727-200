@@ -11,7 +11,7 @@ name "EngExhaustL"
 loc 4.95911e-005 0 0.2448
 data 8
 Tube.020
-texture "JT8D-200-texture.png"
+texture "JT8D-texture.png"
 crease 30.000000
 numvert 33
 37.2336 0.2144 2.3486
@@ -262,7 +262,7 @@ name "EngExhaustR"
 loc 3.8147e-006 0 -0.367206
 data 8
 Tube.059
-texture "JT8D-200-texture.png"
+texture "JT8D-texture.png"
 crease 30.000000
 numvert 33
 37.2336 0.2144 -2.2262
@@ -513,7 +513,7 @@ name "EngFanDiskL"
 loc 4.95911e-005 0 0.2448
 data 8
 Tube.013
-texture "JT8D-200-texture.png"
+texture "JT8D-texture.png"
 crease 30.000000
 numvert 17
 31.5307 0.769212 2.7
@@ -636,7 +636,7 @@ name "EngFanDiskL1"
 loc 4.95911e-005 0 0.2448
 data 8
 Tube.017
-texture "JT8D-200-texture.png"
+texture "JT8D-texture.png"
 crease 30.000000
 numvert 17
 31.5307 0.769212 2.7
@@ -759,7 +759,7 @@ name "EngFanDiskR"
 loc 3.8147e-006 0 -0.367206
 data 8
 Tube.088
-texture "JT8D-200-texture.png"
+texture "JT8D-texture.png"
 crease 30.000000
 numvert 17
 31.5307 0.769212 -2.5776
@@ -882,7 +882,7 @@ name "EngFanDiskR1"
 loc 3.8147e-006 0 -0.367206
 data 8
 Tube.026
-texture "JT8D-200-texture.png"
+texture "JT8D-texture.png"
 crease 30.000000
 numvert 17
 31.5307 0.769212 -2.5776
