@@ -45,8 +45,8 @@
 		<object-name>flap2.1</object-name>
 		<object-name>flap4</object-name>
 		<object-name>flap4.1</object-name>
-		<object-name>inneraileronl_0</object-name>
-		<object-name>inneraileronl_1</object-name>
+		<object-name>inneraileronl</object-name>
+		<object-name>inneraileronl</object-name>
 		<object-name>spoiler1</object-name>
 		<object-name>spoiler2</object-name>
 		<object-name>spoiler3</object-name>
@@ -68,8 +68,8 @@
 		<object-name>flap3</object-name>
 		<object-name>flap3.1</object-name>
 		<object-name>spoiler8</object-name>
-		<object-name>inneraileronr_0</object-name>
-		<object-name>inneraileronr_1</object-name>
+		<object-name>inneraileronr</object-name>
+		<object-name>inneraileronr</object-name>
 		<object-name>spoiler9</object-name>
 		<object-name>spoiler10</object-name>
 		<object-name>spoiler11</object-name>
@@ -150,8 +150,8 @@
 		<object-name>flap2.1</object-name>
 		<object-name>flap4</object-name>
 		<object-name>flap4.1</object-name>
-		<object-name>inneraileronl_0</object-name>
-		<object-name>inneraileronl_1</object-name>
+		<object-name>inneraileronl</object-name>
+		<object-name>inneraileronl</object-name>
 		<object-name>obs1</object-name>
 		<object-name>obs2</object-name>
 		<object-name>ibs3</object-name>
@@ -175,8 +175,8 @@
 		<object-name>flap3.1</object-name>
 		<object-name>gs8_0</object-name>
 		<object-name>gs8_1</object-name>
-		<object-name>inneraileronr_0</object-name>
-		<object-name>inneraileronr_1</object-name>
+		<object-name>inneraileronr</object-name>
+		<object-name>inneraileronr</object-name>
 		<object-name>ibs9</object-name>
 		<object-name>ibs10</object-name>
 		<object-name>ibs11</object-name>
