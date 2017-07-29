@@ -17,5 +17,6 @@ CCI - Israel Hernandez (IAHM-COL)
 Servientrega - Israel Hernandez (IAHM-COL)
 PSA - Brandon Amaro (Omega13a)
 PSA2 - Brandon Amaro (Omega13a)
+N721RW - Paul Erickson (airzona)
 
 Special Thanks to Gilberto for the texturizing of the default wings -- amazing work!
