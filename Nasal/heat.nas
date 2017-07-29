@@ -8,7 +8,37 @@
 var oat = getprop("/environment/temperature-degc");
 
 setlistener("/sim/signals/fdm-initialized", func {
+	var L1Anti = getprop("/systems/heat/window/L1antiIce");
+	var L2Anti = getprop("/systems/heat/window/L2antiIce");
+	var R1Anti = getprop("/systems/heat/window/R1antiIce");
+	var R2Anti = getprop("/systems/heat/window/R2antiIce");
+	var L1temp = getprop("/systems/heat/window/L1temp");
+	var L2temp = getprop("/systems/heat/window/L2temp");
+	var L3temp = getprop("/systems/heat/window/L3temp");
+	var L4temp = getprop("/systems/heat/window/L4temp");
+	var L5temp = getprop("/systems/heat/window/L5temp");
+	var R1temp = getprop("/systems/heat/window/R1temp");
+	var R2temp = getprop("/systems/heat/window/R2temp");
+	var R3temp = getprop("/systems/heat/window/R3temp");
+	var R4temp = getprop("/systems/heat/window/R4temp");
+	var R5temp = getprop("/systems/heat/window/R5temp");
+	var L1sw = getprop("/controls/heat/window/switches/L1");
+	var L2sw = getprop("/controls/heat/window/switches/L2");
+	var R1sw = getprop("/controls/heat/window/switches/R1");
+	var R2sw = getprop("/controls/heat/window/switches/R2");
+	var test = getprop("/controls/heat/window/switches/test");
+	var ovht1 = getprop("/controls/heat/window/lamps/L1ovht");
+	var ovht2 = getprop("/controls/heat/window/lamps/L2ovht");
+	var ovht3 = getprop("/controls/heat/window/lamps/R1ovht");
+	var ovht4 = getprop("/controls/heat/window/lamps/L2ovht");
 	var heatingfactor = getprop("/systems/heat/heatingfactor");
+	var oat = getprop("environment/temperature-degc");
+	maxTemp = 43;
+	ovhtDisco = 58;
+	EyeBrowMax = 38;
+	cabinTemp = 21;
+	densityAtmo = getprop("atmosphere/rho-slugs_ft3");
+	ambientTemp = getprop("environment/temperature-degc");
 	var maxTemp = 43;
 	var ovhtDisco = 58;
 	var EyeBrowMax = 38;
