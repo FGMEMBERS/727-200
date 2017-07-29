@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Pacific Southwest Airlines aka PSA</name>
+				<texture>Liveries-ADV/PSA.png</texture>
+			</livery>
+			<eng>
+				<texture>Liveries-ADV/PSA-eng.png</texture>
+			</eng>
+		</model>
+	</sim>
+</PropertyList>
