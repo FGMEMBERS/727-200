@@ -6,6 +6,9 @@
 				<name type="string">Hughes Airwest "Flying Banana"</name>
 				<texture>Liveries-ADV/N721RW-Flying-Banana.png</texture>
 			</livery>
+			<eng>
+				<texture>Liveries-ADV/N721RW-Flying-Banana-eng.png</texture>
+			</eng>
 		</model>
 	</sim>
 </PropertyList>
