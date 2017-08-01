@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">DHL</name>
+				<texture>Liveries-ADV/DHL.png</texture>
+			</livery>
+			<eng>
+				<texture>Liveries-ADV/DHL-eng.png</texture>
+			</eng>
+		</model>
+	</sim>
+</PropertyList>
