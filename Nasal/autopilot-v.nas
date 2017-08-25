@@ -396,6 +396,7 @@ var make_loc_active = func {
 	setprop("/it-autoflight/output/loc-armed", 0);
 	setprop("/it-autoflight/output/lat", 2);
 	setprop("/it-autoflight/mode/lat", "LOC");
+	setprop("/it-autoflight/input/roll-deg", 0);
 	if (getprop("/it-autoflight/output/appr-armed") == 1) {
 		# Do nothing because G/S is armed
 	} else {
