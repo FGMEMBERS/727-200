@@ -51,6 +51,8 @@ setlistener("/it-autoflight/input/ap", func {
 	var apmas = getprop("/it-autoflight/input/ap");
 	if (apmas == 0) {
 		setprop("/it-autoflight/output/ap", 0);
+		setprop("/controls/flight/aileron", 0);
+		setprop("/controls/flight/elevator", 0);
 		setprop("/controls/flight/rudder", 0);
 		setprop("/autopilot-v/roll-knob", 3);
 		setprop("/autopilot-v/pitch-knob", 3);
