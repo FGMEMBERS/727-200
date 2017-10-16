@@ -21,18 +21,26 @@ var fd_update = func {
 		setprop("/autopilot-v/internal/fd-appr-armed", 0);
 		setprop("/autopilot-v/internal/fd-lat", 1);
 		setprop("/autopilot-v/internal/fd-vert", 3);
+		if (getprop("/autopilot-v/fd/alt-hld") == 1) {
+			setprop("/autopilot-v/fd/alt-hld", 0);
+		}
 	} else if (fdset == 2) {
 		setprop("/autopilot-v/internal/fd-loc-armed", 0);
 		setprop("/autopilot-v/internal/fd-appr-armed", 0);
 		setprop("/autopilot-v/internal/fd-lat", 4);
 		setprop("/autopilot-v/internal/fd-vert", 4);
-		setprop("/autopilot-v/fd/alt-hld", 0);
+		if (getprop("/autopilot-v/fd/alt-hld") == 1) {
+			setprop("/autopilot-v/fd/alt-hld", 0);
+		}
 	} else if (fdset == 3) {
 		sync_pitch();
 		setprop("/autopilot-v/internal/fd-loc-armed", 0);
 		setprop("/autopilot-v/internal/fd-appr-armed", 0);
 		setprop("/autopilot-v/internal/fd-lat", 0);
 		setprop("/autopilot-v/internal/fd-vert", 1);
+		if (getprop("/autopilot-v/fd/alt-hld") == 1) {
+			setprop("/autopilot-v/fd/alt-hld", 0);
+		}
 	} else if (fdset == 4) {
 		sync_pitch();
 		setprop("/autopilot-v/internal/fd-appr-armed", 1);
@@ -43,6 +51,9 @@ var fd_update = func {
 			setprop("/instrumentation/nav[0]/signal-quality-norm", 0);
 			setprop("/instrumentation/nav[1]/signal-quality-norm", 0);
 			setprop("/autopilot-v/internal/fd-loc-armed", 1);
+		}
+		if (getprop("/autopilot-v/fd/alt-hld") == 1) {
+			setprop("/autopilot-v/fd/alt-hld", 0);
 		}
 	} else if (fdset == 5) {
 		if (getprop("/autopilot-v/internal/fd-vert") == 4) {
@@ -63,6 +74,9 @@ var fd_update = func {
 			setprop("/instrumentation/nav[1]/gs-rate-of-climb", 0);
 			setprop("/autopilot-v/internal/fd-appr-armed", 1);
 		}
+		if (getprop("/autopilot-v/fd/alt-hld") == 1) {
+			setprop("/autopilot-v/fd/alt-hld", 0);
+		}
 	}
 }
 
@@ -72,9 +86,7 @@ setlistener("/autopilot-v/fd/alt-hld", func {
 			setprop("/autopilot-v/internal/fd-alt", int((getprop("/instrumentation/altimeter/indicated-altitude-ft")+50)/100)*100);
 			setprop("/autopilot-v/internal/fd-vert", 0);
 		} else if (getprop("/autopilot-v/fd/alt-hld") == 0) {
-			if (getprop("/autopilot-v/internal/fd-vert") != 2 and getprop("/autopilot-v/internal/fd-vert") != 4) {
-				fd_update();
-			}
+			fd_update();
 		}
 	} else {
 		setprop("/autopilot-v/fd/alt-hld", 0);
