@@ -78,7 +78,7 @@
 	<animation> 
 		<type>rotate</type>
 		<object-name>needle.001</object-name>
-		<property>engines/engine[0]/n1</property>
+		<property>engines/engine[0]/n1-actual</property>
     <factor>36</factor>
 		<center>   
 		  <x-m> 0 </x-m> 

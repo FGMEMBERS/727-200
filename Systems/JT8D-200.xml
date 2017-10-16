@@ -45,7 +45,7 @@
         <input>
             <expression>
                 <table>
-                    <property>/engines/engine[0]/n1</property>
+                    <property>/engines/engine[0]/n1-actual</property>
                     <entry><ind> 18.7</ind><dep>0.00</dep></entry>
                     <entry><ind> 33.4</ind><dep>0.03</dep></entry>
                     <entry><ind>104.6</ind><dep>0.91</dep></entry>
@@ -69,7 +69,7 @@
             </expression>
         </input>
 		<output>/engines/engine[0]/epr-actual</output>
-		<max-rate-of-change>0.15</max-rate-of-change>
+		<max-rate-of-change>0.2</max-rate-of-change>
     </filter>
 	
     <filter>
@@ -80,7 +80,7 @@
         <input>
             <expression>
                 <table>
-                    <property>/engines/engine[1]/n1</property>
+                    <property>/engines/engine[1]/n1-actual</property>
                     <entry><ind> 18.7</ind><dep>0.00</dep></entry>
                     <entry><ind> 33.4</ind><dep>0.03</dep></entry>
                     <entry><ind>104.6</ind><dep>1.00</dep></entry>
@@ -104,7 +104,7 @@
             </expression>
         </input>
 		<output>/engines/engine[1]/epr-actual</output>
-		<max-rate-of-change>0.15</max-rate-of-change>
+		<max-rate-of-change>0.2</max-rate-of-change>
     </filter>
 	
     <filter>
@@ -115,7 +115,7 @@
         <input>
             <expression>
                 <table>
-                    <property>/engines/engine[2]/n1</property>
+                    <property>/engines/engine[2]/n1-actual</property>
                     <entry><ind> 18.7</ind><dep>0.00</dep></entry>
                     <entry><ind> 33.4</ind><dep>0.03</dep></entry>
                     <entry><ind>104.6</ind><dep>0.91</dep></entry>
@@ -139,7 +139,7 @@
             </expression>
         </input>
 		<output>/engines/engine[2]/epr-actual</output>
-		<max-rate-of-change>0.15</max-rate-of-change>
+		<max-rate-of-change>0.2</max-rate-of-change>
     </filter>
 	
 </PropertyList>

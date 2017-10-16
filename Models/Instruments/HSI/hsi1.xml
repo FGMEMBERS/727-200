@@ -306,11 +306,6 @@
                 <wrap>true</wrap>
             </binding>
         </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>HSI.crsknob</object-name>
         <action>
             <button>1</button>
 				<repeatable>true</repeatable>
@@ -324,11 +319,6 @@
                 <wrap>true</wrap>
             </binding>
         </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>HSI.crsknob</object-name>
         <action>
             <button>3</button>
              <binding>
@@ -340,11 +330,6 @@
                 <wrap>true</wrap>
             </binding>
         </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>HSI.crsknob</object-name>
         <action>
             <button>4</button>
              <binding>
@@ -356,6 +341,15 @@
                 <wrap>true</wrap>
             </binding>
         </action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>heading-bug</tooltip-id>
+				<mapping>heading</mapping>
+				<label>NAV1 Course: %3d</label>
+				<property>instrumentation/nav/radials/selected-deg</property>
+			</binding>
+		</hovered>
     </animation>
 
     <animation>
@@ -374,11 +368,6 @@
                 <wrap>true</wrap>
             </binding>
         </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>HSI.hdgknob</object-name>
         <action>
             <button>1</button>
 				<repeatable>true</repeatable>
@@ -392,11 +381,6 @@
                 <wrap>true</wrap>
             </binding>
         </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>HSI.hdgknob</object-name>
         <action>
             <button>3</button>
              <binding>
@@ -408,11 +392,6 @@
                 <wrap>true</wrap>
             </binding>
         </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>HSI.hdgknob</object-name>
         <action>
             <button>4</button>
              <binding>
@@ -424,6 +403,15 @@
                 <wrap>true</wrap>
             </binding>
         </action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>heading-bug</tooltip-id>
+				<mapping>heading</mapping>
+				<label>Heading Bug: %3d</label>
+				<property>it-autoflight/input/hdg</property>
+			</binding>
+		</hovered>
     </animation>
 
 </PropertyList>

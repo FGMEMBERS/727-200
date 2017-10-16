@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 
+<!-- (c) Joshua Davidson -->
+
 <PropertyList>
 
 	<sim>
@@ -13,6 +15,20 @@
 			<cockpit type="int">3</cockpit>
 			<model type="int">3</model>
 		</rating>
+		
+		<hud n="0">
+			<enable3d n="0">false</enable3d>
+			<enable3d n="1">false</enable3d>
+		</hud>
+		
+		<model>
+			<pushback>
+				<kp type="double">5000</kp>
+				<ki type="double">200</ki>
+				<kd type="double">500</kd>
+				<position-norm type="double">0</position-norm>
+			</pushback>
+		</model>
 		
 		<sound>
 			<path>Aircraft/727-200/Sounds/Sounds.xml</path>
@@ -149,18 +165,18 @@
 			<!--electrical>
 				<path></path>
 			</electrical-->
-            <autopilot n="0">
-                <path>Aircraft/727-200/Systems/autopilot-v.xml</path>
-            </autopilot>
-            <autopilot n="1">
-                <path>Aircraft/727-200/Systems/flight-director-v.xml</path>
-            </autopilot>
-            <autopilot n="2">
-                <path>Aircraft/727-200/Systems/hydraulics.xml</path>
-            </autopilot>
-            <autopilot n="3">
-                <path>Aircraft/727-200/Systems/libraries.xml</path>
-            </autopilot>
+			<autopilot n="0">
+				<path>Aircraft/727-200/Systems/autopilot-v.xml</path>
+			</autopilot>
+			<autopilot n="1">
+				<path>Aircraft/727-200/Systems/flight-director-v.xml</path>
+			</autopilot>
+			<autopilot n="2">
+				<path>Aircraft/727-200/Systems/hydraulics.xml</path>
+			</autopilot>
+			<autopilot n="3">
+				<path>Aircraft/727-200/Systems/libraries.xml</path>
+			</autopilot>
 			<!-- Skip number 4, used in -set -->
 			<autopilot n="10">
 				<path>Aircraft/727-200/Sounds/Sound-Control.xml</path>
@@ -249,7 +265,7 @@
 		</flight>
 		<gear>
 			<brake-parking>0</brake-parking>
-            <tiller-cmd-norm type="double">0</tiller-cmd-norm>
+			<tiller-cmd-norm type="double">0</tiller-cmd-norm>
 			<tiller-enabled type="bool">0</tiller-enabled>
 		</gear>
 		<lighting>
@@ -260,20 +276,20 @@
 			<dome-norm type="double">0</dome-norm>
 			<overhead-panel-norm type="double">1.0</overhead-panel-norm>
 			<main-panel-pedestal-norm type="double">1.0</main-panel-pedestal-norm>
-                        <!--EXTERIOR LIGHTS-->
-                        <outbound-landing-lights-left type="bool">0</outbound-landing-lights-left>
-                        <outbound-landing-lights-right type="bool">0</outbound-landing-lights-right>
-                        <inbound-landing-lights-left type="bool">0</inbound-landing-lights-left>
-                        <inbound-landing-lights-right type="bool">0</inbound-landing-lights-right>
-                        <taxi-lights type="bool">0</taxi-lights>
-                        <runway-turnoff-left type="bool">0</runway-turnoff-left>
-                        <runway-turnoff-right type="bool">0</runway-turnoff-right>
-                        <strobe-lights type="bool">0</strobe-lights>
-                        <logo-lights type="bool">0</logo-lights>
-                        <beacon-lights type="bool">0</beacon-lights>
-                        <wing-lights type="bool">0</wing-lights>
-                        <wheel-well-lights type="bool">0</wheel-well-lights>
-                        <taxi-lights type="bool">0</taxi-lights>
+			<!--EXTERIOR LIGHTS-->
+			<outbound-landing-lights-left type="bool">0</outbound-landing-lights-left>
+			<outbound-landing-lights-right type="bool">0</outbound-landing-lights-right>
+			<inbound-landing-lights-left type="bool">0</inbound-landing-lights-left>
+			<inbound-landing-lights-right type="bool">0</inbound-landing-lights-right>
+			<taxi-lights type="bool">0</taxi-lights>
+			<runway-turnoff-left type="bool">0</runway-turnoff-left>
+			<runway-turnoff-right type="bool">0</runway-turnoff-right>
+			<strobe-lights type="bool">0</strobe-lights>
+			<logo-lights type="bool">0</logo-lights>
+			<beacon-lights type="bool">0</beacon-lights>
+			<wing-lights type="bool">0</wing-lights>
+			<wheel-well-lights type="bool">0</wheel-well-lights>
+			<taxi-lights type="bool">0</taxi-lights>
 		</lighting>
 		<special>
 			<elev-trim-help>0</elev-trim-help>
@@ -288,21 +304,29 @@
 			<reverser-pos-norm type="double">0</reverser-pos-norm>
 		</engine>
 		<engine n="1">
-			<egt-actual type="float">0</egt-actual>
-			<state type="int">0</state>
+			<egt-actual type="double">0</egt-actual>
+			<epr-actual type="double">1</epr-actual>
+			<n1-actual type="double">0</n1-actual>
+			<n2-actual type="double">0</n2-actual>
 			<on-fire type="bool">0</on-fire>
 			<reverser-pos-norm type="double">0</reverser-pos-norm>
+			<running type="bool">0</running>
+			<state type="int">0</state>
 		</engine>
 		<engine n="2">
-			<egt-actual type="float">0</egt-actual>
-			<state type="int">0</state>
+			<egt-actual type="double">0</egt-actual>
+			<epr-actual type="double">1</epr-actual>
+			<n1-actual type="double">0</n1-actual>
+			<n2-actual type="double">0</n2-actual>
 			<on-fire type="bool">0</on-fire>
 			<reverser-pos-norm type="double">0</reverser-pos-norm>
+			<running type="bool">0</running>
+			<state type="int">0</state>
 		</engine>
 	</engines>
 
 	<instrumentation>
-		<path>Aircraft/727-200/init/instrumentation.xml</path>
+		<path>Aircraft/727-200/Systems/instrumentation.xml</path>
 	</instrumentation>
 	
 	<it-autoflight>
@@ -313,14 +337,14 @@
 				<max>0.5</max>
 			</roll>
 			<pitch>
-				<gain>0.11</gain>
-				<min>-0.25</min>
-				<max>0.25</max>
+				<gain>0.08</gain>
+				<min>-0.35</min>
+				<max>0.35</max>
 			</pitch>
 			<cmd>
 				<roll-kp>-0.9</roll-kp>
 				<roll-scale>1.2</roll-scale>
-				<vorloc>-2.5</vorloc>
+				<vorloc>-2.1</vorloc>
 				<vs>0.01</vs>
 			</cmd>
 		</config>
@@ -576,24 +600,24 @@
 		</weight>
 
 	</payload>
-        
-        <systems>
-            <anti-ice>
-                <ducttemp>
-                    <engine1 type="float">0</engine1>
-                    <engine2 type="float">0</engine2>
-                    <engine3 type="float">0</engine3>
-                    <engine1-overheat type="bool">0</engine1-overheat>
-                    <engine2-overheat type="bool">0</engine2-overheat>
-                    <engine3-overheat type="bool">0</engine3-overheat>
-                </ducttemp>
-            </anti-ice>
-            <electrical>
-                <outputs>
-                    <ohp-lights type="float">1</ohp-lights>
-                </outputs>
-            </electrical>
-        </systems>
+		
+		<systems>
+			<anti-ice>
+				<ducttemp>
+					<engine1 type="float">0</engine1>
+					<engine2 type="float">0</engine2>
+					<engine3 type="float">0</engine3>
+					<engine1-overheat type="bool">0</engine1-overheat>
+					<engine2-overheat type="bool">0</engine2-overheat>
+					<engine3-overheat type="bool">0</engine3-overheat>
+				</ducttemp>
+			</anti-ice>
+			<electrical>
+				<outputs>
+					<ohp-lights type="float">1</ohp-lights>
+				</outputs>
+			</electrical>
+		</systems>
 
 	<nasal n="0">
 		<libraries>

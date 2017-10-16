@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="http://jsbsim.sourceforge.net/JSBSim.xsl"?>
 
+<!-- (c) Joshua Davidson (it0uchpods) -->
+
 <fdm_config name="727-200" version="2.0" release="ALPHA"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
@@ -20,251 +22,407 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		<htailarm  unit="FT" >   35.75 </htailarm>
 		<vtailarea unit="FT2">  330.00 </vtailarea>
 		<vtailarm  unit="FT" >   34.00 </vtailarm>
-		<location name="AERORP" unit="IN">
-			<x> -4.4626 </x>
-			<y> 0.00    </y>
-			<z> 25.2535 </z>
+
+		<location name="AERORP" unit="M">
+			<x> -0.26876 </x>
+			<y> 0 </y>
+			<z> 0.32935 </z>
 		</location>
-		<location name="EYEPOINT" unit="IN">
-			<x> -829.4645669 </x>
-			<y> -23.31299213 </y>
-			<z> 47.2842 </z>
+
+		<location name="EYEPOINT" unit="M">
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 0 </z>
 		</location>
-		<location name="VRP" unit="IN">
-			<x>0</x>
-			<y>0</y>
-			<z>-104</z>
+
+		<location name="VRP" unit="M">
+			<x> 0 </x>
+			<y> 0 </y>
+			<z> 0 </z>
 		</location>
 	</metrics>
 
 	<mass_balance>
-		<ixx unit="SLUG*FT2">    582408 </ixx>
-		<iyy unit="SLUG*FT2">   2429029 </iyy>
-		<izz unit="SLUG*FT2">   3009335 </izz>
-		<emptywt unit="LBS" >    102900 </emptywt>
-		<location name="CG" unit="IN">
-			<x> -8.7724 </x>
-			<y> 0.00 </y>
-			<z> 25.2535 </z>
+		<ixx unit="SLUG*FT2"> 611903</ixx>
+		<iyy unit="SLUG*FT2">1735389</iyy>
+		<izz unit="SLUG*FT2">2301293</izz>
+		
+		<ixy unit="SLUG*FT2">0</ixy>
+		<ixz unit="SLUG*FT2">0</ixz>
+		<iyz unit="SLUG*FT2">0</iyz>
+		<emptywt unit="LBS">102900</emptywt>
+
+		<location name="CG" unit="M">
+			<x> -0.36876 </x>
+			<y> 0 </y>
+			<z> 0.32935 </z>
 		</location>
 		
 		<pointmass name="Cockpit Crew">
 			<description>Cockpit Crew, 3 persons</description>
-			<weight unit="LBS">  600.0000 </weight>
-			<location name="CREW" unit="IN">
-			<x> -829.4645669 </x>
-			<y> 0.00 </y>
-			<z> 47.2842 </z>
+			<weight unit="LBS">  600 </weight>
+			<location name="POINTMASS" unit="M">
+				<x> -0.36876 </x>
+				<y> 0 </y>
+				<z> 0.32935 </z>
 			</location>
 		</pointmass> 
 		
 		<pointmass name="First Class">
 			<description>First Class, 12 persons</description>
-			<weight unit="LBS"> 3200.0000 </weight>
-			<location name="CREW" unit="IN">
-				<x> -8.7724 </x>
-				<y> 0.00    </y>
-				<z> 25.2535 </z>
+			<weight unit="LBS"> 3200 </weight>
+			<location name="POINTMASS" unit="M">
+				<x> -0.36876 </x>
+				<y> 0 </y>
+				<z> 0.32935 </z>
 			</location>
 		</pointmass> 
 
 		<pointmass name="Coach Class">
 			<description>Coach Class, 111 persons</description>
-			<weight unit="LBS"> 22200.0000 </weight>
-			<location name="Tech ops" unit="IN">
-				<x> -8.7724 </x>
-				<y> 0.00    </y>
-				<z> 25.2535 </z>
+			<weight unit="LBS"> 22200 </weight>
+			<location name="POINTMASS" unit="M">
+				<x> -0.36876 </x>
+				<y> 0 </y>
+				<z> 0.32935 </z>
 			</location>
 		</pointmass> 
  
 	</mass_balance>
 
 	<ground_reactions>
-
-		<contact type="BOGEY" name="NOSE">
-			<location unit="IN">
-				<x> -756.6102 </x>
-				<y>   0.00 </y>
-				<z> -210.5600 </z>
+		<contact type="BOGEY" name="NOSE_LG">
+			<location unit="M">
+				<x> -19.2179 </x>
+				<y> 0 </y>
+				<z> -2.77617 </z>
 			</location>
-			<static_friction>  0.80 </static_friction>
-			<dynamic_friction> 0.50 </dynamic_friction>
+			<static_friction> 0.4 </static_friction>
+			<dynamic_friction> 0.6 </dynamic_friction>
 			<rolling_friction> 0.02 </rolling_friction>
 			<spring_coeff unit="LBS/FT"> 30935.5 </spring_coeff>
 			<damping_coeff unit="LBS/FT/SEC"> 16978.5 </damping_coeff>
-			<max_steer unit="DEG"> 70.00 </max_steer>
-			<brake_group>NONE</brake_group>
+			<max_steer unit="DEG"> 70 </max_steer>
+			<brake_group> NOSE </brake_group>
 			<retractable>1</retractable>
 		</contact>
-
-		<contact type="BOGEY" name="LEFT_MAIN">
-			<location unit="IN">
-				<x> 6.7724 </x>
-				<y> -126.6661 </y>
-				<z> -230.5600 </z>
+		<contact type="BOGEY" name="LEFT_MLG">
+			<location unit="M">
+				<x> 0.17202 </x>
+				<y> -3.21732 </y>
+				<z> -3.14743 </z>
 			</location>
-			<static_friction>  0.80 </static_friction>
-			<dynamic_friction> 0.50 </dynamic_friction>
+			<static_friction> 0.4 </static_friction>
+			<dynamic_friction> 0.6 </dynamic_friction>
 			<rolling_friction> 0.02 </rolling_friction>
 			<spring_coeff unit="LBS/FT"> 59785 </spring_coeff>
 			<damping_coeff unit="LBS/FT/SEC"> 23957 </damping_coeff>
-			<max_steer unit="DEG">0</max_steer>
-			<brake_group>LEFT</brake_group>
+			<max_steer unit="DEG"> 0.0 </max_steer>
+			<brake_group> LEFT </brake_group>
 			<retractable>1</retractable>
 		</contact>
-
-		<contact type="BOGEY" name="RIGHT_MAIN">
-			<location unit="IN">
-				<x> 6.7724 </x>
-				<y> 126.6661 </y>
-				<z> -230.5600 </z>
+		<contact type="BOGEY" name="RIGHT_MLG">
+			<location unit="M">
+				<x> 0.17202 </x>
+				<y> 3.21732 </y>
+				<z> -3.14743 </z>
 			</location>
-			<static_friction>  0.80 </static_friction>
-			<dynamic_friction> 0.50 </dynamic_friction>
+			<static_friction> 0.4 </static_friction>
+			<dynamic_friction> 0.6 </dynamic_friction>
 			<rolling_friction> 0.02 </rolling_friction>
 			<spring_coeff unit="LBS/FT"> 59785 </spring_coeff>
 			<damping_coeff unit="LBS/FT/SEC"> 23957 </damping_coeff>
-			<max_steer unit="DEG">0</max_steer>
-			<brake_group>RIGHT</brake_group>
+			<max_steer unit="DEG"> 0.0 </max_steer>
+			<brake_group> RIGHT </brake_group>
 			<retractable>1</retractable>
 		</contact>
 		
-		<contact type="STRUCTURE" name="NOSE">
-			<location unit="IN">
-				<x> -891.6062 </x>
-				<y> 0.00 </y>
-				<z> -28.3673 </z>
+		<contact type="STRUCTURE" name="NOSE_1">
+			<location unit="M">
+				<x> -23.1123 </x>
+				<y> 0 </y>
+				<z> -0.46884 </z>
 			</location>
-			<static_friction>  1.00 </static_friction>
-			<dynamic_friction> 1.00 </dynamic_friction>
+			<static_friction> 1.0 </static_friction>
+			<dynamic_friction> 0.4 </dynamic_friction>
+			<rolling_friction> 0.4 </rolling_friction>
 			<spring_coeff unit="LBS/FT"> 50000 </spring_coeff>
 			<damping_coeff unit="LBS/FT/SEC"> 50000 </damping_coeff>
+			<max_steer unit="DEG"> 0.0 </max_steer>
+			<brake_group> NONE </brake_group>
+			<retractable>0</retractable>
 		</contact>
-
-		<contact type="STRUCTURE" name="LEFT_WING">
-			<location unit="IN">
-				<x> 239.8102 </x>
-				<y> -639.9251 </y>
-				<z> -11.8137 </z>
+		<contact type="STRUCTURE" name="NOSE_2">
+			<location unit="M">
+				<x> -21.147 </x>
+				<y> 0 </y>
+				<z> 1.38067 </z>
 			</location>
-			<static_friction>  1.00 </static_friction>
-			<dynamic_friction> 1.00 </dynamic_friction>
+			<static_friction> 1.0 </static_friction>
+			<dynamic_friction> 0.4 </dynamic_friction>
+			<rolling_friction> 0.4 </rolling_friction>
 			<spring_coeff unit="LBS/FT"> 50000 </spring_coeff>
 			<damping_coeff unit="LBS/FT/SEC"> 50000 </damping_coeff>
-		</contact>
-
-		<contact type="STRUCTURE" name="RIGHT_WING">
-			<location unit="IN">
-				<x> 239.8102 </x>
-				<y> 639.9251 </y>
-				<z> -11.8137 </z>
-			</location>
-			<static_friction>  1.00 </static_friction>
-			<dynamic_friction> 1.00 </dynamic_friction>
-			<spring_coeff unit="LBS/FT"> 50000 </spring_coeff>
-			<damping_coeff unit="LBS/FT/SEC"> 50000 </damping_coeff>
+			<max_steer unit="DEG"> 0.0 </max_steer>
+			<brake_group> NONE </brake_group>
+			<retractable>0</retractable>
 		</contact>
 		
-		<contact type="STRUCTURE" name="TAIL">
-			<location unit="IN">
-				<x> 668.6574 </x>
-				<y> 0.00 </y>
-				<z> -6.0295 </z>
+		<contact type="STRUCTURE" name="BOTTOM_1">
+			<location unit="M">
+				<x> -19.8061 </x>
+				<y> 0 </y>
+				<z> -1.531 </z>
 			</location>
-			<static_friction>  1.00 </static_friction>
-			<dynamic_friction> 1.00 </dynamic_friction>
+			<static_friction> 1.0 </static_friction>
+			<dynamic_friction> 0.4 </dynamic_friction>
+			<rolling_friction> 0.4 </rolling_friction>
 			<spring_coeff unit="LBS/FT"> 50000 </spring_coeff>
 			<damping_coeff unit="LBS/FT/SEC"> 50000 </damping_coeff>
+			<max_steer unit="DEG"> 0.0 </max_steer>
+			<brake_group> NONE </brake_group>
+			<retractable>0</retractable>
+		</contact>
+		<contact type="STRUCTURE" name="BOTTOM_2">
+			<location unit="M">
+				<x> 7.90224 </x>
+				<y> 0 </y>
+				<z> -1.52092 </z>
+			</location>
+			<static_friction> 1.0 </static_friction>
+			<dynamic_friction> 0.4 </dynamic_friction>
+			<rolling_friction> 0.4 </rolling_friction>
+			<spring_coeff unit="LBS/FT"> 50000 </spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 50000 </damping_coeff>
+			<max_steer unit="DEG"> 0.0 </max_steer>
+			<brake_group> NONE </brake_group>
+			<retractable>0</retractable>
+		</contact>
+		
+		<contact type="STRUCTURE" name="TOP_1">
+			<location unit="M">
+				<x> -17.1724 </x>
+				<y> 0 </y>
+				<z> 2.23407 </z>
+			</location>
+			<static_friction> 1.0 </static_friction>
+			<dynamic_friction> 0.4 </dynamic_friction>
+			<rolling_friction> 0.4 </rolling_friction>
+			<spring_coeff unit="LBS/FT"> 50000 </spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 50000 </damping_coeff>
+			<max_steer unit="DEG"> 0.0 </max_steer>
+			<brake_group> NONE </brake_group>
+			<retractable>0</retractable>
+		</contact>
+		<contact type="STRUCTURE" name="TOP_2">
+			<location unit="M">
+				<x> 7.99957 </x>
+				<y> 0 </y>
+				<z> 3.81403 </z>
+			</location>
+			<static_friction> 1.0 </static_friction>
+			<dynamic_friction> 0.4 </dynamic_friction>
+			<rolling_friction> 0.4 </rolling_friction>
+			<spring_coeff unit="LBS/FT"> 50000 </spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 50000 </damping_coeff>
+			<max_steer unit="DEG"> 0.0 </max_steer>
+			<brake_group> NONE </brake_group>
+			<retractable>0</retractable>
 		</contact>
 
+		<contact type="STRUCTURE" name="ENG_1">
+			<location unit="M">
+				<x> 9.7089 </x>
+				<y> -3.61586 </y>
+				<z> 0.1278 </z>
+			</location>
+			<static_friction> 1.0 </static_friction>
+			<dynamic_friction> 0.4 </dynamic_friction>
+			<rolling_friction> 0.4 </rolling_friction>
+			<spring_coeff unit="LBS/FT"> 50000 </spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 50000 </damping_coeff>
+			<max_steer unit="DEG"> 0.0 </max_steer>
+			<brake_group> NONE </brake_group>
+			<retractable>0</retractable>
+		</contact>
+		<contact type="STRUCTURE" name="ENG_3">
+			<location unit="M">
+				<x> 9.7089 </x>
+				<y> 3.61586 </y>
+				<z> 0.1278 </z>
+			</location>
+			<static_friction> 1.0 </static_friction>
+			<dynamic_friction> 0.4 </dynamic_friction>
+			<rolling_friction> 0.4 </rolling_friction>
+			<spring_coeff unit="LBS/FT"> 50000 </spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 50000 </damping_coeff>
+			<max_steer unit="DEG"> 0.0 </max_steer>
+			<brake_group> NONE </brake_group>
+			<retractable>0</retractable>
+		</contact>
+
+		<contact type="STRUCTURE" name="TAIL_1">
+			<location unit="M">
+				<x> 18.1322 </x>
+				<y> 0 </y>
+				<z> 6.68499 </z>
+			</location>
+			<static_friction> 1.0 </static_friction>
+			<dynamic_friction> 0.4 </dynamic_friction>
+			<rolling_friction> 0.4 </rolling_friction>
+			<spring_coeff unit="LBS/FT"> 50000 </spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 50000 </damping_coeff>
+			<max_steer unit="DEG"> 0.0 </max_steer>
+			<brake_group> NONE </brake_group>
+			<retractable>0</retractable>
+		</contact>
+		<contact type="STRUCTURE" name="TAIL_2">
+			<location unit="M">
+				<x> 23.4254 </x>
+				<y> 0 </y>
+				<z> 5.95357 </z>
+			</location>
+			<static_friction> 1.0 </static_friction>
+			<dynamic_friction> 0.4 </dynamic_friction>
+			<rolling_friction> 0.4 </rolling_friction>
+			<spring_coeff unit="LBS/FT"> 50000 </spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 50000 </damping_coeff>
+			<max_steer unit="DEG"> 0.0 </max_steer>
+			<brake_group> NONE </brake_group>
+			<retractable>0</retractable>
+		</contact>
+		<contact type="STRUCTURE" name="TAIL_3">
+			<location unit="M">
+				<x> 17.4486 </x>
+				<y> 0 </y>
+				<z> 0.48992 </z>
+			</location>
+			<static_friction> 1.0 </static_friction>
+			<dynamic_friction> 0.4 </dynamic_friction>
+			<rolling_friction> 0.4 </rolling_friction>
+			<spring_coeff unit="LBS/FT"> 50000 </spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 50000 </damping_coeff>
+			<max_steer unit="DEG"> 0.0 </max_steer>
+			<brake_group> NONE </brake_group>
+			<retractable>0</retractable>
+		</contact>
+		
+		<contact type="STRUCTURE" name="WING_TIP_1">
+			<location unit="M">
+				<x> 5.3792 </x>
+				<y> -16.2541 </y>
+				<z> -0.47786 </z>
+			</location>
+			<static_friction> 1.0 </static_friction>
+			<dynamic_friction> 0.4 </dynamic_friction>
+			<rolling_friction> 0.4 </rolling_friction>
+			<spring_coeff unit="LBS/FT"> 50000 </spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 50000 </damping_coeff>
+			<max_steer unit="DEG"> 0.0 </max_steer>
+			<brake_group> NONE </brake_group>
+			<retractable>0</retractable>
+		</contact>
+		<contact type="STRUCTURE" name="WING_TIP_2">
+			<location unit="M">
+				<x> 5.3792 </x>
+				<y> 16.2541 </y>
+				<z> -0.47786 </z>
+			</location>
+			<static_friction> 1.0 </static_friction>
+			<dynamic_friction> 1 </dynamic_friction>
+			<rolling_friction> 1 </rolling_friction>
+			<spring_coeff unit="LBS/FT"> 50000 </spring_coeff>
+			<damping_coeff unit="LBS/FT/SEC"> 50000 </damping_coeff>
+			<max_steer unit="DEG"> 0.0 </max_steer>
+			<brake_group> NONE </brake_group>
+			<retractable>0</retractable>
+		</contact>
 	</ground_reactions>
 
 	<propulsion>
-
 		<engine file="JT8D-219">
-			<location unit="IN">
-				<x> 361.8303 </x>
-				<y> -135.0791 </y>
-				<z> 25.2535 </z>
+			<location unit="M">
+				<x> 9.35115 </x>
+				<y> -2.9448 </y>
+				<z> -0.32935 </z>
 			</location>
 			<orient unit="DEG">
-				<pitch> 0.00 </pitch>
-				<roll>  0.00 </roll>
-				<yaw>   0.00 </yaw>
+				<roll> 0.0 </roll>
+				<pitch> 2.2 </pitch>
+				<yaw> 1 </yaw>
 			</orient>
 			<feed>0</feed>
 			<thruster file="direct">
-				<location unit="IN">
-					<x> 361.8303 </x>
-					<y> -135.0791 </y>
-					<z> 25.2535 </z>
+				<location unit="M">
+					<x> 9.35115 </x>
+					<y> -2.9448 </y>
+					<z> -0.32935 </z>
 				</location>
 				<orient unit="DEG">
-					<pitch> 0.00 </pitch>
-					<roll>  0.00 </roll>
-					<yaw>   0.00 </yaw>
+					<roll> 0.0 </roll>
+					<pitch> 2.2 </pitch>
+					<yaw> 1 </yaw>
 				</orient>
 			</thruster>
 		</engine>
 
 		<engine file="JT8D-17R">
-			<location unit="IN">
-				<x> 669.3818 </x>
-				<y> 0.00     </y>
-				<z> 19.8515  </z>
+			<location unit="M">
+				<x> 16.8476 </x>
+				<y> 0 </y>
+				<z> -0.32935 </z>
 			</location>
 			<orient unit="DEG">
-				<pitch> 0.00 </pitch>
-				<roll>  0.00 </roll>
-				<yaw>   0.00 </yaw>
+				<roll> 0.0 </roll>
+				<pitch> 1.6 </pitch>
+				<yaw> 0 </yaw>
 			</orient>
 			<feed>1</feed>
 			<thruster file="direct">
-				<location unit="IN">
-					<x> 669.3818 </x>
-					<y> 0.00     </y>
-					<z> 19.8515  </z>
+				<location unit="M">
+					<x> 16.8476 </x>
+					<y> 0 </y>
+					<z> -0.32935 </z>
 				</location>
 				<orient unit="DEG">
-					<pitch> 0.00 </pitch>
-					<roll>  0.00 </roll>
-					<yaw>   0.00 </yaw>
+					<roll> 0.0 </roll>
+					<pitch> 1.6 </pitch>
+					<yaw> 0 </yaw>
 				</orient>
 			</thruster>
 		</engine>
 
 		<engine file="JT8D-219">
-			<location unit="IN">
-				<x> 361.8303 </x>
-				<y> 135.0791 </y>
-				<z> 25.2535 </z>
+			<location unit="M">
+				<x> 9.35115 </x>
+				<y> 2.9448 </y>
+				<z> -0.32935 </z>
 			</location>
 			<orient unit="DEG">
-				<pitch> 0.00 </pitch>
-				<roll>  0.00 </roll>
-				<yaw>   0.00 </yaw>
+				<roll> 0.0 </roll>
+				<pitch> 2.2 </pitch>
+				<yaw> -1 </yaw>
 			</orient>
 			<feed>2</feed>
 			<thruster file="direct">
-				<location unit="IN">
-					<x> 361.8303 </x>
-					<y> 135.0791 </y>
-					<z> 25.2535 </z>
+				<location unit="M">
+					<x> 9.35115 </x>
+					<y> 2.9448 </y>
+					<z> -0.32935 </z>
 				</location>
 				<orient unit="DEG">
-					<pitch> 0.00 </pitch>
-					<roll>  0.00 </roll>
-					<yaw>   0.00 </yaw>
+					<roll> 0.0 </roll>
+					<pitch> 2.2 </pitch>
+					<yaw> -1 </yaw>
 				</orient>
 			</thruster>
 		</engine>
 
 		<tank type="FUEL" number="0"> <!-- Left Wing -->
-			<location unit="IN">
-				<x> -8.7724 </x>
-				<y> -251.0074 </y>
-				<z> -18.4531 </z>
+			<location unit="M">
+				<x> -0.36876 </x>
+				<y> -5.1783 </y>
+				<z> 0.32935 </z>
 			</location>
 			<priority>2</priority>
 			<capacity unit="LBS"> 13230 </capacity>
@@ -272,10 +430,10 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		</tank>
 
 		<tank type="FUEL" number="1"> <!-- Center -->
-			<location unit="IN">
-				<x> -8.7724 </x>
-				<y>   0.00 </y>
-				<z> -18.4531 </z>
+			<location unit="M">
+				<x> -0.36876 </x>
+				<y> 0 </y>
+				<z> 0.32935 </z>
 			</location>
 			<priority>1</priority>
 			<capacity unit="LBS"> 30233 </capacity>
@@ -283,16 +441,15 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		</tank>
 
 		<tank type="FUEL" number="2"> <!-- Right Wing -->
-			<location unit="IN">
-				<x> -8.7724 </x>
-				<y> 251.0074 </y>
-				<z> -18.4531 </z>
+			<location unit="M">
+				<x> -0.36876 </x>
+				<y> 5.1783 </y>
+				<z> 0.32935 </z>
 			</location>
 			<priority>2</priority>
 			<capacity unit="LBS"> 13230 </capacity>
 			<contents unit="LBS">  8000 </contents>
 		</tank>
-
 	</propulsion>
 
 	<system file="pushback" />
@@ -304,15 +461,15 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
 	<external_reactions>
 		<force name="pushback" frame="BODY">
-			<location unit="IN">
-				<x>294</x>
-				<y>0</y>
-				<z>-149</z>
+			<location unit="M">
+				<x> -19.6515 </x>
+				<y> 0 </y>
+				<z> -1.22002 </z>
 			</location>
 			<direction>
-				<x>1</x>
-				<y>0</y>
-				<z>0</z>
+				<x> 1 </x>
+				<y> 0 </y>
+				<z> 0 </z>
 			</direction>
 		</force>
 	</external_reactions>

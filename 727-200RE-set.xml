@@ -26,9 +26,9 @@
 			<internal archive="y">true</internal>
 			<config>
 				<x-offset-m archive="y">-0.44</x-offset-m>
-				<y-offset-m archive="y">1.05</y-offset-m>
+				<y-offset-m archive="y">1.06</y-offset-m>
 				<z-offset-m archive="y">-20.44</z-offset-m>
-				<pitch-offset-deg archive="y">-13.0</pitch-offset-deg>
+				<pitch-offset-deg archive="y">-14.0</pitch-offset-deg>
 				<default-field-of-view-deg type="double">56.8</default-field-of-view-deg>
 			</config>
 		</view>
@@ -39,9 +39,9 @@
 			<config>
 				<from-model type="bool">true</from-model>
 				<x-offset-m archive="y">0.44</x-offset-m>
-				<y-offset-m archive="y">1.05</y-offset-m>
+				<y-offset-m archive="y">1.06</y-offset-m>
 				<z-offset-m archive="y">-20.44</z-offset-m>
-				<pitch-offset-deg archive="y">-13.0</pitch-offset-deg>
+				<pitch-offset-deg archive="y">-14.0</pitch-offset-deg>
 				<default-field-of-view-deg type="double">56.8</default-field-of-view-deg>
 			</config>
 		</view>
