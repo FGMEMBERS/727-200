@@ -192,7 +192,7 @@
 			<expression>
 				<dif>
 					<property>/instrumentation/altimeter/indicated-altitude-ft</property>
-					<property>/it-autoflight/internal/alt</property>
+					<property>/it-autoflight/input/alt</property>
 				</dif>
 			</expression>
 		</input>

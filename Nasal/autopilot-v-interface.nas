@@ -1,6 +1,6 @@
 # 727 Block V Autopilot/Flight Director
 # IT-AUTOFLIGHT Based
-# Joshua Davidson (it0uchpods)
+# (c) Joshua Davidson (it0uchpods)
 
 var pitch_knob = func {
 	if (getprop("/it-autoflight/output/ap") == 1) {

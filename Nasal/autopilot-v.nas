@@ -1,6 +1,6 @@
 # 727 Block V Autopilot/Flight Director
 # IT-AUTOFLIGHT Based
-# Joshua Davidson (it0uchpods)
+# (c) Joshua Davidson (it0uchpods)
 
 setprop("/it-autoflight/internal/vert-speed-fpm", 0);
 setprop("/it-autoflight/input/alt", 10000);
@@ -426,7 +426,7 @@ setlistener("/it-autoflight/internal/alt", func {
 
 # Timers
 var update_armst = maketimer(0.5, update_arms);
-var altcaptt = maketimer(0.5, altcapt);
+var altcaptt = maketimer(0.25, altcapt);
 var minmaxtimer = maketimer(0.5, minmax);
 var ap_varioust = maketimer(1, ap_various);
 var spdmach_pitcht = maketimer(0.25, spdmach_pitch);

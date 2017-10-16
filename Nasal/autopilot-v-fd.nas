@@ -1,6 +1,6 @@
 # 727 Block V Autopilot/Flight Director
 # Custom Flight Director Functions
-# Joshua Davidson (it0uchpods)
+# (c) Joshua Davidson (it0uchpods)
 
 var fd_init = func {
 	setprop("/autopilot-v/internal/fd-alt", 10000);
