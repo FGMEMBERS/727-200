@@ -14,10 +14,10 @@
 				<table>
 					<independentVar lookup="row">aero/alpha-rad</independentVar>
 					<tableData>
-						-0.20 -0.895
-						 0.00  0.183
-						 0.15  2.200
-						 0.23  2.600
+						-0.20 -0.995
+						 0.00  0.052
+						 0.15  1.700
+						 0.23  2.400
 						 0.60  1.000
 					</tableData>
 				</table>
@@ -252,7 +252,7 @@
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
 				<property>fcs/roll-pos-rad</property>
-				<value>0.04</value>
+				<value>0.05</value>
 			</product>
 		</function>
 

@@ -344,7 +344,7 @@
 		<hovered>
 			<binding>
 				<command>set-tooltip</command>
-				<tooltip-id>heading-bug</tooltip-id>
+				<tooltip-id>nav1-crs</tooltip-id>
 				<mapping>heading</mapping>
 				<label>NAV1 Course: %3d</label>
 				<property>instrumentation/nav/radials/selected-deg</property>
