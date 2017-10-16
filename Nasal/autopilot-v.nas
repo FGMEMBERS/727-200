@@ -393,7 +393,9 @@ var update_arms = func {
 }
 
 var make_loc_active = func {
-	setprop("/autopilot-v/hdg-sel-btn", 0);
+	if (getprop("/autopilot-v/hdg-sel-btn") == 1) {
+		setprop("/autopilot-v/hdg-sel-btn", 0);
+	}
 	setprop("/it-autoflight/output/nav-armed", 0);
 	setprop("/it-autoflight/output/loc-armed", 0);
 	setprop("/it-autoflight/output/lat", 2);
@@ -408,7 +410,9 @@ var make_loc_active = func {
 
 var make_appr_active = func {
 	setprop("/autopilot-v/pitch-knob", 3);
-	setprop("/autopilot-v/alt-sel-btn", 0);
+	if (getprop("/autopilot-v/alt-sel-btn") == 1) {
+		setprop("/autopilot-v/alt-sel-btn", 0);
+	}
 	setprop("/it-autoflight/output/appr-armed", 0);
 	setprop("/it-autoflight/output/vert", 2);
 	setprop("/it-autoflight/mode/vert", "G/S");

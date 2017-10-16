@@ -19,7 +19,7 @@ var pitch_knob = func {
 				setprop("/it-autoflight/input/vert", 4);
 			}
 		} else if (getprop("/autopilot-v/pitch-knob") == 3) {
-			if (getprop("/it-autoflight/output/vert") != 1) {
+			if ((getprop("/it-autoflight/output/vert") != 1 and getprop("/it-autoflight/output/vert") != 0) or getprop("/autopilot-v/alt-sel-btn") == 0) {
 				setprop("/it-autoflight/input/vert", 1);
 			}
 		} else if (getprop("/autopilot-v/pitch-knob") == 4) {
@@ -44,7 +44,9 @@ setlistener("/autopilot-v/pitch-knob", func {
 var roll_knob = func {
 	if (getprop("/it-autoflight/output/ap") == 1) {
 		if (getprop("/autopilot-v/roll-knob") == 1) {
-			setprop("/autopilot-v/hdg-sel-btn", 0);
+			if (getprop("/autopilot-v/hdg-sel-btn") == 1) {
+				setprop("/autopilot-v/hdg-sel-btn", 0);
+			}
 			setprop("/it-autoflight/input/lat", 1);
 			setprop("/it-autoflight/settings/slave-gps-nav", 1);
 			setprop("/it-autoflight/input/lat", 2);
@@ -52,7 +54,9 @@ var roll_knob = func {
 				pitch_knob();
 			}
 		} else if (getprop("/autopilot-v/roll-knob") == 2) {
-			setprop("/autopilot-v/hdg-sel-btn", 0);
+			if (getprop("/autopilot-v/hdg-sel-btn") == 1) {
+				setprop("/autopilot-v/hdg-sel-btn", 0);
+			}
 			setprop("/it-autoflight/settings/slave-gps-nav", 0);
 			setprop("/it-autoflight/input/lat", 2);
 			if (getprop("/it-autoflight/output/vert") == 2) {
@@ -60,7 +64,9 @@ var roll_knob = func {
 			}
 		} else if (getprop("/autopilot-v/roll-knob") == 3) {
 			setprop("/it-autoflight/settings/slave-gps-nav", 0);
-			setprop("/it-autoflight/input/lat", 1);
+			if (getprop("/autopilot-v/hdg-sel-btn") != 1) {
+				setprop("/it-autoflight/input/lat", 1);
+			}
 			if (getprop("/it-autoflight/output/vert") == 2) {
 				pitch_knob();
 			}
@@ -89,7 +95,9 @@ setlistener("/autopilot-v/hdg-sel-btn", func {
 			roll_knob();
 		}
 	} else {
-		setprop("/autopilot-v/hdg-sel-btn", 0);
+		if (getprop("/autopilot-v/hdg-sel-btn") == 1) {
+			setprop("/autopilot-v/hdg-sel-btn", 0);
+		}
 	}
 });
 
@@ -104,7 +112,9 @@ setlistener("/autopilot-v/alt-sel-btn", func {
 			}
 		}
 	} else {
-		setprop("/autopilot-v/alt-sel-btn", 0);
+		if (getprop("/autopilot-v/alt-sel-btn") == 1) {
+			setprop("/autopilot-v/alt-sel-btn", 0);
+		}
 	}
 });
 
