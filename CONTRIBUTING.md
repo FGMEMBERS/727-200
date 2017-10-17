@@ -7,7 +7,7 @@ These examples will show the 727-200 Guidelines for contributing. Please follow 
 - Use lowerCamelCase or underscores for naming Nasal variables/functions (someFunction, some_function).
 - Comments optional for XML, mandatory for Nasal.
 - Do not add a comment to every line, only to functions/groups of code.
-- Remove .ac or .bak files, unless absolutely needed.
+- Remove .bak or .blend files, unless absolutely needed.
 - Leave one extra line at the bottom of each file.
 
 ## Formatting Guidelines:
