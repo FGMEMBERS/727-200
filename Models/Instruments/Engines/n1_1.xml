@@ -63,7 +63,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>needle</object-name>
-		<property>engines/engine[0]/n1</property>
+		<property>engines/engine[0]/n1-actual</property>
 		<interpolation>
 		  <entry><ind>  0.0</ind><dep>    0.0</dep></entry>
 		  <entry><ind>115.0</ind><dep>  307.0</dep></entry>
@@ -78,7 +78,7 @@
 	<animation> 
 		<type>rotate</type>
 		<object-name>needle.001</object-name>
-		<property>engines/engine[0]/n1</property>
+		<property>engines/engine[0]/n1-actual</property>
     <factor>36</factor>
 		<center>   
 		  <x-m> 0 </x-m> 

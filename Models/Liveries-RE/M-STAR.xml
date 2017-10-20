@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">M-STAR</name>
+				<texture>Liveries-RE/M-STAR.png</texture>
+			</livery>
+			<eng>
+				<texture>Liveries-RE/M-STAR-eng.png</texture>
+			</eng>
+		</model>
+	</sim>
+</PropertyList>

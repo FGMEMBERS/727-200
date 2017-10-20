@@ -1,121 +1,151 @@
-<!-- Beoing 727-200 FCS by Joshua Davidson (it0uchpods) -->
+<!-- Boeing 727-200 FCS -->
+
+<!-- (c) Joshua Davidson (it0uchpods) -->
 
 <system name="B722: FCS">
 
+	<channel name="Roll">
+	
+		<summer name="Roll Trim Sum">
+			<input>/controls/flight/aileron-sum</input>
+			<input>/controls/flight/aileron-trim</input>
+			<clipto>
+				<min>-1</min>
+				<max>1</max>
+			</clipto>
+		</summer>
+
+		<aerosurface_scale name="Roll Control">
+			<input>fcs/roll-trim-sum</input>
+			<range>
+				<min>-0.523599</min>
+				<max>0.523599</max>
+			</range>
+			<output>fcs/roll-pos-rad</output>
+		</aerosurface_scale>
+
+		<aerosurface_scale name="Roll Control Normalized">
+			<input>fcs/roll-pos-rad</input>
+			<domain>
+				<min>-0.523599</min>
+				<max>0.523599</max>
+			</domain>
+			<range>
+				<min>-1</min>
+				<max>1</max>
+			</range>
+			<output>fcs/roll-pos-norm</output>
+		</aerosurface_scale>
+		
+	</channel>
+	
 	<channel name="Pitch">
 	
 		<summer name="Pitch Trim Sum">
 			<input>/controls/flight/elevator-sum</input>
 			<input>/controls/flight/elevator-trim</input>
 			<clipto>
-				<min> -1 </min>
-				<max>  1 </max>
+				<min>-1</min>
+				<max>1</max>
 			</clipto>
 		</summer>
 
-		<aerosurface_scale name="Elevator Control">
+		<aerosurface_scale name="Pitch Control">
 			<input>fcs/pitch-trim-sum</input>
 			<range>
-				<min> -0.35 </min>
-				<max>  0.35 </max>
+				<min>-0.523599</min>
+				<max>0.523599</max>
 			</range>
-			<output>fcs/elevator-pos-rad</output>
+			<output>fcs/pitch-pos-rad</output>
 		</aerosurface_scale>
-
-		<aerosurface_scale name="elevator normalization">
-			<input>fcs/elevator-pos-rad</input>
+		
+		<scheduled_gain name="Pitch Control Gearing">
+			<input>fcs/pitch-pos-rad</input>
+			<table>
+				<independentVar lookup="row">velocities/mach</independentVar>
+				<independentVar lookup="column">atmosphere/density-altitude</independentVar>
+				<tableData>
+					         0.0       43000
+					0.0      1.00      0.85
+					0.9      0.10      0.75
+				</tableData>
+			</table>
+			<output>fcs/pitch-pos-geared</output>
+		</scheduled_gain>
+		
+		<aerosurface_scale name="Pitch Control Normalized">
+			<input>fcs/pitch-pos-geared</input>
 			<domain>
-				<min> -0.35 </min>
-				<max>  0.35 </max>
+				<min>-0.523599</min>
+				<max>0.523599</max>
 			</domain>
 			<range>
-				<min> -1 </min>
-				<max>  1 </max>
+				<min>-1</min>
+				<max>1</max>
 			</range>
-			<output>fcs/elevator-pos-norm</output>
+			<output>fcs/pitch-pos-norm</output>
 		</aerosurface_scale>
-	
-	</channel>
-
-	<channel name="Roll">
-
-		<summer name="Roll Trim Sum">
-			<input>/controls/flight/aileron-sum</input>
-			<input>/controls/flight/aileron-trim</input>
-			<clipto>
-				<min> -1 </min>
-				<max>  1 </max>
-			</clipto>
-		</summer>
-
-		<aerosurface_scale name="Left Aileron Control">
-			<input>fcs/roll-trim-sum</input>
-			<range>
-				<min> -0.20 </min>
-				<max>  0.20 </max>
-			</range>
-			<output>fcs/left-aileron-pos-rad</output>
-		</aerosurface_scale>
-
-		<aerosurface_scale name="Right Aileron Control">
-			<input>fcs/roll-trim-sum</input>
-			<range>
-				<min> -0.20 </min>
-				<max>  0.20 </max>
-			</range>
-			<output>fcs/right-aileron-pos-rad</output>
-		</aerosurface_scale>
-
-		<aerosurface_scale name="left aileron normalization">
-			<input>fcs/left-aileron-pos-rad</input>
-			<domain>
-				<min> -0.20 </min>
-				<max>  0.20 </max>
-			</domain>
-			<range>
-				<min> -1 </min>
-				<max>  1 </max>
-			</range>
-			<output>fcs/left-aileron-pos-norm</output>
-		</aerosurface_scale>
-
-		<aerosurface_scale name="right aileron normalization">
-			<input>fcs/right-aileron-pos-rad</input>
-			<domain>
-				<min> -0.20 </min>
-				<max>  0.20 </max>
-			</domain>
-			<range>
-				<min> -1 </min>
-				<max>  1 </max>
-			</range>
-			<output>fcs/right-aileron-pos-norm</output>
-		</aerosurface_scale>
-
+		
 	</channel>
 	
-	<channel name="Throttle">
+	<channel name="Engines">
 	
-		<pure_gain name="fcs/throttle1">
+		<lag_filter name="fcs/throttle1">
 			<input>/controls/engines/engine[0]/throttle-fdm</input>
-			<gain>1</gain>
+			<c1>0.75</c1>
 			<output>fcs/throttle-cmd-norm</output>
 			<output>fcs/throttle-pos-norm</output>
-		</pure_gain>
+		</lag_filter>
 		
-		<pure_gain name="fcs/throttle2">
+		<lag_filter name="fcs/throttle2">
 			<input>/controls/engines/engine[1]/throttle-fdm</input>
-			<gain>1</gain>
+			<c1>0.75</c1>
 			<output>fcs/throttle-cmd-norm[1]</output>
 			<output>fcs/throttle-pos-norm[1]</output>
-		</pure_gain>
+		</lag_filter>
 		
-		<pure_gain name="fcs/throttle3">
+		<lag_filter name="fcs/throttle3">
 			<input>/controls/engines/engine[2]/throttle-fdm</input>
-			<gain>1</gain>
+			<c1>0.75</c1>
 			<output>fcs/throttle-cmd-norm[2]</output>
 			<output>fcs/throttle-pos-norm[2]</output>
-		</pure_gain>
+		</lag_filter>
+		
+		<lag_filter name="fcs/n1-actual1">
+			<input>/engines/engine[0]/n1</input>
+			<c1>2.25</c1>
+			<output>/engines/engine[0]/n1-actual</output>
+		</lag_filter>
+		
+		<lag_filter name="fcs/n1-actual2">
+			<input>/engines/engine[1]/n1</input>
+			<c1>2.25</c1>
+			<output>/engines/engine[1]/n1-actual</output>
+		</lag_filter>
+		
+		<lag_filter name="fcs/n1-actual3">
+			<input>/engines/engine[2]/n1</input>
+			<c1>2.25</c1>
+			<output>/engines/engine[2]/n1-actual</output>
+		</lag_filter>
+		
+		<lag_filter name="fcs/n2-actual1">
+			<input>/engines/engine[0]/n2</input>
+			<c1>2.25</c1>
+			<output>/engines/engine[0]/n2-actual</output>
+		</lag_filter>
+		
+		<lag_filter name="fcs/n2-actual2">
+			<input>/engines/engine[1]/n2</input>
+			<c1>2.25</c1>
+			<output>/engines/engine[1]/n2-actual</output>
+		</lag_filter>
+		
+		<lag_filter name="fcs/n2-actual3">
+			<input>/engines/engine[2]/n2</input>
+			<c1>2.25</c1>
+			<output>/engines/engine[2]/n2-actual</output>
+		</lag_filter>
 		
 	</channel>
 

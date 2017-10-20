@@ -1,6 +1,6 @@
 # 727 Block V Autopilot/Flight Director
 # IT-AUTOFLIGHT Based
-# Joshua Davidson (it0uchpods)
+# (c) Joshua Davidson (it0uchpods)
 
 setprop("/it-autoflight/internal/vert-speed-fpm", 0);
 setprop("/it-autoflight/input/alt", 10000);
@@ -51,6 +51,8 @@ setlistener("/it-autoflight/input/ap", func {
 	var apmas = getprop("/it-autoflight/input/ap");
 	if (apmas == 0) {
 		setprop("/it-autoflight/output/ap", 0);
+		setprop("/controls/flight/aileron", 0);
+		setprop("/controls/flight/elevator", 0);
 		setprop("/controls/flight/rudder", 0);
 		setprop("/autopilot-v/roll-knob", 3);
 		setprop("/autopilot-v/pitch-knob", 3);
@@ -391,11 +393,14 @@ var update_arms = func {
 }
 
 var make_loc_active = func {
-	setprop("/autopilot-v/hdg-sel-btn", 0);
+	if (getprop("/autopilot-v/hdg-sel-btn") == 1) {
+		setprop("/autopilot-v/hdg-sel-btn", 0);
+	}
 	setprop("/it-autoflight/output/nav-armed", 0);
 	setprop("/it-autoflight/output/loc-armed", 0);
 	setprop("/it-autoflight/output/lat", 2);
 	setprop("/it-autoflight/mode/lat", "LOC");
+	setprop("/it-autoflight/input/roll-deg", 0);
 	if (getprop("/it-autoflight/output/appr-armed") == 1) {
 		# Do nothing because G/S is armed
 	} else {
@@ -405,7 +410,9 @@ var make_loc_active = func {
 
 var make_appr_active = func {
 	setprop("/autopilot-v/pitch-knob", 3);
-	setprop("/autopilot-v/alt-sel-btn", 0);
+	if (getprop("/autopilot-v/alt-sel-btn") == 1) {
+		setprop("/autopilot-v/alt-sel-btn", 0);
+	}
 	setprop("/it-autoflight/output/appr-armed", 0);
 	setprop("/it-autoflight/output/vert", 2);
 	setprop("/it-autoflight/mode/vert", "G/S");
@@ -423,7 +430,7 @@ setlistener("/it-autoflight/internal/alt", func {
 
 # Timers
 var update_armst = maketimer(0.5, update_arms);
-var altcaptt = maketimer(0.5, altcapt);
+var altcaptt = maketimer(0.25, altcapt);
 var minmaxtimer = maketimer(0.5, minmax);
 var ap_varioust = maketimer(1, ap_various);
 var spdmach_pitcht = maketimer(0.25, spdmach_pitch);
