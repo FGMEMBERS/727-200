@@ -1579,7 +1579,7 @@
   </offsets>     
  </model>
 <model>
-  <path>Aircraft/727-200/Models/lights/ALS/beacon.xml</path>
+  <path>Aircraft/727-200/Models/Lights/ALS/beacon.xml</path>
   <name>beacon.top.ALS</name>     
  <offsets>
    <x-m>-7.31186</x-m>
