@@ -5,7 +5,7 @@
     <model>
       <livery>
 	<name type="string">Pacific Southwest Airlines aka PSA (Original Catch Our Smile Livery)</name>
-	<texture>Liveries-ADV/PSA2.png</texture>
+	<texture>Liveries-RE/PSA2.png</texture>
       </livery>
     </model>
   </sim>

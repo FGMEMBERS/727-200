@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Avensa</name>
+				<texture>Liveries-ADV/AVE.png</texture>
+			</livery>
+			<eng>
+				<texture>Liveries-ADV/AVE-eng.png</texture>
+			</eng>
+		</model>
+	</sim>
+</PropertyList>

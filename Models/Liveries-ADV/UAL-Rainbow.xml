@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">United Airlines (Rainbow Livery)</name>
+				<texture>Liveries-ADV/UAL-Rainbow.png</texture>
+			</livery>
+			<eng>
+				<texture>Liveries-ADV/UAL-Rainbow-eng.png</texture>
+			</eng>
+		</model>
+	</sim>
+</PropertyList>

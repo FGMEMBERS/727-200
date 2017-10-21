@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Capital Cargo Airlines</name>
+				<texture>Liveries-ADV/CCI.png</texture>
+			</livery>
+			<eng>
+				<texture>Liveries-ADV/CCI-eng.png</texture>
+			</eng>
+		</model>
+	</sim>
+</PropertyList>
