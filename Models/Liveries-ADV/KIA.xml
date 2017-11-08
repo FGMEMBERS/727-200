@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Kiwi International Airlines</name>
+				<texture>Liveries-ADV/KIA.png</texture>
+			</livery>
+			<eng>
+				<texture>Liveries-ADV/KIA-eng.png</texture>
+			</eng>
+		</model>
+	</sim>
+</PropertyList>

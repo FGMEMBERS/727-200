@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Servientrega</name>
+				<texture>Liveries-ADV/Servientrega.png</texture>
+			</livery>
+			<eng>
+				<texture>Liveries-ADV/Servientrega-eng.png</texture>
+			</eng>
+		</model>
+	</sim>
+</PropertyList>

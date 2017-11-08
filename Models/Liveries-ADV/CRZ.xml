@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Cruzeiro Airlines</name>
+				<texture>Liveries-ADV/CRZ.png</texture>
+			</livery>
+			<eng>
+				<texture>Liveries-ADV/CRZ-eng.png</texture>
+			</eng>
+		</model>
+	</sim>
+</PropertyList>

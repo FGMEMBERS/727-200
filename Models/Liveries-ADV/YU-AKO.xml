@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Aviogenex (YU-AKO)</name>
+				<texture>Liveries-ADV/YU-AKO.png</texture>
+			</livery>
+			<eng>
+				<texture>Liveries-ADV/YU-AKO-eng.png</texture>
+			</eng>
+		</model>
+	</sim>
+</PropertyList>

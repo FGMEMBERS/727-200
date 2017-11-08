@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">JAT Yugoslav Airlines (YU-AKI)</name>
+				<texture>Liveries-ADV/JAT.png</texture>
+			</livery>
+			<eng>
+				<texture>Liveries-ADV/JAT-eng.png</texture>
+			</eng>
+		</model>
+	</sim>
+</PropertyList>

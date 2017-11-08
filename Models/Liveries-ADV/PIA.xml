@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Pakistan International Airlines</name>
+				<texture>Liveries-ADV/PIA.png</texture>
+			</livery>
+			<eng>
+				<texture>Liveries-ADV/PIA-eng.png</texture>
+			</eng>
+		</model>
+	</sim>
+</PropertyList>
