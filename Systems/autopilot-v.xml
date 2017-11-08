@@ -616,7 +616,7 @@
 		</input>
 		<output>/controls/flight/aileron</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>0.5</max-rate-of-change>
+		<max-rate-of-change>0.9</max-rate-of-change>
 	</filter>
 
  <!-- =============================================================== -->
@@ -716,8 +716,22 @@
 			<gamma>0.0</gamma>  
 			<Ti>2.5</Ti>
 			<Td>0.00001</Td>
-			<u_min>-6000</u_min>
-			<u_max>6000</u_max>
+			<u_min>
+				<expression>
+					<dif>
+						<property>/it-autoflight/internal/vert-speed-fpm</property>
+						<value>2500</value>
+					</dif>
+				</expression>
+			</u_min>
+			<u_max>
+				<expression>
+					<sum>
+						<property>/it-autoflight/internal/vert-speed-fpm</property>
+						<value>2500</value>
+					</sum>
+				</expression>
+			</u_max>
 		</config>
 	</pid-controller>
 	
@@ -1056,7 +1070,7 @@
 		</input>
 		<output>/controls/flight/elevator</output>
 		<type>noise-spike</type>
-		<max-rate-of-change>0.4</max-rate-of-change>
+		<max-rate-of-change>0.7</max-rate-of-change>
 	</filter>
 	
  <!-- =============================================================== -->
