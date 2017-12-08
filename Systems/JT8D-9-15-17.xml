@@ -10,8 +10,8 @@
 			<expression>
 				<table>
 					<property>/position/altitude-ft</property> 
-					<entry><ind>    0</ind><dep>1.259</dep></entry>
-					<entry><ind>44000</ind><dep>2.745</dep></entry>
+					<entry><ind>    0</ind><dep>1.469</dep></entry>
+					<entry><ind>44000</ind><dep>3.225</dep></entry>
 				</table>
 			</expression>
 		</input>
