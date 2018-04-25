@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Mexicana-Veracruz</name>
+				<texture>Liveries-ADV/MAL80.png</texture>
+			</livery>
+			<eng>
+				<texture>Liveries-ADV/MAL80-eng.png</texture>
+			</eng>
+		</model>
+	</sim>
+</PropertyList>

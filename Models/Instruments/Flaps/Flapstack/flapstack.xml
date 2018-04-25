@@ -165,7 +165,7 @@
   </axis>
 </animation>
 
-<animation>
+         <animation>
 		<type>material</type>
 		<object-name>stack</object-name> 
 		<object-name>Gear.lever</object-name>

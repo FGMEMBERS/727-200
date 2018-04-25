@@ -5,13 +5,13 @@
 <PropertyList>
 
 	<sim>
-		<author>Joshua Davidson (it0uchpods)</author>
+		<author>Joshua Davidson (it0uchpods) And Gabriel Hernandez(YV3399)</author>
 		
 		<status>Pre V1.0</status>
 		
 		<rating>
 			<FDM type="int">3</FDM>
-			<systems type="int">2</systems>
+			<systems type="int">3</systems>
 			<cockpit type="int">3</cockpit>
 			<model type="int">3</model>
 		</rating>
@@ -37,8 +37,9 @@
 		</sound>
 		
 		<startup>
-			<splash-texture>Aircraft/727-200/Splash/SplashOld.png</splash-texture>
-		</startup>
+		<splash-texture>Aircraft/727-200/Splash/splash1.png</splash-texture>
+                <splash-texture>Aircraft/727-200/Splash/splash2.png</splash-texture>
+                <splash-texture>Aircraft/727-200/Splash/splash3.png</splash-texture>		</startup>
 		
 		<previews>
 			<preview>
@@ -209,8 +210,8 @@
 		<pitch-knob type="int">3</pitch-knob>
 		<roll-knob type="int">3</roll-knob>
 		<fd>
-			<alt-hld type="bool">0</alt-hld>
-			<go-around type="bool">0</go-around>
+		<alt-hld type="bool">0</alt-hld>
+		<go-around type="bool">0</go-around>
 		</fd>
 	</autopilot-v>
 

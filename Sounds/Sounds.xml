@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
-<!-- 727 Sounds -->
-<!-- Swamp, it0uchpods -->
+<!-- 727 New Sounds -->
+<!-- YV3399, it0uchpods -->
 
 <PropertyList>
 
@@ -1033,6 +1033,28 @@
         <reference-dist>1.0</reference-dist>
         <max-dist>2.0</max-dist>
     </wind>
+
+ <gpws>
+    	<name>appr_mins</name>
+    	<mode>once</mode>
+    	<type>avionics</type>		
+    	<path>Aircraft/727-200/Sounds/approaching-minimums.wav</path>
+    	<condition>
+    		<less-than>
+    			<property>/position/altitude-agl-ft</property>
+    			<value>380</value>
+    		</less-than>
+    		<greater-than>
+    			<property>/position/altitude-agl-ft</property>
+    			<value>300</value>
+    		</greater-than>			
+    		<less-than>
+    			<property>/velocities/vertical-speed-fps</property>
+    			<value>0</value>
+    		</less-than>
+    	</condition>
+    </gpws>
+
 
   </fx>
 

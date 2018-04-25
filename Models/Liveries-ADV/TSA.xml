@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Taesa</name>
+				<texture>Liveries-ADV/TSA.png</texture>
+			</livery>
+			<eng>
+				<texture>Liveries-ADV/TSA-eng.png</texture>
+			</eng>
+		</model>
+	</sim>
+</PropertyList>
