@@ -12,14 +12,6 @@
 			<livery>
 				<file>Boeing 727</file>
 			</livery>
-
-			<pushback>
-				<kp type="double">1600</kp>
-				<ki type="double">0</ki>
-				<kd type="double">0</kd>
-				<position-norm type="double">0</position-norm>
-				<enabled type="bool">false</enabled>
-			</pushback>
 		</model>
 
 		<view>

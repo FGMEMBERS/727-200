@@ -22,11 +22,9 @@
   
 	<trimming>
 		<name>trimming</name>
-		<mode>looped</mode>
+		<mode>in-transit</mode>
+		<property>/controls/flight/elevator-trim</property>
 		<path>Aircraft/727-200/Sounds/trim.wav</path>
-		<condition>
-			<property>sim/sounde/trim</property>
-		</condition>
 		<volume>
 			<property>/sim/current-view/internal</property>
 			<value>0.50</value>

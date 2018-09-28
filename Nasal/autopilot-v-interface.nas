@@ -44,9 +44,6 @@ setlistener("/autopilot-v/pitch-knob", func {
 var roll_knob = func {
 	if (getprop("/it-autoflight/output/ap") == 1) {
 		if (getprop("/autopilot-v/roll-knob") == 1) {
-			if (getprop("/autopilot-v/hdg-sel-btn") == 1) {
-				setprop("/autopilot-v/hdg-sel-btn", 0);
-			}
 			setprop("/it-autoflight/input/lat", 1);
 			setprop("/it-autoflight/settings/slave-gps-nav", 1);
 			setprop("/it-autoflight/input/lat", 2);
@@ -54,9 +51,6 @@ var roll_knob = func {
 				pitch_knob();
 			}
 		} else if (getprop("/autopilot-v/roll-knob") == 2) {
-			if (getprop("/autopilot-v/hdg-sel-btn") == 1) {
-				setprop("/autopilot-v/hdg-sel-btn", 0);
-			}
 			setprop("/it-autoflight/settings/slave-gps-nav", 0);
 			setprop("/it-autoflight/input/lat", 2);
 			if (getprop("/it-autoflight/output/vert") == 2) {
