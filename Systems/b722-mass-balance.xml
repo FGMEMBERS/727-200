@@ -8,9 +8,9 @@
 -->
 
 <mass_balance>
-	<ixx unit="SLUG*FT2"> 1911903 </ixx>
-	<iyy unit="SLUG*FT2"> 3635389 </iyy>
-	<izz unit="SLUG*FT2"> 3001293 </izz>
+	<ixx unit="SLUG*FT2">  611903 </ixx>
+	<iyy unit="SLUG*FT2"> 1735389 </iyy>
+	<izz unit="SLUG*FT2"> 1401293 </izz>
 	
 	<ixy unit="SLUG*FT2">       0 </ixy>
 	<ixz unit="SLUG*FT2">       0 </ixz>

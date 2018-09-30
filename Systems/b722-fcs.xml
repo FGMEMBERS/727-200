@@ -3,93 +3,404 @@
 <!-- (c) Joshua Davidson (it0uchpods) -->
 
 <system name="B722: FCS">
-
-	<channel name="Roll">
 	
-		<summer name="Roll Trim Sum">
-			<input>/controls/flight/aileron-sum</input>
+	<channel name="Common">
+		
+		<summer name="fcs/aileron-sum">
+			<input>/controls/flight/aileron</input>
 			<input>/controls/flight/aileron-trim</input>
 			<clipto>
-				<min>-1</min>
-				<max>1</max>
+				<min>-1.0</min>
+				<max>1.0</max>
 			</clipto>
 		</summer>
-
-		<aerosurface_scale name="Roll Control">
-			<input>fcs/roll-trim-sum</input>
-			<range>
-				<min>-0.523599</min>
-				<max>0.523599</max>
-			</range>
-			<output>fcs/roll-pos-rad</output>
-		</aerosurface_scale>
-
-		<aerosurface_scale name="Roll Control Normalized">
-			<input>fcs/roll-pos-rad</input>
-			<domain>
-				<min>-0.523599</min>
-				<max>0.523599</max>
-			</domain>
-			<range>
-				<min>-1</min>
-				<max>1</max>
-			</range>
-			<output>fcs/roll-pos-norm</output>
-		</aerosurface_scale>
 		
+		<lag_filter name="fcs/aileron-yoke">
+			<input>fcs/aileron-sum</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<pure_gain name="fcs/aileron-yoke-inv">
+			<input>fcs/aileron-yoke</input>
+			<gain>-1.0</gain>
+		</pure_gain>
+		
+		<lag_filter name="fcs/elevator-yoke">
+			<input>/controls/flight/elevator</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<lag_filter name="fcs/rudder-pedal">
+			<input>/controls/flight/rudder</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<fcs_function name="hydraulics/aileron-droop">
+			<function>
+				<table>
+					<independentVar lookup="row">/velocities/airspeed-kt</independentVar>
+					<tableData>
+						 62  1.0
+						116  0.0
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="hydraulics/elevator-droop">
+			<function>
+				<table>
+					<independentVar lookup="row">/velocities/airspeed-kt</independentVar>
+					<tableData>
+						 52  1.0
+						101  0.0
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
+	
 	</channel>
 	
-	<channel name="Pitch">
-	
-		<summer name="Pitch Trim Sum">
-			<input>/controls/flight/elevator-sum</input>
-			<input>/controls/flight/elevator-trim</input>
-			<clipto>
-				<min>-1</min>
-				<max>1</max>
-			</clipto>
-		</summer>
-
-		<aerosurface_scale name="Pitch Control">
-			<input>fcs/pitch-trim-sum</input>
-			<range>
-				<min>-0.523599</min>
-				<max>0.523599</max>
-			</range>
-			<output>fcs/pitch-pos-rad</output>
-		</aerosurface_scale>
+	<channel name="Aileron L">
 		
-		<scheduled_gain name="Pitch Control Gearing">
-			<input>fcs/pitch-pos-rad</input>
+		<fcs_function name="hydraulics/aileron-l-man">
+			<function>
+				<sum>
+					<property>hydraulics/aileron-droop</property>
+					<product>
+						<property>fcs/aileron-yoke</property>
+						<table>
+							<independentVar lookup="row">/velocities/airspeed-kt</independentVar>
+							<tableData>
+								 60  0.0
+								 80  0.3
+								380  0.5
+							</tableData>
+						</table>
+					</product>
+				</sum>
+			</function>
+		</fcs_function>
+		
+		<switch name="hydraulics/aileron-l/switch">
+			<default value="hydraulics/aileron-l-man"/>
+			<test value="fcs/aileron-yoke">
+				/systems/hydraulic/ail-active eq 1
+			</test>
+			<clipto>
+				<min>-1.0</min>
+				<max>1.0</max>
+			</clipto>
+		</switch>
+		
+		<lag_filter name="hydraulics/aileron-l/final">
+			<input>hydraulics/aileron-l/switch</input>
+			<c1>14.5</c1>
+		</lag_filter>
+		
+		<aerosurface_scale name="hydraulics/aileron-l/final-deg">
+			<input>hydraulics/aileron-l/final</input>
+			<range>
+				<min>-25</min>
+				<max>25</max>
+			</range>
+		</aerosurface_scale>
+	
+	</channel>
+	
+	<channel name="Aileron R">
+		
+		<fcs_function name="hydraulics/aileron-r-man">
+			<function>
+				<sum>
+					<property>hydraulics/aileron-droop</property>
+					<product>
+						<property>fcs/aileron-yoke-inv</property>
+						<table>
+							<independentVar lookup="row">/velocities/airspeed-kt</independentVar>
+							<tableData>
+								 60  0.0
+								 80  0.3
+								380  0.5
+							</tableData>
+						</table>
+					</product>
+				</sum>
+			</function>
+		</fcs_function>
+		
+		<switch name="hydraulics/aileron-r/switch">
+			<default value="hydraulics/aileron-r-man"/>
+			<test value="fcs/aileron-yoke-inv">
+				/systems/hydraulic/ail-active eq 1
+			</test>
+			<clipto>
+				<min>-1.0</min>
+				<max>1.0</max>
+			</clipto>
+		</switch>
+		
+		<lag_filter name="hydraulics/aileron-r/final">
+			<input>hydraulics/aileron-r/switch</input>
+			<c1>14.5</c1>
+		</lag_filter>
+		
+		<aerosurface_scale name="hydraulics/aileron-r/final-deg">
+			<input>hydraulics/aileron-r/final</input>
+			<range>
+				<min>-25</min>
+				<max>25</max>
+			</range>
+		</aerosurface_scale>
+	
+	</channel>
+	
+	<channel name="Elevator L">
+		
+		<fcs_function name="hydraulics/elevator-l-man">
+			<function>
+				<sum>
+					<property>hydraulics/elevator-droop</property>
+					<product>
+						<property>fcs/elevator-yoke</property>
+						<table>
+							<independentVar lookup="row">/velocities/airspeed-kt</independentVar>
+							<tableData>
+								 50  0.0
+								 70  0.2
+								370  0.4
+							</tableData>
+						</table>
+					</product>
+				</sum>
+			</function>
+		</fcs_function>
+		
+		<switch name="hydraulics/elevator-l/switch">
+			<default value="hydraulics/elevator-l-man"/>
+			<test value="fcs/elevator-yoke">
+				/systems/hydraulic/elev-active eq 1
+			</test>
+			<clipto>
+				<min>-1.0</min>
+				<max>1.0</max>
+			</clipto>
+		</switch>
+		
+		<lag_filter name="hydraulics/elevator-l/final">
+			<input>hydraulics/elevator-l/switch</input>
+			<c1>14.5</c1>
+		</lag_filter>
+		
+		<aerosurface_scale name="hydraulics/elevator-l/final-deg">
+			<input>hydraulics/elevator-l/final</input>
+			<range>
+				<min>-22</min>
+				<max>22</max>
+			</range>
+		</aerosurface_scale>
+	
+	</channel>
+	
+	<channel name="Elevator R">
+		
+		<fcs_function name="hydraulics/elevator-r-man">
+			<function>
+				<sum>
+					<property>hydraulics/elevator-droop</property>
+					<product>
+						<property>fcs/elevator-yoke</property>
+						<table>
+							<independentVar lookup="row">/velocities/airspeed-kt</independentVar>
+							<tableData>
+								 50  0.0
+								 70  0.2
+								370  0.4
+							</tableData>
+						</table>
+					</product>
+				</sum>
+			</function>
+		</fcs_function>
+		
+		<switch name="hydraulics/elevator-r/switch">
+			<default value="hydraulics/elevator-r-man"/>
+			<test value="fcs/elevator-yoke">
+				/systems/hydraulic/elev-active eq 1
+			</test>
+			<clipto>
+				<min>-1.0</min>
+				<max>1.0</max>
+			</clipto>
+		</switch>
+		
+		<lag_filter name="hydraulics/elevator-r/final">
+			<input>hydraulics/elevator-r/switch</input>
+			<c1>14.5</c1>
+		</lag_filter>
+		
+		<aerosurface_scale name="hydraulics/elevator-r/final-deg">
+			<input>hydraulics/elevator-r/final</input>
+			<range>
+				<min>-22</min>
+				<max>22</max>
+			</range>
+		</aerosurface_scale>
+	
+	</channel>
+	
+	<channel name="Elevator Trim">
+		
+		<lag_filter name="hydraulics/elevator-trim/lag">
+			<input>/controls/flight/elevator-trim</input>
+			<c1>0.5</c1>
+		</lag_filter>
+		
+		<aerosurface_scale name="hydraulics/elevator-trim/final-deg">
+			<input>hydraulics/elevator-trim/lag</input>
+			<domain>
+				<min>-1.0</min>
+				<max>1.0</max>
+			</domain>
+			<range>
+				<min>-15.0</min>
+				<max>15.0</max>
+			</range>
+		</aerosurface_scale>
+	
+	</channel>
+	
+	<channel name="Pitch Aero">
+	
+		<scheduled_gain name="hydraulics/elevator-l/final-deg-aero">
+			<input>hydraulics/elevator-l/final-deg</input>
 			<table>
 				<independentVar lookup="row">velocities/mach</independentVar>
 				<independentVar lookup="column">atmosphere/density-altitude</independentVar>
 				<tableData>
-					         0.0       43000
-					0.0      1.00      0.85
-					0.9      0.10      0.75
+					     0     43000
+					0.0  1.00  0.85
+					0.9  0.10  0.75
 				</tableData>
 			</table>
-			<output>fcs/pitch-pos-geared</output>
 		</scheduled_gain>
 		
-		<aerosurface_scale name="Pitch Control Normalized">
-			<input>fcs/pitch-pos-geared</input>
-			<domain>
-				<min>-0.523599</min>
-				<max>0.523599</max>
-			</domain>
-			<range>
-				<min>-1</min>
-				<max>1</max>
-			</range>
-			<output>fcs/pitch-pos-norm</output>
-		</aerosurface_scale>
+		<scheduled_gain name="hydraulics/elevator-r/final-deg-aero">
+			<input>hydraulics/elevator-r/final-deg</input>
+			<table>
+				<independentVar lookup="row">velocities/mach</independentVar>
+				<independentVar lookup="column">atmosphere/density-altitude</independentVar>
+				<tableData>
+					     0     43000
+					0.0  1.00  0.85
+					0.9  0.10  0.75
+				</tableData>
+			</table>
+		</scheduled_gain>
 		
+		<scheduled_gain name="hydraulics/elevator-trim/final-deg-aero">
+			<input>hydraulics/elevator-trim/final-deg</input>
+			<table>
+				<independentVar lookup="row">velocities/mach</independentVar>
+				<independentVar lookup="column">atmosphere/density-altitude</independentVar>
+				<tableData>
+					     0     43000
+					0.0  1.00  0.85
+					0.9  0.10  0.75
+				</tableData>
+			</table>
+		</scheduled_gain>
+	
+	</channel>
+	
+	<channel name="Rudder Trim">
+		
+		<aerosurface_scale name="hydraulics/rudder/trim-norm">
+			<input>/controls/flight/rudder-trim</input>
+			<range>
+				<min>-0.8</min>
+				<max>0.8</max>
+			</range>
+		</aerosurface_scale>
+	
+	</channel>
+	
+	<channel name="Rudder Upper">
+		
+		<summer name="hydraulics/rudder-upper/summer">
+			<input>fcs/rudder-pedal</input>
+			<input>hydraulics/rudder/trim-norm</input>
+			<clipto>
+				<min>-1.0</min>
+				<max>1.0</max>
+			</clipto>
+		</summer>
+		
+		<switch name="hydraulics/rudder-upper/switch">
+			<default value="0"/>
+			<test value="hydraulics/rudder-upper/summer">
+				/systems/hydraulic/rudder-u-active eq 1
+			</test>
+			<clipto>
+				<min>-1.0</min>
+				<max>1.0</max>
+			</clipto>
+		</switch>
+		
+		<lag_filter name="hydraulics/rudder-upper/final">
+			<input>hydraulics/rudder-upper/switch</input>
+			<c1>13.5</c1>
+		</lag_filter>
+		
+		<aerosurface_scale name="hydraulics/rudder-upper/final-deg">
+			<input>hydraulics/rudder-upper/final</input>
+			<range>
+				<min>-25</min>
+				<max>25</max>
+			</range>
+		</aerosurface_scale>
+	
+	</channel>
+	
+	<channel name="Rudder Lower">
+		
+		<summer name="hydraulics/rudder-lower/summer">
+			<input>fcs/rudder-pedal</input>
+			<input>hydraulics/rudder/trim-norm</input>
+			<clipto>
+				<min>-1.0</min>
+				<max>1.0</max>
+			</clipto>
+		</summer>
+		
+		<switch name="hydraulics/rudder-lower/switch">
+			<default value="0"/>
+			<test value="hydraulics/rudder-lower/summer">
+				/systems/hydraulic/rudder-l-active eq 1
+			</test>
+			<clipto>
+				<min>-1.0</min>
+				<max>1.0</max>
+			</clipto>
+		</switch>
+		
+		<lag_filter name="hydraulics/rudder-lower/final">
+			<input>hydraulics/rudder-lower/switch</input>
+			<c1>13.5</c1>
+		</lag_filter>
+		
+		<aerosurface_scale name="hydraulics/rudder-lower/final-deg">
+			<input>hydraulics/rudder-lower/final</input>
+			<range>
+				<min>-25</min>
+				<max>25</max>
+			</range>
+		</aerosurface_scale>
+	
 	</channel>
 	
 	<channel name="Engines">
-	
+		
 		<lag_filter name="fcs/throttle1">
 			<input>/controls/engines/engine[0]/throttle-fdm</input>
 			<c1>0.75</c1>
@@ -146,90 +457,9 @@
 			<c1>2.25</c1>
 			<output>/engines/engine[2]/n2-actual</output>
 		</lag_filter>
-		
+	
 	</channel>
-
-	<channel name="Yaw">
-
-		<scheduled_gain name="Yaw Damper Rate">
-			<input>velocities/r-aero-rad_sec</input>
-			<table>
-				<independentVar lookup="row">velocities/ve-kts</independentVar>
-				<tableData>
-				30     0.00
-				60     2.00
-				</tableData>
-			</table>
-		</scheduled_gain>
-
-		<scheduled_gain name="Yaw Damper Beta">
-			<input>aero/beta-rad</input>
-			<table>
-				<independentVar lookup="row">velocities/ve-kts</independentVar>
-				<tableData>
-				30     0.00
-				60     0.00
-				</tableData>
-			</table>
-		</scheduled_gain>
-
-		<summer name="Yaw Damper Sum">
-			<input>fcs/yaw-damper-beta</input>
-			<input>fcs/yaw-damper-rate</input>
-			<clipto>
-				<min> -0.1 </min>
-				<max>  0.1 </max>
-			</clipto>
-		</summer>
-
-		<scheduled_gain name="Yaw Damper Final">
-			<input>fcs/yaw-damper-sum</input>
-			<table>
-				<independentVar lookup="row">velocities/ve-kts</independentVar>
-				<tableData>
-				30         0.0
-				31         1.0
-				</tableData>
-			</table>
-		</scheduled_gain>
-
-		<summer name="Rudder Sum">
-			<input>/controls/flight/rudder-sum</input>
-			<input>fcs/yaw-damper-final</input>
-			<clipto>
-				<min> -1.0 </min>
-				<max>  1.0 </max>
-			</clipto>
-		</summer>
-
-		<aerosurface_scale name="Rudder Control">
-			<input>fcs/rudder-sum</input>
-			<domain>
-				<min> -1.0 </min>
-				<max>  1.0 </max>
-			</domain>
-			<range>
-				<min> -0.35 </min>
-				<max>  0.35 </max>
-			</range>
-			<output>fcs/rudder-pos-rad</output>
-		</aerosurface_scale>
-
-		<aerosurface_scale name="rudder normalization">
-			<input>fcs/rudder-pos-rad</input>
-			<domain>
-				<min> -0.35 </min>
-				<max>  0.35 </max>
-			</domain>
-			<range>
-				<min> -1 </min>
-				<max>  1 </max>
-			</range>
-			<output>fcs/rudder-pos-norm</output>
-		</aerosurface_scale>
-
-	</channel>
-
+	
 	<channel name="Flaps">
 		
 		<kinematic name="rubbish/flap-pos-deg">
@@ -241,7 +471,7 @@
 				</setting>
 				<setting>
 					<position>40</position>
-					<time>3 </time>
+					<time>20</time>
 				</setting>
 			</traverse>
 			<output>fcs/flap-pos-deg</output>

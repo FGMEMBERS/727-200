@@ -76,7 +76,7 @@
 		<object-name>plane.up.001</object-name>
 		<object-name>plane.down.001</object-name>
 		<object-name>plane.out.001</object-name>
-    <property>controls/flight/elevator</property>
+    <property>fdm/jsbsim/fcs/elevator-yoke</property>
     <factor> -8 </factor>
     <center>
       <x-m>-18.718 </x-m>
@@ -100,7 +100,7 @@
 		<object-name>plane.up</object-name>
 		<object-name>plane.down</object-name>
 		<object-name>plane.out</object-name>
-    <property>controls/flight/aileron</property>
+    <property>fdm/jsbsim/fcs/aileron-yoke</property>
     <factor> -60 </factor>
     <center>
       <x-m> 0.000 </x-m>
@@ -124,7 +124,7 @@
 		<object-name>plane.up.001</object-name>
 		<object-name>plane.down.001</object-name>
 		<object-name>plane.out.001</object-name>
-    <property>controls/flight/aileron</property>
+    <property>fdm/jsbsim/fcs/aileron-yoke</property>
     <factor> -60 </factor>
     <center>
       <x-m> 0.000 </x-m>
@@ -247,7 +247,7 @@
         <interval-sec>0.2</interval-sec>
         <binding>
 		      <command>property-adjust</command>
-		      <property>controls/flight/elevator-trim</property>
+		      <property>fdm/jsbsim/fcs/elevator-yoke-trim</property>
 		      <step>0.005</step>
 		      <min>-1.0</min>
 		      <max> 1.0</max>
@@ -260,7 +260,7 @@
         <interval-sec>0.2</interval-sec>
         <binding>
 		      <command>property-adjust</command>
-		      <property>controls/flight/elevator-trim</property>
+		      <property>fdm/jsbsim/fcs/elevator-yoke-trim</property>
 		      <step>-0.005</step>
 		      <min>-1.0</min>
 		      <max> 1.0</max>
@@ -279,7 +279,7 @@
         <repeatable>true</repeatable>
         <binding>
 		      <command>property-adjust</command>
-		      <property>controls/flight/elevator-trim</property>
+		      <property>fdm/jsbsim/fcs/elevator-yoke-trim</property>
 		      <step>0.005</step>
 		      <min>-1.0</min>
 		      <max> 1.0</max>
@@ -310,7 +310,7 @@
         <repeatable>true</repeatable>
         <binding>
 		      <command>property-adjust</command>
-		      <property>controls/flight/elevator-trim</property>
+		      <property>fdm/jsbsim/fcs/elevator-yoke-trim</property>
 		      <step>-0.005</step>
 		      <min>-1.0</min>
 		      <max> 1.0</max>

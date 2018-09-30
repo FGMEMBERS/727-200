@@ -68,9 +68,9 @@
 			<config>
 				<x-offset-m archive="y">-0.44</x-offset-m>
 				<y-offset-m archive="y">1.06</y-offset-m>
-				<z-offset-m archive="y">-20.44</z-offset-m>
-				<pitch-offset-deg archive="y">-14.0</pitch-offset-deg>
-				<default-field-of-view-deg type="double">60.0</default-field-of-view-deg>
+				<z-offset-m archive="y">-20.42</z-offset-m>
+				<pitch-offset-deg archive="y">-13.0</pitch-offset-deg>
+				<default-field-of-view-deg type="double">62.0</default-field-of-view-deg>
 			</config>
 		</view>
 		<view n="100">
@@ -81,9 +81,9 @@
 				<from-model type="bool">true</from-model>
 				<x-offset-m archive="y">0.44</x-offset-m>
 				<y-offset-m archive="y">1.06</y-offset-m>
-				<z-offset-m archive="y">-20.44</z-offset-m>
-				<pitch-offset-deg archive="y">-14.0</pitch-offset-deg>
-				<default-field-of-view-deg type="double">60.0</default-field-of-view-deg>
+				<z-offset-m archive="y">-20.42</z-offset-m>
+				<pitch-offset-deg archive="y">-13.0</pitch-offset-deg>
+				<default-field-of-view-deg type="double">62.0</default-field-of-view-deg>
 			</config>
 		</view>
 		<view n="101">
@@ -244,17 +244,20 @@
 			<autopilot n="10">
 				<path>Aircraft/727-200/Sounds/Sound-Control.xml</path>
 			</autopilot>
+			<autopilot n="11">
+				<path>Aircraft/727-200/Systems/zoom-views.xml</path>
+			</autopilot>
 		</systems>
 		
 		<!-- Multiplayer properties -->
 		<multiplay>
 			<generic>
-				<float n="0" alias="/controls/flight/elevator-left" />
-				<float n="1" alias="/controls/flight/elevator-right" />
-				<float n="2" alias="/controls/flight/aileron-left" />
-				<float n="3" alias="/controls/flight/aileron-right" />
-				<float n="4" alias="/controls/flight/rudder-upper" />
-				<float n="5" alias="/controls/flight/rudder-lower" />
+				<float n="0" alias="/fdm/jsbsim/hydraulics/elevator-l/final-deg" />
+				<float n="1" alias="/fdm/jsbsim/hydraulics/elevator-r/final-deg" />
+				<float n="2" alias="/fdm/jsbsim/hydraulics/aileron-l/final-deg" />
+				<float n="3" alias="/fdm/jsbsim/hydraulics/aileron-r/final-deg" />
+				<float n="4" alias="/fdm/jsbsim/hydraulics/rudder-upper/final-deg" />
+				<float n="5" alias="/fdm/jsbsim/hydraulics/rudder-lower/final-deg" />
 				<float n="6" alias="/fdm/jsbsim/fcs/slat-pos-norm" />
 				<float n="7" alias="/engines/engine[0]/reverser-pos-norm" />
 				<float n="8" alias="/engines/engine[1]/reverser-pos-norm" />
@@ -263,6 +266,20 @@
 		</multiplay>
 		
 		<flight-recorder include="Systems/flight-recorder.xml"/>
+		
+		<gui n="0" include="Systems/it-gui.xml"/>
+		
+		<current-view>
+			<z-offset-dec-step type="double">0.0</z-offset-dec-step>
+			<z-offset-inc-step type="double">0.0</z-offset-inc-step>
+			<can-change-z-offset type="bool">false</can-change-z-offset>
+			
+			<z-offset-default type="float">80.0</z-offset-default>
+			<z-offset-min-m type="float">30.0</z-offset-min-m>
+			<z-offset-max-m type="float">300.0</z-offset-max-m>
+		</current-view>
+		
+		 <minimum-fg-version>2018.1.0</minimum-fg-version>
 	</sim>
 	
 	<autopilot-v>
@@ -304,9 +321,7 @@
 		</engines>
 		<flight>
 			<aileron-drives-tiller type="bool">0</aileron-drives-tiller>
-			<aileron-sum>0</aileron-sum>
-			<elevator-sum>0</elevator-sum>
-			<rudder-sum>0</rudder-sum>
+			<elevator-trim type="double">-0.1</elevator-trim>
 			<spoiler-1>0.0</spoiler-1>
 			<spoiler-2>0.0</spoiler-2>
 			<spoiler-3>0.0</spoiler-3>
@@ -569,6 +584,22 @@
 	
 	<input>
 		<keyboard>
+			<key n="24">
+				<name>Ctrl-x</name>
+				<desc>Reset zoom to default</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						if (getprop("/sim/current-view/can-change-z-offset")) {
+							setprop("/sim/current-view/z-offset-m", getprop("/sim/current-view/z-offset-default") * -1);
+
+							gui.popupTip(sprintf("%d meters", getprop("/sim/current-view/z-offset-default")));
+						} else {
+							setprop("/sim/current-view/field-of-view", getprop("/sim/view/config/default-field-of-view-deg"));
+						}
+					</script>
+				</binding>
+			</key>
 			<key n="49">
 				<name>1</name>
 				<desc>Captain View</desc>
@@ -585,6 +616,50 @@
 					<command>property-assign</command>
 					<property>/sim/current-view/view-number</property>
 					<value>8</value>
+				</binding>
+			</key>
+			<key n="88">
+				<name>X</name>
+				<desc>Increase field of view</desc>
+				<repeatable type="bool">true</repeatable>
+				<binding>
+				<command>nasal</command>
+				<script>
+					if (getprop("/sim/current-view/can-change-z-offset")) {
+						var distance = getprop("/sim/current-view/z-offset-m");
+						var multiple = getprop("/sim/current-view/z-offset-dec-step");
+						var max_dist = getprop("/sim/current-view/z-offset-max-m");
+
+						distance = math.round(std.max(-max_dist, distance + multiple) / multiple) * multiple;
+						setprop("/sim/current-view/z-offset-m", distance);
+
+						gui.popupTip(sprintf("%d meters", abs(distance)));
+					} else {
+						view.increase();
+					}
+				</script>
+				</binding>
+			</key>
+			<key n="120">
+				<name>x</name>
+				<desc>Decrease field of view</desc>
+				<repeatable type="bool">true</repeatable>
+				<binding>
+					<command>nasal</command>
+					<script>
+						if (getprop("/sim/current-view/can-change-z-offset")) {
+							var distance = getprop("/sim/current-view/z-offset-m");
+							var multiple = getprop("/sim/current-view/z-offset-inc-step");
+							var min_dist = getprop("/sim/current-view/z-offset-min-m");
+
+							distance = math.round(std.min(-min_dist, distance + multiple) / multiple) * multiple;
+							setprop("/sim/current-view/z-offset-m", distance);
+
+							gui.popupTip(sprintf("%d meters", abs(distance)));
+						} else {
+							view.decrease();
+						}
+					</script>
 				</binding>
 			</key>
 			<key n="127">
@@ -631,32 +706,30 @@
 	</input>
 
 	<payload>
-
 		<weight n="0">
 			<name>Cockpit Crew</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]" />
-			<min-lb type="double">  200</min-lb>
-			<max-lb type="double">  600</max-lb>
+			<min-lb type="double">200</min-lb>
+			<max-lb type="double">600</max-lb>
 		</weight>
 		
 		<weight n="2">
 			<name>First Class</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]" />
-			<min-lb type="double">    0 </min-lb>
-			<max-lb type="double"> 1200 </max-lb>
+			<min-lb type="double">0 </min-lb>
+			<max-lb type="double">1200 </max-lb>
 		</weight>
 
 		<weight n="3">
 			<name>Coach Class</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]" />
-			<min-lb type="double">     0 </min-lb>
-			<max-lb type="double"> 12000 </max-lb>
+			<min-lb type="double">0 </min-lb>
+			<max-lb type="double">12000 </max-lb>
 		</weight>
-
 	</payload>
 		
-	<systems>
-		<anti-ice>
+	<systems n="0">
+		<anti-ice n="0">
 			<ducttemp>
 				<engine1 type="float">0</engine1>
 				<engine2 type="float">0</engine2>
@@ -666,11 +739,17 @@
 				<engine3-overheat type="bool">0</engine3-overheat>
 			</ducttemp>
 		</anti-ice>
-		<electrical>
+		<electrical n="0">
 			<outputs>
 				<ohp-lights type="float">1</ohp-lights>
 			</outputs>
 		</electrical>
+		<hydraulic n="0">
+			<ail-active type="bool">0</ail-active>
+			<elev-active type="bool">0</elev-active>
+			<rudder-l-active type="bool">0</rudder-l-active>
+			<rudder-u-active type="bool">0</rudder-u-active>
+		</hydraulic>
 	</systems>
 
 	<nasal n="0">

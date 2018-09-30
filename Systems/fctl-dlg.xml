@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!-- Flight Control Dialog -->
-
+<!--
+##############################################
+# Copyright (c) Joshua Davidson (it0uchpods) #
+##############################################
+-->
 
 <PropertyList>
 
-	<name>fctl</name>
+	<name>aircraft-config-fctl</name>
 	<layout>vbox</layout>
 
     <group>
         <layout>hbox</layout>
         <text>
             <halign>left</halign>
-            <label>FCTL System</label>
+            <label>Flight Controls</label>
         </text>
         <button>
             <halign>right</halign>
@@ -25,15 +28,15 @@
             </binding>
         </button>
     </group>
-
+	
     <hrule/>
 	
-    <group>
-        <layout>hbox</layout>
-        <text>
-            <label>Flight Controls</label>
-        </text>
-    </group>
+	<group>
+		<layout>hbox</layout>
+		<text>
+			<label>MAN/LSAS/AP</label>
+		</text>
+	</group>
 	
 	<group>
 		<layout>vbox</layout>
@@ -57,13 +60,68 @@
 			
 			<group>
 				<layout>vbox</layout>
-
+				
+				<text>
+					<label>L1:</label>
+				</text>
 				<slider>
-					<pref-width>150</pref-width>
-					<property>/controls/flight/aileron-sum</property>
-					<min>-1</min>
-					<max>1</max>
-					<step>0.0001</step>
+					<pref-height>150</pref-height>
+					<vertical>true</vertical>
+					<property>/fdm/jsbsim/hydraulics/aileron-l/final-deg</property>
+					<min>-25</min>
+					<max>25</max>
+					<step>0.0025</step>
+					<live>true</live>
+				</slider>
+			</group>
+			
+			<group>
+				<layout>vbox</layout>
+				
+				<text>
+					<label>L2:</label>
+				</text>
+				<slider>
+					<pref-height>150</pref-height>
+					<vertical>true</vertical>
+					<property>/fdm/jsbsim/hydraulics/aileron-l/final-deg</property>
+					<min>-25</min>
+					<max>25</max>
+					<step>0.0025</step>
+					<live>true</live>
+				</slider>
+			</group>
+				
+			<group>
+				<layout>vbox</layout>
+				
+				<text>
+					<label>R2:</label>
+				</text>
+				<slider>
+					<pref-height>150</pref-height>
+					<vertical>true</vertical>
+					<property>/fdm/jsbsim/hydraulics/aileron-r/final-deg</property>
+					<min>-25</min>
+					<max>25</max>
+					<step>0.0025</step>
+					<live>true</live>
+				</slider>
+			</group>
+			
+			<group>
+				<layout>vbox</layout>
+				
+				<text>
+					<label>R1:</label>
+				</text>
+				<slider>
+					<pref-height>150</pref-height>
+					<vertical>true</vertical>
+					<property>/fdm/jsbsim/hydraulics/aileron-r/final-deg</property>
+					<min>-25</min>
+					<max>25</max>
+					<step>0.0025</step>
 					<live>true</live>
 				</slider>
 			</group>
@@ -90,36 +148,49 @@
 				<layout>vbox</layout>
 				
 				<text>
-					<label>Pitch CMD: </label>
+					<label>L:</label>
 				</text>
 				<slider>
-					<row>2</row>
-					<col>0</col>
 					<pref-height>150</pref-height>
 					<vertical>true</vertical>
-					<property>/controls/flight/elevator-sum</property>
-					<min>-1</min>
-					<max>1</max>
-					<step>0.0001</step>
+					<property>/fdm/jsbsim/hydraulics/elevator-l/final-deg</property>
+					<min>-22</min>
+					<max>22</max>
+					<step>0.0022</step>
 					<live>true</live>
 				</slider>
 			</group>
-				
+			
 			<group>
 				<layout>vbox</layout>
 		
 				<text>
-					<label>Pitch Trim: </label>
+					<label>Trim:</label>
 				</text>
 				<slider>
-					<row>2</row>
-					<col>0</col>
 					<pref-height>150</pref-height>
 					<vertical>true</vertical>
-					<property>/controls/flight/elevator-trim</property>
-					<min>-1</min>
-					<max>1</max>
-					<step>0.0001</step>
+					<property>/fdm/jsbsim/hydraulics/elevator-trim/final-deg</property>
+					<min>-15</min>
+					<max>15</max>
+					<step>0.0015</step>
+					<live>true</live>
+				</slider>
+			</group>
+			
+			<group>
+				<layout>vbox</layout>
+				
+				<text>
+					<label>R:</label>
+				</text>
+				<slider>
+					<pref-height>150</pref-height>
+					<vertical>true</vertical>
+					<property>/fdm/jsbsim/hydraulics/elevator-r/final-deg</property>
+					<min>-22</min>
+					<max>22</max>
+					<step>0.0022</step>
 					<live>true</live>
 				</slider>
 			</group>
@@ -132,7 +203,7 @@
 				<stretch type="bool">true</stretch>
 			</hrule>
 			<text>
-				<label>Yaw</label>
+				<label>Upper Rudder</label>
 			</text>
 			<hrule>
 				<stretch type="bool">true</stretch>
@@ -147,10 +218,41 @@
 				
 				<slider>
 					<pref-width>150</pref-width>
-					<property>/controls/flight/rudder-sum</property>
-					<min>1</min>
-					<max>-1</max>
-					<step>0.0001</step>
+					<property>/fdm/jsbsim/hydraulics/rudder-upper/final-deg</property>
+					<min>-25</min>
+					<max>25</max>
+					<step>0.0025</step>
+					<live>true</live>
+				</slider>
+			</group>
+		</group>
+		
+		<group>
+			<layout>hbox</layout>
+
+			<hrule>
+				<stretch type="bool">true</stretch>
+			</hrule>
+			<text>
+				<label>Lower Rudder</label>
+			</text>
+			<hrule>
+				<stretch type="bool">true</stretch>
+			</hrule>
+		</group>
+		
+		<group>
+			<layout>hbox</layout>
+			
+			<group>
+				<layout>vbox</layout>
+				
+				<slider>
+					<pref-width>150</pref-width>
+					<property>/fdm/jsbsim/hydraulics/rudder-lower/final-deg</property>
+					<min>-25</min>
+					<max>25</max>
+					<step>0.0025</step>
 					<live>true</live>
 				</slider>
 			</group>
