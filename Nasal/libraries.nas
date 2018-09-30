@@ -1,29 +1,30 @@
 # B727 Main Libraries
 # Joshua Davidson (it0uchpods)
 
-# :)
-print("-----------------------------------------------------------------------------");
-print("Copyright (c) 2017 Joshua Davidson (it0uchpods)");
-print("-----------------------------------------------------------------------------");
-
 #######################
 # Various Other Stuff #
 #######################
  
-setlistener("/sim/signals/fdm-initialized", func {
+var systemsInit = func {
 	setprop("/systems/electrical/bus-volts", 1);
     setprop("/systems/electrical/outputs/mk-viii", 28);
     setprop("/systems/electrical/outputs/efis", 28);
-#	systems.elec_init();
-	systems.hyd_init();
-	systems.heat_init();
+#	systems.ELEC.init();
+	systems.HYD.init();
+	systems.HEAT.init();
 	autopilot_v.ap_init();
 	var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/727-200/Systems/autopilot-dlg.xml");
-	librariesLoop.start();
-	var trim = 0;
+	systemsLoop.start();
+}
+
+setlistener("/sim/signals/fdm-initialized", func {
+	systemsInit();
 });
 
-var librariesLoop = maketimer(0.1, func {
+var systemsLoop = maketimer(0.1, func {
+	systems.HYD.loop();
+	systems.HEAT.loop();
+	
 	var V = getprop("/velocities/groundspeed-kt");
 
 	if (V > 15) {
@@ -33,26 +34,11 @@ var librariesLoop = maketimer(0.1, func {
 	}
 });
 
-var aglgears = func {
-    var agl = getprop("/position/altitude-agl-ft") or 0;
-    var aglft = agl - 19.801;  # is the position from the Boeing 727 above ground
-    var aglm = aglft * 0.3048;
-    setprop("/position/gear-agl-ft", aglft);
-    setprop("/position/gear-agl-m", aglm);
-
-    settimer(aglgears, 0.01);
+if (getprop("/controls/flight/auto-coordination") == 1) {
+	setprop("/controls/flight/auto-coordination", 0);
+	setprop("/controls/flight/aileron-drives-tiller", 1);
+} else {
+	setprop("/controls/flight/aileron-drives-tiller", 0);
 }
 
-aglgears();
-
-# Not working right -JD
-#setlistener("/controls/flight/elevator-trim", func {
-#	trim = getprop("/controls/flight/elevator-trim");
-#	settimer(func {
-#		if (getprop("/controls/flight/elevator-trim") == trim) {
-#			setprop("/sim/sounde/trim", 0);
-#		} else {
-#			setprop("/sim/sounde/trim", 1);
-#		}
-#	}, 0.05);
-#});
+setprop("/systems/acconfig/libraries-loaded", 1);

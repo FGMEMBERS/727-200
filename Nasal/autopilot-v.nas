@@ -2,20 +2,17 @@
 # IT-AUTOFLIGHT Based
 # (c) Joshua Davidson (it0uchpods)
 
+var locdefl = 0;
+var locdefl_b = 0;
+var signal = 0;
+var signal_b = 0;
+var bank_limit_sw = 0;
 setprop("/it-autoflight/internal/heading-deg", 0);
 setprop("/it-autoflight/internal/track-deg", 0);
 setprop("/it-autoflight/internal/vert-speed-fpm", 0);
-setprop("/it-autoflight/internal/heading-5-sec-ahead", 0);
-setprop("/it-autoflight/internal/altitude-5-sec-ahead", 0);
+setprop("/it-autoflight/internal/heading-predicted", 0);
+setprop("/it-autoflight/internal/altitude-predicted", 0);
 setprop("/it-autoflight/input/alt", 10000);
-
-setlistener("/sim/signals/fdm-initialized", func {
-	var locdefl = getprop("/instrumentation/nav[0]/heading-needle-deflection-norm");
-	var locdefl_b = getprop("/instrumentation/nav[1]/heading-needle-deflection-norm");
-	var signal = getprop("/instrumentation/nav[0]/gs-needle-deflection-norm");
-	var signal_b = getprop("/instrumentation/nav[1]/gs-needle-deflection-norm");
-	var bank_limit_sw = 0;
-});
 
 var ap_init = func {
 	setprop("/it-autoflight/input/ap", 0);
@@ -121,8 +118,8 @@ var lateral = func {
 		setprop("/it-autoflight/output/nav-armed", 0);
 		setprop("/it-autoflight/output/loc-armed", 0);
 		setprop("/it-autoflight/output/appr-armed", 0);
-		var hdg5sec = math.round(getprop("/it-autoflight/internal/heading-5-sec-ahead"));
-		setprop("/it-autoflight/input/hdg", hdg5sec);
+		var hdgpredic = math.round(getprop("/it-autoflight/internal/heading-predicted"));
+		setprop("/it-autoflight/input/hdg", hdgpredic);
 		setprop("/it-autoflight/output/lat", 0);
 		setprop("/it-autoflight/mode/lat", "HDG");
 		setprop("/it-autoflight/mode/arm", " ");
@@ -144,9 +141,9 @@ var vertical = func {
 		} else {
 			setprop("/it-autoflight/mode/arm", " ");
 		}
-		var alt5sec = math.round(getprop("/it-autoflight/internal/altitude-5-sec-ahead"), 500);
-		setprop("/it-autoflight/input/alt", alt5sec);
-		setprop("/it-autoflight/internal/alt", alt5sec);
+		var altpredic = math.round(getprop("/it-autoflight/internal/altitude-predicted"), 500);
+		setprop("/it-autoflight/input/alt", altpredic);
+		setprop("/it-autoflight/internal/alt", altpredic);
 	} else if (vertset == 1) {
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);

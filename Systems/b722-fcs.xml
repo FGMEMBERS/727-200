@@ -231,60 +231,40 @@
 	</channel>
 
 	<channel name="Flaps">
-
-		<kinematic name="Flaps Control">
+		
+		<kinematic name="rubbish/flap-pos-deg">
 			<input>fcs/flap-cmd-norm</input>
 			<traverse>
 				<setting>
-					<position>  0 </position>
-					<time>      0 </time>
+					<position>0</position>
+					<time>0</time>
 				</setting>
 				<setting>
-					<position> 2 </position>
-					<time>     4 </time>
-				</setting>
-				<setting>
-					<position> 5 </position>
-					<time>     3 </time>
-				</setting>
-				<setting>
-					<position> 15 </position>
-					<time>     3 </time>
-				</setting>
-				<setting>
-					<position> 25 </position>
-					<time>     4 </time>
-				</setting>
-				<setting>
-					<position> 30 </position>
-					<time>     3 </time>
-				</setting>
-				<setting>
-					<position> 40 </position>
-					<time>     3 </time>
+					<position>40</position>
+					<time>3 </time>
 				</setting>
 			</traverse>
 			<output>fcs/flap-pos-deg</output>
 		</kinematic>
-
-		<aerosurface_scale name="flap normalization">
+		
+		<aerosurface_scale name="rubbish/flap-pos-norm">
 			<input>fcs/flap-pos-deg</input>
 			<domain>
-				<min>  0 </min>
-				<max> 40 </max>
+				<min>0</min>
+				<max>40</max>
 			</domain>
 			<range>
-				<min> 0 </min>
-				<max> 1 </max>
+				<min>0</min>
+				<max>1</max>
 			</range>
 			<output>fcs/flap-pos-norm</output>
 		</aerosurface_scale>
-
+	
 	</channel>
 	
 	<channel name="Slats">
-
-		<kinematic name="Slats Control">
+		
+		<kinematic name="rubbish/slat-pos-deg">
 			<input>/controls/flight/flaps</input>
 			<traverse>
 			<setting>
@@ -298,43 +278,43 @@
 			</traverse>
 			<output>fcs/slat-pos-deg</output>
 		</kinematic>
-
-		<aerosurface_scale name="Slat position normalized">
+		
+		<aerosurface_scale name="rubbish/slat-pos-norm">
 			<input>fcs/slat-pos-deg</input>
 			<domain>
-			<min>0</min>
-			<max>27</max>
+				<min>0</min>
+				<max>27</max>
 			</domain>
 			<range>
-			<min>0</min>
-			<max>1</max>
+				<min>0</min>
+				<max>1</max>
 			</range>
 			<output>fcs/slat-pos-norm</output>
 		</aerosurface_scale>
-
+	
 	</channel>
-
+	
 	<channel name="Landing Gear">
-
-		<kinematic name="Gear Control">
+		
+		<kinematic name="rubbish/gear-pos-norm">
 			<input>gear/gear-cmd-norm</input>
 			<traverse>
 				<setting>
-					<position> 0 </position>
-					<time>     0 </time>
+					<position>0</position>
+					<time>0</time>
 				</setting>
 				<setting>
-					<position> 1 </position>
-					<time>     5 </time>
+					<position>1</position>
+					<time>10</time>
 				</setting>
 			</traverse>
 			<output>gear/gear-pos-norm</output>
 		</kinematic>
-
+	
 	</channel>
-
+	
 	<channel name="Speedbrake">
-
+		
 		<kinematic name="Speedbrake Control">
 			<input>fcs/speedbrake-cmd-norm</input>
 			<traverse>
@@ -349,51 +329,45 @@
 			</traverse>
 			<output>fcs/speedbrake-pos-norm</output>
 		</kinematic>
-
+	
 	</channel>
 	
 	<channel name="Tiller">
-		<switch name="/controls/gear/tiller-disabled">
-			<default value="0"/>
-			<test logic="AND" value="1">
-				/controls/gear/tiller-enabled == 0
+		
+		<switch name="hydraulics/tiller/switch">
+			<default value="/controls/flight/rudder"/>
+			<test value="/controls/flight/aileron">
+				/controls/flight/aileron-drives-tiller eq 1
 			</test>
 		</switch>
-        
-        <fcs_function name="Nose Wheel Steering 0">
-            <function name="fcs/steer-nose-deg[0]">
-                <description>Steering command for nose gear</description>
-                <sum>
-                    <product>
-                        <table>
-                            <independentVar lookup="row">/controls/gear/tiller-cmd-norm</independentVar>
-                            <independentVar lookup="column">/controls/flight/rudder</independentVar>
-                            <tableData>
-                                -1   0   1
-                                -1 -70 -70 -70
-                                0  -7   0   7
-                                1  70  70  70
-                            </tableData>
-                        </table>
-                        <property>/controls/gear/tiller-enabled</property>
-                    </product>
-                    <product>
-                        <product>
-                            <property>/controls/flight/rudder</property>
-                            <value>70</value>
-                        </product>
-                        <property>/controls/gear/tiller-disabled</property>
-                    </product>
-                </sum>
-            </function>
-        </fcs_function>
-        
-        <actuator name="Gear Nose Actuator">
-            <input>fcs/steer-nose-deg[0]</input>
-            <rate_limit>70</rate_limit>
-            <output>fcs/steer-pos-deg[0]</output>
-        </actuator>
-        
-    </channel>
+		
+		<fcs_function name="hydraulics/tiller/function">
+			<function>
+				<table>
+					<independentVar lookup="row">/velocities/groundspeed-kt</independentVar>
+					<independentVar lookup="column">hydraulics/tiller/switch</independentVar>
+					<tableData>
+						       -1     0  1
+						30.000 -70.0  0  70.0
+						30.001 -10.0  0  10.0
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
+		
+		<actuator name="fcs/steer-deg">
+			<input>hydraulics/tiller/function</input>
+			<rate_limit>70</rate_limit>
+			<output>fcs/steer-pos-deg[0]</output>
+		</actuator>
+		
+		<switch name="fcs/pushback-steer-deg">
+			<default value="0"/>
+			<test value="fcs/steer-deg">
+				/sim/model/pushback/position-norm gt 0.999
+			</test>
+		</switch>
+	
+	</channel>
 
 </system>

@@ -1,11 +1,11 @@
 <!-- Boeing 727-200 Aerodynamics -->
 
-<!-- (c) Joshua Davidson (it0uchpods) -->
+<!-- Copyright (c) 2018 Joshua Davidson (it0uchpods) -->
 
 <aerodynamics>
-
+	
 	<axis name="LIFT">
-
+		
 		<function name="aero/force/Lift_alpha">
 			<description>Lift due to alpha</description>
 			<product>
@@ -23,7 +23,7 @@
 				</table>
 			</product>
 		</function>
-
+		
 		<function name="aero/force/Lift_flap">
 			<description>Delta Lift due to flaps</description>
 			<product>
@@ -50,10 +50,10 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>fcs/slat-pos-deg</property> 
-				<value> 0.01310 </value>
+				<value>0.0131</value>
 			</product>
 		</function>
-
+		
 		<function name="aero/force/Lift_speedbrake">
 			<description>Delta Lift due to speedbrake</description>
 			<product>
@@ -63,7 +63,7 @@
 				<value>-0.09</value>
 			</product>
 		</function>
-
+		
 		<function name="aero/force/Lift_elevator">
 			<description>Lift due to pitch control deflection</description>
 			<product>
@@ -73,11 +73,11 @@
 				<value>0.2</value>
 			</product>
 		</function>
-
+	
 	</axis>
-
+	
 	<axis name="DRAG">
-
+		
 		<function name="aero/force/Drag_basic">
 			<description>Drag at zero lift</description>
 			<product>
@@ -95,7 +95,7 @@
 				</table>
 			</product>
 		</function>
-
+		
 		<function name="aero/force/Drag_induced">
 			<description>Induced drag</description>
 			<product>
@@ -105,7 +105,7 @@
 				<value>0.037</value>
 			</product>
 		</function>
-
+		
 		<function name="aero/force/Drag_mach">
 			<description>Drag due to mach</description>
 			<product>
@@ -123,7 +123,7 @@
 				</table>
 			</product>
 		</function>
-
+		
 		<function name="aero/force/Drag_flap">
 			<description>Drag due to flaps</description>
 			<product>
@@ -143,7 +143,7 @@
 				<value> 0.000975 </value>
 			</product>
 		</function>
-
+		
 		<function name="aero/force/Drag_gear">
 			<description>Drag due to gear</description>
 			<product>
@@ -153,7 +153,7 @@
 				<value>0.012</value>
 			</product>
 		</function>
-
+		
 		<function name="aero/force/Drag_speedbrake">
 			<description>Drag due to speedbrakes</description>
 			<product>
@@ -163,7 +163,7 @@
 				<value>0.019</value>
 			</product>
 		</function>
-
+		
 		<function name="aero/force/Drag_beta">
 			<description>Drag due to sideslip</description>
 			<product>
@@ -181,7 +181,7 @@
 				</table>
 			</product>
 		</function>
-
+		
 		<function name="aero/force/Drag_elevator">
 			<description>Drag due to pitch control deflection</description>
 			<product>
@@ -191,11 +191,11 @@
 				<value>0.04</value>
 			</product>
 		</function>
-
+	
 	</axis>
-
+	
 	<axis name="SIDE">
-
+		
 		<function name="aero/force/Side_beta">
 			<description>Side force due to beta</description>
 			<product>
@@ -205,11 +205,11 @@
 				<value>-1</value>
 			</product>
 		</function>
-
+	
 	</axis>
 
 	<axis name="ROLL">
-
+		
 		<function name="aero/moment/Roll_beta">
 			<description>Roll moment due to beta</description>
 			<product>
@@ -220,7 +220,7 @@
 				<value>-0.05</value>
 			</product>
 		</function>
-
+		
 		<function name="aero/moment/Roll_damp">
 			<description>Roll moment due to roll rate</description>
 			<product>
@@ -232,7 +232,7 @@
 				<value>-0.65</value>
 			</product>
 		</function>
-
+		
 		<function name="aero/moment/Roll_yaw">
 			<description>Roll moment due to yaw rate</description>
 			<product>
@@ -244,7 +244,7 @@
 				<value>0.09</value>
 			</product>
 		</function>
-
+		
 		<function name="aero/moment/Roll_aileron">
 			<description>Roll moment due to roll control</description>
 			<product>
@@ -255,7 +255,7 @@
 				<value>0.05</value>
 			</product>
 		</function>
-
+		
 		<function name="aero/moment/Roll_rudder">
 			<description>Roll moment due to rudder</description>
 			<product>
@@ -266,11 +266,11 @@
 				<value>0.008</value>
 			</product>
 		</function>
-
+	
 	</axis>
-
+	
 	<axis name="PITCH">
-
+		
 		<function name="aero/moment/Pitch_alpha">
 			<description>Pitch moment due to alpha</description>
 			<product>
@@ -281,7 +281,7 @@
 				<value>-0.6</value>
 			</product>
 		</function>
-
+		
 		<function name="aero/moment/Pitch_elevator">
 			<description>Pitch moment due to pitch control</description>
 			<product>
@@ -292,7 +292,7 @@
 				<value>-0.820</value>
 			</product>
 		</function>
-
+		
 		<function name="aero/moment/Pitch_damp">
 			<description>Pitch moment due to pitch rate</description>
 			<product>
@@ -304,7 +304,7 @@
 				<value>-46</value>
 			</product>
 		</function>
-
+		
 		<function name="aero/moment/Pitch_alphadot">
 			<description>Pitch moment due to alpha rate</description>
 			<product>
@@ -316,11 +316,11 @@
 				<value>-1</value>
 			</product>
 		</function>
-
+	
 	</axis>
-
+	
 	<axis name="YAW">
-
+		
 		<function name="aero/moment/Yaw_beta">
 			<description>Yaw moment due to beta</description>
 			<product>
@@ -331,7 +331,7 @@
 				<value>0.12</value>
 			</product>
 		</function>
-
+		
 		<function name="aero/moment/Yaw_damp">
 			<description>Yaw moment due to yaw rate</description>
 			<product>
@@ -343,7 +343,7 @@
 				<value>-0.2</value>
 			</product>
 		</function>
-
+		
 		<function name="aero/moment/Yaw_rudder">
 			<description>Yaw moment due to rudder</description>
 			<product>
@@ -354,18 +354,7 @@
 				<value>-0.15</value>
 			</product>
 		</function>
-
-		<function name="aero/moment/Yaw_aileron">
-			<description>Adverse yaw</description>
-			<product>
-				<property>aero/qbar-psf</property>
-				<property>metrics/Sw-sqft</property>
-				<property>metrics/bw-ft</property>
-				<property>fcs/left-aileron-pos-rad</property>
-				<value>0</value>
-			</product>
-		</function>
-
+	
 	</axis>
 
 </aerodynamics>

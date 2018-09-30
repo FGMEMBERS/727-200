@@ -1,0 +1,55 @@
+<!-- Boeing 727-200 JSBsim -->
+<!-- Joshua Davidson (it0uchpods) -->
+
+<!--
+##############################################
+# Copyright (c) Joshua Davidson (it0uchpods) #
+##############################################
+-->
+
+<mass_balance>
+	<ixx unit="SLUG*FT2"> 1911903 </ixx>
+	<iyy unit="SLUG*FT2"> 3635389 </iyy>
+	<izz unit="SLUG*FT2"> 3001293 </izz>
+	
+	<ixy unit="SLUG*FT2">       0 </ixy>
+	<ixz unit="SLUG*FT2">       0 </ixz>
+	<iyz unit="SLUG*FT2">       0 </iyz>
+	<emptywt unit="LBS" >  102900 </emptywt>
+	
+	<location name="CG" unit="M">
+		<x> -0.36876 </x>
+		<y> 0 </y>
+		<z> 0.32935 </z>
+	</location>
+	
+	<pointmass name="Cockpit Crew">
+		<description>Cockpit Crew, 3 persons</description>
+		<weight unit="LBS">  600 </weight>
+		<location name="POINTMASS" unit="M">
+			<x> -0.36876 </x>
+			<y> 0 </y>
+			<z> 0.32935 </z>
+		</location>
+	</pointmass> 
+	
+	<pointmass name="First Class">
+		<description>First Class, 12 persons</description>
+		<weight unit="LBS"> 3200 </weight>
+		<location name="POINTMASS" unit="M">
+			<x> -0.36876 </x>
+			<y> 0 </y>
+			<z> 0.32935 </z>
+		</location>
+	</pointmass> 
+	
+	<pointmass name="Coach Class">
+		<description>Coach Class, 111 persons</description>
+		<weight unit="LBS"> 22200 </weight>
+		<location name="POINTMASS" unit="M">
+			<x> -0.36876 </x>
+			<y> 0 </y>
+			<z> 0.32935 </z>
+		</location>
+	</pointmass>
+</mass_balance>
