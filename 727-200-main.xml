@@ -319,8 +319,8 @@
 		<flight>
 			<aileron-drives-tiller type="bool">0</aileron-drives-tiller>
 			<elevator-trim type="double">-0.1</elevator-trim>
-			<yaw-damper-a>1</yaw-damper-a>
-			<yaw-damper-b>1</yaw-damper-b>
+			<yaw-damper-a type="bool">1</yaw-damper-a>
+			<yaw-damper-b type="bool">1</yaw-damper-b>
 		</flight>
 		<gear>
 			<brake-parking>0</brake-parking>

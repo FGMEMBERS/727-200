@@ -325,11 +325,40 @@
 	
 	</channel>
 	
+	<channel name="Yaw Damper">
+		
+		<switch name="fcs/yaw-damper-upper-gain">
+			<default value="0"/>
+			<test value="-2.2">
+				/controls/flight/yaw-damper-a eq 1
+			</test>
+		</switch>
+		
+		<pure_gain name="fcs/yaw-damper-upper">
+			<input>velocities/r-rad_sec</input>
+			<gain>fcs/yaw-damper-upper-gain</gain>
+		</pure_gain>
+		
+		<switch name="fcs/yaw-damper-lower-gain">
+			<default value="0"/>
+			<test value="-2.2">
+				/controls/flight/yaw-damper-b eq 1
+			</test>
+		</switch>
+		
+		<pure_gain name="fcs/yaw-damper-lower">
+			<input>velocities/r-rad_sec</input>
+			<gain>fcs/yaw-damper-lower-gain</gain>
+		</pure_gain>
+	
+	</channel>
+	
 	<channel name="Rudder Upper">
 		
 		<summer name="hydraulics/rudder-upper/summer">
 			<input>fcs/rudder-pedal</input>
 			<input>hydraulics/rudder/trim-norm</input>
+			<input>fcs/yaw-damper-upper</input>
 			<clipto>
 				<min>-1.0</min>
 				<max>1.0</max>
@@ -367,6 +396,7 @@
 		<summer name="hydraulics/rudder-lower/summer">
 			<input>fcs/rudder-pedal</input>
 			<input>hydraulics/rudder/trim-norm</input>
+			<input>fcs/yaw-damper-lower</input>
 			<clipto>
 				<min>-1.0</min>
 				<max>1.0</max>
