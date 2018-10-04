@@ -344,8 +344,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>spoiler1</object-name>
-		<property>controls/flight/spoiler-1</property>
-		<factor>40</factor>
+		<property>fdm/jsbsim/hydraulics/spoiler-l7/final-deg</property>
+		<factor>1</factor>
 		<offset-deg>0</offset-deg>
 		<axis>
 			<x1-m>2.249</x1-m>
@@ -360,8 +360,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>spoiler2</object-name>
-		<property>controls/flight/spoiler-2</property>
-		<factor>40</factor>
+		<property>fdm/jsbsim/hydraulics/spoiler-l6/final-deg</property>
+		<factor>1</factor>
 		<offset-deg>0</offset-deg>
 		<axis>
 			<x1-m>2.249</x1-m>
@@ -376,8 +376,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>spoiler3</object-name>
-		<property>controls/flight/spoiler-3</property>
-		<factor>40</factor>
+		<property>fdm/jsbsim/hydraulics/spoiler-l5/final-deg</property>
+		<factor>1</factor>
 		<offset-deg>0</offset-deg>
 		<axis>
 			<x1-m>2.249</x1-m>
@@ -392,8 +392,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>spoiler4</object-name>
-		<property>controls/flight/spoiler-4</property>
-		<factor>40</factor>
+		<property>fdm/jsbsim/hydraulics/spoiler-l4/final-deg</property>
+		<factor>1</factor>
 		<offset-deg>0</offset-deg>
 		<axis>
 			<x1-m>2.249</x1-m>
@@ -408,8 +408,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>spoiler5</object-name>
-		<property>controls/flight/spoiler-5</property>
-		<factor>-40</factor>
+		<property>fdm/jsbsim/hydraulics/spoiler-l3/final-deg</property>
+		<factor>-1</factor>
 		<offset-deg>0</offset-deg>
 		<axis>
 			<x1-m>1.142</x1-m>
@@ -424,8 +424,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>spoiler6</object-name>
-		<property>controls/flight/spoiler-6</property>
-		<factor>-40</factor>
+		<property>fdm/jsbsim/hydraulics/spoiler-l2/final-deg</property>
+		<factor>-1</factor>
 		<offset-deg>0</offset-deg>
 		<axis>
 			<x1-m>1.142</x1-m>
@@ -440,8 +440,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>spoiler7</object-name>
-		<property>controls/flight/spoiler-7</property>
-		<factor>-40</factor>
+		<property>fdm/jsbsim/hydraulics/spoiler-l1/final-deg</property>
+		<factor>-1</factor>
 		<offset-deg>0</offset-deg>
 		<axis>
 			<x1-m>1.142</x1-m>
@@ -456,8 +456,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>spoiler8</object-name>
-		<property>controls/flight/spoiler-8</property>
-		<factor>40</factor>
+		<property>fdm/jsbsim/hydraulics/spoiler-r1/final-deg</property>
+		<factor>1</factor>
 		<offset-deg>0</offset-deg>
 		<axis>
 			<x1-m>1.142</x1-m>
@@ -472,8 +472,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>spoiler9</object-name>
-		<property>controls/flight/spoiler-9</property>
-		<factor>40</factor>
+		<property>fdm/jsbsim/hydraulics/spoiler-r2/final-deg</property>
+		<factor>1</factor>
 		<offset-deg>0</offset-deg>
 		<axis>
 			<x1-m>1.142</x1-m>
@@ -488,8 +488,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>spoiler10</object-name>
-		<property>controls/flight/spoiler-10</property>
-		<factor>40</factor>
+		<property>fdm/jsbsim/hydraulics/spoiler-r3/final-deg</property>
+		<factor>1</factor>
 		<offset-deg>0</offset-deg>
 		<axis>
 			<x1-m>1.142</x1-m>
@@ -504,8 +504,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>spoiler11</object-name>
-		<property>controls/flight/spoiler-11</property>
-		<factor>-40</factor>
+		<property>fdm/jsbsim/hydraulics/spoiler-r4/final-deg</property>
+		<factor>-1</factor>
 		<offset-deg>0</offset-deg>
 		<axis>
 			<x1-m>2.249</x1-m>
@@ -520,8 +520,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>spoiler12</object-name>
-		<property>controls/flight/spoiler-12</property>
-		<factor>-40</factor>
+		<property>fdm/jsbsim/hydraulics/spoiler-r5/final-deg</property>
+		<factor>-1</factor>
 		<offset-deg>0</offset-deg>
 		<axis>
 			<x1-m>2.249</x1-m>
@@ -536,8 +536,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>spoiler13</object-name>
-		<property>controls/flight/spoiler-13</property>
-		<factor>-40</factor>
+		<property>fdm/jsbsim/hydraulics/spoiler-r6/final-deg</property>
+		<factor>-1</factor>
 		<offset-deg>0</offset-deg>
 		<axis>
 			<x1-m>2.249</x1-m>
@@ -552,8 +552,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>spoiler14</object-name>
-		<property>controls/flight/spoiler-14</property>
-		<factor>-40</factor>
+		<property>fdm/jsbsim/hydraulics/spoiler-r7/final-deg</property>
+		<factor>-1</factor>
 		<offset-deg>0</offset-deg>
 		<axis>
 			<x1-m>2.249</x1-m>

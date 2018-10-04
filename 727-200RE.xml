@@ -131,6 +131,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 	</propulsion>
 	
 	<system file="b722-fcs"/>
+	<system file="b722-spoilers"/>
 	
 	<flight_control name="none"/>
 	

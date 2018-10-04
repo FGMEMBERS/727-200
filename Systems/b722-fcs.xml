@@ -1,6 +1,6 @@
 <!-- Boeing 727-200 FCS -->
 
-<!-- (c) Joshua Davidson (it0uchpods) -->
+<!-- Copyright (c) 2018 Joshua Davidson (it0uchpods) -->
 
 <system name="B722: FCS">
 	
@@ -539,25 +539,6 @@
 				</setting>
 			</traverse>
 			<output>gear/gear-pos-norm</output>
-		</kinematic>
-	
-	</channel>
-	
-	<channel name="Speedbrake">
-		
-		<kinematic name="Speedbrake Control">
-			<input>fcs/speedbrake-cmd-norm</input>
-			<traverse>
-				<setting>
-					<position> 0 </position>
-					<time>     0 </time>
-				</setting>
-				<setting>
-					<position> 1 </position>
-					<time>     1 </time>
-				</setting>
-			</traverse>
-			<output>fcs/speedbrake-pos-norm</output>
 		</kinematic>
 	
 	</channel>

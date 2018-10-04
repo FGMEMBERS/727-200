@@ -235,9 +235,6 @@
 				<path>Aircraft/727-200/Systems/flight-director-v.xml</path>
 			</autopilot>
 			<autopilot n="2">
-				<path>Aircraft/727-200/Systems/hydraulics.xml</path>
-			</autopilot>
-			<autopilot n="3">
 				<path>Aircraft/727-200/Systems/libraries.xml</path>
 			</autopilot>
 			<!-- Skip number 4, used in -set -->
@@ -322,23 +319,6 @@
 		<flight>
 			<aileron-drives-tiller type="bool">0</aileron-drives-tiller>
 			<elevator-trim type="double">-0.1</elevator-trim>
-			<spoiler-1>0.0</spoiler-1>
-			<spoiler-2>0.0</spoiler-2>
-			<spoiler-3>0.0</spoiler-3>
-			<spoiler-4>0.0</spoiler-4>
-			<spoiler-5>0.0</spoiler-5>
-			<spoiler-6>0.0</spoiler-6>
-			<spoiler-7>0.0</spoiler-7>
-			<spoiler-l-sum>0.0</spoiler-l-sum>
-			<spoiler-8>0.0</spoiler-8>
-			<spoiler-9>0.0</spoiler-9>
-			<spoiler-10>0.0</spoiler-10>
-			<spoiler-11>0.0</spoiler-11>
-			<spoiler-12>0.0</spoiler-12>
-			<spoiler-13>0.0</spoiler-13>
-			<spoiler-14>0.0</spoiler-14>
-			<spoiler-r-sum>0.0</spoiler-r-sum>
-			<speedbrake-output>0.0</speedbrake-output>
 			<yaw-damper-a>1</yaw-damper-a>
 			<yaw-damper-b>1</yaw-damper-b>
 		</flight>
@@ -747,6 +727,8 @@
 		<hydraulic n="0">
 			<ail-active type="bool">0</ail-active>
 			<elev-active type="bool">0</elev-active>
+			<spoiler-a-active type="bool">0</spoiler-a-active>
+			<spoiler-b-active type="bool">0</spoiler-b-active>
 			<rudder-l-active type="bool">0</rudder-l-active>
 			<rudder-u-active type="bool">0</rudder-u-active>
 		</hydraulic>
