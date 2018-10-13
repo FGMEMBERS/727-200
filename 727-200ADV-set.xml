@@ -16,8 +16,6 @@
 			</livery>
 		</model>
 		
-		<chase-distance-m>-100</chase-distance-m>
-		
 		<systems n="0">
             <autopilot n="4">
                 <path>Aircraft/727-200/Systems/JT8D-9-15-17.xml</path>

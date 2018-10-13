@@ -63,6 +63,7 @@
 			<tag>3-engine</tag>
 		</tags>
 		
+		<chase-distance-m type="double" archive="y">-80.0</chase-distance-m>
 		<view>
 			<internal archive="y">true</internal>
 			<config>
@@ -241,9 +242,6 @@
 			<autopilot n="10">
 				<path>Aircraft/727-200/Sounds/Sound-Control.xml</path>
 			</autopilot>
-			<autopilot n="11">
-				<path>Aircraft/727-200/Systems/zoom-views.xml</path>
-			</autopilot>
 		</systems>
 		
 		<!-- Multiplayer properties -->
@@ -267,10 +265,6 @@
 		<gui n="0" include="Systems/it-gui.xml"/>
 		
 		<current-view>
-			<z-offset-dec-step type="double">0.0</z-offset-dec-step>
-			<z-offset-inc-step type="double">0.0</z-offset-inc-step>
-			<can-change-z-offset type="bool">false</can-change-z-offset>
-			
 			<z-offset-default type="float">80.0</z-offset-default>
 			<z-offset-min-m type="float">30.0</z-offset-min-m>
 			<z-offset-max-m type="float">300.0</z-offset-max-m>
@@ -563,21 +557,49 @@
 	</instrumentation>
 	
 	<input>
+		<mice n="0">
+			<mouse n="0">
+				<mode n="0">
+					<button n="3">
+						<binding n="0">
+							<script></script>
+						</binding>
+						<binding n="1">
+							<condition>
+								<and>
+									<property>/devices/status/mice/mouse[0]/button[2]</property>
+									<not><property>/sim/mouse/right-button-mode-cycle-enabled</property></not>
+								</and>
+							</condition>
+							<command>nasal</command>
+							<script>libraries.fovZoom(-1);</script>
+						</binding>
+					</button>
+					<button n="4">
+						<binding n="0">
+							<script></script>
+						</binding>
+						<binding n="1">
+							<condition>
+								<and>
+									<property>/devices/status/mice/mouse[0]/button[2]</property>
+									<not><property>/sim/mouse/right-button-mode-cycle-enabled</property></not>
+								</and>
+							</condition>
+							<command>nasal</command>
+							<script>libraries.fovZoom(1);</script>
+						</binding>
+					</button>
+				</mode>
+			</mouse>
+		</mice>
 		<keyboard>
 			<key n="24">
 				<name>Ctrl-x</name>
 				<desc>Reset zoom to default</desc>
 				<binding>
 					<command>nasal</command>
-					<script>
-						if (getprop("/sim/current-view/can-change-z-offset")) {
-							setprop("/sim/current-view/z-offset-m", getprop("/sim/current-view/z-offset-default") * -1);
-
-							gui.popupTip(sprintf("%d meters", getprop("/sim/current-view/z-offset-default")));
-						} else {
-							setprop("/sim/current-view/field-of-view", getprop("/sim/view/config/default-field-of-view-deg"));
-						}
-					</script>
+					<script>libraries.fovZoom(0);</script>
 				</binding>
 			</key>
 			<key n="49">
@@ -603,21 +625,8 @@
 				<desc>Increase field of view</desc>
 				<repeatable type="bool">true</repeatable>
 				<binding>
-				<command>nasal</command>
-				<script>
-					if (getprop("/sim/current-view/can-change-z-offset")) {
-						var distance = getprop("/sim/current-view/z-offset-m");
-						var multiple = getprop("/sim/current-view/z-offset-dec-step");
-						var max_dist = getprop("/sim/current-view/z-offset-max-m");
-
-						distance = math.round(std.max(-max_dist, distance + multiple) / multiple) * multiple;
-						setprop("/sim/current-view/z-offset-m", distance);
-
-						gui.popupTip(sprintf("%d meters", abs(distance)));
-					} else {
-						view.increase();
-					}
-				</script>
+					<command>nasal</command>
+					<script>libraries.fovZoom(1);</script>
 				</binding>
 			</key>
 			<key n="120">
@@ -626,20 +635,7 @@
 				<repeatable type="bool">true</repeatable>
 				<binding>
 					<command>nasal</command>
-					<script>
-						if (getprop("/sim/current-view/can-change-z-offset")) {
-							var distance = getprop("/sim/current-view/z-offset-m");
-							var multiple = getprop("/sim/current-view/z-offset-inc-step");
-							var min_dist = getprop("/sim/current-view/z-offset-min-m");
-
-							distance = math.round(std.min(-min_dist, distance + multiple) / multiple) * multiple;
-							setprop("/sim/current-view/z-offset-m", distance);
-
-							gui.popupTip(sprintf("%d meters", abs(distance)));
-						} else {
-							view.decrease();
-						}
-					</script>
+					<script>libraries.fovZoom(-1);</script>
 				</binding>
 			</key>
 			<key n="127">
@@ -741,6 +737,7 @@
 			<file>Aircraft/727-200/Nasal/tire-smoke.nas</file>
 			<file>Aircraft/727-200/Nasal/lighting.nas</file>
 			<file>Aircraft/727-200/Nasal/shake.nas</file>
+			<file>Aircraft/727-200/Nasal/zoom-views.nas</file>
 		</libraries>
 		<systems>
 			<!--file>Aircraft/727-200/Nasal/electrical.nas</file-->
