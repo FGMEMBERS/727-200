@@ -251,9 +251,14 @@
 	
 	<channel name="Elevator Trim">
 		
-		<lag_filter name="hydraulics/elevator-trim/lag">
+		<actuator name="hydraulics/elevator-trim/actuator">
 			<input>/controls/flight/elevator-trim</input>
-			<c1>0.5</c1>
+			<rate_limit>0.02</rate_limit>
+		</actuator>
+		
+		<lag_filter name="hydraulics/elevator-trim/lag">
+			<input>hydraulics/elevator-trim/actuator</input>
+			<c1>10.5</c1>
 		</lag_filter>
 		
 		<aerosurface_scale name="hydraulics/elevator-trim/final-deg">
