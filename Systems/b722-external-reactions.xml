@@ -1,0 +1,23 @@
+<!-- Boeing 727-200 JSBsim -->
+<!-- Joshua Davidson (it0uchpods) -->
+
+<!--
+##############################################
+# Copyright (c) Joshua Davidson (it0uchpods) #
+##############################################
+-->
+
+<external_reactions>
+	<force name="tractor" frame="BODY">
+		<location unit="M">
+			<x> -19.6515 </x>
+			<y> 0 </y>
+			<z> -1.22002 </z>
+		</location>
+		<direction>
+			<x> 1 </x>
+			<y> 0 </y>
+			<z> 0 </z>
+		</direction>
+	</force>
+</external_reactions>

@@ -783,7 +783,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>RudderArrow</object-name>
-		<property>controls/flight/rudder-trim</property>
+		<property>fdm/jsbsim/fcs/rudder-pedal-trim</property>
 		<factor>-45</factor>
 		<center>
 		  <x-m>-18.288</x-m>
@@ -800,7 +800,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>RudderTab</object-name>
-		<property>controls/flight/rudder-trim</property>
+		<property>fdm/jsbsim/fcs/rudder-pedal-trim</property>
 		<factor>-4680</factor>
 		<center>
 		  <x-m>-18.288</x-m>
@@ -836,7 +836,7 @@
             <not><property>devices/status/keyboard/super</property></not>
         </condition>
 		    <command>property-adjust</command>
-		    <property>controls/flight/rudder-trim</property>
+		    <property>fdm/jsbsim/fcs/rudder-pedal-trim</property>
 		    <step>0.001</step>
 		    <min>-1</min>
 		    <max>1</max>
@@ -850,7 +850,7 @@
            </or>
         </condition>
 		    <command>property-adjust</command>
-		    <property>controls/flight/rudder-trim</property>
+		    <property>fdm/jsbsim/fcs/rudder-pedal-trim</property>
 		    <step>0.01</step>
 		    <min>-1</min>
 		    <max>1</max>
@@ -867,7 +867,7 @@
             <not><property>devices/status/keyboard/super</property></not>
         </condition>
 		    <command>property-adjust</command>
-		    <property>controls/flight/rudder-trim</property>
+		    <property>fdm/jsbsim/fcs/rudder-pedal-trim</property>
 		    <step>-0.001</step>
 		    <min>-1</min>
 		    <max>1</max>
@@ -881,7 +881,7 @@
            </or>
         </condition>
 		    <command>property-adjust</command>
-		    <property>controls/flight/rudder-trim</property>
+		    <property>fdm/jsbsim/fcs/rudder-pedal-trim</property>
 		    <step>-0.01</step>
 		    <min>-1</min>
 		    <max>1</max>

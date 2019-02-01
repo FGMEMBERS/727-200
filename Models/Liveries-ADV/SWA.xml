@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Southwest Airlines</name>
+				<texture>Liveries-ADV/SWA.png</texture>
+			</livery>
+			<eng>
+				<texture>Liveries-ADV/SWA-eng.png</texture>
+			</eng>
+		</model>
+	</sim>
+</PropertyList>

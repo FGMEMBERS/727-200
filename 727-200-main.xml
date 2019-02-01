@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- (c) Joshua Davidson -->
+<!-- Copyright (c) 2018 Joshua Davidson (it0uchpods) -->
 
 <PropertyList>
 
@@ -63,7 +63,71 @@
 			<tag>jet</tag>
 			<tag>3-engine</tag>
 		</tags>
-
+		
+		<chase-distance-m type="double" archive="y">-80.0</chase-distance-m>
+		<view>
+			<internal archive="y">true</internal>
+			<config>
+				<x-offset-m archive="y">-0.44</x-offset-m>
+				<y-offset-m archive="y">1.06</y-offset-m>
+				<z-offset-m archive="y">-20.42</z-offset-m>
+				<pitch-offset-deg archive="y">-13.0</pitch-offset-deg>
+				<default-field-of-view-deg type="double">62.0</default-field-of-view-deg>
+			</config>
+		</view>
+		<view n="100">
+			<name>Copilot View</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">0.44</x-offset-m>
+				<y-offset-m archive="y">1.06</y-offset-m>
+				<z-offset-m archive="y">-20.42</z-offset-m>
+				<pitch-offset-deg archive="y">-13.0</pitch-offset-deg>
+				<default-field-of-view-deg type="double">62.0</default-field-of-view-deg>
+			</config>
+		</view>
+		<view n="101">
+			<name>Left Front View</name>
+			<type>lookfrom</type>
+			<internal archive="y">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">-2.03</x-offset-m>
+				<y-offset-m archive="y">0.97</y-offset-m>
+				<z-offset-m archive="y">-5.56</z-offset-m>
+				<heading-offset-deg>115</heading-offset-deg>
+				<default-field-of-view-deg type="double">90.0</default-field-of-view-deg>
+			</config>
+		</view>
+		<view n="102">
+			<name>Right Mid View</name>
+			<type>lookfrom</type>
+			<internal archive="y">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">2.03</x-offset-m>
+				<y-offset-m archive="y">0.97</y-offset-m>
+				<z-offset-m archive="y">-0.32</z-offset-m>
+				<heading-offset-deg>257</heading-offset-deg>
+				<default-field-of-view-deg type="double">90.0</default-field-of-view-deg>
+			</config>
+		</view>
+		<view n="103">
+			<name>Left Aft View</name>
+			<type>lookfrom</type>
+			<internal archive="y">false</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">-2.03</x-offset-m>
+				<y-offset-m archive="y">0.97</y-offset-m>
+				<z-offset-m archive="y">5.54</z-offset-m>
+				<heading-offset-deg>88</heading-offset-deg>
+				<default-field-of-view-deg type="double">90.0</default-field-of-view-deg>
+			</config>
+		</view>
+		
 		<menubar>
 			<default>
 				<menu n="10">
@@ -173,9 +237,6 @@
 				<path>Aircraft/727-200/Systems/flight-director-v.xml</path>
 			</autopilot>
 			<autopilot n="2">
-				<path>Aircraft/727-200/Systems/hydraulics.xml</path>
-			</autopilot>
-			<autopilot n="3">
 				<path>Aircraft/727-200/Systems/libraries.xml</path>
 			</autopilot>
 			<!-- Skip number 4, used in -set -->
@@ -187,12 +248,12 @@
 		<!-- Multiplayer properties -->
 		<multiplay>
 			<generic>
-				<float n="0" alias="/controls/flight/elevator-left" />
-				<float n="1" alias="/controls/flight/elevator-right" />
-				<float n="2" alias="/controls/flight/aileron-left" />
-				<float n="3" alias="/controls/flight/aileron-right" />
-				<float n="4" alias="/controls/flight/rudder-upper" />
-				<float n="5" alias="/controls/flight/rudder-lower" />
+				<float n="0" alias="/fdm/jsbsim/hydraulics/elevator-l/final-deg" />
+				<float n="1" alias="/fdm/jsbsim/hydraulics/elevator-r/final-deg" />
+				<float n="2" alias="/fdm/jsbsim/hydraulics/aileron-l/final-deg" />
+				<float n="3" alias="/fdm/jsbsim/hydraulics/aileron-r/final-deg" />
+				<float n="4" alias="/fdm/jsbsim/hydraulics/rudder-upper/final-deg" />
+				<float n="5" alias="/fdm/jsbsim/hydraulics/rudder-lower/final-deg" />
 				<float n="6" alias="/fdm/jsbsim/fcs/slat-pos-norm" />
 				<float n="7" alias="/engines/engine[0]/reverser-pos-norm" />
 				<float n="8" alias="/engines/engine[1]/reverser-pos-norm" />
@@ -201,6 +262,16 @@
 		</multiplay>
 		
 		<flight-recorder include="Systems/flight-recorder.xml"/>
+		
+		<gui n="0" include="Systems/it-gui.xml"/>
+		
+		<current-view>
+			<z-offset-default type="float">80.0</z-offset-default>
+			<z-offset-min-m type="float">30.0</z-offset-min-m>
+			<z-offset-max-m type="float">300.0</z-offset-max-m>
+		</current-view>
+		
+		 <minimum-fg-version>2018.1.0</minimum-fg-version>
 	</sim>
 	
 	<autopilot-v>
@@ -241,28 +312,10 @@
 			</engine>
 		</engines>
 		<flight>
-			<aileron-sum>0</aileron-sum>
-			<elevator-sum>0</elevator-sum>
-			<rudder-sum>0</rudder-sum>
-			<spoiler-1>0.0</spoiler-1>
-			<spoiler-2>0.0</spoiler-2>
-			<spoiler-3>0.0</spoiler-3>
-			<spoiler-4>0.0</spoiler-4>
-			<spoiler-5>0.0</spoiler-5>
-			<spoiler-6>0.0</spoiler-6>
-			<spoiler-7>0.0</spoiler-7>
-			<spoiler-l-sum>0.0</spoiler-l-sum>
-			<spoiler-8>0.0</spoiler-8>
-			<spoiler-9>0.0</spoiler-9>
-			<spoiler-10>0.0</spoiler-10>
-			<spoiler-11>0.0</spoiler-11>
-			<spoiler-12>0.0</spoiler-12>
-			<spoiler-13>0.0</spoiler-13>
-			<spoiler-14>0.0</spoiler-14>
-			<spoiler-r-sum>0.0</spoiler-r-sum>
-			<speedbrake-output>0.0</speedbrake-output>
-			<yaw-damper-a>1</yaw-damper-a>
-			<yaw-damper-b>1</yaw-damper-b>
+			<aileron-drives-tiller type="bool">0</aileron-drives-tiller>
+			<elevator-trim type="double">-0.1</elevator-trim>
+			<yaw-damper-a type="bool">1</yaw-damper-a>
+			<yaw-damper-b type="bool">1</yaw-damper-b>
 		</flight>
 		<gear>
 			<brake-parking>0</brake-parking>
@@ -332,20 +385,10 @@
 	
 	<it-autoflight>
 		<config>
-			<roll>
-				<gain>-0.05</gain>
-				<min>-0.5</min>
-				<max>0.5</max>
-			</roll>
-			<pitch>
-				<gain>0.08</gain>
-				<min>-0.35</min>
-				<max>0.35</max>
-			</pitch>
 			<cmd>
-				<roll-kp>-0.9</roll-kp>
-				<roll-scale>1.2</roll-scale>
-				<vorloc>-2.1</vorloc>
+				<roll-kp>-1.6</roll-kp>
+				<vorloc>-2.5</vorloc>
+				<alt-gain>-5</alt-gain>
 				<vs>0.01</vs>
 			</cmd>
 		</config>
@@ -515,7 +558,51 @@
 	</instrumentation>
 	
 	<input>
+		<mice n="0">
+			<mouse n="0">
+				<mode n="0">
+					<button n="3">
+						<binding n="0">
+							<script></script>
+						</binding>
+						<binding n="1">
+							<condition>
+								<and>
+									<property>/devices/status/mice/mouse[0]/button[2]</property>
+									<not><property>/sim/mouse/right-button-mode-cycle-enabled</property></not>
+								</and>
+							</condition>
+							<command>nasal</command>
+							<script>libraries.fovZoom(-1);</script>
+						</binding>
+					</button>
+					<button n="4">
+						<binding n="0">
+							<script></script>
+						</binding>
+						<binding n="1">
+							<condition>
+								<and>
+									<property>/devices/status/mice/mouse[0]/button[2]</property>
+									<not><property>/sim/mouse/right-button-mode-cycle-enabled</property></not>
+								</and>
+							</condition>
+							<command>nasal</command>
+							<script>libraries.fovZoom(1);</script>
+						</binding>
+					</button>
+				</mode>
+			</mouse>
+		</mice>
 		<keyboard>
+			<key n="24">
+				<name>Ctrl-x</name>
+				<desc>Reset zoom to default</desc>
+				<binding>
+					<command>nasal</command>
+					<script>libraries.fovZoom(0);</script>
+				</binding>
+			</key>
 			<key n="49">
 				<name>1</name>
 				<desc>Captain View</desc>
@@ -532,6 +619,24 @@
 					<command>property-assign</command>
 					<property>/sim/current-view/view-number</property>
 					<value>8</value>
+				</binding>
+			</key>
+			<key n="88">
+				<name>X</name>
+				<desc>Increase field of view</desc>
+				<repeatable type="bool">true</repeatable>
+				<binding>
+					<command>nasal</command>
+					<script>libraries.fovZoom(1);</script>
+				</binding>
+			</key>
+			<key n="120">
+				<name>x</name>
+				<desc>Decrease field of view</desc>
+				<repeatable type="bool">true</repeatable>
+				<binding>
+					<command>nasal</command>
+					<script>libraries.fovZoom(-1);</script>
 				</binding>
 			</key>
 			<key n="127">
@@ -578,47 +683,53 @@
 	</input>
 
 	<payload>
-
 		<weight n="0">
 			<name>Cockpit Crew</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]" />
-			<min-lb type="double">  200</min-lb>
-			<max-lb type="double">  600</max-lb>
+			<min-lb type="double">200</min-lb>
+			<max-lb type="double">600</max-lb>
 		</weight>
 		
 		<weight n="2">
 			<name>First Class</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]" />
-			<min-lb type="double">    0 </min-lb>
-			<max-lb type="double"> 1200 </max-lb>
+			<min-lb type="double">0 </min-lb>
+			<max-lb type="double">1200 </max-lb>
 		</weight>
 
 		<weight n="3">
 			<name>Coach Class</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]" />
-			<min-lb type="double">     0 </min-lb>
-			<max-lb type="double"> 12000 </max-lb>
+			<min-lb type="double">0 </min-lb>
+			<max-lb type="double">12000 </max-lb>
 		</weight>
-
 	</payload>
 		
-		<systems>
-			<anti-ice>
-				<ducttemp>
-					<engine1 type="float">0</engine1>
-					<engine2 type="float">0</engine2>
-					<engine3 type="float">0</engine3>
-					<engine1-overheat type="bool">0</engine1-overheat>
-					<engine2-overheat type="bool">0</engine2-overheat>
-					<engine3-overheat type="bool">0</engine3-overheat>
-				</ducttemp>
-			</anti-ice>
-			<electrical>
-				<outputs>
-					<ohp-lights type="float">1</ohp-lights>
-				</outputs>
-			</electrical>
-		</systems>
+	<systems n="0">
+		<anti-ice n="0">
+			<ducttemp>
+				<engine1 type="float">0</engine1>
+				<engine2 type="float">0</engine2>
+				<engine3 type="float">0</engine3>
+				<engine1-overheat type="bool">0</engine1-overheat>
+				<engine2-overheat type="bool">0</engine2-overheat>
+				<engine3-overheat type="bool">0</engine3-overheat>
+			</ducttemp>
+		</anti-ice>
+		<electrical n="0">
+			<outputs>
+				<ohp-lights type="float">1</ohp-lights>
+			</outputs>
+		</electrical>
+		<hydraulic n="0">
+			<ail-active type="bool">0</ail-active>
+			<elev-active type="bool">0</elev-active>
+			<spoiler-a-active type="bool">0</spoiler-a-active>
+			<spoiler-b-active type="bool">0</spoiler-b-active>
+			<rudder-l-active type="bool">0</rudder-l-active>
+			<rudder-u-active type="bool">0</rudder-u-active>
+		</hydraulic>
+	</systems>
 
 	<nasal n="0">
 		<libraries>
@@ -627,6 +738,7 @@
 			<file>Aircraft/727-200/Nasal/tire-smoke.nas</file>
 			<file>Aircraft/727-200/Nasal/lighting.nas</file>
 			<file>Aircraft/727-200/Nasal/shake.nas</file>
+			<file>Aircraft/727-200/Nasal/zoom-views.nas</file>
 		</libraries>
 		<systems>
 			<!--file>Aircraft/727-200/Nasal/electrical.nas</file-->
