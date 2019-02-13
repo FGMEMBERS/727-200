@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Avianca Colombia 90s</name>
+				<texture>Liveries-ADV/AVA.png</texture>
+			</livery>
+			<eng>
+				<texture>Liveries-ADV/AVA-eng.png</texture>
+			</eng>
+		</model>
+	</sim>
+</PropertyList>

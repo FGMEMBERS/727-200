@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Copa Panama</name>
+				<texture>Liveries-ADV/CPA.png</texture>
+			</livery>
+			<eng>
+				<texture>Liveries-ADV/CPA-eng.png</texture>
+			</eng>
+		</model>
+	</sim>
+</PropertyList>
