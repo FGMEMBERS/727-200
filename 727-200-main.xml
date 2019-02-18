@@ -5,7 +5,7 @@
 <PropertyList>
 
 	<sim>
-		<author>Joshua Davidson (it0uchpods) And Gabriel Hernandez(YV3399)</author>
+		<author>Joshua Davidson (it0uchpods), Gabriel Hernandez(YV3399)</author>
 		
 		<status>Pre V1.0</status>
 		
@@ -322,7 +322,8 @@
 			<tiller-cmd-norm type="double">0</tiller-cmd-norm>
 			<tiller-enabled type="bool">0</tiller-enabled>
 		</gear>
-		<lighting>
+		
+                  <lighting>
 			<interior type="double">0</interior>
 			<panel-norm>0.2</panel-norm>
 			<cockpit type="bool">false</cockpit>
@@ -594,7 +595,8 @@
 				</mode>
 			</mouse>
 		</mice>
-		<keyboard>
+		
+                 <keyboard>
 			<key n="24">
 				<name>Ctrl-x</name>
 				<desc>Reset zoom to default</desc>
