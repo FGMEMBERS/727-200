@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name type="string">Delta_80's</name>
+				<texture>Liveries-ADV/DEL80.png</texture>
+			</livery>
+			<eng>
+				<texture>Liveries-ADV/DEL80-eng.png</texture>
+			</eng>
+		</model>
+	</sim>
+</PropertyList>
