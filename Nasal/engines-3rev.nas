@@ -1,5 +1,5 @@
 # 727 JSB Engine System
-# Joshua Davidson (it0uchpods)
+# Josh Davidson (Octal450)
 
 #####################
 # Initializing Vars #

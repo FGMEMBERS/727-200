@@ -53,37 +53,5 @@
 		<inherits-from>Effects/model-transparent</inherits-from>
 		<object-name>shadow</object-name>
   </effect>
-  
-    <!-- The pneubrake knob -->
-    <animation>
-        <type>rotate</type>
-        <object-name>brake</object-name>
-        <property>controls/gear/brake-parking</property>
-        <factor>-90</factor>
-        <axis>
-            <x> 1.0</x>
-            <y> 0.0</y>
-            <z> 0.0</z>
-        </axis>
-        <center>
-            <x-m> 0.0</x-m>
-            <y-m>-0.213</y-m>
-            <z-m>0.976</z-m>
-        </center>
-    </animation>
-
-    <animation>
-      <type>pick</type>
-      <object-name>brake</object-name>
-      <visible>true</visible>
-      <action>
-        <button>0</button>
-        <repeatable>false</repeatable>
-        <binding>
-          <command>property-toggle</command>
-          <property>controls/gear/brake-parking</property>  
-        </binding>
-      </action>
-    </animation>
 
 </PropertyList>

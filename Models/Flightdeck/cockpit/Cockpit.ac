@@ -1,5 +1,5 @@
 AC3Db
-MATERIAL "cockpit.003" rgb 0.8 0.8 0.8  amb 1 1 1  emis 0 0 0  spec 1 1 1  shi 200  trans 0
+MATERIAL "cockpit.003" rgb 0.8 0.8 0.8  amb 1 1 1  emis 0 0 0  spec 1 1 1  shi 64  trans 0
 MATERIAL "glas.002" rgb 0.42 0.42 0.42  amb 1 1 1  emis 0.6 0.6 0.6  spec 0.64 0.64 0.64  shi 50  trans 0.5
 MATERIAL "Fuselage.000" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.64 0.64 0.64  shi 50  trans 0
 MATERIAL "chrome.001" rgb 0.8 0.8 0.8  amb 0.8864 0.8864 0.8864  emis 0 0 0  spec 0.5 0.5 0.5  shi 50  trans 0

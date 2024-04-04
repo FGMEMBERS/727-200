@@ -1,5 +1,5 @@
 # B727 Main Libraries
-# Joshua Davidson (it0uchpods)
+# Josh Davidson (Octal450)
 
 #######################
 # Various Other Stuff #
@@ -9,12 +9,9 @@ var systemsInit = func {
 	setprop("/systems/electrical/bus-volts", 1);
     setprop("/systems/electrical/outputs/mk-viii", 28);
     setprop("/systems/electrical/outputs/efis", 28);
-#	systems.ELEC.init();
 	systems.HYD.init();
-	systems.HEAT.init();
-	autopilot_v.ap_init();
-	var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/727-200/Systems/autopilot-dlg.xml");
 	systemsLoop.start();
+	gui.popupTip("This plane is outdated and may not work properly anymore, please update to the newer 727");
 }
 
 setlistener("/sim/signals/fdm-initialized", func {
@@ -23,7 +20,6 @@ setlistener("/sim/signals/fdm-initialized", func {
 
 var systemsLoop = maketimer(0.1, func {
 	systems.HYD.loop();
-	systems.HEAT.loop();
 	
 	var V = getprop("/velocities/groundspeed-kt");
 

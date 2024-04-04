@@ -1,13 +1,11 @@
 <?xml version="1.0"?>
 
-<!-- Copyright (c) 2018 Joshua Davidson (it0uchpods) -->
+<!-- Copyright (c) 2018 Josh Davidson (Octal450) -->
 
 <PropertyList>
 
 	<sim>
-		<author>Joshua Davidson (it0uchpods), Gabriel Hernandez(YV3399)</author>
-		
-		<status>Pre V1.0</status>
+		<author>Josh Davidson (Octal450), Heiko Schulz (HHS81)</author>
 		
 		<rating>
 			<FDM type="int">3</FDM>
@@ -230,12 +228,6 @@
 			<!--electrical>
 				<path></path>
 			</electrical-->
-			<autopilot n="0">
-				<path>Aircraft/727-200/Systems/autopilot-v.xml</path>
-			</autopilot>
-			<autopilot n="1">
-				<path>Aircraft/727-200/Systems/flight-director-v.xml</path>
-			</autopilot>
 			<autopilot n="2">
 				<path>Aircraft/727-200/Systems/libraries.xml</path>
 			</autopilot>
@@ -263,8 +255,6 @@
 		
 		<flight-recorder include="Systems/flight-recorder.xml"/>
 		
-		<gui n="0" include="Systems/it-gui.xml"/>
-		
 		<current-view>
 			<z-offset-default type="float">80.0</z-offset-default>
 			<z-offset-min-m type="float">30.0</z-offset-min-m>
@@ -273,18 +263,6 @@
 		
 		 <minimum-fg-version>2018.1.0</minimum-fg-version>
 	</sim>
-	
-	<autopilot-v>
-		<alt-sel-btn type="bool">0</alt-sel-btn>
-		<fd-mode-knob type="int">2</fd-mode-knob>
-		<hdg-sel-btn type="bool">0</hdg-sel-btn>
-		<pitch-knob type="int">3</pitch-knob>
-		<roll-knob type="int">3</roll-knob>
-		<fd>
-		<alt-hld type="bool">0</alt-hld>
-		<go-around type="bool">0</go-around>
-		</fd>
-	</autopilot-v>
 
 	<controls n="0">
 		<anti-ice>
@@ -743,16 +721,8 @@
 			<file>Aircraft/727-200/Nasal/zoom-views.nas</file>
 		</libraries>
 		<systems>
-			<!--file>Aircraft/727-200/Nasal/electrical.nas</file-->
 			<file>Aircraft/727-200/Nasal/hydraulics.nas</file>
-			<file>Aircraft/727-200/Nasal/heat.nas</file>
-			<!--file>Aircraft/727-200/Nasal/engines.nas</file-->
 		</systems>
-		<autopilot_v>
-			<file>Aircraft/727-200/Nasal/autopilot-v.nas</file>
-			<file>Aircraft/727-200/Nasal/autopilot-v-fd.nas</file>
-			<file>Aircraft/727-200/Nasal/autopilot-v-interface.nas</file>
-		</autopilot_v>
 	</nasal>
 
 </PropertyList>
